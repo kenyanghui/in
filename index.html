@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 内部知识库 v4.0</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+
+  .topbar {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #f1c40f;
+  }
+  .topbar .logo { font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+  .topbar .logo span { color: #f1c40f; }
+  .topbar .badge {
+    font-size: 11px;
+    background: rgba(241,196,15,.15);
+    color: #f1c40f;
+    padding: 4px 14px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+  }
+  .topbar .nav-links { display: flex; gap: 20px; }
+  .topbar .nav-links a {
+    color: rgba(255,255,255,.55);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s;
+    padding: 2px 0;
+  }
+  .topbar .nav-links a:hover { color: #fff; }
+  .topbar .meta-info { font-size: 10px; color: rgba(255,255,255,.35); letter-spacing: 0.3px; }
+
+  .wrapper { display: flex; max-width: 1440px; margin: 0 auto; padding: 24px 20px; gap: 24px; }
+
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 84px;
+    align-self: flex-start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+  .sidebar .menu { list-style: none; }
+  .sidebar .menu li { margin-bottom: 1px; }
+  .sidebar .menu a {
+    display: block;
+    padding: 7px 14px;
+    border-radius: 6px;
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all .15s;
+    border-left: 3px solid transparent;
+  }
+  .sidebar .menu a:hover, .sidebar .menu a.active {
+    background: #fff;
+    color: #1a1a2e;
+    border-left-color: #f1c40f;
+    font-weight: 600;
+  }
+  .sidebar .menu .sec-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #bbb;
+    padding: 18px 14px 4px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .main { flex: 1; min-width: 0; }
+
+  .section {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.04);
+    scroll-margin-top: 80px;
+  }
+  .section h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f5;
+  }
+  .section h3 {
+    font-size: 16px;
+    margin: 20px 0 10px;
+    color: #2c3e50;
+  }
+  .section h4 { font-size: 14px; margin: 16px 0 8px; color: #555; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag.confirmed { background: #d5f5e3; color: #1e8449; }
+  .tag.draft { background: #fdebd0; color: #b7950b; }
+  .tag.discuss { background: #fadbd8; color: #c0392b; }
+  .tag.done { background: #d5f5e3; color: #1e8449; }
+  .tag.wip { background: #d6eaf8; color: #1a5276; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 800px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13px;
+  }
+  .card .lbl { color: #888; font-size: 11px; margin-bottom: 3px; }
+  .card .val { font-weight: 600; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  table th {
+    background: #2c3e50;
+    color: #fff;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+  table tr:nth-child(even) td { background: #f8f9fa; }
+
+  .callout {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .callout.yellow { background: #fef9e7; border-left: 4px solid #f1c40f; }
+  .callout.blue { background: #eaf2f8; border-left: 4px solid #2e86c1; }
+  .callout.green { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .callout.red { background: #fdedec; border-left: 4px solid #e74c3c; }
+  .callout strong { display: block; margin-bottom: 4px; }
+
+  .poster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  @media (max-width: 700px) { .poster-grid { grid-template-columns: 1fr; } }
+  .poster-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+    transition: box-shadow .2s;
+  }
+  .poster-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+  .poster-card .ptitle { font-weight: 700; margin-bottom: 6px; }
+  .poster-card .pdesc { color: #666; font-size: 12px; }
+
+  .log-entry {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f2f5;
+    font-size: 13px;
+  }
+  .log-entry .date { color: #aaa; font-size: 12px; white-space: nowrap; width: 70px; flex-shrink: 0; padding-top: 1px; }
+  .log-entry .content { flex: 1; }
+  .log-entry .content .decision { color: #1e8449; font-weight: 600; }
+
+  hr { border: none; border-top: 1px solid #eef0f2; margin: 20px 0; }
+  .footer { text-align: center; color: #aaa; font-size: 12px; padding: 30px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">悦洋<span>教育</span></div>
+  <div class="badge">内部知识库 v4.0 · 全链路闭环+赛事落地</div>
+  <div class="nav-links">
+    <a href="#chain">全链路</a>
+    <a href="#brand">品牌</a>
+    <a href="#product">产品</a>
+    <a href="#bizcamps">商科四营</a>
+    <a href="#camp">游学营</a>
+    <a href="#icc">ICC</a>
+    <a href="#race">赛事</a>
+    <a href="#course">课程</a>
+    <a href="#outcome">成果</a>
+    <a href="#poster">海报</a>
+    <a href="#feedback">反馈</a>
+    <a href="#todo">行动</a>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<aside class="sidebar">
+  <ul class="menu">
+    <li class="sec-title">品牌核心</li>
+    <li><a href="#philosophy">顶层设计·教育哲学</a></li>
+    <li><a href="#chain">全链路闭环</a></li>
+    <li><a href="#brand">品牌总览</a></li>
+    <li><a href="#product">业务全景</a></li>
+    <li><a href="#pipeline">产品阶梯</a></li>
+    <li class="sec-title">产品线</li>
+    <li><a href="#course">一日创造营</a></li>
+    <li><a href="#bizcamps">商科四营</a></li>
+    <li><a href="#camp">游学营战略</a></li>
+    <li><a href="#icc">ICC全球发明大会</a></li>
+    <li><a href="#race">赛事金字塔</a></li>
+    <li><a href="#summer">暑假战役</a></li>
+    <li><a href="#outcome">五大成果体系</a></li>
+    <li class="sec-title">市场物料</li>
+    <li><a href="#poster">招生海报库</a></li>
+    <li><a href="#copy">核心文案</a></li>
+    <li class="sec-title">运营</li>
+    <li><a href="#price">定价策略</a></li>
+    <li><a href="#feedback">家长反馈系统</a></li>
+    <li><a href="#todo">待办与决策</a></li>
+  </ul>
+</aside>
+
+<div class="main">
+
+<!-- ===================== 品牌总览 ===================== -->
+<div class="section" id="brand">
+  <h2>🌅 悦洋教育 · 品牌总览</h2>
+  <div class="grid-4">
+    <div class="card"><div class="lbl">品牌名</div><div class="val">悦洋教育</div></div>
+    <div class="card"><div class="lbl">创始人</div><div class="val">杨辉</div></div>
+    <div class="card"><div class="lbl">定位</div><div class="val">AI摆渡人 · 道商修行者 · 二代教育传承教练</div></div>
+    <div class="card"><div class="lbl">目标人群</div><div class="val">8–22岁青少年+家庭（国内+海外华裔+企二代）</div></div>
+  </div>
+  <div class="grid-3">
+    <div class="card"><div class="lbl" style="color:#2e86c1;">🎯 核心能力</div><div class="val">AI技术教育 + 生命成长引导 + 文化传承设计</div></div>
+    <div class="card"><div class="lbl" style="color:#27ae60;">💡 独特价值</div><div class="val">不是教"操作AI"，是教"用AI解决真实问题、连接家族能量、完成生命觉醒"</div></div>
+    <div class="card"><div class="lbl" style="color:#e74c3c;">⚡ 竞争壁垒</div><div class="val">道商哲学 × AI技术 × 教育传承 —— 国内唯一同时打通三者的机构</div></div>
+  </div>
+  <div class="callout green"><strong>🌉 品牌使命</strong>做AI时代的精神摆渡人。不仅教孩子使用AI工具，更帮助他们在技术浪潮中安顿身心、传承文化、建立生命自觉。</div>
+  <div class="callout blue"><strong>📢 一句话介绍</strong>"用AI连接世界，用文化安顿身心" —— 适用于名片、朋友圈签名、开场白、课程首页。</div>
+  <div class="callout yellow"><strong>🏛️ 集团背景</strong>悦洋教育是悦洋海外集团（EnjoyLife Group）成员，集团成立于1996年，30年高净值客户服务积淀。总部广州天河·中泰国际广场A座29楼，在中山、长沙、成都、贵阳、武汉、盐城、墨尔本等地设有分公司。联系方式：edu@joy1996.com · 400-893-1633 · 粤ICP备13046921号</div>
+</div>
+
+<!-- ===================== 顶层设计与教育哲学 ===================== -->
+<div class="section" id="philosophy">
+  <h2>🧠 顶层设计与教育哲学</h2>
+
+  <div class="callout yellow"><strong>📌 一句话概括悦洋哲学</strong>不是教"操作AI"，而是教"用AI解决真实问题、连接家族能量、完成生命觉醒"——这是所有产品设计的原点。</div>
+
+  <h3>一、教育的根本追问</h3>
+  <p style="font-size:13px;color:#555;margin-bottom:10px;">悦洋教育的起点不是"做什么产品"，而是一个更根本的问题：<strong>AI时代，什么样的教育能让孩子在未来30年不被淘汰，反而活得更加丰盛？</strong></p>
+  <div class="grid-3">
+    <div class="card" style="border-left:4px solid #3498db;">
+      <div class="lbl" style="color:#3498db;font-weight:700;">💻 与技术对话</div>
+      <div class="val" style="font-size:12px;">AI素养 — 做AI的主人而非工具人</div>
+      <div style="font-size:11px;color:#999;margin-top:4px;">不是学编程，是学"用AI创造价值"的思维方式</div>
+    </div>
+    <div class="card" style="border-left:4px solid #27ae60;">
+      <div class="lbl" style="color:#27ae60;font-weight:700;">🧘 与自我对话</div>
+      <div class="val" style="font-size:12px;">生命觉察 — 在变化中安顿身心</div>
+      <div style="font-size:11px;color:#999;margin-top:4px;">在高速变化中找到内在定力，建立自我认同</div>
+    </div>
+    <div class="card" style="border-left:4px solid #e74c3c;">
+      <div class="lbl" style="color:#e74c3c;font-weight:700;">🏛️ 与文化对话</div>
+      <div class="val" style="font-size:12px;">传承意识 — 知道"我从哪里来，往哪里去"</div>
+      <div style="font-size:11px;color:#999;margin-top:4px;">连接家族能量，建立文化根基和使命感</div>
+    </div>
+  </div>
+
+  <h3>二、道商哲学：道法术器四层体系</h3>
+  <p style="font-size:13px;color:#555;margin-bottom:10px;">悦洋的教育哲学以<strong>道商</strong>思想为顶层框架，将中国传统智慧与现代AI教育融合：</p>
+  <table>
+    <thead><tr><th>层级</th><th>内涵</th><th>教育映射</th><th>产品对应</th></tr></thead>
+    <tbody>
+      <tr><td><strong>道</strong>（顶层）</td><td>使命与价值观<br>为什么做</td><td>唤醒生命自觉、传承家族能量</td><td>品牌定位 · 爱信营（WHO）</td></tr>
+      <tr><td><strong>法</strong>（策略）</td><td>方法论与路径<br>怎么做</td><td>AI+商业的创新教育方法论</td><td>爱智营（WHY）· 爱创营（WHAT）</td></tr>
+      <tr><td><strong>术</strong>（技能）</td><td>具体工具与技术<br>用什么做</td><td>AI工具操作、商业分析技能</td><td>爱习营（HOW）· 一日营</td></tr>
+      <tr><td><strong>器</strong>（载体）</td><td>产品与交付<br>做什么</td><td>课程、赛事、活动</td><td>所有产品形态</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue"><strong>💡 核心洞察</strong>大多数AI教育机构只停留在"术"和"器"的层面（教操作、卖课程），悦洋从<strong>"道"和"法"</strong>层面建立差异化——我们不是在教AI操作，而是在培养AI时代的道商修行者。</div>
+
+  <h3>三、"AI摆渡人"的三层使命</h3>
+  <table>
+    <thead><tr><th>层次</th><th>摆渡什么</th><th>解决什么问题</th><th>家长感知价值</th></tr></thead>
+    <tbody>
+      <tr><td><strong>第一层 · 技术摆渡</strong></td><td>从AI小白到AI创造者</td><td>只会用AI查答案/玩游戏 → 能用AI创造真实作品</td><td>"孩子居然能用AI做出一个作品！"</td></tr>
+      <tr><td><strong>第二层 · 生命摆渡</strong></td><td>从被动学习到主动创造</td><td>缺乏内驱力 → 找到热爱的方向</td><td>"孩子主动说：我想把这个想法做出来"</td></tr>
+      <tr><td><strong>第三层 · 文化摆渡</strong></td><td>从文化断层到文化传承</td><td>对家族事业无感 → 建立文化根基和使命感</td><td>"孩子开始理解爸爸为什么创业"</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green"><strong>🎯 对内共识</strong>所有产品设计、市场话术、定价策略，都应当围绕这三层使命展开。一个产品如果能同时覆盖三层，就是爆品；如果只覆盖第一层，就是同质化。</div>
+
+  <h3>四、双轨同源：AI创造营 × 商科Enjoy的统一哲学</h3>
+  <p style="font-size:13px;color:#555;margin-bottom:10px;">两大产品线看似分属不同赛道，实则共享同一哲学内核：<strong>AI技术 + 真实问题 + 价值创造</strong>。</p>
+  <table>
+    <thead><tr><th>维度</th><th>AI创造营线</th><th>商科Enjoy线</th></tr></thead>
+    <tbody>
+      <tr><td><strong>目标人群</strong></td><td>8-16岁大众</td><td>14-22岁企二代/留学群体</td></tr>
+      <tr><td><strong>核心命题</strong></td><td>"用AI解决真实社会问题"</td><td>"用AI创造商业价值"</td></tr>
+      <tr><td><strong>哲学基础</strong></td><td>科技向善 · 社会责任感</td><td>道商智慧 · 家族使命传承</td></tr>
+      <tr><td><strong>底层能力</strong></td><td>创造力+同理心+技术素养</td><td>商业思维+领袖心智+文化根基</td></tr>
+      <tr><td><strong>共同内核</strong></td><td colspan="2" style="text-align:center;font-weight:700;color:#27ae60;">AI技术 + 真实问题 + 价值创造</td></tr>
+      <tr><td><strong>终极指向</strong></td><td colspan="2" style="text-align:center;">培养AI时代的创变者，不论赛道</td></tr>
+    </tbody>
+  </table>
+
+  <h3>五、T1-T4的哲学解读：不是产品阶梯，是成长觉醒之路</h3>
+  <p style="font-size:13px;color:#555;margin-bottom:10px;">T1-T4表面上是产品定价的梯级，本质上是<strong>孩子生命成长的四个觉醒阶段</strong>：</p>
+  <table>
+    <thead><tr><th>阶段</th><th>产品</th><th>核心命题</th><th>觉醒什么</th><th>家长眼中</th></tr></thead>
+    <tbody>
+      <tr><td><strong>T1 · 体验</strong></td><td>一日营</td><td>"我能用AI做什么？"</td><td><strong>能力觉醒</strong> — "我也可以创造"</td><td>"孩子居然能做出一个AI作品！"</td></tr>
+      <tr><td><strong>T2 · 创造</strong></td><td>爱创营/暑假项目</td><td>"我想解决什么问题？"</td><td><strong>使命觉醒</strong> — 从"我能"到"我想"</td><td>"孩子主动说想做点什么"</td></tr>
+      <tr><td><strong>T3 · 绽放</strong></td><td>竞赛营/赛事</td><td>"我的作品能给世界带来什么？"</td><td><strong>价值觉醒</strong> — 从"我想"到"世界需要"</td><td>"孩子的作品被官方认可了"</td></tr>
+      <tr><td><strong>T4 · 传承</strong></td><td>升学/领袖陪跑</td><td>"我要成为什么样的人？"</td><td><strong>生命觉醒</strong> — 从"做事"到"做人"</td><td>"孩子开始思考未来的方向"</td></tr>
+    </tbody>
+  </table>
+  <div class="callout red"><strong>🔥 对内金句</strong>悦洋的产品线覆盖¥680到¥398,000，不是因为"想赚更多钱"，而是要<strong>"陪伴一个孩子从8岁走到18岁，完整走完从能力觉醒到生命觉醒的十年之路"</strong>。</div>
+</div>
+
+<!-- ===================== 全链路闭环 ===================== -->
+<div class="section" id="chain">
+  <h2>🔄 全链路闭环 · 从体验到升学</h2>
+  <div class="callout blue"><strong>🧠 哲学底色</strong>全链路闭环不仅是"产品漏斗"，更是<strong>成长觉醒路径</strong>（详见顶层设计章节）。T1体验唤醒能力自信 → T2创造唤醒使命方向 → T3赛事唤醒社会价值 → T4升学唤醒生命自觉。每个阶段的产品设计，都在回答孩子当下最需要被唤醒的那个问题。</div>
+  <div class="callout green"><strong>🎯 核心策略</strong>以"一日体验→暑假做项目→参赛拿奖→升学出口"为主线，覆盖8–18岁青少年从AI商科启蒙到升学背景提升的完整成长路径。每个阶段都是下一阶段的流量入口和信任铺垫。</div>
+  <div class="grid-4">
+    <div class="card" style="border-left:4px solid #3498db;text-align:center;">
+      <div style="font-size:28px;margin-bottom:6px;">🎯</div>
+      <div class="lbl" style="font-size:12px;">T1 · 体验</div>
+      <div class="val">一日体验营 ¥680</div>
+      <div style="font-size:11px;color:#999;">6小时AI商科启蒙 · 低门槛转化</div>
+    </div>
+    <div class="card" style="border-left:4px solid #9b59b6;text-align:center;">
+      <div style="font-size:28px;margin-bottom:6px;">💡</div>
+      <div class="lbl" style="font-size:12px;">T2 · 暑假项目</div>
+      <div class="val">爱创营 ¥9,800</div>
+      <div style="font-size:11px;color:#999;">5天出BP+AI原型 · 核心爆品</div>
+    </div>
+    <div class="card" style="border-left:4px solid #f39c12;text-align:center;">
+      <div style="font-size:28px;margin-bottom:6px;">🏆</div>
+      <div class="lbl" style="font-size:12px;">T3 · 赛事出口</div>
+      <div class="val">竞赛营 ¥15,840</div>
+      <div style="font-size:11px;color:#999;">冲刺ICC/商赛/微软杯/腾讯AI赛等 · 省赛获奖率50-60%</div>
+    </div>
+    <div class="card" style="border-left:4px solid #27ae60;text-align:center;">
+      <div style="font-size:28px;margin-bottom:6px;">🎓</div>
+      <div class="lbl" style="font-size:12px;">T4 · 升学背书</div>
+      <div class="val">背景提升 ¥48,000+</div>
+      <div style="font-size:11px;color:#999;">奖项+作品集+推荐信 · 升学加分</div>
+    </div>
+  </div>
+  <h3>暑假爆品包（核心转化产品）</h3>
+  <table>
+    <thead><tr><th>产品包</th><th>内容</th><th>原价</th><th>早鸟价</th><th>省</th></tr></thead>
+    <tbody>
+      <tr><td><strong>🔥 暑假爆品包</strong></td><td>爱创营(¥12,800) + 竞赛冲刺营(¥19,800)</td><td>¥32,600</td><td><strong style="color:#e74c3c;">¥27,600</strong></td><td>¥5,000</td></tr>
+      <tr><td><strong>全链路闭环包</strong></td><td>一日营(¥980) + 爱创营 + 竞赛冲刺营</td><td>¥33,580</td><td><strong style="color:#e74c3c;">¥28,800</strong></td><td>¥4,780</td></tr>
+      <tr><td><strong>🚀 升学加速包</strong></td><td>爱创营 + 竞赛营 + VIP保奖营</td><td>¥62,400</td><td><strong style="color:#e74c3c;">¥68,800</strong></td><td>含保奖服务</td></tr>
+    </tbody>
+  </table>
+  <div class="callout yellow"><strong>📌 暑假战役节奏</strong>早鸟期 5.20-6.10（8折）→ 常规期 6.11-6.30（8.8折）→ 开营期 7-8月。每期仅12-15人。核心爆品：爱创营（5天做BP+AI原型），可直接对接秋季赛事。</div>
+</div>
+
+<!-- ===================== 业务全景 ===================== -->
+<div class="section" id="product">
+  <h2>🗺️ 业务全景图</h2>
+  <div class="callout yellow"><strong>📌 产线说明</strong>悦洋教育目前有两大产品阵营：<strong>AI创造营线</strong>（AI+社会问题解决，面向8–16岁大众）和<strong>商科线</strong>（AI+商业创新，面向14–22岁企二代/留学群体）。两线共享品牌和集团资源，分别覆盖不同客群。</div>
+  <table>
+    <thead><tr><th>业务线</th><th>产品形态</th><th>目标人群</th><th>状态</th><th>参考价</th></tr></thead>
+    <tbody>
+      <tr style="background:#eafaf1;"><td colspan="5"><strong>🤖 T1 · 体验层（¥680–980）</strong></td></tr>
+      <tr><td>AI商科启蒙一日营</td><td>1天（6课时）体验课</td><td>8–16岁</td><td><span class="tag confirmed">已运营</span></td><td>¥680–980</td></tr>
+      <tr><td>AI商科一日体验营（海外版）</td><td>周末6小时双语课</td><td>海外华裔8–18岁</td><td><span class="tag draft">待启动</span></td><td>$150–250 AUD</td></tr>
+      <tr style="background:#f0e6f6;"><td colspan="5"><strong>💡 T2 · 项目层（¥9,800–12,800）</strong></td></tr>
+      <tr><td>爱智营（商业思维）</td><td>5天线下集训</td><td>14–22岁</td><td><span class="tag draft">待启动</span></td><td>¥9,800</td></tr>
+      <tr><td><strong>⭐ 爱创营（商业创新实战）</strong></td><td><strong>5天线下集训 ← 核心爆品</strong></td><td>12–18岁</td><td><span class="tag confirmed">已运营</span></td><td>¥12,800 / 早鸟¥9,800</td></tr>
+      <tr><td>爱习营（商业技能）</td><td>5天线下集训</td><td>14–22岁</td><td><span class="tag draft">待启动</span></td><td>¥9,800</td></tr>
+      <tr><td>爱信营（领袖心智）</td><td>5天线下集训</td><td>企二代专属</td><td><span class="tag draft">待启动</span></td><td>¥9,800</td></tr>
+      <tr style="background:#fef5e7;"><td colspan="5"><strong>🏆 T3 · 赛事层（¥15,840–29,800）</strong></td></tr>
+      <tr><td>AI商业创业竞赛冲刺营</td><td>5天集训+课后4周跟进</td><td>12–18岁</td><td><span class="tag confirmed">已运营</span></td><td>¥19,800 / 早鸟¥15,840</td></tr>
+      <tr><td>VIP保奖营</td><td>1对1辅导+省-国级保奖</td><td>有项目基础</td><td><span class="tag draft">待启动</span></td><td>¥29,800</td></tr>
+      <tr><td>比赛孵化服务</td><td>1对1备赛辅导6–12周</td><td>有项目基础学员</td><td><span class="tag draft">待启动</span></td><td>¥3,000–8,000</td></tr>
+      <tr style="background:#e8f8f0;"><td colspan="5"><strong>🎓 T4 · 升学层（¥48,000–398,000）</strong></td></tr>
+      <tr><td>商科背景提升陪跑</td><td>6–24个月长期规划</td><td>留学群体</td><td><span class="tag draft">待启动</span></td><td>¥48,000–158,000</td></tr>
+      <tr><td>留学规划与申请咨询</td><td>全球TOP100–藤校申请</td><td>留学群体</td><td><span class="tag draft">待启动</span></td><td>¥58,000–298,000</td></tr>
+      <tr><td>海外商科心智陪跑</td><td>1–12个月学术+心理支持</td><td>已在海外留学生</td><td><span class="tag draft">待启动</span></td><td>¥6,800/月起</td></tr>
+      <tr><td>商科领袖陪跑</td><td>12个月1对1教练陪跑</td><td>企二代</td><td><span class="tag draft">待启动</span></td><td>¥98,000–398,000/年</td></tr>
+      <tr style="background:#fef9e7;"><td colspan="5"><strong>🛠️ 公共设施</strong></td></tr>
+      <tr><td>海外华裔寻根游学营</td><td>入境文化研学5–7天</td><td>海外华裔8–18岁</td><td><span class="tag draft">待启动</span></td><td>$2,000–3,000</td></tr>
+      <tr><td>国内赴澳游学营</td><td>出境游学7–14天</td><td>国内中产家庭</td><td><span class="tag discuss">建议放弃</span></td><td>—</td></tr>
+      <tr><td>家长反馈系统</td><td>飞书多维表格</td><td>所有报名家长</td><td><span class="tag confirmed">已上线</span></td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================== 产品阶梯 ===================== -->
+<div class="section" id="pipeline">
+  <h2>🪜 产品阶梯 · 用户成长路径</h2>
+  <div class="callout green"><strong>✅ 已共识</strong>一个孩子从8岁开始，在悦洋体系内每年上升一个台阶。</div>
+  <div class="callout yellow"><strong>📌 双轨制说明</strong>本阶梯适用于AI创造营线（8–18岁，AI+社会问题解决）。商科线（14–22岁，AI+商业创新）的进阶为：AI商科启蒙一日营 → 企业商业研学/竞赛营 → 商科背景提升陪跑 → 留学申请/领袖陪跑。两线可根据学员兴趣切换或并行。</div>
+  <table>
+    <thead><tr><th>阶段</th><th>年龄</th><th>内容</th><th>成果产出</th><th>家长感知价值</th></tr></thead>
+    <tbody>
+      <tr><td><strong>L1 启蒙</strong></td><td>8–10岁</td><td>AI创造营基础班</td><td>第一个AI作品</td><td>"孩子居然会用AI了！"</td></tr>
+      <tr><td><strong>L2 探索</strong></td><td>10–12岁</td><td>创造营进阶+展览/会议</td><td>作品参展+上台演讲</td><td>"孩子站在台上真自信"</td></tr>
+      <tr><td><strong>L3 突破</strong></td><td>12–14岁</td><td>比赛孵化+ICC备赛</td><td>参赛获奖/证书</td><td>"奖状挂上墙了"</td></tr>
+      <tr><td><strong>L4 深度</strong></td><td>14–16岁</td><td>论文辅导+高阶科研</td><td>发表论文/科研报告</td><td>"像研究生一样做研究"</td></tr>
+      <tr><td><strong>L5 卓越</strong></td><td>16–18岁</td><td>专利申请+顶尖赛事</td><td>专利证书/国赛奖项</td><td>"专利证书官网可查"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================== 商科四营 ===================== -->
+<div class="section" id="bizcamps">
+  <h2>📚 商科四营 · 悦洋核心体系（Enjoy系列）</h2>
+  <div class="callout blue"><strong>💡 定位</strong>商科四营是悦洋教育的核心体系，以"爱"为主线贯穿，逐层递进：从商业思维到创造行动，从技能掌握到领袖心智。面向14–22岁青少年，为企二代和国际学校学生设计。每个营会对应商业创新者成长闭环中的一个关键问题：WHY → WHAT → HOW → WHO。</div>
+  <div class="grid-4">
+    <div class="card" style="border-left: 4px solid #0d7377;">
+      <div class="lbl" style="color:#0d7377;font-weight:700;">01 爱智营</div>
+      <div class="val" style="font-size:12px;color:#666;">商业思维与认知</div>
+      <div style="font-size:11px;color:#999;margin:4px 0;">WHY — 为什么做？</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>掌握商业创新底层思维框架</li>
+        <li>学会发现商业机会的能力</li>
+        <li>14–22岁，建立商业洞察与系统思考</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left: 4px solid #d4745f;">
+      <div class="lbl" style="color:#d4745f;font-weight:700;">02 爱创营 ⭐</div>
+      <div class="val" style="font-size:12px;color:#666;">商业创新实战</div>
+      <div style="font-size:11px;color:#999;margin:4px 0;">WHAT — 解决什么？</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>核心实战营，团队组建→BP→AI工具→路演</li>
+        <li>完成完整商业计划书，可转化竞赛/升学成果</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left: 4px solid #c8a96e;">
+      <div class="lbl" style="color:#c8a96e;font-weight:700;">03 爱习营</div>
+      <div class="val" style="font-size:12px;color:#666;">商业技能与工具</div>
+      <div style="font-size:11px;color:#999;margin:4px 0;">HOW — 如何受益？</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>数据分析、商业建模、市场调研、财务规划</li>
+        <li>掌握AI商科核心工具，建立可迁移商科技能</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left: 4px solid #1a1a2e;">
+      <div class="lbl" style="color:#1a1a2e;font-weight:700;">04 爱信营</div>
+      <div class="val" style="font-size:12px;color:#666;">商界领袖心智</div>
+      <div style="font-size:11px;color:#999;margin:4px 0;">WHO — 成为谁？</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>完成前三营后进阶，明确商业愿景与使命</li>
+        <li>企二代专属：家族使命与"AI创造商业价值"路径</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout green"><strong>📌 商科线产品矩阵</strong>商科四营是核心能力体系，对外呈现为7个产品：AI商科启蒙一日营(¥980) → 企业商业研学(¥8,800–28,800) → AI商业创业竞赛营(¥12,800–29,800) → 商科背景提升陪跑(¥48,000–158,000) → 留学规划与申请咨询(¥58,000–298,000) → 海外商科心智陪跑(¥6,800/月起) → 商科领袖陪跑(¥98,000–398,000/年)。价格覆盖¥980到¥398,000，梯度完整。</div>
+</div>
+
+<!-- ===================== 一日创造营 ===================== -->
+<div class="section" id="course">
+  <h2>⚡ AI青少年一日创造营 · 6小时体验课</h2>
+  <div class="callout blue"><strong>📌 现有产品</strong>线下6小时高强度体验，从0到1完成一个AI项目。</div>
+  <h3>课程结构</h3>
+  <table>
+    <thead><tr><th>时间</th><th>环节</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>09:00–10:00</td><td><strong>破冰+认知</strong></td><td>AI是什么？AI能解决什么真实问题？观看往期作品展示</td></tr>
+      <tr><td>10:00–10:30</td><td><strong>选题工作坊</strong></td><td>从环保/校园/社区/科技向善四个方向中选定自己的选题</td></tr>
+      <tr><td>10:30–12:00</td><td><strong>AI工具实操</strong></td><td>用AI编程工具搭建项目原型（网站/游戏/海报）</td></tr>
+      <tr><td>12:00–13:00</td><td>午餐+休息</td><td></td></tr>
+      <tr><td>13:00–15:00</td><td><strong>项目深化</strong></td><td>完善项目、添加交互、测试优化</td></tr>
+      <tr><td>15:00–16:00</td><td><strong>成果展示</strong></td><td>每人3分钟路演展示项目，导师点评+家长观摩</td></tr>
+      <tr><td>16:00–16:30</td><td><strong>结营+下一步</strong></td><td>颁发证书，介绍进阶课程和比赛机会</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-3">
+    <div class="card"><div class="val">🎯 6小时从0到1做出AI作品</div></div>
+    <div class="card"><div class="val">🏆 优秀作品直推ICC全球发明大会</div></div>
+    <div class="card"><div class="val">📜 结营证书+项目成果包发给家长留存</div></div>
+  </div>
+</div>
+
+<!-- ===================== 暑假战役 ===================== -->
+<div class="section" id="summer">
+  <h2>☀️ 暑假招生战役 · 核心策略</h2>
+  <div class="callout red"><strong>🔥 战役核心</strong>早鸟窗口 5.20-6.10（8折），6.11-6.30（8.8折），7-8月开营。核心爆品：爱创营（¥12,800 → 早鸟¥9,800）+ 暑假爆品包（←核心转化产品）。</div>
+  <div class="grid-3">
+    <div class="card" style="border-left:4px solid #e74c3c;">
+      <div class="lbl" style="font-weight:700;">⚡ 战役目标</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>一期：7月第一个完整周（爱创营）</li>
+        <li>二期：7月底（爱创营）</li>
+        <li>三期：8月上旬（竞赛冲刺营）</li>
+        <li>每期上限15人，确保辅导质量</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #3498db;">
+      <div class="lbl" style="font-weight:700;">📣 推广渠道</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>家长社群 → 朋友圈海报 → 扫码咨询</li>
+        <li>异业合作（留学机构/国际学校）</li>
+        <li>海外渠道：澳洲华人社团/华校</li>
+        <li>赛事素材驱动：获奖案例+备赛vlog</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #27ae60;">
+      <div class="lbl" style="font-weight:700;">🎯 转化漏斗</div>
+      <ul style="font-size:12px;color:#555;margin-top:6px;padding-left:14px;">
+        <li>一日营体验 → 现场转化爱创营</li>
+        <li>爱创营结营 → 赛事匹配 → 竞赛营转化</li>
+        <li>竞赛营 → 升学方案 → 背景提升陪跑</li>
+        <li>裂变：学员家长见证 → 转介绍</li>
+      </ul>
+    </div>
+  </div>
+  <h3>5套招生海报（已就绪）</h3>
+  <div class="poster-grid">
+    <div class="poster-card"><div class="ptitle">😰 家长焦虑版</div><div class="pdesc">"暑假60天拉开差距" — 痛点驱动</div></div>
+    <div class="poster-card"><div class="ptitle">🔁 全链路闭环版</div><div class="pdesc">"当别人写模联，你的孩子说：我创办了一个商业项目"</div></div>
+    <div class="poster-card"><div class="ptitle">🏅 赛事直通车版</div><div class="pdesc">"暑假做项目，秋季拿奖项"</div></div>
+    <div class="poster-card"><div class="ptitle">🎓 升学背书版</div><div class="pdesc">Common App活动描述+面试素材</div></div>
+    <div class="poster-card"><div class="ptitle">☀️ 5天出项目版</div><div class="pdesc">"5天，做一个能参赛的商业项目"</div></div>
+  </div>
+</div>
+
+<!-- ===================== 游学营战略 ===================== -->
+<div class="section" id="camp">
+  <h2>✈️ 游学营战略决策</h2>
+  <div class="callout red"><strong>⚡ 关键决策</strong>放弃"中国孩子赴澳"出境游学赛道，All-in"海外华裔孩子回中国"寻根游学。</div>
+  <table>
+    <thead><tr><th style="width:20%">维度</th><th style="width:40%">中国→澳洲（出境）</th><th style="width:40%">海外华裔→中国（入境）</th></tr></thead>
+    <tbody>
+      <tr><td><strong>客单价</strong></td><td>¥28,000–45,000</td><td>$2,500–5,000 USD</td></tr>
+      <tr><td><strong>核心痛点</strong></td><td>安全焦虑·语言障碍·价格敏感</td><td>文化断层·身份认同·中文退化</td></tr>
+      <tr><td><strong>复购率</strong></td><td>偏低（尝鲜型消费）</td><td>较高（持续需求）</td></tr>
+      <tr><td><strong>竞争格局</strong></td><td>红海·头部垄断</td><td>蓝海·尚无巨头</td></tr>
+      <tr><td><strong>悦洋优势</strong></td><td>无成本优势</td><td>在地资源+文化基因+道商叙事</td></tr>
+    </tbody>
+  </table>
+  <h3>行动指令</h3>
+  <table>
+    <thead><tr><th>#</th><th>指令</th><th>优先级</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>放弃赴澳营</td><td><span class="tag done">已决策</span></td></tr>
+      <tr><td>2</td><td>锁定海外华裔二代"寻根游学"赛道</td><td><span class="tag done">已决策</span></td></tr>
+      <tr><td>3</td><td>定位"文化基因修复"而非旅游</td><td><span class="tag done">已决策</span></td></tr>
+      <tr><td>4</td><td>切入点：单点资源先做，再扩版图</td><td><span class="tag wip">策划中</span></td></tr>
+      <tr><td>5</td><td>渠道：圈子电商（同乡会/华校/中文教师群）</td><td><span class="tag wip">策划中</span></td></tr>
+      <tr><td>6</td><td>借力文旅/教育政策支持</td><td><span class="tag draft">待启动</span></td></tr>
+      <tr><td>7</td><td>心智占位：回国营目前没有对手</td><td><span class="tag draft">长期</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================== ICC全球发明大会 ===================== -->
+<div class="section" id="icc">
+  <h2>🏅 ICC全球发明大会 · 悦洋结合方案</h2>
+  <div class="callout blue"><strong>📌 ICC是什么</strong>全球发明大会（Invention Convention Global）是全球性青少年发明创新赛事，中国区由教育部白名单认证。ICC鼓励孩子"发现真实问题→提出发明方案→制作原型"。</div>
+  <table>
+    <thead><tr><th>ICC要求</th><th>悦洋优势</th><th>结合点</th></tr></thead>
+    <tbody>
+      <tr><td>发现真实社会问题</td><td>创造营"社会问题选题"环节</td><td>创造营选题直接作为ICC项目起点</td></tr>
+      <tr><td>提出创新解决方案</td><td>AI工具赋能创意实现</td><td>6小时产出可演示的AI交互原型</td></tr>
+      <tr><td>制作可演示的原型</td><td>项目深化+成果展示环节</td><td>创造营结营作品=ICC参赛作品</td></tr>
+      <tr><td>记录发明日志</td><td>项目周报+实验日志体系</td><td>比赛+论文+专利的基础素材</td></tr>
+      <tr><td>现场答辩展示</td><td>模拟答辩+演讲辅导</td><td>在悦洋服务体系内一站式完成</td></tr>
+    </tbody>
+  </table>
+  <div class="card" style="font-size:13px;"><b>参赛全流程：</b>创造营/一日营产出项目 → 选题评估与赛事匹配 → 备赛训练营（M1–M5）→ 提交发明日志和演示视频 → 省赛答辩 → 国赛/全球赛 → 成果放大（媒体/综评/后续赛）</div>
+</div>
+
+<!-- ===================== 赛事匹配分析 ===================== -->
+<div class="section" id="race">
+  <h2>📊 国内国际AI商科赛事全景 · 30+赛事深度分析</h2>
+  <div class="callout yellow"><strong>🎯 赛事战略</strong>赛事不是终点，是成果出口。悦洋AI商科的产出（BP+AI原型+市场分析+路演视频）天然适合参赛——我们不是"为了参赛而教"，而是"教的东西天然能参赛"。</div>
+  <div class="callout green"><strong>⚡ 悦洋AI商科的核心差异化优势</strong>普通编程培训机构只教技术——学生参赛只有代码作品。我们的学生有<b>完整的商业计划书（BP）+AI原型+市场分析报告+路演视频</b>。企业创新赛（微软杯/Google/Intel等）和商业专项赛恰恰最看重"技术如何转化为商业价值"——这正是AI商科赋予的差异化竞争力。<br><br>简单说：别人只有"怎么做"，我们有"为什么做、给谁做、怎么赚钱、如何推广"——整个商业闭环。</div>
+
+  <h3>🏆 赛事总览 · 四大层级</h3>
+  <div class="grid-4">
+    <div class="card" style="text-align:center;border-left:4px solid #f1c40f;">
+      <div style="font-size:24px;margin-bottom:4px;">🥇</div>
+      <div class="lbl" style="font-weight:700;">S级 · 白名单官方</div>
+      <div class="val" style="font-size:11px;color:#666;">ICC / NOC / 科创大赛 / 宋庆龄奖</div>
+      <div style="font-size:10px;color:#999;margin-top:4px;">教育部认证 · 综评直接认可</div>
+    </div>
+    <div class="card" style="text-align:center;border-left:4px solid #3498db;">
+      <div style="font-size:24px;margin-bottom:4px;">💼</div>
+      <div class="lbl" style="font-weight:700;">A级 · 商业/创业专项</div>
+      <div class="val" style="font-size:11px;color:#666;">"互联网+"萌芽 · 挑战杯 · 三创赛 · MIT Launch X · Diamond Challenge · DECA</div>
+      <div style="font-size:10px;color:#999;margin-top:4px;">BP+路演核心 · 与悦洋教学内容高度重合</div>
+    </div>
+    <div class="card" style="text-align:center;border-left:4px solid #e74c3c;">
+      <div style="font-size:24px;margin-bottom:4px;">🏢</div>
+      <div class="lbl" style="font-weight:700;">A级 · 头部企业AI赛</div>
+      <div class="val" style="font-size:11px;color:#666;">微软杯 · Intel · Google · 腾讯 · 百度 · 华为 · 阿里 · 商汤 · 科大讯飞</div>
+      <div style="font-size:10px;color:#999;margin-top:4px;">企业背书 · 升学含金量极高</div>
+    </div>
+    <div class="card" style="text-align:center;border-left:4px solid #9b59b6;">
+      <div style="font-size:24px;margin-bottom:4px;">🌍</div>
+      <div class="lbl" style="font-weight:700;">S-A级 · 国际顶级</div>
+      <div class="val" style="font-size:11px;color:#666;">ISEF · Conrad · Google Science · Kaggle</div>
+      <div style="font-size:10px;color:#999;margin-top:4px;">全球认可 · 藤校/牛剑申请王牌</div>
+    </div>
+  </div>
+
+  <!-- ===== 国内赛事 ===== -->
+  <hr>
+  <h3>🇨🇳 一、国内AI商科赛事全景（18项）</h3>
+  <table>
+    <thead><tr><th>赛事名称</th><th>主办/类型</th><th>年龄</th><th>赛程</th><th>参赛形式</th><th>匹配度</th><th>悦洋AI商科优势</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏅 ICC全球发明大会</strong></td>
+        <td>中国发明协会 · 教育部白名单</td>
+        <td>8-16岁</td>
+        <td>省赛9月→国赛11月</td>
+        <td>发明日志+原型+答辩</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">SDG选题+AI原型 = 天然匹配。一日营/爱创营产出直接参赛</td>
+      </tr>
+      <tr>
+        <td><strong>NOC全国中小学信息技术创新与实践大赛</strong></td>
+        <td>中国人工智能学会 · 白名单</td>
+        <td>10-18岁</td>
+        <td>选拔4-6月→全国7-8月</td>
+        <td>AI创新作品+答辩</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">AI专项赛事，AI原型可直接参赛。商科视角让作品"有灵魂"</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>全国青少年人工智能创新挑战赛</strong></td>
+        <td>中国少年儿童发展服务中心 · 白名单</td>
+        <td>8-18岁</td>
+        <td>选拔5-7月→决赛8月</td>
+        <td>AI作品+现场竞技</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">AI专项，综合考察创新+技术。BP中的社会价值分析加分</td>
+      </tr>
+      <tr>
+        <td><strong>全国青少年科技创新大赛</strong></td>
+        <td>中国科协等 · 白名单</td>
+        <td>12-18岁</td>
+        <td>省赛3-5月→国赛8月</td>
+        <td>研究论文+展板+答辩</td>
+        <td style="color:#3498db;font-weight:700;">★★★☆☆</td>
+        <td>高阶赛事，需更系统的科研。适合L4-L5学员冲击</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>宋庆龄少年儿童发明奖</strong></td>
+        <td>中国宋庆龄基金会 · 白名单</td>
+        <td>8-18岁</td>
+        <td>申报4-6月→终评8月</td>
+        <td>发明作品+人工智能作品</td>
+        <td style="color:#3498db;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">AI作品可直接申报，发明日志体系复用</td>
+      </tr>
+      <tr>
+        <td><strong>🔥 中国"互联网+"大学生创新创业大赛·萌芽赛道</strong></td>
+        <td>教育部等 · 国家级</td>
+        <td>高中生</td>
+        <td>校赛5-7月→省赛8月→国赛10月</td>
+        <td><strong>BP+路演</strong></td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;font-weight:700;"><strong>BP直接参赛！评分标准与我们教学内容高度一致：商业逻辑(30%)+创新性(30%)+社会价值(20%)+团队(20%)</strong></td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>"挑战杯"中国大学生创业计划竞赛</strong></td>
+        <td>共青团中央等</td>
+        <td>大学生（高中可超前接触）</td>
+        <td>校赛3-5月→省赛6-8月→国赛10-11月</td>
+        <td><strong>BP+路演</strong></td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">BP+路演 = 商科学生主场。初高中学员可用爱创营BP参赛</td>
+      </tr>
+      <tr>
+        <td><strong>全国大学生电子商务"三创"挑战赛</strong></td>
+        <td>全国电商教指委</td>
+        <td>大学生（有高中生赛道探索）</td>
+        <td>校赛4-6月→省赛7-8月→国赛9-10月</td>
+        <td>BP+原型</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">完整商业计划书要求，AI电商项目是热门赛道</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>"创青春"中国青年创新创业大赛</strong></td>
+        <td>共青团中央等</td>
+        <td>18-35岁（高质量目标赛）</td>
+        <td>5-10月</td>
+        <td>BP+路演</td>
+        <td style="color:#3498db;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">适合高三-大学阶段的学员，延续参赛路径</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 阿里巴巴GDT全球商业挑战赛</strong></td>
+        <td>阿里巴巴 · 企业赛</td>
+        <td>16-25岁</td>
+        <td>7-12月</td>
+        <td>商业方案+路演</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">AI+商业全球视野，阿里的平台经济思维+我们的AI商科完美对接</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏢 腾讯青少年人工智能大赛</strong></td>
+        <td>腾讯 · 企业赛</td>
+        <td>10-18岁</td>
+        <td>7-10月</td>
+        <td>AI作品+现场展示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">腾讯看重产品思维——我们的学员有BP打底，展示的不只是代码</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 百度飞桨AI创意大赛</strong></td>
+        <td>百度 · 企业赛</td>
+        <td>12-22岁</td>
+        <td>5-8月</td>
+        <td>AI创意方案+演示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">"创新性+应用价值"并重，商业分析能力天然加分</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏢 华为ICT大赛（创新赛）</strong></td>
+        <td>华为 · 企业赛</td>
+        <td>大学生/高中生</td>
+        <td>9-12月</td>
+        <td>行业解决方案</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">行业洞察+商业逻辑是华为评委最看重的</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 商汤科技AI创意挑战赛</strong></td>
+        <td>商汤科技 · 企业赛</td>
+        <td>10-18岁</td>
+        <td>6-9月</td>
+        <td>AI创意作品</td>
+        <td style="color:#3498db;font-weight:700;">★★★☆☆</td>
+        <td>偏计算机视觉。结合BP中的应用场景可加分</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏢 科大讯飞AI开发者大赛（青少赛道）</strong></td>
+        <td>科大讯飞 · 企业赛</td>
+        <td>8-18岁</td>
+        <td>5-10月</td>
+        <td>AI创意作品+演示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">讯飞看重AI+应用场景——BP提供完整的场景分析</td>
+      </tr>
+      <tr>
+        <td><strong>全国中学生商业计划大赛</strong></td>
+        <td>商业教育机构</td>
+        <td>12-18岁</td>
+        <td>9-10月</td>
+        <td>BP+路演</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">BP直接参赛，悦洋爱创营产出完美匹配</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>社会创新商业挑战赛（国内赛区）</strong></td>
+        <td>社会企业机构</td>
+        <td>12-18岁</td>
+        <td>10-11月</td>
+        <td>BP+社会影响力报告</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">社会价值+商业模式= "互联网+"萌芽的平替赛道</td>
+      </tr>
+      <tr>
+        <td><strong>"你是达芬奇"AI创造力大赛</strong></td>
+        <td>AI教育平台</td>
+        <td>8-18岁</td>
+        <td>12月-1月</td>
+        <td>AI创意作品</td>
+        <td style="color:#3498db;font-weight:700;">★★★☆☆</td>
+        <td>AI专项赛，门槛较低适合作品积累</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout blue"><strong>🎯 国内赛事核心推荐</strong>按优先级排序：①<b>ICC全球发明大会</b>（白名单+匹配度最高）→ ②<b>"互联网+"萌芽赛道</b>（BP直接参赛+教育部主办）→ ③<b>全国中学生商赛</b>（零门槛参与）→ ④<b>阿里巴巴GDT</b>（AI+商业国际视野）→ ⑤<b>腾讯/百度/华为</b>（企业背书，升学含金量高）</div>
+
+  <!-- ===== 国际赛事 ===== -->
+  <hr>
+  <h3>🌍 二、国际AI商科赛事全景（14项）</h3>
+  <table>
+    <thead><tr><th>赛事名称</th><th>主办/级别</th><th>年龄</th><th>赛程</th><th>参赛形式</th><th>匹配度</th><th>悦洋AI商科优势</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9e7;">
+        <td><strong>🌍 Intel ISEF 国际科学与工程大奖赛</strong></td>
+        <td>Society for Science · 全球最高级别</td>
+        <td>14-18岁</td>
+        <td>附属赛1-4月→全球赛5月</td>
+        <td>研究论文+展板+答辩</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">全球青少年科创"诺贝尔"。AI+社会影响项目受欢迎，商科背景助力社会价值叙事</td>
+      </tr>
+      <tr>
+        <td><strong>🌍 Conrad Challenge 康莱德挑战赛</strong></td>
+        <td>Conrad Foundation · 全球顶级</td>
+        <td>13-18岁</td>
+        <td>报名10-11月→初赛1月→全球赛4月</td>
+        <td><strong>创新方案+商业计划+原型</strong></td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;font-weight:700;"><strong>与悦洋教学内容高度重合！要求学生提交：商业计划+技术原型+市场分析——我们产出的BP+AI原型+路演视频可直接参赛</strong></td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🌍 Google Science Fair</strong></td>
+        <td>Google · 全球</td>
+        <td>13-18岁</td>
+        <td>全球赛8月</td>
+        <td>STREAM项目+展示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">AI+科学项目。商科思维让项目"不止于技术"</td>
+      </tr>
+      <tr>
+        <td><strong>💼 MIT Launch X</strong></td>
+        <td>MIT · 全球青少年创业赛</td>
+        <td>14-18岁</td>
+        <td>申请2-4月→暑校7-8月→展示8月</td>
+        <td><strong>BP+路演</strong></td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;font-weight:700;"><strong>纯创业竞赛，要求学生从头创建一家公司。我们的BP+路演经验直接对应</strong></td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>💼 Diamond Challenge</strong></td>
+        <td>University of Delaware · 全球青少年创业赛</td>
+        <td>14-18岁</td>
+        <td>报名9-1月→提交2月→全球赛4月</td>
+        <td><strong>BP+路演</strong></td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;font-weight:700;"><strong>全球顶级青少年商赛！BP+路演正是我们爱创营/竞赛营的核心训练</strong></td>
+      </tr>
+      <tr>
+        <td><strong>💼 DECA ICDC</strong></td>
+        <td>DECA Inc. · 全球商科竞赛</td>
+        <td>14-18岁</td>
+        <td>州赛1-2月→ICDC 4月</td>
+        <td>商业方案+角色扮演+路演</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">全球商科学生标志性赛事。我们的BP训练+路演技能直接转化</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>💼 FBLA NLC</strong></td>
+        <td>FBLA · 全球最大商科学生组织</td>
+        <td>14-18岁</td>
+        <td>州赛1-3月→全国赛4-6月</td>
+        <td>商业方案+客观测试+路演</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">FBLA是美国大学申请中含金量最高的商科竞赛之一。商科知识+路演</td>
+      </tr>
+      <tr>
+        <td><strong>💼 Junior Achievement Company Program</strong></td>
+        <td>JA Worldwide · 全球青少年创业</td>
+        <td>14-18岁</td>
+        <td>学年制10-5月</td>
+        <td>运营真实公司+年报+路演</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">实战运营一家公司，与悦洋"用AI创造商业价值"理念高度一致</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏢 Microsoft Imagine Cup</strong></td>
+        <td>微软 · 全球学生AI大赛</td>
+        <td>大学生/高中生可参赛</td>
+        <td>1-5月</td>
+        <td>AI方案+BP+演示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">BP+AI原型直接参赛，商科背景在这里是巨大优势</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 Google Solution Challenge</strong></td>
+        <td>Google · 全球SDG解决方案</td>
+        <td>大学生/高中生</td>
+        <td>1-6月</td>
+        <td>SDG技术方案+演示</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★★</td>
+        <td style="color:#27ae60;">SDG选题方法论直接对表，比纯技术团队更懂"为什么解决"</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🏢 Intel AI Global Impact Festival</strong></td>
+        <td>Intel · 全球AI影响力</td>
+        <td>13-18岁</td>
+        <td>6-9月</td>
+        <td>AI项目展示+社会影响力</td>
+        <td style="color:#f1c40f;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">天然适合——我们的学生从社会选题开始，具备完整的社会影响力叙事</td>
+      </tr>
+      <tr>
+        <td><strong>🌍 GSEA 全球学生企业家奖</strong></td>
+        <td>EO · 全球创业组织</td>
+        <td>18岁以上（可作为目标）</td>
+        <td>各国赛1-8月→全球11月</td>
+        <td>BP+路演+经营数据</td>
+        <td style="color:#3498db;font-weight:700;">★★★★☆</td>
+        <td style="color:#27ae60;">适合高三-大学学员，BP延续参赛</td>
+      </tr>
+      <tr style="background:#fef9e7;">
+        <td><strong>🌍 Kaggle（青少年可参赛）</strong></td>
+        <td>Google · 全球数据科学平台</td>
+        <td>不限（有分级）</td>
+        <td>全年滚动</td>
+        <td>数据模型+代码</td>
+        <td style="color:#3498db;font-weight:700;">★★★☆☆</td>
+        <td>偏数据科学，适合高阶学员补充技术深度</td>
+      </tr>
+      <tr>
+        <td><strong>🏢 AWS DeepRacer Student</strong></td>
+        <td>Amazon AWS · AI强化学习</td>
+        <td>学生不限</td>
+        <td>全年滚动</td>
+        <td>AI模型训练+竞赛</td>
+        <td style="color:#3498db;font-weight:700;">★★★☆☆</td>
+        <td>AI技术类，可作为学员的AI技能补充</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout blue"><strong>🌍 国际赛事核心推荐</strong>按优先级排序：①<b>Conrad Challenge</b>（与悦洋产出高度重合）→ ②<b>Diamond Challenge</b>（全球顶级青少年商赛）→ ③<b>DECA/FBLA</b>（申请美本含金量极高的商赛）→ ④<b>MIT Launch X</b>（MIT背书的创业赛）→ ⑤<b>Microsoft Imagine Cup</b>（全球影响力最大AI学生赛）</div>
+  <div class="callout yellow"><strong>💡 海外华人学员特别推荐</strong>DECA ICDC / FBLA NLC / Diamond Challenge 是美国大学申请中含金量最高的商科竞赛，对于在澳洲/北美的海外华裔学员尤其适合。我们的线上辅导模式可以覆盖全球学员参赛需求。</div>
+
+  <!-- ===== 评分标准映射 ===== -->
+  <hr>
+  <h3>🎯 三、赛事评分标准 vs 悦洋AI商科产出映射</h3>
+  <p style="font-size:13px;color:#666;margin-bottom:12px;">以下分析证明：悦洋AI商科的教学产出与主流赛事的评分标准高度重合，学员在课程中完成的每一个模块都对应赛事评分维度。</p>
+  <table>
+    <thead><tr><th style="width:18%;">评分维度</th><th style="width:22%;">典型赛事权重</th><th style="width:30%;">赛事描述</th><th style="width:30%;">悦洋AI商科对应产出</th></tr></thead>
+    <tbody>
+      <tr><td><strong>商业逻辑/可行性</strong></td><td>25-35%</td><td>商业模式是否清晰、市场分析是否到位、收入模型是否合理</td><td style="color:#27ae60;">✅ 商业计划书(BP)完整章节包含：市场分析、商业模式画布、财务预测、竞品分析</td></tr>
+      <tr><td><strong>创新性/创意</strong></td><td>20-30%</td><td>解决方案是否新颖、是否突破常规</td><td style="color:#27ae60;">✅ AI工具辅助创意发散+设计思维工作坊，产出创新解决方案</td></tr>
+      <tr><td><strong>技术实现/原型</strong></td><td>15-25%</td><td>是否有可演示的原型、技术实现是否有效</td><td style="color:#27ae60;">✅ AI编程+无代码工具搭建可交互原型，结营时可展示</td></tr>
+      <tr><td><strong>社会价值/影响力</strong></td><td>10-20%</td><td>是否解决真实问题、对社会有何贡献</td><td style="color:#27ae60;">✅ SDG导向选题方法论，每个项目从"真实社会问题"出发</td></tr>
+      <tr><td><strong>展示/路演能力</strong></td><td>10-15%</td><td>表达是否清晰、PPT质量、问答表现</td><td style="color:#27ae60;">✅ 路演视频录制+模拟答辩+PPT制作，结营仪式家长观摩</td></tr>
+      <tr><td><strong>团队协作</strong></td><td>5-10%</td><td>团队分工、协作效率</td><td style="color:#27ae60;">✅ 角色分工（CEO/PM/AI工程师/商业分析师），真实团队协作体验</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green"><strong>✅ 核心结论</strong>悦洋AI商科的教学产出覆盖了赛事评分标准的<b>90%+</b>。不需要额外"备赛"——学员完成课程的同时，参赛材料已基本就绪。这就是"用AI创造商业价值"在赛事维度的完整验证。</div>
+
+  <!-- ===== 产品线推荐矩阵 ===== -->
+  <hr>
+  <h3>📋 四、分产品线推荐参赛矩阵</h3>
+  <table>
+    <thead><tr><th>产品线</th><th>建议参赛赛事</th><th>匹配材料</th><th>备赛周期</th><th>预期获奖</th></tr></thead>
+    <tbody>
+      <tr><td><strong>🎯 一日体验营</strong><br><span style="font-size:11px;color:#999;">6小时AI商科启蒙</span></td>
+        <td>ICC省赛 / Intel AI Festival / "你是达芬奇"AI赛 / 科大讯飞青少赛道</td>
+        <td>AI原型 + 问题定义文档</td>
+        <td>课后2-4周</td>
+        <td>省赛三等奖以上</td>
+      </tr>
+      <tr><td><strong>💡 爱创营</strong><br><span style="font-size:11px;color:#999;">5天BP+AI原型⭐</span></td>
+        <td>全国中学生商赛 / 社创挑战赛 / Google Solution / 百度飞桨 / 腾讯AI赛 / 阿里巴巴GDT / Conrad Challenge / Diamond Challenge</td>
+        <td><strong>完整BP</strong> + <strong>AI原型</strong> + 路演视频</td>
+        <td>结营即具备参赛条件</td>
+        <td>省赛-国家级/ 国际赛入围</td>
+      </tr>
+      <tr><td><strong>🏆 竞赛冲刺营</strong><br><span style="font-size:11px;color:#999;">5天赛事打磨</span></td>
+        <td>ICC国赛 / "互联网+"萌芽 / 挑战杯 / 三创赛 / 微软杯 / 华为ICT / MIT Launch X / DECA / FBLA</td>
+        <td>BP定稿 + 高保真原型 + 路演视频 + 答辩准备</td>
+        <td>课前已有一期营基础</td>
+        <td>国赛获奖 / 国际赛获奖</td>
+      </tr>
+      <tr><td><strong>👑 VIP保奖营</strong><br><span style="font-size:11px;color:#999;">1对1全赛事覆盖</span></td>
+        <td>全赛事定制（含ISEF等高端赛事）</td>
+        <td>1对1定制+专家辅导+企业资源</td>
+        <td>3-6个月</td>
+        <td>省-国级保奖 / 国际赛保入围</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout red"><strong>🔥 招生卖点</strong>"来悦洋，你的BP+AI原型可以直接参加<b>20+</b>个国内外赛事。一个爱创营的产出=多个赛事的入场券。这不叫备赛，这叫<b>一次产出，多次参赛</b>。"</div>
+
+  <!-- ===== 时间线 ===== -->
+  <hr>
+  <h3>📅 五、2026-2027全年赛事时间线</h3>
+  <table>
+    <thead><tr><th>月份</th><th>国内赛事</th><th>国际赛事</th><th>悦洋动作</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1月</strong></td><td>"你是达芬奇"AI赛提交</td><td>Conrad Challenge初赛 · Diamond Challenge报名</td><td>寒假营备赛+国际赛报名指导</td></tr>
+      <tr><td><strong>2月</strong></td><td>ICC报名启动</td><td>Diamond Challenge提交 · MIT Launch X申请</td><td>学员选题评估+赛事匹配</td></tr>
+      <tr><td><strong>3月</strong></td><td>科创大赛省赛 · 挑战杯校赛</td><td>DECA/FBLA州赛 · Conrad全球赛</td><td>模拟答辩+赛事材料打磨</td></tr>
+      <tr><td><strong>4月</strong></td><td>ICC省赛 · NOC选拔启动</td><td>Diamond Challenge全球赛 · DECA ICDC · ISEF全球赛</td><td>省赛冲刺+国际赛成果包装</td></tr>
+      <tr><td><strong>5月</strong></td><td><strong>早鸟招生启动</strong> · "互联网+"萌芽校赛 · 百度飞桨报名</td><td>Microsoft Imagine Cup全球赛 · ISEF全球赛</td><td><strong>朋友圈海报投放+异业合作</strong></td></tr>
+      <tr><td><strong>6月</strong></td><td>"三创"校赛 · 宋庆龄奖申报 · 社创赛选题</td><td>Google Solution Challenge截止 · Intel AI Festival报名</td><td>学员选题评估+赛事匹配+早鸟转化</td></tr>
+      <tr><td><strong>7月</strong></td><td><strong>爱创营一期开营</strong> · 腾讯AI赛报名 · 阿里巴巴GDT报名</td><td>MIT Launch X暑校 · Intel Festival作品提交</td><td><strong>5天产出BP+AI原型+路演视频</strong> → 赛事对接</td></tr>
+      <tr><td><strong>8月</strong></td><td><strong>爱创营二期</strong> · <strong>竞赛冲刺营开营</strong> · NOC国赛 · "互联网+"省赛</td><td>Google Science Fair · Intel Festival决胜</td><td><strong>对标多赛事标准打磨</strong>+企业赛专项辅导</td></tr>
+      <tr><td><strong>9月</strong></td><td><strong>ICC省赛</strong> · 全国中学生商赛提交 · 华为ICT报名</td><td>Intel AI Festival全球赛</td><td><strong>省赛参赛（获奖率50-60%）</strong>+成果曝光招生</td></tr>
+      <tr><td><strong>10月</strong></td><td>腾讯AI赛决赛 · "三创"国赛 · 社创挑战赛 · 阿里巴巴GDT提交</td><td>Conrad Challenge新赛季报名</td><td>国赛冲刺+成果展准备+下赛季宣讲</td></tr>
+      <tr><td><strong>11月</strong></td><td>ICC国赛 · 华为ICT决赛</td><td>GSEA全球赛 · Diamond Challenge新赛季</td><td>国家级奖项+年度成果展</td></tr>
+      <tr><td><strong>12月</strong></td><td>年度成果展 · 下赛季赛事规划</td><td>FBLA/DECA报名截止 · Conrad Challenge报名截止</td><td>展览+颁奖+新赛季规划+招生</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green"><strong>📌 核心原则</strong>全年赛事形成<b>"春赛·夏练·秋赛·冬展"</b>节奏：<br>
+    ① <b>春季</b>（3-5月）：国际赛为主（DECA/FBLA/Diamond/Conrad）+ 国内白名单启动<br>
+    ② <b>夏季</b>（7-8月）：爱创营+竞赛营密集产出，对标秋季赛事<br>
+    ③ <b>秋季</b>（9-11月）：赛事高峰（ICC/"互联网+"/腾讯/etc.），成果密集兑现<br>
+    ④ <b>冬季</b>（12-2月）：成果展+下赛季规划+国际赛备赛
+  </div>
+  <div class="callout blue"><strong>📌 落地执行</strong>详见《赛事落地路线图_v1.md》完整版（含课前/课中/课后/参赛/赛后5阶段Checklist+家长沟通话术）。企业创新赛+国际赛事专项辅导计划已纳入产品规划。</div>
+</div>
+
+<!-- ===================== 六大成果体系 ===================== -->
+<div class="section" id="outcome">
+  <h2>🏆 六大成果体系 · 从赛事到升学</h2>
+  <div class="callout green"><strong>✅ 已共识</strong>从"卖课程"转向"卖成长里程碑"。六大成果覆盖白名单赛事、企业创新赛、学术科研、知识产权等多维度，为学员打造无可替代的升学竞争力。</div>
+  <div class="callout yellow"><strong>⚡ AI商科独特价值</strong>普通AI培训机构只能带学生做出技术作品参赛；悦洋AI商科的学生除了作品，还有<b>商业计划书、市场分析报告、商业模式画布</b>——这正是企业创新赛（微软杯/Google/Intel/腾讯/百度等）最看重的"商业价值落地能力"。我们的BP就是他们的商业计划书雏形。</div>
+  <table>
+    <thead><tr><th>成果</th><th>对外命名</th><th>周期</th><th>参考价</th><th>核心交付</th></tr></thead>
+    <tbody>
+      <tr><td><strong>🏆 白名单赛事</strong></td><td>"青少年AI创新成果孵化计划"</td><td>6–12周</td><td>¥3,000–8,000</td><td>参赛作品+答辩PPT+模拟答辩+证明</td></tr>
+      <tr><td><strong>🏢 企业创新赛</strong></td><td>"未来商业创新者计划"</td><td>8–16周</td><td>¥6,000–18,000</td><td>BP+AI原型+路演视频+企业评委点评</td></tr>
+      <tr><td><strong>🎨 展览</strong></td><td>"悦洋少年创新力峰会"</td><td>4–6周</td><td>¥1,000–3,000</td><td>作品展板+讲解员+纪录片+画册</td></tr>
+      <tr><td><strong>🎤 会议</strong></td><td>"青少年版TED演讲"</td><td>4–8周</td><td>¥3,000–10,000</td><td>演讲稿+PPT+演讲视频+证书</td></tr>
+      <tr><td><strong>📄 论文</strong></td><td>"青少年科研启蒙计划"</td><td>8–16周</td><td>¥5,000–15,000</td><td>学术论文+投稿信+科研成长档案</td></tr>
+      <tr><td><strong>🔧 专利</strong></td><td>"少年发明家计划·第一项专利"</td><td>3–6月</td><td>¥6,000–20,000</td><td>受理通知书+证书+技术交底书</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-3">
+    <div class="card"><div class="lbl" style="color:#f1c40f;">白名单赛事</div><div class="val">每周《项目进展周报》→家长晒朋友圈</div></div>
+    <div class="card"><div class="lbl" style="color:#e74c3c;">企业创新赛</div><div class="val">企业背书效应——微软/腾讯/Intel认证，升学含金量极高</div></div>
+    <div class="card"><div class="lbl" style="color:#8e44ad;">展览</div><div class="val">讲解员+合影墙+画册=家长的社交货币</div></div>
+    <div class="card"><div class="lbl" style="color:#2e86c1;">会议</div><div class="val">"排练→上台"蜕变视频，朋友圈版+完整版分层分发</div></div>
+    <div class="card"><div class="lbl" style="color:#27ae60;">论文</div><div class="val">公开承诺"学生主笔"，实验日志=综评材料</div></div>
+    <div class="card"><div class="lbl" style="color:#f39c12;">专利</div><div class="val">红本效应——颁证仪式感+升学应用指南</div></div>
+  </div>
+  <div class="callout red"><strong>🚫 红线</strong>永远不做"代写论文""买卖专利"。让孩子全程参与，是区分灰色机构的护城河。</div>
+</div>
+
+<!-- ===================== 招生海报库 ===================== -->
+<div class="section" id="poster">
+  <h2>🖼️ 招生海报库 · 5套HTML已出 + 档案库</h2>
+  <div class="callout green"><strong>📌 5套HTML海报已就绪</strong>位于 <code>悦洋教育\悦洋教育_海报_*.html</code>，可直接双击打开、分享给家长、用于朋友圈/微信群传播。暗黑紫粉渐变风格，响应式设计，手机友好。</div>
+  <div class="poster-grid">
+    <div class="poster-card">
+      <div class="ptitle">🔁 全链路闭环版 <span class="tag confirmed">v5</span></div>
+      <div class="pdesc">一日营→暑假营→赛事→升学，完整链条</div>
+      <div style="margin-top:4px;font-size:11px;color:#2e86c1;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" style="color:#2e86c1;">📄 打开海报 →</a></div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">☀️ 暑假5天出项目版 <span class="tag confirmed">v2</span></div>
+      <div class="pdesc">"5天，做出一个能参赛的商业项目" — 日历年视图</div>
+      <div style="margin-top:4px;font-size:11px;color:#2e86c1;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" style="color:#2e86c1;">📄 打开海报 →</a></div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">🏅 赛事直通车版 <span class="tag confirmed">v3</span></div>
+      <div class="pdesc">"暑假做项目，秋季拿奖项" — ICC/商赛/社创赛</div>
+      <div style="margin-top:4px;font-size:11px;color:#2e86c1;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" style="color:#2e86c1;">📄 打开海报 →</a></div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">😰 家长焦虑版 <span class="tag confirmed">v4</span></div>
+      <div class="pdesc">"暑假60天拉开差距" — 痛点驱动+解决方案</div>
+      <div style="margin-top:4px;font-size:11px;color:#2e86c1;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank" style="color:#2e86c1;">📄 打开海报 →</a></div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">🎓 升学背书版 <span class="tag confirmed">v5</span></div>
+      <div class="pdesc">"当别人写模联，你的孩子说：我创办了一个商业项目"</div>
+      <div style="margin-top:4px;font-size:11px;color:#2e86c1;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank" style="color:#2e86c1;">📄 打开海报 →</a></div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">💼 商科四营版 <span class="tag draft">待出</span></div>
+      <div class="pdesc">面向企二代/留学群体，展示四营WHY→WHAT→HOW→WHO路径</div>
+      <div style="margin-top:4px;font-size:11px;color:#aaa;">标题：从"为什么做"到"成为谁"</div>
+    </div>
+    <div class="poster-card">
+      <div class="ptitle">👑 商科领袖陪跑版 <span class="tag draft">待出</span></div>
+      <div class="pdesc">旗舰产品海报，面向企二代家族传承需求</div>
+      <div style="margin-top:4px;font-size:11px;color:#aaa;">标题：找到用AI创造商业价值的家族使命</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 核心文案 ===================== -->
+<div class="section" id="copy">
+  <h2>✍️ 核心文案库</h2>
+  <div class="callout yellow"><strong>💡 共识</strong>对外话术要"痛点导向"——家长为"孩子升学能用""孩子自信了"买单。</div>
+  <table>
+    <thead><tr><th>产品</th><th>卖点文案</th></tr></thead>
+    <tbody>
+      <tr><td>品牌一句话</td><td>"用AI连接世界，用文化安顿身心"</td></tr>
+      <tr><td>品牌一句话（商科线）</td><td>"用AI创造商业价值，培养未来商界领袖"</td></tr>
+      <tr><td>品牌故事</td><td>"每个孩子都是AI时代的创变者，悦洋是他们的摆渡人"</td></tr>
+      <tr><td>与普通AI课区别</td><td>"别人的AI课教'怎么用'；悦洋教'为什么用、用来做什么、做完之后世界会怎样'"</td></tr>
+      <tr><td>一日创造营</td><td>"6小时，从0到1做出你的第一个AI作品"</td></tr>
+      <tr><td>ICC备赛营</td><td>"用AI解决真实问题，站在全球舞台发声"</td></tr>
+      <tr><td>寻根游学营</td><td>"不仅是旅行，更是一场文化基因修复之旅"</td></tr>
+      <tr><td>比赛孵化</td><td>"你的AI项目值得被世界看见"</td></tr>
+      <tr><td>展览/会议</td><td>"让孩子站在舞台中央"</td></tr>
+      <tr><td>论文辅导</td><td>"提前体验985大学生的科研全流程"</td></tr>
+      <tr><td>专利申请</td><td>"孩子的第一项专利——写在国家知识产权局官网上的名字"</td></tr>
+      <tr><td>AI商科启蒙一日营</td><td>"用一天时间，亲手搭建第一个AI商业项目"</td></tr>
+      <tr><td>企业商业研学</td><td>"走进名企，用商业思维看世界"</td></tr>
+      <tr><td>商科背景提升陪跑</td><td>"用商业创新项目，打造不一样的申请故事"</td></tr>
+      <tr><td>商科领袖陪跑</td><td>"找到'用AI创造商业价值'的家族使命"</td></tr>
+      <tr><td>商科四营 · 爱创营</td><td>"从0到1，完成你的第一个商业计划书"</td></tr>
+      <tr><td>暑假战役 · 全链路</td><td>"当别人写参加了模联，你的孩子说：我创办了一个商业项目"</td></tr>
+      <tr><td>暑假战役 · 赛事直通车</td><td>"暑假做项目，秋季拿奖项"</td></tr>
+      <tr><td>暑假战役 · 一日营引流</td><td>"用一天时间，亲手搭建第一个AI商业项目"</td></tr>
+      <tr><td>暑假战役 · 爆品包</td><td>"暑假爆品包，打包省¥5,000"</td></tr>
+      <tr><td>赛事出口</td><td>"你的BP+AI原型，ICC/商赛直接参赛"</td></tr>
+      <tr><td>企业创新赛</td><td>"微软杯、Google、腾讯——你的AI商业项目，企业也在看"</td></tr>
+      <tr><td>企业创新赛 · 卖点</td><td>"别人只有代码，你有BP+原型+市场分析——这就是AI商科给你的优势"</td></tr>
+      <tr><td>Microsoft Imagine Cup</td><td>"全球学生科技大赛，你的商业计划书就是入场券"</td></tr>
+      <tr><td>百度飞桨AI创意大赛</td><td>"百度评委想看到的不只是技术，而是技术如何创造商业价值"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================== 定价策略 ===================== -->
+<div class="section" id="price">
+  <h2>💰 定价策略与产品包</h2>
+  <div class="callout yellow"><strong>📌 建议方案</strong>需结合悦洋实际成本调整。</div>
+  <div class="grid-4">
+    <div class="card"><div class="lbl">原则一</div><div class="val">按"家长感知价值×0.7"定价</div></div>
+    <div class="card"><div class="lbl">原则二</div><div class="val">每个服务必须有"可晒朋友圈"的成果</div></div>
+    <div class="card"><div class="lbl">原则三</div><div class="val">成果包一口价，清单式交付</div></div>
+    <div class="card"><div class="lbl">原则四</div><div class="val">国内人民币/海外美元</div></div>
+  </div>
+  <table>
+    <thead><tr><th>产品包</th><th>内容</th><th>国内价</th><th>海外价</th></tr></thead>
+    <tbody>
+      <tr style="background:#eafaf1;"><td colspan="4"><strong>🤖 AI创造营线</strong></td></tr>
+      <tr><td><strong>⚡ 体验课</strong></td><td>6小时一日创造营</td><td>¥298–498</td><td>—</td></tr>
+      <tr><td><strong>🎯 基础营</strong></td><td>AI创造营（2–5天）</td><td>¥1,980–3,980</td><td>$400–800</td></tr>
+      <tr><td><strong>🥈 银卡</strong></td><td>创造营+比赛+展览</td><td>¥6,800–12,800</td><td>$1,400–2,600</td></tr>
+      <tr><td><strong>🥇 金卡</strong></td><td>创造营+比赛+展览+会议</td><td>¥12,800–22,800</td><td>$2,600–4,600</td></tr>
+      <tr><td><strong>💎 钻石卡</strong></td><td>全包含（含论文+专利辅导）</td><td>¥22,800–48,000</td><td>$4,600–9,600</td></tr>
+      <tr style="background:#e8f4f2;"><td colspan="4"><strong>💼 商科线（Enjoy系列）</strong></td></tr>
+      <tr><td><strong>AI商科启蒙一日营</strong></td><td>1天AI商科体验</td><td>¥980</td><td>—</td></tr>
+      <tr><td><strong>企业商业研学</strong></td><td>3–7天名企参访+实战</td><td>¥8,800–28,800</td><td>—</td></tr>
+      <tr><td><strong>AI商业创业竞赛营</strong></td><td>5天集训+赛后辅导</td><td>¥12,800–29,800</td><td>—</td></tr>
+      <tr><td><strong>商科背景提升陪跑</strong></td><td>6–24个月长期规划</td><td>¥48,000–158,000</td><td>—</td></tr>
+      <tr><td><strong>留学规划与申请咨询</strong></td><td>全程申请服务</td><td>¥58,000–298,000</td><td>—</td></tr>
+      <tr><td><strong>海外商科心智陪跑</strong></td><td>1–12个月学术+心理</td><td>¥6,800/月起</td><td>—</td></tr>
+      <tr><td><strong>商科领袖陪跑</strong></td><td>12个月1对1教练</td><td>¥98,000–398,000/年</td><td>—</td></tr>
+      <tr style="background:#fef9e7;"><td colspan="4"><strong>🛠️ 其他</strong></td></tr>
+      <tr><td><strong>✈️ 游学营</strong></td><td>入境文化研学（5–7天）</td><td>—</td><td>$2,000–3,000</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===================== 家长反馈系统 ===================== -->
+<div class="section" id="feedback">
+  <h2>📊 家长课程反馈系统</h2>
+  <div class="callout green"><strong>✅ 已上线</strong>飞书多维表格「家长课程反馈收集表」</div>
+  <p style="font-size:13px;color:#555;margin-bottom:10px;">🔗 <a href="https://xinguang.feishu.cn/base/G2S5bvQDFaQt8csOBY4c8HgXnjc" target="_blank" style="color:#2e86c1;">xinguang.feishu.cn/base/G2S5bvQDFaQt8csOBY4c8HgXnjc</a></p>
+  <table>
+    <thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>孩子姓名</td><td>文本</td><td>必填基础信息</td></tr>
+      <tr><td>期数/课程名称</td><td>文本</td><td>每期替换</td></tr>
+      <tr><td>Q1_主动分享</td><td>单选</td><td>主动分享/问才说/没怎么聊</td></tr>
+      <tr><td>Q2_社会问题类别</td><td>多选</td><td>环保/校园/社区/科技向善/其他</td></tr>
+      <tr><td>Q3_最大变化收获</td><td>文本</td><td>⭐ 最有价值字段——家长真实反馈</td></tr>
+      <tr><td>Q4_认同度</td><td>单选</td><td>高度认同→不太理解</td></tr>
+      <tr><td>Q5_行动意愿</td><td>单选</td><td>有很兴奋/有共鸣/不明显</td></tr>
+      <tr><td>Q6_进阶课程意愿</td><td>单选</td><td>有兴趣想了解/再看看/暂不考虑</td></tr>
+      <tr><td>Q7_顾虑建议</td><td>文本</td><td>⭐ 最有价值字段——产品改进输入</td></tr>
+      <tr><td>提交时间</td><td>自动</td><td>系统自动记录</td></tr>
+      <tr><td>备注</td><td>文本</td><td>预留</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue"><strong>💡 待做：建立反馈闭环</strong>建议：每期课程结束后3天内发卷→1周内汇总Q3+Q7→月度产品会讨论→季度趋势报告。</div>
+</div>
+
+<!-- ===================== 待办与决策 ===================== -->
+<div class="section" id="todo">
+  <h2>📋 决策日志 & 待办</h2>
+  <h3>决策日志</h3>
+  <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 升级：</span>内部知识库 v3.1 → v4.0，新增全链路闭环+赛事金字塔+暑假战役</div></div>
+	  <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 新增：</span>顶层设计与教育哲学章节——道商五论：教育的根本追问、道法术器体系、AI摆渡人三层使命、双轨同源、T1-T4成长觉醒之路</div></div>
+      <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 更新：</span>赛事落地路线图_v1 创立，赛事金字塔(S/A/B/C四级)确立</div></div>
+      <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">✅ 完成：</span>5套HTML招生海报（全链路/v2暑假/v3赛事/v4焦虑/v5升学）</div></div>
+      <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 更新：</span>整合Enjoy商科四营+7条产品线至v3.1</div></div>
+  <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 扩展：</span>赛事金字塔新增企业创新赛（微软/Intel/Google/腾讯/百度/华为），五大成果→六大成果</div></div>
+  <div class="log-entry"><div class="date">05.14</div><div class="content"><span class="decision">📌 更新：</span>全量整合至悦洋教育官网 v3.0</div></div>
+  <div class="log-entry"><div class="date">05.13</div><div class="content"><span class="decision">✅ 确认：</span>放弃赴澳游学营，转型海外华裔回华寻根游学</div></div>
+  <div class="log-entry"><div class="date">05.13</div><div class="content"><span class="decision">✅ 确认：</span>五大成果体系作为产品化核心</div></div>
+  <div class="log-entry"><div class="date">05.13</div><div class="content"><span class="decision">✅ 上线：</span>飞书多维表格家长反馈系统</div></div>
+  <div class="log-entry"><div class="date">05.13</div><div class="content"><span class="decision">✅ 完成：</span>6套招生海报设计稿</div></div>
+  <hr>
+  <h3>优先级行动清单</h3>
+  <table>
+    <thead><tr><th>优先级</th><th>事项</th><th>分类</th></tr></thead>
+    <tbody>
+      <tr><td><span style="color:#e74c3c;">🔴 高</span></td><td>建立海外华人社群联系（澳洲/北美华校+同乡会）</td><td>市场</td></tr>
+      <tr><td><span style="color:#e74c3c;">🔴 高</span></td><td>设计银卡/金卡/钻石卡产品手册和定价文件</td><td>产品</td></tr>
+      <tr><td><span style="color:#e74c3c;">🔴 高</span></td><td>跑通一个成果案例——建议从"展览"入手</td><td>运营</td></tr>
+      <tr><td><span style="color:#f39c12;">🟡 中</span></td><td>寻根游学营详细课程设计（5–7天方案）</td><td>产品</td></tr>
+      <tr><td><span style="color:#f39c12;">🟡 中</span></td><td>家长反馈系统对接飞书表单</td><td>技术</td></tr>
+      <tr><td><span style="color:#f39c12;">🟡 中</span></td><td>定价方案转化为朋友圈海报+产品页</td><td>市场</td></tr>
+      <tr><td><span style="color:#3498db;">🔵 低</span></td><td>品牌视觉统一（LOGO/色系/模板）</td><td>品牌</td></tr>
+      <tr><td><span style="color:#e74c3c;">🔴 高</span></td><td>商科四营产品手册和定价文件（Enjoy官网产品标准化）</td><td>产品</td></tr>
+      <tr><td><span style="color:#e74c3c;">🔴 高</span></td><td>商科线7个产品的详情页/销售页内容撰写</td><td>市场</td></tr>
+      <tr><td><span style="color:#f39c12;">🟡 中</span></td><td>商科线家长反馈系统（与AI创造营共用或分开？待讨论）</td><td>产品</td></tr>
+      <tr><td><span style="color:#f39c12;">🟡 中</span></td><td>悦洋海外集团官网链接（edu.joy1996.com vs joy1996.com）</td><td>品牌</td></tr>
+      <tr><td><span style="color:#3498db;">🔵 低</span></td><td>悦洋公众号搭建+内容规划</td><td>市场</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /main -->
+</div><!-- /wrapper -->
+
+<div class="footer">
+  悦洋教育 · 内部知识库 v4.0 · 全链路闭环+赛事落地 · 2026.05.14<br>
+  悦洋海外集团成员 · edu@joy1996.com · 400-893-1633 · 广州天河·中泰国际广场A座29楼<br>
+  整合自：品牌定位/商科四营/游学营战略/ICC全球发明大会/赛事分析/一日创造营/备赛训练营/五大成果体系/7条Enjoy产品线/6套海报/定价策略/家长反馈系统
+</div>
+
+</body>
+</html>

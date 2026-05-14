@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 暑假做项目，秋季拿奖项</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a12; --card: #14141f; --border: #1e1e32;
+    --text: #e8e8f0; --text-muted: #8888a8;
+    --accent: #7c5cfc; --accent-light: #a88cff;
+    --gradient: linear-gradient(135deg, #7c5cfc, #ff6b9d);
+    --gold: #f6a623; --green: #00d4aa;
+  }
+  body { font-family: 'Noto Sans SC','Inter',sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 40px 20px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(246,166,35,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 30% 70%, rgba(124,92,252,0.10) 0%, transparent 50%),
+      var(--bg);
+  }
+
+  .badge {
+    display: inline-block; background: rgba(246,166,35,0.12);
+    border: 1px solid rgba(246,166,35,0.25); color: var(--gold);
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    padding: 6px 18px; border-radius: 20px; margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 6.5vw, 60px); font-weight: 900;
+    letter-spacing: -2px; line-height: 1.12; margin-bottom: 12px;
+  }
+  .hero h1 .g { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero .subtitle {
+    font-size: clamp(16px, 2.5vw, 20px); color: var(--text-muted);
+    max-width: 520px; margin-bottom: 36px;
+  }
+
+  .comp-list {
+    max-width: 600px; margin: 0 auto 36px; text-align: left; width: 100%;
+  }
+  .comp-item {
+    display: flex; gap: 16px; align-items: center;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 20px; margin-bottom: 10px;
+  }
+  .comp-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    background: rgba(124,92,252,0.12);
+  }
+  .comp-info { flex: 1; }
+  .comp-info .name { font-size: 15px; font-weight: 600; }
+  .comp-info .detail { font-size: 13px; color: var(--text-muted); }
+  .comp-info .match {
+    display: inline-block; font-size: 11px; color: var(--green);
+    font-weight: 600;
+  }
+
+  .timeline {
+    max-width: 600px; margin: 0 auto 36px; text-align: left; width: 100%;
+    position: relative;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+  .tl-item { display: flex; gap: 16px; margin-bottom: 20px; position: relative; }
+  .tl-dot {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .tl-dot.purple { background: var(--accent); }
+  .tl-dot.gold { background: var(--gold); }
+  .tl-dot.green { background: var(--green); }
+  .tl-content .period { font-size: 12px; color: var(--accent-light); font-weight: 600; letter-spacing: 1px; }
+  .tl-content .action { font-size: 14px; font-weight: 600; }
+  .tl-content .result { font-size: 13px; color: var(--text-muted); }
+
+  .price-block {
+    background: rgba(246,166,35,0.06);
+    border: 1px solid rgba(246,166,35,0.2);
+    border-radius: 16px; padding: 24px 32px;
+    max-width: 440px; margin: 0 auto 28px; width: 100%;
+  }
+  .price-block .row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+  .price-block .row .name { font-size: 14px; color: var(--text-muted); }
+  .price-block .row .price { font-size: 18px; font-weight: 700; }
+  .price-block .row .price em { font-size: 13px; color: var(--text-muted); font-style: normal; }
+  .price-block .divider { border-top: 1px solid var(--border); margin: 8px 0; }
+  .price-block .total {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 4px;
+  }
+  .price-block .total .name { font-size: 15px; font-weight: 700; color: var(--gold); }
+  .price-block .total .price { font-size: 24px; font-weight: 900; color: var(--gold); }
+  .price-block .total .price em { font-size: 14px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 40px; border-radius: 12px; font-size: 16px;
+    font-weight: 600; text-decoration: none; transition: all 0.2s;
+    cursor: default;
+  }
+  .btn-primary {
+    background: var(--gradient); color: #fff;
+    box-shadow: 0 4px 24px rgba(124,92,252,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,92,252,0.45); }
+
+  .footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); }
+
+  .highlight-text { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+  .highlight-text strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">赛事直通车 · 成果看得见</div>
+  <h1>暑假做项目<br><span class="g">秋季拿奖项</span></h1>
+  <p class="subtitle">不是"学AI"，是做出一个能参赛的商业项目<br>不是"为了参赛而参赛"，是项目本身就有参赛价值</p>
+
+  <div class="comp-list">
+    <div class="comp-item">
+      <div class="comp-icon">🏅</div>
+      <div class="comp-info">
+        <div class="name">ICC 全球发明大会</div>
+        <div class="detail">SDG赛道 · 省赛9月 · 悦洋匹配度 <span class="match">极高</span></div>
+      </div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-icon">📊</div>
+      <div class="comp-info">
+        <div class="name">青少年商业计划大赛</div>
+        <div class="detail">BP直接参赛 · 9-10月 · 悦洋匹配度 <span class="match">完美</span></div>
+      </div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-icon">🌍</div>
+      <div class="comp-info">
+        <div class="name">社会创新商业挑战赛</div>
+        <div class="detail">10-11月 · 悦洋匹配度 <span class="match">高</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot purple">7</div>
+      <div class="tl-content">
+        <div class="period">7月 · 暑假营</div>
+        <div class="action">爱创营：做出BP+AI原型</div>
+        <div class="result">确定项目方向，完成商业计划书初稿</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot purple">8</div>
+      <div class="tl-content">
+        <div class="period">8月 · 竞赛冲刺</div>
+        <div class="action">竞赛营：对标赛事评分标准打磨</div>
+        <div class="result">BP终稿+发明日志+路演视频+报名</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gold">9</div>
+      <div class="tl-content">
+        <div class="period">9月 · 省赛</div>
+        <div class="action">ICC省赛 / 商业计划大赛提交</div>
+        <div class="result">🏆 省赛获奖率约50-60%</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot green">11</div>
+      <div class="tl-content">
+        <div class="period">11月 · 国赛</div>
+        <div class="action">ICC全国赛 / 青创赛</div>
+        <div class="result">🎯 国家级奖项+升学材料</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-block">
+    <div class="row">
+      <span class="name">爱创营（5天做BP+原型）</span>
+      <span class="price"><em>早鸟</em> ¥9,800</span>
+    </div>
+    <div class="row">
+      <span class="name">竞赛冲刺营（5天参赛打磨）</span>
+      <span class="price"><em>早鸟</em> ¥15,840</span>
+    </div>
+    <div class="divider"></div>
+    <div class="total">
+      <span class="name">🔥 暑假爆品包（爱创营+竞赛营）</span>
+      <span class="price"><em>省</em> ¥27,600</span>
+    </div>
+  </div>
+
+  <p class="highlight-text">原价¥32,600 · <strong>打包省¥5,000</strong> · 早鸟期5.20-6.10</p>
+
+  <span class="btn btn-primary">📱 咨询报名 · 锁定赛事名额</span>
+  <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">适合12-18岁 · 零基础可参赛 · 每期仅12人</div>
+</div>
+
+<div class="footer">
+  悦洋教育 · 用AI创造商业价值 | Create business value with AI
+</div>
+
+</body>
+</html>

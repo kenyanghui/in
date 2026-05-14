@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 从体验到成果</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a12;
+    --card: #14141f;
+    --border: #1e1e32;
+    --text: #e8e8f0;
+    --text-muted: #8888a8;
+    --accent: #7c5cfc;
+    --accent-light: #a88cff;
+    --gradient: linear-gradient(135deg, #7c5cfc, #ff6b9d);
+    --green: #00d4aa;
+    --amber: #f6a623;
+  }
+  body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 40px 20px;
+    background: radial-gradient(ellipse at 30% 20%, rgba(124,92,252,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255,107,157,0.08) 0%, transparent 50%),
+                var(--bg);
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(124,92,252,0.15); border: 1px solid rgba(124,92,252,0.3);
+    color: var(--accent-light); font-size: 12px; font-weight: 600;
+    letter-spacing: 2px; padding: 6px 18px; border-radius: 20px; margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 56px); font-weight: 900;
+    letter-spacing: -2px; line-height: 1.15; margin-bottom: 16px;
+  }
+  .hero h1 .g { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p { font-size: clamp(15px, 2.2vw, 18px); color: var(--text-muted); max-width: 520px; margin-bottom: 36px; }
+
+  .chain {
+    display: flex; gap: 8px; justify-content: center; align-items: center;
+    flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .chain-item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 24px; text-align: center; min-width: 140px; flex: 1;
+  }
+  .chain-item .emoji { font-size: 28px; margin-bottom: 6px; }
+  .chain-item .label { font-size: 14px; font-weight: 600; }
+  .chain-item .sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .chain-item .price { font-size: 13px; color: var(--accent-light); font-weight: 600; margin-top: 4px; }
+  .chain-item.highlight { border-color: var(--accent); background: rgba(124,92,252,0.08); }
+  .arrow { font-size: 24px; color: var(--text-muted); flex-shrink: 0; }
+
+  .outcome-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px; max-width: 700px; margin: 0 auto 40px; width: 100%;
+  }
+  .outcome-item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; text-align: center;
+  }
+  .outcome-item .emoji { font-size: 22px; margin-bottom: 4px; }
+  .outcome-item .label { font-size: 13px; font-weight: 500; }
+  .outcome-item .sub { font-size: 11px; color: var(--text-muted); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 40px; border-radius: 12px; font-size: 16px;
+    font-weight: 600; text-decoration: none; transition: all 0.2s;
+    cursor: default;
+  }
+  .btn-primary {
+    background: var(--gradient); color: #fff;
+    box-shadow: 0 4px 24px rgba(124,92,252,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,92,252,0.45); }
+
+  .footer {
+    text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .price-row {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .price-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 28px; text-align: center; min-width: 180px;
+  }
+  .price-card .name { font-size: 14px; color: var(--text-muted); }
+  .price-card .price { font-size: 28px; font-weight: 800; color: #fff; margin: 4px 0; }
+  .price-card .old { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
+  .price-card .tag {
+    display: inline-block; background: rgba(0,212,170,0.15); color: var(--green);
+    font-size: 11px; padding: 2px 10px; border-radius: 10px; margin-top: 4px; font-weight: 600;
+  }
+  .price-card.featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(124,92,252,0.15);
+    position: relative;
+  }
+  .price-card.featured::before {
+    content: '🔥 主推'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+    background: var(--gradient); color: #fff; font-size: 11px; font-weight: 700;
+    padding: 3px 14px; border-radius: 10px;
+  }
+
+  .timeline { max-width: 600px; margin: 0 auto 40px; text-align: left; }
+  .tl-item { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+  .tl-dot {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--gradient);
+    display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0;
+    color: #fff; font-weight: 700;
+  }
+  .tl-content .month { font-size: 14px; font-weight: 700; color: var(--accent-light); }
+  .tl-content .desc { font-size: 14px; color: var(--text-muted); }
+
+  .section-title { font-size: clamp(20px, 3vw, 28px); font-weight: 800; margin-bottom: 24px; text-align: center; }
+
+  @media (max-width: 640px) {
+    .chain { flex-direction: column; }
+    .arrow { transform: rotate(90deg); }
+    .price-row { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">悦洋教育 · 全链路闭环</div>
+  <h1>有学习 → 有项目 →<br>有奖项 → <span class="g">有升学</span></h1>
+  <p>不是零碎的暑假班——是一条从体验到成果的完整路径。<br>每一步，孩子都带走看得见的东西。</p>
+
+  <div class="chain">
+    <div class="chain-item">
+      <div class="emoji">🎯</div>
+      <div class="label">一日体验</div>
+      <div class="sub">6小时找到商业兴趣</div>
+      <div class="price">¥680起</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="chain-item highlight">
+      <div class="emoji">💡</div>
+      <div class="label">暑假做项目</div>
+      <div class="sub">5天做出BP+AI原型</div>
+      <div class="price">爱创营 ¥12,800</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="chain-item">
+      <div class="emoji">🏆</div>
+      <div class="label">参赛拿奖</div>
+      <div class="sub">ICC/商赛冲刺奖项</div>
+      <div class="price">竞赛营 ¥19,800</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="chain-item">
+      <div class="emoji">🎓</div>
+      <div class="label">升学出口</div>
+      <div class="sub">奖项+作品集+推荐信</div>
+      <div class="price">背景提升 ¥48,000+</div>
+    </div>
+  </div>
+
+  <div class="section-title">每个阶段，都有清晰可见的成果</div>
+  <div class="outcome-grid">
+    <div class="outcome-item">
+      <div class="emoji">📋</div><div class="label">商业计划书</div><div class="sub">可直接参赛</div>
+    </div>
+    <div class="outcome-item">
+      <div class="emoji">🤖</div><div class="label">AI商业原型</div><div class="sub">可运行的MVP</div>
+    </div>
+    <div class="outcome-item">
+      <div class="emoji">🏅</div><div class="label">竞赛奖项</div><div class="sub">省-国家级</div>
+    </div>
+    <div class="outcome-item">
+      <div class="emoji">📎</div><div class="label">推荐信</div><div class="sub">院士/导师背书</div>
+    </div>
+    <div class="outcome-item">
+      <div class="emoji">🔗</div><div class="label">作品集链接</div><div class="sub">一键分享</div>
+    </div>
+    <div class="outcome-item">
+      <div class="emoji">🎤</div><div class="label">路演视频</div><div class="sub">面试素材</div>
+    </div>
+  </div>
+
+  <span class="btn btn-primary">📱 立即咨询 · 早鸟8折倒计时</span>
+  <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">早鸟窗口：5月20日 - 6月10日</div>
+</div>
+
+<div class="footer">
+  悦洋教育 · 用AI创造商业价值 | Create business value with AI
+</div>
+
+</body>
+</html>

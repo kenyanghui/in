@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 5天做出能参赛的商业项目</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a12; --card: #14141f; --border: #1e1e32;
+    --text: #e8e8f0; --text-muted: #8888a8;
+    --accent: #7c5cfc; --accent-light: #a88cff;
+    --gradient: linear-gradient(135deg, #7c5cfc, #ff6b9d);
+    --green: #00d4aa; --amber: #f6a623;
+  }
+  body { font-family: 'Noto Sans SC','Inter',sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 40px 20px;
+    background: radial-gradient(ellipse at 20% 30%, rgba(124,92,252,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0,212,170,0.06) 0%, transparent 50%),
+                var(--bg);
+  }
+
+  .badge {
+    display: inline-block; background: rgba(0,212,170,0.12);
+    border: 1px solid rgba(0,212,170,0.25); color: var(--green);
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    padding: 6px 18px; border-radius: 20px; margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 6.5vw, 60px); font-weight: 900;
+    letter-spacing: -2px; line-height: 1.12; margin-bottom: 16px;
+  }
+  .hero h1 .g { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .green { color: var(--green); }
+  .hero .subtitle {
+    font-size: clamp(16px, 2.5vw, 20px); color: var(--text-muted);
+    max-width: 480px; margin-bottom: 36px;
+  }
+
+  .output-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; max-width: 600px; margin: 0 auto 32px; width: 100%;
+  }
+  .output-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 16px; text-align: center;
+  }
+  .output-item .big { font-size: 36px; margin-bottom: 8px; }
+  .output-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .output-item p { font-size: 12px; color: var(--text-muted); }
+
+  .day-timeline {
+    max-width: 680px; margin: 0 auto 36px; text-align: left; width: 100%;
+  }
+  .day-row {
+    display: flex; gap: 12px; align-items: center;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 20px; margin-bottom: 8px;
+  }
+  .day-num {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--gradient); display: flex; align-items: center;
+    justify-content: center; font-weight: 800; font-size: 14px;
+    color: #fff; flex-shrink: 0;
+  }
+  .day-content { flex: 1; }
+  .day-content .title { font-size: 14px; font-weight: 600; }
+  .day-content .desc { font-size: 13px; color: var(--text-muted); }
+
+  .price-block {
+    background: rgba(124,92,252,0.08);
+    border: 1px solid rgba(124,92,252,0.25);
+    border-radius: 16px; padding: 28px 36px;
+    max-width: 400px; margin: 0 auto 28px; width: 100%;
+  }
+  .price-block .old { font-size: 18px; color: var(--text-muted); text-decoration: line-through; }
+  .price-block .now { font-size: 40px; font-weight: 900; color: #fff; margin: 4px 0; }
+  .price-block .now .unit { font-size: 18px; color: var(--text-muted); }
+  .price-block .tag {
+    display: inline-block; background: rgba(0,212,170,0.15); color: var(--green);
+    font-size: 12px; padding: 4px 14px; border-radius: 10px; font-weight: 600;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 40px; border-radius: 12px; font-size: 16px;
+    font-weight: 600; text-decoration: none; transition: all 0.2s;
+    cursor: default;
+  }
+  .btn-primary {
+    background: var(--gradient); color: #fff;
+    box-shadow: 0 4px 24px rgba(124,92,252,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,92,252,0.45); }
+
+  .footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 520px) {
+    .output-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">暑假限定 · 每期仅15人</div>
+  <h1>5天，做出一个<br><span class="g">能参赛的商业项目</span></h1>
+  <p class="subtitle">不是学理论，是做出商业计划书 + AI原型<br>然后拿这份项目去参加真实竞赛</p>
+
+  <div class="output-grid">
+    <div class="output-item">
+      <div class="big">📋</div>
+      <h4>商业计划书</h4>
+      <p>可直接提交参赛的BP</p>
+    </div>
+    <div class="output-item">
+      <div class="big">🤖</div>
+      <h4>AI商业原型</h4>
+      <p>可分享的在线产品</p>
+    </div>
+    <div class="output-item">
+      <div class="big">🎤</div>
+      <h4>路演视频</h4>
+      <p>面试申请素材</p>
+    </div>
+  </div>
+
+  <div class="day-timeline">
+    <div class="day-row">
+      <div class="day-num">D1</div>
+      <div class="day-content">
+        <div class="title">发现商业机会</div>
+        <div class="desc">用AI对话找到真实痛点，确定项目方向</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">D2</div>
+      <div class="day-content">
+        <div class="title">设计商业模式</div>
+        <div class="desc">BMC画布+AI市场调研，搭建商业逻辑</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">D3</div>
+      <div class="day-content">
+        <div class="title">撰写商业计划书</div>
+        <div class="desc">深度打磨BP每个章节，对标赛事评分标准</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">D4</div>
+      <div class="day-content">
+        <div class="title">AI原型+路演准备</div>
+        <div class="desc">用AI工具搭建产品原型，准备路演材料</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">D5</div>
+      <div class="day-content">
+        <div class="title">路演展示+赛事对接</div>
+        <div class="desc">上台路演，确定秋季参赛方向</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-block">
+    <div class="old">原价 ¥12,800</div>
+    <div class="now">¥9,800 <span class="unit">/人</span></div>
+    <div class="tag">早鸟8折 · 5月20日-6月10日</div>
+  </div>
+
+  <span class="btn btn-primary">📱 咨询报名 · 锁定暑假名额</span>
+  <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">适合12-18岁 · 手机即可完成 · 零编程基础</div>
+</div>
+
+<div class="footer">
+  悦洋教育 · 爱创营（商业创新实战）· 用AI创造商业价值
+</div>
+
+</body>
+</html>
