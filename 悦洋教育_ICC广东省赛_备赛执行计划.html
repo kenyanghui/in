@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICC全球发明大会 · 广东省赛备赛执行计划</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', -apple-system, sans-serif;
+    color: #2d3748;
+    background: #f7fafc;
+    line-height: 1.8;
+  }
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1a365d 40%, #2b6cb0 70%, #1a365d 100%);
+    color: white;
+    padding: 70px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='g' patternUnits='userSpaceOnUse' width='40' height='40'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero .badge {
+    display: inline-block; border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06); padding: 5px 18px;
+    border-radius: 20px; font-size: 12px; letter-spacing: 2px;
+    color: rgba(255,255,255,0.6); margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 34px; font-weight: 900; margin-bottom: 10px; }
+  .hero h1 .accent { color: #d69e2e; }
+  .hero .subtitle { font-size: 16px; font-weight: 300; opacity: 0.85; }
+  .hero .countdown {
+    display: inline-block; margin-top: 16px;
+    background: rgba(229,62,62,0.2); border: 1px solid rgba(229,62,62,0.4);
+    padding: 8px 24px; border-radius: 8px; font-weight: 700; color: #fc8181;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 40px 0; border-bottom: 1px solid #e2e8f0; }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    display: inline-block; background: #1a365d; color: white;
+    font-size: 11px; padding: 3px 12px; border-radius: 3px;
+    letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .section-label.red { background: #e53e3e; }
+  .section-label.green { background: #38a169; }
+  .section-label.gold { background: #d69e2e; color: #744210; }
+  .section-label.purple { background: #805ad5; }
+
+  h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #1a365d; }
+  h3 { font-size: 17px; font-weight: 600; margin: 20px 0 10px; color: #2b6cb0; }
+  h4 { font-size: 14px; font-weight: 600; margin: 14px 0 8px; }
+  p { margin-bottom: 12px; }
+
+  .card {
+    background: white; border-radius: 10px; padding: 22px;
+    margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+  }
+  .card-red { border-left: 4px solid #e53e3e; background: #fff5f5; }
+  .card-green { border-left: 4px solid #38a169; background: #f0fff4; }
+  .card-gold { border-left: 4px solid #d69e2e; background: #fffff0; }
+  .card-blue { border-left: 4px solid #2b6cb0; background: #ebf8ff; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px;
+  }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+  th {
+    background: #1a365d; color: white; font-weight: 600;
+    font-size: 11px; letter-spacing: 1px;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover { background: #f0f4ff; }
+  tr.highlight { background: #fffff0; }
+
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 10px;
+    font-size: 11px; font-weight: 600;
+  }
+  .tag-green { background: #c6f6d5; color: #22543d; }
+  .tag-yellow { background: #fefcbf; color: #744210; }
+  .tag-red { background: #fed7d7; color: #742a2a; }
+  .tag-blue { background: #bee3f8; color: #2a4365; }
+  .tag-purple { background: #e9d8fd; color: #553c9a; }
+
+  .timeline-bar {
+    display: flex; margin: 16px 0; border-radius: 8px; overflow: hidden;
+  }
+  .tl-section {
+    padding: 10px 8px; text-align: center; font-size: 11px; font-weight: 600;
+    color: white; flex: 1;
+  }
+
+  .highlight-box {
+    background: #ebf8ff; border-radius: 8px; padding: 16px;
+    margin: 12px 0; border: 1px solid #bee3f8; font-size: 14px;
+  }
+  .highlight-box.gold { background: #fffff0; border-color: #d69e2e; }
+  .highlight-box.green { background: #f0fff4; border-color: #38a169; }
+  .highlight-box.red { background: #fff5f5; border-color: #fed7d7; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 12px; }
+  li { margin-bottom: 4px; }
+
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li { padding: 6px 0; padding-left: 28px; position: relative; }
+  .checklist li::before { content: '☐'; position: absolute; left: 0; font-size: 16px; }
+
+  .funnel {
+    display: flex; flex-direction: column; align-items: center; padding: 12px 0;
+  }
+  .funnel-step {
+    width: 85%; text-align: left; padding: 12px 18px;
+    border-radius: 8px; color: white; font-weight: 500; font-size: 14px;
+    position: relative;
+  }
+  .funnel-step .sub { display: block; font-weight: 300; font-size: 12px; opacity: 0.85; margin-top: 2px; }
+  .funnel-arrow { color: #a0aec0; font-size: 14px; padding: 2px 0; }
+
+  .footer {
+    text-align: center; padding: 24px;
+    color: rgba(255,255,255,0.6); font-size: 13px; background: #1a365d;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">立即执行</div>
+  <h1>ICC全球发明大会 · <span class="accent">广东省赛</span> 备赛执行计划</h1>
+  <div class="subtitle">从5月创造营学员出发，32天冲刺ICC省赛</div>
+  <div class="countdown">⏰ 距报名截止还有 32 天</div>
+</div>
+
+<div class="container">
+
+<!-- ===== PART 1 ===== -->
+<section>
+  <span class="section-label">PART 1</span>
+  <h2>ICC广东省赛关键信息</h2>
+
+  <div class="grid-2">
+    <div class="card card-red">
+      <h4 style="margin-top:0;">📅 重要日期</h4>
+      <table>
+        <tr><td>报名截止</td><td><strong>2026年6月15日</strong></td></tr>
+        <tr><td>省赛时间</td><td>2026年5月-6月（线下）</td></tr>
+        <tr><td>全国总决赛</td><td>2026年7月-8月</td></tr>
+        <tr><td>国际赛（ICW）</td><td>ICC国赛获奖→晋级</td></tr>
+      </table>
+    </div>
+    <div class="card card-blue">
+      <h4 style="margin-top:0;">👥 参赛规则</h4>
+      <table>
+        <tr><td>组队人数</td><td><strong>2-4人/队</strong></td></tr>
+        <tr><td>指导老师</td><td><strong>2位</strong></td></tr>
+        <tr><td>参赛费用</td><td>免费</td></tr>
+        <tr><td>分组</td><td>G(1-2) / P(3-6) / J(7-9) / S(10-12)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3>参赛材料清单</h3>
+  <table>
+    <tr><th>材料</th><th>格式</th><th>大小限制</th><th>ICC分值占比</th></tr>
+    <tr class="highlight">
+      <td><strong>📄 发明日志</strong></td>
+      <td>PDF（可含视频+图片）</td>
+      <td>≤50MB</td>
+      <td><strong>发明过程 40%</strong></td>
+    </tr>
+    <tr>
+      <td>📋 查新报告</td>
+      <td>PDF/DOC/DOCX</td>
+      <td>≤20MB</td>
+      <td>发明过程</td>
+    </tr>
+    <tr>
+      <td>🖼️ 发明展板照片</td>
+      <td>PNG/JPG</td>
+      <td>≤50MB</td>
+      <td>发明影响</td>
+    </tr>
+    <tr>
+      <td>📸 发明原型照片</td>
+      <td>PNG/JPG</td>
+      <td>≤50MB</td>
+      <td>发明过程</td>
+    </tr>
+    <tr class="highlight">
+      <td><strong>🎬 路演视频</strong></td>
+      <td>MP4/MOV</td>
+      <td>≤100MB</td>
+      <td><strong>发明交流 30%</strong></td>
+    </tr>
+  </table>
+
+  <h3>9大主题匹配指南</h3>
+  <table>
+    <tr><th>主题</th><th>适合组别</th><th>与创造营匹配度</th><th>推荐</th></tr>
+    <tr style="background:#f0fff4;"><td>① AI与生活</td><td>P/J/S</td><td>最高——一日营AI作品直接适配</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr style="background:#f0fff4;"><td>② 无障碍世界</td><td>P/J/S</td><td>高——AI+关怀场景</td><td>⭐⭐⭐⭐</td></tr>
+    <tr style="background:#f0fff4;"><td>③ 可持续社区</td><td>J/S</td><td>高——社会创新方向</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>④ 健康老龄化</td><td>J/S</td><td>中——需调整方向</td><td>⭐⭐⭐</td></tr>
+    <tr><td>⑤ 低碳未来</td><td>J/S</td><td>中——需调整方向</td><td>⭐⭐⭐</td></tr>
+    <tr><td>⑥ 未来交通</td><td>P/J/S</td><td>中</td><td>⭐⭐⭐</td></tr>
+    <tr><td>⑦ 生物多样性保护</td><td>P/J</td><td>中低</td><td>⭐⭐</td></tr>
+    <tr><td>⑧ 气候变化应对</td><td>J/S</td><td>中低</td><td>⭐⭐</td></tr>
+    <tr><td>⑨ 粮食安全</td><td>J/S</td><td>低</td><td>⭐⭐</td></tr>
+    <tr><td>⑩ 智能制造（主题赛）</td><td>J/S</td><td>低——需硬件基础</td><td>⭐⭐</td></tr>
+  </table>
+</section>
+
+<!-- ===== PART 2 ===== -->
+<section>
+  <span class="section-label green">PART 2</span>
+  <h2>从创造营到ICC：转化漏斗</h2>
+
+  <div class="funnel">
+    <div class="funnel-step" style="background:#38a169;width:95%;">
+      🎯 一日创造营（16人）
+      <span class="sub">AI作品产出 + 路演展示</span>
+    </div>
+    <div class="funnel-arrow">▼ 筛选标准：创意可延展 / 表现出兴趣 / 家长有意向</div>
+    <div class="funnel-step" style="background:#2b6cb0;width:70%;">
+      🎯 ICC潜力学员（6-8人）
+      <span class="sub">创造营当天16:30路演后 → 家长沟通</span>
+    </div>
+    <div class="funnel-arrow">▼ 话术："您孩子的作品完全可以拿去参加白名单竞赛"</div>
+    <div class="funnel-step" style="background:#d69e2e;width:50%;">
+      🎯 ICC正式队伍（2支×2-4人）
+      <span class="sub">创造营后3天内确认意向 → 组队 → 选题</span>
+    </div>
+  </div>
+
+  <h3>32天冲刺时间线</h3>
+  <div class="timeline-bar">
+    <div class="tl-section" style="background:#e53e3e;flex:1.2;">🔥 Week 1<br>5/14-5/20</div>
+    <div class="tl-section" style="background:#2b6cb0;flex:1;">Week 2<br>5/21-5/27</div>
+    <div class="tl-section" style="background:#38a169;flex:1;">Week 3<br>5/28-6/3</div>
+    <div class="tl-section" style="background:#d69e2e;flex:1;">Week 4<br>6/4-6/10</div>
+    <div class="tl-section" style="background:#805ad5;flex:0.8;">冲刺<br>6/11-6/15</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-red">
+      <h4 style="margin-top:0;">🔥 Week 1（5/14-5/20）· 此刻</h4>
+      <ul>
+        <li>创造营举办 → 筛选潜力学员</li>
+        <li>家长沟通 → 确认ICC意向</li>
+        <li>组建队伍 → 分配主题方向</li>
+      </ul>
+    </div>
+    <div class="card card-blue">
+      <h4 style="margin-top:0;">Week 2（5/21-5/27）</h4>
+      <ul>
+        <li>选题定稿 → 对标ICC评审标准</li>
+        <li>AI原型搭建 → 从一日营作品升级</li>
+        <li>发明日志启动 → 按模板填写</li>
+      </ul>
+    </div>
+    <div class="card card-green">
+      <h4 style="margin-top:0;">Week 3（5/28-6/3）</h4>
+      <ul>
+        <li>原型迭代 → 功能完善+外观优化</li>
+        <li>查新报告完成 → 提交审核</li>
+        <li>展板设计 → 初稿完成</li>
+      </ul>
+    </div>
+    <div class="card card-gold">
+      <h4 style="margin-top:0;">Week 4-冲刺（6/4-6/15）</h4>
+      <ul>
+        <li>路演视频拍摄 → 5分钟成片</li>
+        <li>全部材料终审 → 逐项核对</li>
+        <li>模拟答辩 → 至少演练2遍</li>
+        <li>官网报名提交</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PART 3 ===== -->
+<section>
+  <span class="section-label gold">PART 3</span>
+  <h2>创造营→ICC主题快速匹配</h2>
+
+  <p>核心原则：<strong>不重新做，而是升级做。</strong>一日营的AI作品直接作为ICC基础。</p>
+
+  <h3>常见一日营作品 → ICC主题映射</h3>
+  <table>
+    <tr><th>一日营作品类型</th><th>可匹配ICC主题</th><th>需要升级什么</th></tr>
+    <tr>
+      <td>AI学习助手（作业/知识点问答）</td>
+      <td><span class="tag tag-green">AI与生活</span></td>
+      <td>增加用户调研+社会价值论证</td>
+    </tr>
+    <tr>
+      <td>AI垃圾分类助手</td>
+      <td><span class="tag tag-green">可持续社区</span> / <span class="tag tag-blue">低碳未来</span></td>
+      <td>增加数据+社区试点数据</td>
+    </tr>
+    <tr>
+      <td>AI陪聊机器人（老人/儿童）</td>
+      <td><span class="tag tag-green">健康老龄化</span> / <span class="tag tag-blue">无障碍世界</span></td>
+      <td>增加真实用户反馈</td>
+    </tr>
+    <tr>
+      <td>AI校园助手（查课表/通知）</td>
+      <td><span class="tag tag-green">AI与生活</span></td>
+      <td>增加调研数据+使用场景</td>
+    </tr>
+    <tr>
+      <td>AI环保检测工具</td>
+      <td><span class="tag tag-green">气候变化</span> / <span class="tag tag-blue">可持续社区</span></td>
+      <td>增加技术验证+数据</td>
+    </tr>
+    <tr>
+      <td>AI创意生成器（画图/音乐）</td>
+      <td><span class="tag tag-green">AI与生活</span></td>
+      <td>强调"发明影响"维度</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box gold">
+    <strong>💬 对家长说的话：</strong><br>
+    "您孩子今天做的AI作品，只要再花3天升级一下材料，就能直接参加ICC全球发明大会——这是教育部白名单竞赛，省奖对升学有实质帮助。而且ICC国赛获奖后还可以晋级国际展，孩子可以去国外展示作品。"
+  </div>
+
+  <h3>推荐组队结构（2-4人/队）</h3>
+  <table>
+    <tr><th>角色</th><th>人数</th><th>职责</th><th>来源</th></tr>
+    <tr><td>项目负责人</td><td>1人</td><td>整体统筹+路演主讲</td><td>创造营学员</td></tr>
+    <tr><td>技术担当</td><td>1人</td><td>AI工具操作+原型制作</td><td>创造营学员</td></tr>
+    <tr><td>调研/文档</td><td>1人</td><td>用户调研+发明日志+查新报告</td><td>可外招募</td></tr>
+    <tr><td>设计/展示</td><td>1人</td><td>展板设计+视频拍摄</td><td>可外招募</td></tr>
+  </table>
+</section>
+
+<!-- ===== PART 4 ===== -->
+<section>
+  <span class="section-label purple">PART 4</span>
+  <h2>材料准备速成方案</h2>
+
+  <div class="grid-2">
+    <div class="card card-green">
+      <h4 style="margin-top:0;">📄 发明日志（占40%）</h4>
+      <p><strong>来源：</strong>创造营创意画布+AI原型记录→扩展</p>
+      <p><strong>结构：</strong></p>
+      <ol>
+        <li>发现问题（创意画布内容直接迁移）</li>
+        <li>创意方案（AI原型方案）</li>
+        <li>发明过程（补充调研+迭代记录）</li>
+        <li>发明成果（原型照片+使用说明）</li>
+      </ol>
+    </div>
+    <div class="card card-blue">
+      <h4 style="margin-top:0;">📋 查新报告</h4>
+      <p><strong>快速完成法：</strong></p>
+      <ol>
+        <li>用百度/Google搜索3-5个相似产品</li>
+        <li>查是否有类似专利</li>
+        <li>结论："经检索，未发现与本发明完全相同的方案"</li>
+      </ol>
+    </div>
+    <div class="card card-gold">
+      <h4 style="margin-top:0;">🖼️ 展板+原型照片</h4>
+      <p><strong>展板：</strong>创造营路演展示内容扩展</p>
+      <p><strong>照片：</strong>创造营当天直接拍摄AI作品</p>
+      <p>建议在创造营16:00前完成拍摄</p>
+    </div>
+    <div class="card card-red">
+      <h4 style="margin-top:0;">🎬 路演视频（占30%）</h4>
+      <p><strong>素材：</strong>创造营16:00路演录像</p>
+      <p><strong>制作：</strong></p>
+      <ol>
+        <li>路演录像片段</li>
+        <li>作品特写</li>
+        <li>后期配音</li>
+        <li>5分钟：问题→方案→演示→影响→致谢</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>📎 官方模板获取：</strong><br>
+    ① 官网下载：<a href="https://www.icc-edu.org.cn/" style="color:#2b6cb0;">https://www.icc-edu.org.cn/</a> → 下载中心<br>
+    ② 微信公众号关注：「全球发明大会中国竞赛活动资讯」<br>
+    ③ 官网提供发明日志+查新报告PDF/DOCX模板下载<br>
+    ④ 往年可用参考：ICC官网提供3-12年级和1-2年级两个版本的发明日志模板
+  </div>
+</section>
+
+<!-- ===== PART 5 ===== -->
+<section>
+  <span class="section-label red">PART 5</span>
+  <h2>行动清单：今天就开始做</h2>
+
+  <div class="highlight-box red">
+    <strong>⏰ 距ICC报名截止还有32天。</strong> 创造营是获取ICC参赛学员的最佳时机——家长亲眼看到了孩子的作品，转化率最高。
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4 style="margin-top:0;">🔥 今日（5/14）待办</h4>
+      <ul class="checklist">
+        <li>确认5月创造营的具体日期</li>
+        <li>通知助教团队：路演环节全程录像（横屏）</li>
+        <li>准备ICC宣传单页，路演时发给家长</li>
+        <li>设计课后问卷，增加ICC参赛意向选项</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0;">创造营当日待办</h4>
+      <ul class="checklist">
+        <li>每个学员路演全程录像</li>
+        <li>每个学员AI作品截图保存</li>
+        <li>创意画布工作表回收+拍照</li>
+        <li>助教记录每个学员的"ICC潜力评估"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0;">创造营后3天内待办</h4>
+      <ul class="checklist">
+        <li>私信ICC潜力学员的家长</li>
+        <li>拉ICC备赛意向群</li>
+        <li>发布ICC组队信息（学员群+家长群）</li>
+        <li>下载ICC官方发明日志+查新报告模板</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0;">本周内完成</h4>
+      <ul class="checklist">
+        <li>至少组建1-2支ICC参赛队伍</li>
+        <li>每队确定选题方向（建议AI与生活/无障碍/可持续）</li>
+        <li>指导老师分配（杨辉+另一位）</li>
+        <li>在官网注册报名账号</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p>悦洋教育 · Yueyang Education | 联系人：杨辉 13611414319</p>
+  <p style="font-size:11px;margin-top:4px;">ICC官网：https://icc.cffpd.org.cn | 公众号：全球发明大会中国竞赛活动资讯</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI青少年一日创造营 · 招生海报文案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: #f7fafc;
+    color: #2d3748;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid #d69e2e;
+    padding-bottom: 1rem;
+  }
+  .section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(26,54,93,0.08);
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #1a365d;
+  }
+  .section h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #d69e2e;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 1.2rem 0 0.6rem;
+    padding: 0.4rem 0.8rem;
+    background: #edf2f7;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .section h3:first-of-type { margin-top: 0; }
+  .card {
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #e2e8f0;
+  }
+  .card-title {
+    font-weight: 700;
+    color: #1a365d;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+  blockquote {
+    border-left: 4px solid #d69e2e;
+    background: #fffbeb;
+    padding: 0.8rem 1.2rem;
+    margin: 0.6rem 0;
+    border-radius: 0 8px 8px 0;
+    font-weight: 500;
+    color: #1a365d;
+    font-size: 1.05rem;
+  }
+  blockquote p { margin: 0.25rem 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.6rem 0; }
+  li { margin-bottom: 0.35rem; }
+  .tag {
+    display: inline-block;
+    background: #1a365d;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-right: 0.3rem;
+  }
+  .tag-gold {
+    background: #d69e2e;
+    color: #fff;
+  }
+  .tag-green {
+    background: #38a169;
+    color: #fff;
+  }
+  .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d69e2e;
+  }
+  .price .original {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #a0aec0;
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+  }
+  .cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #1a365d, #2a4a7f);
+    color: #fff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+  .cta-gold {
+    background: linear-gradient(135deg, #d69e2e, #ecc94b);
+    color: #1a365d;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 1.5rem 0;
+  }
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+  }
+  .timeline-item {
+    background: #1a365d;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .timeline-item:nth-child(even) { background: #d69e2e; }
+  .tagline {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #38a169;
+    margin: 0.5rem 0;
+  }
+  .title-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.6rem 0;
+  }
+  .title-options span {
+    background: #edf2f7;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    border-left: 3px solid #d69e2e;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 0.6rem 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+  }
+  .meta-row strong { color: #1a365d; }
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li::before { content: "✅ "; margin-right: 0.3rem; }
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8rem 0;
+    font-size: 0.92rem;
+  }
+  th {
+    background: #1a365d;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  th:first-child { border-radius: 8px 0 0 0; }
+  th:last-child { border-radius: 0 8px 0 0; }
+  td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+  tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+  tr:nth-child(even) td { background: #f7fafc; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.75rem; }
+    .section { padding: 1.2rem 1rem; }
+    h1 { font-size: 1.5rem; }
+    .section h2 { font-size: 1.15rem; }
+    .timeline { gap: 0.4rem; }
+    .timeline-item { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
+    blockquote { font-size: 0.95rem; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0.5in; }
+    .section { box-shadow: none; border: 1px solid #e2e8f0; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AI青少年一日创造营</h1>
+<div class="subtitle">招生海报文案 · 全渠道物料</div>
+
+<!-- 一、朋友圈/社群转发卡片 -->
+<div class="section">
+  <h2>一、朋友圈 / 社群转发卡片 <span class="tag">9:16 竖版</span><span class="tag tag-gold">3款</span></h2>
+
+  <h3>卡片A · 痛点型</h3>
+  <div class="card">
+    <div class="card-title">标题（大字号）</div>
+    <blockquote>你家孩子还在刷题，别人家的孩子已经在做AI作品了</blockquote>
+    <div class="card-title" style="margin-top:0.8rem;">正文</div>
+    <p>一天时间，零基础造出人生第一个AI作品<br>
+    不需要编程基础，不需要任何AI经验</p>
+    <div class="meta-row">
+      <span><strong>适合：</strong>三年级至高二</span>
+      <span><strong>早鸟价：</strong><span class="price">¥599</span> <span class="original">¥899</span></span>
+      <span><strong>📍 广州天河</strong></span>
+    </div>
+    <div class="card-title" style="margin-top:0.8rem;">底部CTA</div>
+    <div class="cta">📞 扫码咨询 → 让孩子赢在AI时代</div>
+  </div>
+
+  <h3>卡片B · 结果型</h3>
+  <div class="card">
+    <div class="card-title">标题（大字号）</div>
+    <blockquote>一天后，你的孩子会带着这些东西回家👇</blockquote>
+    <div class="card-title" style="margin-top:0.8rem;">正文</div>
+    <ul class="checklist">
+      <li>一个属于自己的AI作品（可展示可分享）</li>
+      <li>5分钟路演视频（竞赛级）</li>
+      <li>结营证书</li>
+      <li>一套终身受用的创新思维方法</li>
+      <li>🎁 附赠：¥299竞赛规划咨询</li>
+    </ul>
+    <div class="card-title" style="margin-top:0.8rem;">底部CTA</div>
+    <p>一天时间，给孩子一个看得见的成长</p>
+    <div class="cta">早鸟价¥599 → 扫码锁定名额</div>
+  </div>
+
+  <h3>卡片C · 情绪型</h3>
+  <div class="card">
+    <div class="card-title">标题（大字号）</div>
+    <blockquote>"妈妈，这是我用AI做出来的！"</blockquote>
+    <div class="card-title" style="margin-top:0.8rem;">正文</div>
+    <p>16:30，路演展示。<br>
+    你坐在台下，看孩子在台上<br>
+    讲他的创意、展示他的作品——<br>
+    那种骄傲，¥599买不到。</p>
+    <p style="margin-top:0.6rem;">AI青少年一日创造营<br>
+    一天时间，给孩子一个被看见的机会</p>
+    <div class="card-title" style="margin-top:0.8rem;">底部CTA</div>
+    <div class="cta">扫码报名 → 限16人/期 → 满班即止</div>
+  </div>
+</div>
+
+<!-- 二、小红书种草文案 -->
+<div class="section">
+  <h2>二、小红书种草文案</h2>
+  <div class="card">
+    <p><strong>标题：</strong>被问爆了！孩子零基础一天做出AI作品，这个营太值了</p>
+    <hr>
+    <p>当了一回"AI少年"的一天👦🤖</p>
+    <p>9:00送进去的时候还有点忐忑——<br>
+    三年级，没碰过编程，能行吗？</p>
+    <p>结果16:30来接的时候，娃拉着我<br>
+    "妈妈你看！这是我用AI做的！"</p>
+    <p>说实话有点惊到。<br>
+    一天时间，从不知道怎么用AI<br>
+    到能自己发现问题、设计方案、<br>
+    用AI工具做出来、还上台讲得头头是道。</p>
+    <p>关键是——<br>
+    他不是在"学编程"，而是在"用AI创造"<br>
+    门槛比我想象的低太多了<br>
+    会说话、会打字就能上手<br>
+    导师全程带着走，完全不用操心</p>
+    <p><strong>📌 几个亮点：</strong></p>
+    <ul>
+      <li>零基础友好（真的不需要任何基础）</li>
+      <li>一天真的能出作品（全班都做出来了）</li>
+      <li>最后半小时家长可以看路演（泪目环节）</li>
+      <li>完赛后送了价值¥299的竞赛规划咨询（挺值的）</li>
+    </ul>
+    <div class="meta-row">
+      <span><strong>💰</strong> 早鸟价¥599，一天包午餐材料</span>
+      <span><strong>📍</strong> 广州天河</span>
+      <span><strong>👦</strong> 三年级到高二都能参加</span>
+    </div>
+    <p style="margin-top:0.6rem;">说真的，¥599买不了吃亏<br>
+    但可能给孩子打开一扇新世界的门🚪</p>
+    <p style="margin-top:0.8rem; color:#718096; font-size:0.85rem;">
+      #AI教育 #青少年编程 #广州周末去哪儿 #竞赛规划 #孩子教育
+    </p>
+  </div>
+</div>
+
+<!-- 三、线下海报/易拉宝 -->
+<div class="section">
+  <h2>三、线下海报 / 易拉宝 <span class="tag">竖版</span></h2>
+  <div class="card">
+    <blockquote style="font-size:1.3rem; text-align:center; border-left-color:#1a365d; background:#edf2f7;">
+      一天时间<br>你的孩子能造出什么？
+    </blockquote>
+    <p style="font-size:1rem; font-weight:500; color:#4a5568; text-align:center; margin:0.6rem 0;">
+      AI青少年一日创造营 · 零基础完成人生第一个AI作品
+    </p>
+    <hr>
+    <p><strong>核心卖点</strong></p>
+    <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin:0.8rem 0;">
+      <span class="timeline-item" style="background:#1a365d;">🤖 零基础 → 会说话就能用AI</span>
+      <span class="timeline-item" style="background:#38a169;">🧠 出作品 → 一天带走完整AI作品</span>
+      <span class="timeline-item" style="background:#d69e2e;">🏆 接竞赛 → 衔接ICC等白名单赛事</span>
+    </div>
+    <p><strong>课程速览</strong></p>
+    <div class="timeline">
+      <span class="timeline-item">09:00 AI初体验</span>
+      <span class="timeline-item">10:15 发现你的创意</span>
+      <span class="timeline-item">14:00 搭建AI原型</span>
+      <span class="timeline-item">16:30 🎤 路演展示</span>
+    </div>
+    <hr>
+    <p><strong>定价区</strong></p>
+    <p><span class="price">¥599</span> <span class="original">原价¥899</span></p>
+    <p style="color:#38a169; font-weight:500;">两人同行 ¥1,299 （各减¥250）</p>
+    <hr>
+    <div class="meta-row">
+      <span><strong>👦 适合：</strong>三年级至高二</span>
+      <span><strong>📍 广州天河</strong></span>
+      <span><strong>📞</strong> 杨辉 13611414319</span>
+    </div>
+    <p style="color:#e53e3e; font-weight:500; font-size:0.9rem; margin-top:0.4rem;">每期限16人 · 满班即止</p>
+  </div>
+</div>
+
+<!-- 四、传单/三折页文案 -->
+<div class="section">
+  <h2>四、传单 / 三折页文案 <span class="tag tag-green">正面</span></h2>
+  <div class="card">
+    <blockquote style="font-size:1.2rem; text-align:center; border-left-color:#38a169; background:#f0fff4;">
+      一天，给孩子一个AI作品<br>也给他一个被竞赛看见的机会
+    </blockquote>
+    <p style="font-size:1rem; font-weight:500; color:#4a5568; text-align:center; margin:0.6rem 0;">
+      AI青少年一日创造营 — 从创意到作品，一天搞定
+    </p>
+    <hr>
+    <p><strong>三个 why</strong></p>
+    <div style="margin:0.8rem 0;">
+      <p><strong style="color:#1a365d;">为什么是一天？</strong><br>
+      —— 不是每个孩子都有耐心上十节课。一天，刚好够完成一个完整的创造闭环，又不会让孩子觉得是负担。</p>
+      <p style="margin-top:0.6rem;"><strong style="color:#1a365d;">为什么是AI？</strong><br>
+      —— AI不是未来，是现在。孩子不是要"学AI"，而是要"用AI"去创造、去解决问题。</p>
+      <p style="margin-top:0.6rem;"><strong style="color:#1a365d;">为什么是悦洋？</strong><br>
+      —— 因为我们不是教编程的。我们是用AI+商业思维，帮孩子在竞赛路上拿到结果的。</p>
+    </div>
+    <hr>
+    <div class="cta">扫码报名 → 早鸟价¥599 → 限16人/期</div>
+  </div>
+</div>
+
+<!-- 五、短视频脚本 -->
+<div class="section">
+  <h2>五、短视频脚本 <span class="tag">15-30秒</span></h2>
+  <div class="card">
+    <p><strong>画面：</strong>孩子对着镜头展示AI作品</p>
+    <p><strong>文案（口播）：</strong></p>
+    <blockquote style="border-left-color:#38a169;">
+      "一天时间，零基础，造了一个AI作品。"<br><br>
+      "听起来不可能？但我们做到了。"<br><br>
+      "早上他还不知道怎么用AI，下午已经能上台讲他的创意了。"<br><br>
+      "不是编程课，不是代码课——是用AI去创造。"<br><br>
+      "AI青少年一日创造营，早鸟价¥599。"<br><br>
+      "让孩子的人生第一个AI作品，从今天开始。"
+    </blockquote>
+  </div>
+</div>
+
+<!-- 六、海报标题备选库 -->
+<div class="section">
+  <h2>六、海报标题备选库</h2>
+
+  <div class="card">
+    <p><strong style="color:#1a365d;">短标题（适合大字号）</strong></p>
+    <div class="title-options">
+      <span>一天，一个AI作品</span>
+      <span>你的第一个AI作品，从这里开始</span>
+      <span>创造，从一天开始</span>
+      <span>AI不遥远，就在这一天</span>
+      <span>零基础 → AI创作者，只需一天</span>
+      <span>他/她的第一个AI作品</span>
+      <span>一天能做什么？一个AI作品。</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p><strong style="color:#1a365d;">长标题（适合公众号/推文）</strong></p>
+    <div class="title-options">
+      <span>不用编程、不用基础，一天造出AI作品，这个营专为"零基础"孩子设计</span>
+      <span>广州家长注意：孩子零基础一天做出AI作品，这件事是真的</span>
+      <span>¥599一天，孩子带走一个AI作品+竞赛规划，这笔账我帮你算好了</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p><strong style="color:#d69e2e;">痛点标题</strong></p>
+    <div class="title-options">
+      <span>别人家的孩子已经在做AI了，你家孩子还在等什么？</span>
+      <span>别让孩子成为AI时代的旁观者</span>
+      <span>刷100道题，不如亲手做一个AI作品</span>
+      <span>不是孩子不行，是没给他一个创造的机会</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p><strong style="color:#38a169;">结果标题</strong></p>
+    <div class="title-options">
+      <span>一天后，孩子带着一个AI作品回家</span>
+      <span>路演那天，你会看到孩子眼里的光</span>
+      <span>16:30，来看孩子的AI首秀</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

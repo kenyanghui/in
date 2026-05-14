@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 五大成果国际化竞赛与展示机会分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+
+  .topbar {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0; z-index: 100;
+    border-bottom: 2px solid #f1c40f;
+  }
+  .topbar .logo { font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+  .topbar .logo span { color: #f1c40f; }
+  .topbar .badge {
+    font-size: 11px;
+    background: rgba(241,196,15,.15);
+    color: #f1c40f;
+    padding: 4px 14px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+  }
+  .topbar .nav-links { display: flex; gap: 16px; }
+  .topbar .nav-links a {
+    color: rgba(255,255,255,.55);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color .2s;
+    padding: 2px 0;
+  }
+  .topbar .nav-links a:hover { color: #fff; }
+
+  .wrapper { max-width: 1280px; margin: 0 auto; padding: 24px 20px; }
+
+  .section {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.04);
+    scroll-margin-top: 80px;
+  }
+  .section h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f5;
+  }
+  .section h3 { font-size: 16px; margin: 20px 0 10px; color: #2c3e50; }
+  .section h4 { font-size: 14px; margin: 14px 0 8px; color: #555; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .tag.gold { background: #fef9e7; color: #b7950b; }
+  .tag.green { background: #d5f5e3; color: #1e8449; }
+  .tag.blue { background: #d6eaf8; color: #1a5276; }
+  .tag.red { background: #fadbd8; color: #c0392b; }
+  .tag.purple { background: #e8daef; color: #6c3483; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 800px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13px;
+  }
+  .card .lbl { color: #888; font-size: 11px; margin-bottom: 3px; }
+  .card .val { font-weight: 600; }
+  .card .desc { font-size: 12px; color: #666; margin-top: 4px; line-height: 1.6; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  table thead th {
+    background: #2c3e50;
+    color: #fff;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    position: sticky;
+    top: 60px;
+  }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+  table tr:nth-child(even) td { background: #f8f9fa; }
+  table tr:hover td { background: #eaf2f8; }
+  table td strong { color: #1a1a2e; }
+
+  .callout {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .callout.yellow { background: #fef9e7; border-left: 4px solid #f1c40f; }
+  .callout.blue { background: #eaf2f8; border-left: 4px solid #2e86c1; }
+  .callout.green { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .callout.red { background: #fdedec; border-left: 4px solid #e74c3c; }
+  .callout.purple { background: #f5eef8; border-left: 4px solid #8e44ad; }
+  .callout strong { display: block; margin-bottom: 4px; }
+
+  .flow-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 14px 0;
+  }
+  .flow-step {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 80px;
+  }
+  .flow-step.s1 { background: #fadbd8; color: #c0392b; }
+  .flow-step.s2 { background: #e8daef; color: #6c3483; }
+  .flow-step.s3 { background: #d6eaf8; color: #1a5276; }
+  .flow-step.s4 { background: #d5f5e3; color: #1e8449; }
+  .flow-step.s5 { background: #fdebd0; color: #b7950b; }
+  .flow-arrow { color: #ccc; font-size: 18px; font-weight: 300; }
+
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 6px; top: 0; bottom: 0;
+    width: 2px; background: #e0e0e0;
+  }
+  .tl-item { position: relative; padding: 0 0 20px 20px; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -22px; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #2e86c1; border: 2px solid #fff;
+  }
+  .tl-item .month { font-size: 11px; color: #999; font-weight: 600; }
+  .tl-item .event { font-size: 13px; color: #333; }
+
+  .prio-high { color: #e74c3c; font-weight: 700; }
+  .prio-mid { color: #f39c12; font-weight: 600; }
+  .prio-low { color: #3498db; }
+
+  hr { border: none; border-top: 1px solid #eef0f2; margin: 16px 0; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .match-item {
+    padding: 12px 14px; border-radius: 10px; font-size: 12px;
+    text-align: center;
+  }
+  .match-item.ai { background: #d5f5e3; color: #1e8449; }
+  .match-item.biz { background: #d6eaf8; color: #1a5276; }
+  .match-item.both { background: #fef9e7; color: #7d6608; }
+
+  .footer { text-align: center; color: #aaa; font-size: 12px; padding: 30px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">悦洋<span>教育</span></div>
+  <div class="badge">五大成果 · 国际化竞赛与展示机会分析 v1.0</div>
+  <div class="nav-links">
+    <a href="#overview">总览</a>
+    <a href="#comp">比赛</a>
+    <a href="#exhibition">展览</a>
+    <a href="#conference">会议</a>
+    <a href="#paper">论文</a>
+    <a href="#patent">专利</a>
+    <a href="#calendar">时间线</a>
+    <a href="#loop">闭环</a>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- ==================== 总览 ==================== -->
+<div class="section" id="overview">
+  <h2>🎯 五大成果 · 国际化竞赛与展示机会总览</h2>
+  <div class="callout yellow"><strong>📌 核心逻辑</strong>五大成果不是独立的五个产品——它们是<strong>一个项目从孵化到价值最大化的五步递进</strong>。孩子从创造营/商科营产出一个项目后，依次经过"比赛→展览→会议→论文→专利"逐级放大，每一站都留下一项可写入升学材料的硬成果。</div>
+  <div class="flow-chart">
+    <div class="flow-step s1">🏆 比赛</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step s2">🎨 展览</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step s3">🎤 会议</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step s4">📄 论文</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step s5">🔧 专利</div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="lbl" style="color:#e74c3c;">🏆 比赛</div>
+      <div class="val">短期高冲击 · 升学硬通货</div>
+      <div class="desc">白名单赛事 + 国际竞赛，6-12周产出参赛作品+奖项。门槛最低、见效最快，是五大成果的入门口。</div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#8e44ad;">🎨 展览</div>
+      <div class="val">社会公信力 · 媒体报道机会</div>
+      <div class="desc">作品被"展出"本身就是一种权威认证。国际发明展（日内瓦/IEYI）提供国际化背景，适合家长晒朋友圈。</div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#2e86c1;">🎤 会议</div>
+      <div class="val">演讲能力 · 个人IP塑造</div>
+      <div class="desc">TEDxYouth/全球青年峰会等平台，让孩子从"做项目的人"变成"有观点的人"。演讲视频是长期可用的申请素材。</div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#27ae60;">📄 论文</div>
+      <div class="val">学术深度 · 科研人设</div>
+      <div class="desc">在国际青少年期刊发表论文，建立"研究者"身份。8-16周辅导周期，同行评审背书，综评/申请的独特亮点。</div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#f39c12;">🔧 专利</div>
+      <div class="val">最高权威 · 永久资产</div>
+      <div class="desc">国家知识产权局官网可查的专利证书，是五大成果中最硬的成果。3-6个月周期，实用新型专利通过率高。</div>
+    </div>
+    <div class="card" style="background:#1a1a2e;color:#fff;">
+      <div class="lbl" style="color:#f1c40f;">💡 悦洋差异化价值</div>
+      <div class="desc" style="color:rgba(255,255,255,.7);">悦洋学员的项目天然来自"真实社会问题"，在公益/科技向善类赛事中具有选题优势。商科线学员的BP可直接用于商业竞赛（Conrad/Avenir/NEC），两条产品线各有赛道，互不冲突。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 赛道分类 ==================== -->
+<div class="section">
+  <h2>🧭 两条产品线 · 各自赛道</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left:4px solid #27ae60;padding:20px;">
+      <div class="val" style="font-size:16px;color:#1e8449;">🤖 AI创造营线</div>
+      <div class="desc" style="margin-top:6px;">聚焦<strong>AI+社会问题解决</strong>。适合ICC全球发明大会、NOC、宋庆龄发明奖、RoboRAVE、联合国AI for Good等科技创新类赛事。成果物为AI作品/原型/发明日志。</div>
+      <div class="desc" style="margin-top:6px;color:#999;">年龄：8-16岁 · 路径：创造营 → 比赛/展览 → （可选转商科线）</div>
+    </div>
+    <div class="card" style="border-left:4px solid #2e86c1;padding:20px;">
+      <div class="val" style="font-size:16px;color:#1a5276;">💼 商科线（Enjoy系列）</div>
+      <div class="desc" style="margin-top:6px;">聚焦<strong>AI+商业创新</strong>。适合Conrad康莱德挑战赛、Avenir商业计划赛、NEC经济学挑战、BPA商业全能、沃顿WGHS投资赛等商业类赛事。成果物为商业计划书/市场分析报告/投资组合。</div>
+      <div class="desc" style="margin-top:6px;color:#999;">年龄：14-22岁 · 路径：商科营 → 商业竞赛 → 论文/专利 → 升学申请</div>
+    </div>
+  </div>
+  <div class="callout green"><strong>✅ 双轨互通的隐藏价值</strong>一个AI创造营学员做出环境监测AI作品后，完全可以走商科线参加"Conrad康莱德挑战赛·能源环境赛道"，用技术项目参与商业竞赛，实现"技术+商业"双背景叠加。这是悦洋相比纯AI机构或纯商赛机构的独特优势。</div>
+</div>
+
+<!-- ==================== 1. 比赛 ==================== -->
+<div class="section" id="comp">
+  <h2>🏆 一、国际化竞赛全景图</h2>
+
+  <h3>1.1 科技创新类竞赛（AI创造营线）</h3>
+  <table>
+    <thead><tr><th>赛事名称</th><th>适合年龄</th><th>级别</th><th>周期</th><th>费用</th><th>悦洋匹配度</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>ICC全球发明大会</strong></td>
+        <td>8-16岁</td>
+        <td><span class="tag gold">白名单</span><span class="tag green">国际</span></td>
+        <td>省赛4-5月 → 国赛7-8月</td>
+        <td>¥500-1,000</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>ITU Robotics for Good 联合国AI向善机器人挑战</strong></td>
+        <td>10-18岁</td>
+        <td><span class="tag green">联合国</span></td>
+        <td>报名~2026.3 → 全球决赛2026.7.7（日内瓦）</td>
+        <td>免费</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>IOAI 国际人工智能奥林匹克</strong></td>
+        <td>≤20岁</td>
+        <td><span class="tag green">国际</span></td>
+        <td>国家队选拔~4月 → 全球赛2026.8（阿斯塔纳）</td>
+        <td>免费</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>IAIO 国际冬季AI奥林匹克</strong></td>
+        <td>高中</td>
+        <td><span class="tag green">国际</span></td>
+        <td>2026.2.23-27（卢布尔雅那）</td>
+        <td>待确认</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>NOC AI创新赛项</strong></td>
+        <td>10-18岁</td>
+        <td><span class="tag gold">白名单</span></td>
+        <td>3-7月</td>
+        <td>¥300-500</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>宋庆龄少年儿童发明奖</strong></td>
+        <td>8-18岁</td>
+        <td><span class="tag gold">白名单</span></td>
+        <td>3-8月</td>
+        <td>免费</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>Samsung Solve for Tomorrow</strong></td>
+        <td>10-18岁</td>
+        <td><span class="tag green">国际</span></td>
+        <td>9月-次年3月</td>
+        <td>免费</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>UNESCO 智玩AI创意挑战</strong></td>
+        <td>7-18岁</td>
+        <td><span class="tag green">联合国</span></td>
+        <td>2026.4-8月（巴黎颁奖）</td>
+        <td>免费</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>全国青少年科技创新大赛</strong></td>
+        <td>12-18岁</td>
+        <td><span class="tag gold">白名单</span></td>
+        <td>3-8月</td>
+        <td>免费</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>Goethe KIKUK 2.0 AI创意艺术赛</strong></td>
+        <td>中学</td>
+        <td><span class="tag green">国际</span></td>
+        <td>9-11月提交</td>
+        <td>免费</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>1.2 商业类竞赛（商科线）</h3>
+  <table>
+    <thead><tr><th>赛事名称</th><th>适合年龄</th><th>级别</th><th>周期</th><th>费用</th><th>悦洋匹配度</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Conrad康莱德创新挑战赛</strong></td>
+        <td>13-18岁</td>
+        <td><span class="tag green">国际</span><span class="tag blue">高含金量</span></td>
+        <td>报名~12月 → 中国站3月 → 全球赛4月（休斯顿）</td>
+        <td>¥2,000-4,000</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>Avenir 全球中学生商业计划竞赛</strong></td>
+        <td>13-18岁</td>
+        <td><span class="tag green">国际</span></td>
+        <td>报名9-12月 → 决赛2026.3</td>
+        <td>¥260-360</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>NEC/CNEC 全美经济学挑战</strong></td>
+        <td>7-12年级</td>
+        <td><span class="tag green">国际</span><span class="tag blue">高含金量</span></td>
+        <td>报名9-11月 → 区域12月 → 中国站3-4月 → 全球站5-6月</td>
+        <td>¥1,000-2,000</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>IEO 国际经济学奥赛</strong></td>
+        <td>13-18岁</td>
+        <td><span class="tag green">国际</span></td>
+        <td>报名~11月 → 全国2月 → 全球7-8月</td>
+        <td>¥500-1,000</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>BPA/CBPA 商业全能挑战</strong></td>
+        <td>6-12年级</td>
+        <td><span class="tag green">国际</span></td>
+        <td>报名9-12月 → 中国站2月 → 全球站5月</td>
+        <td>¥800-2,000</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>WGHS 沃顿全球高中生投资赛</strong></td>
+        <td>9-12年级</td>
+        <td><span class="tag green">顶尖</span><span class="tag purple">藤校</span></td>
+        <td>注册6-9月 → 交易10-12月 → 决赛4月</td>
+        <td>免费</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>CTB 全球青年研究创新论坛</strong></td>
+        <td>9-12年级</td>
+        <td><span class="tag green">国际</span><span class="tag blue">哈佛</span></td>
+        <td>报名9-11月 → 中国论坛3月 → 哈佛论坛4月</td>
+        <td>¥2,000-3,000</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>ASIA Business Simulation 阿思丹商模</strong></td>
+        <td>小学-高中</td>
+        <td><span class="tag green">国际</span></td>
+        <td>区域赛9-12月 → 全国总决赛2026.2</td>
+        <td>¥800-1,500</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>1.3 选赛策略</h3>
+  <div class="grid-3">
+    <div class="card" style="border-left:4px solid #27ae60;">
+      <div class="val" style="font-size:14px;">8-12岁 · 入门期</div>
+      <div class="desc">ICC（省赛级） → NOC → 宋庆龄发明奖。优先白名单赛事，门槛低、赛程短，用"第一次获奖"建立孩子自信和家长信任。</div>
+    </div>
+    <div class="card" style="border-left:4px solid #f39c12;">
+      <div class="val" style="font-size:14px;">12-16岁 · 进阶期</div>
+      <div class="desc">ICC国赛 → Conard/Avenir → CTB → 联合国AI for Good。从科技到商业，开始走"双轨叠加"路线。重点积累可写入升学材料的成果。</div>
+    </div>
+    <div class="card" style="border-left:4px solid #e74c3c;">
+      <div class="val" style="font-size:14px;">16-22岁 · 冲刺期</div>
+      <div class="desc">IOAI/IAIO → WGHS/沃顿 → IEO → 论文发表/专利申请。冲击高含金量国际大奖，为藤校/牛剑申请打造差异化背景。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 2. 展览 ==================== -->
+<div class="section" id="exhibition">
+  <h2>🎨 二、国际化展览展示机会</h2>
+  <div class="callout purple"><strong>💡 展览的核心价值</strong>比赛是"竞争"，展览是"展示"。展览没有输赢——所有参展者都是"被选中的"。这是家长安全感最强、晒朋友圈最无压力的成果类型。</div>
+  <table>
+    <thead><tr><th>展览项目</th><th>级别</th><th>时间</th><th>地点</th><th>费用</th><th>适合产品线</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>IEYI 世界青少年创新发明展</strong></td>
+        <td><span class="tag green">国际</span></td>
+        <td>2026.2月</td>
+        <td>北京·冰丝带</td>
+        <td>¥500-1,000</td>
+        <td><span class="tag blue">AI创造营</span></td>
+      </tr>
+      <tr>
+        <td><strong>日内瓦国际发明展 · 青年赛道</strong></td>
+        <td><span class="tag purple">顶尖</span></td>
+        <td>2026.3.10-17</td>
+        <td>瑞士·日内瓦</td>
+        <td>CHF 880-1,100/展位</td>
+        <td><span class="tag blue">AI创造营</span></td>
+      </tr>
+      <tr>
+        <td><strong>Gen-E 欧洲青年创业节（JA Europe）</strong></td>
+        <td><span class="tag green">国际</span></td>
+        <td>2026.4月（虚拟开幕）</td>
+        <td>欧洲（在线+线下）</td>
+        <td>免费-€200</td>
+        <td><span class="tag blue">商科线</span></td>
+      </tr>
+      <tr>
+        <td><strong>RoboRAVE 国际大会中国站</strong></td>
+        <td><span class="tag green">国际</span></td>
+        <td>2026.2.26-27</td>
+        <td>北京·冰丝带</td>
+        <td>¥500-1,000</td>
+        <td><span class="tag blue">AI创造营</span></td>
+      </tr>
+      <tr>
+        <td><strong>悦洋·少年创新力峰会（自办展）</strong></td>
+        <td><span class="tag gold">自办</span></td>
+        <td>每年12月</td>
+        <td>广州/深圳</td>
+        <td>¥1,000-3,000</td>
+        <td><span class="tag blue">全部</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="grid-2 mt-8">
+    <div class="card">
+      <div class="lbl" style="color:#8e44ad;">🎯 展览的价值放大器</div>
+      <div class="desc">
+        • 日内瓦发明展 > 参展本身就是权威背书（世界最大发明展）<br>
+        • IEYI > 与国际同龄人同台，跨文化交流经历<br>
+        • 自办展 > 每个孩子都是"参展艺术家"，家长必到场拍照发朋友圈<br>
+        • <strong>展览后产出：</strong>展板照片+讲解视频+媒体报道+参展证书
+      </div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#8e44ad;">📸 家长视角</div>
+      <div class="desc">
+        "我孩子在日内瓦发明展上展出了自己的作品"——这句话的社交价值远大于"我孩子参加了培训班"。展览是<strong>国际化背景</strong>的直接证明，不需要奖项加持就能在升学材料中占据一席之地。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 3. 会议 ==================== -->
+<div class="section" id="conference">
+  <h2>🎤 三、青少年演讲/会议展示机会</h2>
+  <div class="callout blue"><strong>🎯 会议的核心价值</strong>从"做项目的人"升级为"有观点的人"。演讲视频是Common App/USA申请中最好的活动描述素材——它证明孩子不仅会做，还会"说"（表达、逻辑、自信）。</div>
+  <table>
+    <thead><tr><th>会议/平台</th><th>级别</th><th>适合年龄</th><th>形式</th><th>悦洋对接建议</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>TEDxYouth</strong></td>
+        <td><span class="tag purple">全球</span></td>
+        <td>12-22岁</td>
+        <td>18分钟演讲</td>
+        <td>协助学员申请TEDxYouth牌照或联系本地TEDx组织者</td>
+      </tr>
+      <tr>
+        <td><strong>联合国 AI for Good 全球峰会</strong></td>
+        <td><span class="tag purple">联合国</span></td>
+        <td>14-22岁</td>
+        <td>现场/在线展示</td>
+        <td>ITU Robotics for Good获奖者自动获得展示机会</td>
+      </tr>
+      <tr>
+        <td><strong>全球青年峰会（One Young World）</strong></td>
+        <td><span class="tag purple">全球</span></td>
+        <td>18-22岁</td>
+        <td>峰会演讲+工作坊</td>
+        <td>适合商科线高阶学员，作为青年代表出席</td>
+      </tr>
+      <tr>
+        <td><strong>CTB 哈佛全球论坛</strong></td>
+        <td><span class="tag purple">哈佛</span></td>
+        <td>9-12年级</td>
+        <td>全英文展示+答辩</td>
+        <td>CTB参赛即有机会，悦洋提供演讲辅导</td>
+      </tr>
+      <tr>
+        <td><strong>悦洋·少年版TED（自办）</strong></td>
+        <td><span class="tag gold">自办</span></td>
+        <td>8-18岁</td>
+        <td>10分钟演讲</td>
+        <td>每年12月与成果展同期举办，所有学员均可报名</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="grid-3 mt-8">
+    <div class="card">
+      <div class="lbl">🎬 执行路径</div>
+      <div class="desc">选题 → 写稿 → 教练反馈 → 排练（≥3次录影复盘）→ 正式上台 → 高清视频剪辑</div>
+    </div>
+    <div class="card">
+      <div class="lbl">📱 传播策略</div>
+      <div class="desc">30秒精华版（朋友圈）+ 3分钟版本（申请材料）+ 完整版（成长档案）</div>
+    </div>
+    <div class="card">
+      <div class="lbl">💰 定价参考</div>
+      <div class="desc">辅导¥3,000-10,000（含演讲稿+PPT+排练+视频制作），区别于单纯"演讲培训"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 4. 论文 ==================== -->
+<div class="section" id="paper">
+  <h2>📄 四、青少年科研论文发表平台</h2>
+  <div class="callout green"><strong>📌 论文的价值</strong>在AI时代，"发表论文"不再是研究生的专利。国际青少年期刊让中学生也能体验同行评审的科研全流程。一篇论文 = 科研能力的有形证明 = 综评/申请中的独特亮点。</div>
+  <table>
+    <thead><tr><th>期刊/平台</th><th>适合年龄</th><th>学科范围</th><th>周期</th><th>费用</th><th>悦洋匹配度</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>UYES (Ulysseus Young Explorers in Science)</strong></td>
+        <td>15-19岁</td>
+        <td>科技/可持续/健康/工程/社科/经济</td>
+        <td>截稿2026.4.30 → 出版6.30</td>
+        <td>免费</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>CJJS (Cambridge Junior Science)</strong></td>
+        <td>高中</td>
+        <td>自然科学/应用科学/数学/计算机</td>
+        <td>滚动投稿，审稿2-3月</td>
+        <td>开放获取</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>OJSSR (Open Journal for Students)</strong></td>
+        <td>高中-本科</td>
+        <td>生物/公卫/教育/社科</td>
+        <td>滚动投稿</td>
+        <td>开放获取</td>
+        <td><span class="tag blue">★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>PUZZLE (上海大学主办)</strong></td>
+        <td>全球青少年</td>
+        <td>科学与创新综合</td>
+        <td>待确认</td>
+        <td>待确认</td>
+        <td><span class="tag green">★★★★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="grid-2 mt-8">
+    <div class="card">
+      <div class="lbl" style="color:#27ae60;">📝 论文辅导流程</div>
+      <div class="desc">
+        <strong>第1-2周：</strong>确定选题——从创造营/商科营项目成果中提取可论文化的研究方向<br>
+        <strong>第3-6周：</strong>文献调研 + 实验/数据收集 + 初稿撰写<br>
+        <strong>第7-10周：</strong>导师审稿 + 修改迭代（至少3轮）<br>
+        <strong>第11-12周：</strong>格式校对 + 提交 + 应对审稿意见<br>
+        <strong>第13-16周：</strong>（如需）补充实验 + 终稿发表
+      </div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#27ae60;">🎯 价值放大</div>
+      <div class="desc">
+        • 一搞多投？不可行，但一篇论文可以：<br>
+        &nbsp;&nbsp;① 写入综评"研究性学习"板块<br>
+        &nbsp;&nbsp;② 作为Common App活动列表的核心条目<br>
+        &nbsp;&nbsp;③ 在面试中展示科研能力<br>
+        &nbsp;&nbsp;④ 为后续专利申请提供技术公开基础<br>
+        • <strong>关键承诺：</strong>"学生主笔"——这是区分灰色代写的护城河
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 5. 专利 ==================== -->
+<div class="section" id="patent">
+  <h2>🔧 五、青少年专利申请机会</h2>
+  <div class="callout yellow"><strong>⭐ 专利的最高价值</strong>"国家知识产权局官网可查到孩子的名字"——这是家长感知价值的巅峰。专利没有"获奖与否"的二元结果，只有"受理/授权"的确定性产出，风险最低、回报最硬。</div>
+  <table>
+    <thead><tr><th>专利类型</th><th>周期</th><th>费用（含代理）</th><th>通过率</th><th>适合项目</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>实用新型专利</strong></td>
+        <td>3-6个月</td>
+        <td>¥3,000-6,000</td>
+        <td>60-80%</td>
+        <td>AI作品的结构/装置/系统设计</td>
+      </tr>
+      <tr>
+        <td><strong>外观设计专利</strong></td>
+        <td>3-4个月</td>
+        <td>¥2,000-4,000</td>
+        <td>80-90%</td>
+        <td>AI作品/APP的界面设计、产品外观</td>
+      </tr>
+      <tr>
+        <td><strong>发明专利</strong></td>
+        <td>12-24个月</td>
+        <td>¥5,000-15,000</td>
+        <td>20-40%</td>
+        <td>高阶学员的原创算法/方法创新</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="grid-2 mt-8">
+    <div class="card">
+      <div class="lbl" style="color:#f39c12;">🔍 青少年专利相关竞赛</div>
+      <div class="desc">
+        • <strong>School Patent国际儿童专利竞赛：</strong>6-18岁，截稿2025.12.25，获奖者可在圣彼得堡论坛展示<br>
+        • <strong>香港城大Science Patent Challenge：</strong>中学生组队参赛，2026.1.16截止<br>
+        • <strong>ICC全球发明大会：</strong>参赛作品可直接转化为专利申请<br>
+        • <strong>韩国IP Meister Program：</strong>70%专利成功率，LG/三星等企业参与
+      </div>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#f39c12;">🚫 红线</div>
+      <div class="desc">
+        <strong>永远不做"买卖专利"</strong>。专利的真正价值在于"孩子参与了发明过程"。悦洋的交付物是：<br>
+        &nbsp;① 技术交底书（由辅导老师引导孩子完成）<br>
+        &nbsp;② 专利代理对接（专业代理机构撰写申请文件）<br>
+        &nbsp;③ 受理通知书（提交后3-5个工作日获取）<br>
+        &nbsp;④ 授权后专利证书（可在国知局官网查验）
+      </div>
+    </div>
+  </div>
+  <div class="callout red"><strong>⚠️ 重要提醒</strong>专利的"新颖性"要求在申请前不能公开。因此如果项目计划同时参赛和申请专利，必须先申请专利（或至少提交申请），再参加展览/发表论文。顺序是：<strong>先专利→再展览/论文→再比赛路演</strong>。悦洋需要帮家长做这个顺序规划。</div>
+</div>
+
+<!-- ==================== 6. 全年时间线 ==================== -->
+<div class="section" id="calendar">
+  <h2>📅 五大成果 · 全年征戰时间线</h2>
+  <div class="callout blue"><strong>🎯 以学年为周期（每年9月-次年8月），与学校/申请周期对齐</strong></div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="month">9月</div>
+      <div class="event"><strong>秋季开学 · 竞赛报名季</strong> — NEC报名、Conrad报名、CTB报名、Avenir报名。启动本年度成果规划，为每位学员出具《年度成果路线图》。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">10-11月</div>
+      <div class="event"><strong>项目孵化 · 初赛/区域赛</strong> — 创造营/商科营产出项目 → 匹配赛事选题 → NEC区域赛、BPA初选。同步启动论文选题和专利查新。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">12月</div>
+      <div class="event"><strong>年末冲刺 · 自办成果展</strong> — 悦洋·少年创新力峰会 + 少年版TED。所有学员均可参加。收集全年成果制作画册。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">1-2月</div>
+      <div class="event"><strong>寒假攻坚 · 展览+冬赛</strong> — IEYI发明展（2月北京）、RoboRAVE（2月北京）、IAIO冬季AI奥赛（2月卢布尔雅那）。寒假集训营产出新项目。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">3月</div>
+      <div class="event"><strong>春季爆发 · 多项决赛</strong> — Conrad中国站（3月）、Avenir决赛（3月）、CTB全国论坛（3月）、日内瓦发明展（3月）。集中参赛期。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">4月</div>
+      <div class="event"><strong>国际舞台 · 全球赛</strong> — Conrad全球赛（4月休斯顿）、CTB哈佛论坛（4月）、Gen-E创业节（4月）、UYES论文截稿（4.30）。高级别学员冲击国际大奖。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">5-6月</div>
+      <div class="event"><strong>考试季 · 论文专利冲刺</strong> — ICC省赛（5月）、BPA全球赛（5月）。期末考试前是论文撰写和专利申请的黄金窗口。</div>
+    </div>
+    <div class="tl-item">
+      <div class="month">7-8月</div>
+      <div class="event"><strong>暑假 · 终极决战</strong> — ICC国赛（7-8月）、IOAI全球赛（8月阿斯塔纳）、联合国AI for Good日内瓦峰会（7月）、IEO全球赛（7-8月）。暑假创造营产出新项目 → 下半年赛事循环。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 7. 闭环交付体系 ==================== -->
+<div class="section" id="loop">
+  <h2>🔄 闭环交付体系 · 从项目孵化到成果最大化</h2>
+  <div class="callout green"><strong>✅ 核心原则</strong>一个项目，五重产出。不是每个学员都需要走完五个成果，而是根据年龄、目标和预算，选择最优路径组合。</div>
+
+  <h3>7.1 三条典型路径</h3>
+  <div class="grid-3">
+    <div class="card" style="border-left:4px solid #27ae60;padding:20px;">
+      <div class="val" style="font-size:15px;color:#1e8449;">🌱 基础路径</div>
+      <div class="lbl" style="margin-top:8px;">适用：8-12岁初次体验</div>
+      <div class="desc" style="margin-top:4px;">
+        <strong>路径：</strong>创造营 → 1个白名单比赛 → 自办展<br>
+        <strong>周期：</strong>2-3个月<br>
+        <strong>总价：</strong>¥3,000-6,000<br>
+        <strong>成果：</strong>参赛证书+展板照片+自办展讲解视频
+      </div>
+    </div>
+    <div class="card" style="border-left:4px solid #f39c12;padding:20px;">
+      <div class="val" style="font-size:15px;color:#b7950b;">🚀 进阶路径</div>
+      <div class="lbl" style="margin-top:8px;">适用：12-16岁升学准备</div>
+      <div class="desc" style="margin-top:4px;">
+        <strong>路径：</strong>创造营/商科营 → 比赛 → 展览 → 会议演讲<br>
+        <strong>周期：</strong>4-6个月<br>
+        <strong>总价：</strong>¥8,000-20,000<br>
+        <strong>成果：</strong>参赛奖项+国际展览证书+演讲视频+媒体报道
+      </div>
+    </div>
+    <div class="card" style="border-left:4px solid #e74c3c;padding:20px;">
+      <div class="val" style="font-size:15px;color:#c0392b;">💎 终极路径</div>
+      <div class="lbl" style="margin-top:8px;">适用：14-22岁冲刺顶尖</div>
+      <div class="desc" style="margin-top:4px;">
+        <strong>路径：</strong>商科营/高阶AI → 国际大奖 → 会议演讲 → 论文发表 → 专利申请<span style="color:#e74c3c;font-weight:700;">（五大成果全通）</span><br>
+        <strong>周期：</strong>6-12个月<br>
+        <strong>总价：</strong>¥20,000-50,000<br>
+        <strong>成果：</strong>国际竞赛奖项+论文+专利+演讲视频+完整作品集
+      </div>
+    </div>
+  </div>
+
+  <h3>7.2 闭环交付清单</h3>
+  <table>
+    <thead><tr><th>阶段</th><th>悦洋交付</th><th>家长可见产出</th><th>升学用途</th></tr></thead>
+    <tbody>
+      <tr><td><strong>项目孵化</strong></td><td>创造营/商科营课程 → 输出项目</td><td>孩子完成第一个AI作品/BP</td><td>活动列表初始素材</td></tr>
+      <tr><td><strong>赛事匹配</strong></td><td>《赛事匹配建议书》+ 报名指导</td><td>清晰的备赛时间表+费用预算</td><td>—</td></tr>
+      <tr><td><strong>备赛辅导</strong></td><td>6-12周1对1辅导 + 双师制</td><td>每周《项目进展周报》</td><td>展示持续投入和成长过程</td></tr>
+      <tr><td><strong>参赛参展</strong></td><td>全程跟进 + 模拟答辩</td><td>比赛照片/视频 + 奖项/证书</td><td>奖项填写</td></tr>
+      <tr><td><strong>成果放大</strong></td><td>公众号推文 + 媒体投稿 + 朋友圈素材包</td><td>至少3条可晒朋友圈的素材</td><td>附加材料包</td></tr>
+      <tr><td><strong>成果沉淀</strong></td><td>年度成果画册 + 作品集PDF</td><td>完整档案（可用于升学材料）</td><td>活动描述+附加信息</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7.3 悦洋专属 · 双轨叠加优势</h3>
+  <div class="grid-2">
+    <div class="card" style="background:#eafaf1;padding:20px;">
+      <div class="val" style="color:#1e8449;">🎯 AI创造营线 → 商科线跨赛道</div>
+      <div class="desc" style="margin-top:6px;">
+        <strong>学员画像：</strong>14岁，在AI创造营做了"校园垃圾分类AI识别装置"<br>
+        <strong>科技赛道：</strong>参加ICC全球发明大会 + 宋庆龄发明奖<br>
+        <strong>商业赛道：</strong>同一项目参加Conrad康莱德挑战赛·能源环境赛道<br>
+        <strong>成果叠加：</strong>2个赛道奖项 + 1篇论文（技术方向）+ 1项专利<br>
+        <strong>申请价值：</strong>展现"技术深度+商业思维"双能力，远超单一赛道的竞争者
+      </div>
+    </div>
+    <div class="card" style="background:#d6eaf8;padding:20px;">
+      <div class="val" style="color:#1a5276;">💼 商科线 → AI创造营线跨赛道</div>
+      <div class="desc" style="margin-top:6px;">
+        <strong>学员画像：</strong>16岁，在商科四营完成了"社区养老平台商业计划书"<br>
+        <strong>商业赛道：</strong>参加Avenir商业计划竞赛 + CTB全球青年论坛<br>
+        <strong>科技赛道：</strong>将BP中的技术部分做成AI原型，参加NOC AI创新赛<br>
+        <strong>成果叠加：</strong>商业奖项 + 科技奖项 + 哈佛论坛经历 + 论文<br>
+        <strong>申请价值：</strong>适合申请商科+CS交叉专业，英美名校极度青睐的跨学科背景
+      </div>
+    </div>
+  </div>
+
+  <h3>7.4 风险控制</h3>
+  <div class="grid-4">
+    <div class="card" style="border-left:3px solid #e74c3c;">
+      <div class="lbl" style="color:#e74c3c;">不获奖怎么办</div>
+      <div class="desc">承诺"参赛即有成果"——完整的项目作品集+项目报告+参赛证明，不获奖也产出可用于综评的材料</div>
+    </div>
+    <div class="card" style="border-left:3px solid #e74c3c;">
+      <div class="lbl" style="color:#e74c3c;">时间冲突</div>
+      <div class="desc">每年9月出具《年度成果规划表》，与家长/学校考试时间协调，避免期末/标化考试期排比赛</div>
+    </div>
+    <div class="card" style="border-left:3px solid #e74c3c;">
+      <div class="lbl" style="color:#e74c3c;">专利被驳回</div>
+      <div class="desc">实用新型可二次修改再提交。即使驳回，技术交底书本身也是综评材料中的有效内容</div>
+    </div>
+    <div class="card" style="border-left:3px solid #e74c3c;">
+      <div class="lbl" style="color:#e74c3c;">论文被拒稿</div>
+      <div class="desc">根据审稿意见修改后可改投其他期刊。审稿记录本身证明"经历了完整的科研过程"</div>
+    </div>
+  </div>
+
+  <h3>7.5 立即行动清单</h3>
+  <table>
+    <thead><tr><th>优先级</th><th>事项</th><th>窗口</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="prio-high">🔴 高</span></td>
+        <td>确认第一批ICC参赛学员，完成省赛报名（报名截止4-5月，视各省安排）</td>
+        <td>2026.5-6月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-high">🔴 高</span></td>
+        <td>对接UNESCO"智玩AI"中国区组委会，确认参赛渠道</td>
+        <td>2026.4-5月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-high">🔴 高</span></td>
+        <td>筛选2026暑假Conrad/Avenir备赛学员，暑假集训营产出参赛项目</td>
+        <td>2026.6-8月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-mid">🟡 中</span></td>
+        <td>联系日内瓦发明展中国代理，确认青年赛道参展流程和费用</td>
+        <td>2026.12-2027.1</td>
+      </tr>
+      <tr>
+        <td><span class="prio-mid">🟡 中</span></td>
+        <td>建立青少年论文发表SOP（选题→写作→投稿→修改→发表全流程）</td>
+        <td>2026.5-6月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-mid">🟡 中</span></td>
+        <td>对接专利代理机构，制定青少年专利辅导标准流程和报价</td>
+        <td>2026.5-6月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-low">🔵 低</span></td>
+        <td>筹备2026年12月"悦洋·少年创新力峰会"（场地+流程+招商）</td>
+        <td>2026.9-11月</td>
+      </tr>
+      <tr>
+        <td><span class="prio-low">🔵 低</span></td>
+        <td>建立《成果案例库》——每个学员从参赛到放大的全流程档案</td>
+        <td>长期</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /wrapper -->
+
+<div class="footer">
+  悦洋教育 · 五大成果国际化竞赛与展示机会分析 · v1.0 · 2026.05.14<br>
+  双轨覆盖：AI创造营线（8-16岁）+ 商科Enjoy线（14-22岁）| 闭环交付：一个项目，五重产出
+</div>
+
+</body>
+</html>

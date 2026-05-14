@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球发明大会（ICC）× 悦洋教育 深度结合方案</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b6cb0;
+    --accent: #e53e3e;
+    --accent-light: #fc8181;
+    --gold: #d69e2e;
+    --green: #38a169;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #2d3748;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --highlight: #ebf8ff;
+    --urgent: #fff5f5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #1a365d 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  .urgency-banner {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .urgency-banner small {
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--primary);
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 28px 0 14px;
+    color: var(--primary-light);
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+  }
+  p { margin-bottom: 16px; color: var(--text); }
+
+  /* ===== CARDS ===== */
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .card-highlight {
+    border-left: 4px solid var(--accent);
+    background: var(--urgent);
+  }
+  .card-green {
+    border-left: 4px solid var(--green);
+  }
+  .card-gold {
+    border-left: 4px solid var(--gold);
+  }
+
+  /* ===== GRID ===== */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 40px 20px; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover { background: #f0f4ff; }
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .tag-green { background: #c6f6d5; color: #22543d; }
+  .tag-yellow { background: #fefcbf; color: #744210; }
+  .tag-red { background: #fed7d7; color: #742a2a; }
+  .tag-blue { background: #bee3f8; color: #2a4365; }
+
+  /* ===== FUNNEL ===== */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 0;
+  }
+  .funnel-step {
+    width: 100%;
+    text-align: center;
+    padding: 18px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    position: relative;
+  }
+  .funnel-step .price {
+    display: block;
+    font-weight: 300;
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+  .funnel-arrow {
+    color: var(--text-light);
+    font-size: 20px;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: var(--border);
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 20px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-light);
+    background: white;
+  }
+  .timeline-item.urgent::before {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+  .timeline-item .tl-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-light);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .timeline-item.urgent .tl-date { color: var(--accent); }
+
+  /* ===== DECISION POINTS ===== */
+  .decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 768px) {
+    .decision-grid { grid-template-columns: 1fr; }
+  }
+  .decision-card {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: border-color 0.2s;
+    cursor: default;
+  }
+  .decision-card:hover { border-color: var(--primary-light); }
+  .decision-card .dc-number {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .decision-card h4 { margin: 0 0 8px; }
+  .decision-card p { font-size: 14px; margin: 0; }
+
+  /* ===== MISC ===== */
+  .highlight-box {
+    background: var(--highlight);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    border: 1px solid #bee3f8;
+  }
+  .data-point {
+    text-align: center;
+    padding: 20px;
+  }
+  .data-point .number {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--accent);
+    display: block;
+  }
+  .data-point .label {
+    font-size: 14px;
+    color: var(--text-light);
+  }
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+  li { margin-bottom: 6px; }
+
+  .footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+    font-size: 14px;
+    background: var(--primary);
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ===== HONOR BADGE ===== */
+  .honor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #d69e2e, #f6e05e);
+    color: #744210;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-badge">内部讨论稿 · 机密</div>
+  <h1>全球发明大会 <span>ICC</span> × 悦洋教育</h1>
+  <div class="subtitle">以教育部白名单赛事为入口，构建青少年竞赛辅导获客新引擎</div>
+  <div class="hero-meta">
+    <span>版本：v1.0</span>
+    <span>日期：2026年5月13日</span>
+    <span>编制：杨辉</span>
+    <span>密级：团队内部</span>
+  </div>
+</div>
+
+<div class="urgency-banner">
+  ⚡ 报名窗口：2026年4月4日 — 6月15日 &nbsp;|&nbsp; 距截止还有 <strong>33 天</strong>
+  <small>— 现在是入场的最佳时机</small>
+</div>
+
+<!-- ===== 1 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 1</span>
+  <h2>为什么是ICC？—— 赛事全景与战略价值</h2>
+
+  <div class="grid-3">
+    <div class="card card-gold">
+      <div class="data-point">
+        <span class="number">白名单</span>
+        <span class="label">教育部2025-2028学年认证<br>升学背景提升硬通货</span>
+      </div>
+    </div>
+    <div class="card card-gold">
+      <div class="data-point">
+        <span class="number">3,000+</span>
+        <span class="label">2025年广东赛区参赛学生<br>精准已验竞赛需求的流量池</span>
+      </div>
+    </div>
+    <div class="card card-gold">
+      <div class="data-point">
+        <span class="number">9大主题</span>
+        <span class="label">AI与生活 · 无障碍世界 · 低碳未来等<br>与社会创新方向高度吻合</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>ICC 2025-2026 学年关键时间线</h3>
+  <table>
+    <thead>
+      <tr><th>阶段</th><th>时间</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>活动宣传及报名</strong></td><td>2026年4月4日 — 6月15日</td><td><span class="tag tag-red">进行中 · 距截止33天</span></td></tr>
+      <tr><td>省赛/主题赛</td><td>2026年6月 — 7月</td><td><span class="tag tag-yellow">未开始</span></td></tr>
+      <tr><td>全国总决赛</td><td>2026年8月</td><td><span class="tag tag-blue">未开始</span></td></tr>
+      <tr><td>国际交流赛（拟）</td><td>2026年8月 — 12月</td><td><span class="tag tag-blue">待定</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>评审维度与悦洋能力匹配</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>ICC评审三维度</h4>
+      <ul>
+        <li><strong>发明过程评委</strong> — 发现/定义问题、解决问题的过程（G组/P组侧重）</li>
+        <li><strong>发明影响评委</strong> — 作品的社会影响、实用价值（J组侧重）</li>
+        <li><strong>发明交流评委</strong> — 路演表达、展示沟通能力</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>悦洋能力优势</h4>
+      <ul>
+        <li><strong>AI工具链</strong> — 发明原型搭建效率提升3-5倍</li>
+        <li><strong>BP/路演辅导</strong> — 商业计划书+路演训练直接赋能"发明交流"</li>
+        <li><strong>社会创新导师</strong> — 爱创营导师可辅导"发明影响"维度</li>
+        <li><strong>心智教练</strong> — 帮助参赛学生建立抗挫力和表达自信</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>关键洞察</strong>：ICC的评审体系（过程+影响+交流）与悦洋已有的教学基因高度互补。AI工具链+路演辅导+社会创新视角，恰好补足普通参赛者在"原型效率"和"表达力"上的短板——这正是悦洋可以定价的差异化价值。
+  </div>
+</div>
+</section>
+
+<!-- ===== 2 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 2</span>
+  <h2>ICC对悦洋的战略价值 —— 从获客说起</h2>
+
+  <p>悦洋目前的获客依赖悦洋海外集团存量客户和圈层转介绍，缺少一个<strong>可持续的、外部增量流量入口</strong>。ICC提供了一个年3000+精准流量、低成本验证、可规模化的获客模型。</p>
+
+  <h3>三条获客路径</h3>
+
+  <div class="grid-3">
+    <div class="card card-green">
+      <span class="tag tag-green" style="margin-bottom:8px">路径A · 主攻</span>
+      <h4>赛前辅导获客</h4>
+      <p>ICC报名启动（4-5月）→ 家长寻找辅导资源 → 悦洋提供短期辅导（¥980-¥2,980）→ 辅导中筛选高意向学员 → 转化到竞赛营/爱创营/陪跑</p>
+      <p style="font-size:13px;color:var(--text-light);margin-top:8px;"><strong>优势</strong>：需求明确，转化路径短<br><strong>窗口</strong>：报名期（4-6月），此刻就是黄金期</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-yellow" style="margin-bottom:8px">路径B · 中期</span>
+      <h4>赛后转化</h4>
+      <p>ICC比赛结束（6-7月）→ 获奖学生需要更高级别竞赛成果 → 悦洋提供"从ICC到国际赛事/论文/专利"的升级路径 → 转化到VIP竞赛营/背景提升陪跑</p>
+      <p style="font-size:13px;color:var(--text-light);margin-top:8px;"><strong>优势</strong>：信任已建立，客单价高<br><strong>窗口</strong>：省赛结束后（7月-8月）</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-blue" style="margin-bottom:8px">路径C · 长期</span>
+      <h4>学校/机构合作</h4>
+      <p>ICC学校参与度极高 → 悦洋以"ICC竞赛辅导合作伙伴"身份进入国际学校/民办学校 → 课后服务/社团课/科技节合作 → 长期转化</p>
+      <p style="font-size:13px;color:var(--text-light);margin-top:8px;"><strong>优势</strong>：批量获客，壁垒高<br><strong>窗口</strong>：新学期开学（9月）</p>
+    </div>
+  </div>
+
+  <h3>获客漏斗模型</h3>
+  <div class="card">
+    <div class="funnel">
+      <div class="funnel-step" style="background:#38a169;width:95%">
+        ICC参赛学生（广东3,000+人）
+        <span class="price">年度总量</span>
+      </div>
+      <div class="funnel-arrow">▼</div>
+      <div class="funnel-step" style="background:#2b6cb0;width:70%">
+        ICC免费课程/线上讲座触达
+        <span class="price">预期触达率 20-30% → 600-900人</span>
+      </div>
+      <div class="funnel-arrow">▼</div>
+      <div class="funnel-step" style="background:#d69e2e;width:35%">
+        低价辅导转化（¥980-¥2,980）
+        <span class="price">预期转化率 8-12% → 50-100人</span>
+      </div>
+      <div class="funnel-arrow">▼</div>
+      <div class="funnel-step" style="background:#e53e3e;width:15%">
+        高阶产品转化（竞赛营/陪跑）
+        <span class="price">预期转化率 15-25% → 8-25人</span>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--text-light);margin:12px 0 0;">
+      <strong>预估营收贡献</strong>：低价辅导 ¥4.9万-¥29.8万 + 高阶转化 ¥15.4万-¥72.5万 = <strong>¥20万-¥102万/年</strong>
+    </p>
+  </div>
+
+  <div class="highlight-box" style="background:#fff5f5;border-color:#fc8181;">
+    <strong>⚠️ 核心前提</strong>：以上漏斗依赖两个条件——
+    <ol style="margin-top:8px;">
+      <li>有渠道触达ICC参赛学生（学校合作/社群投放/公众号合作等）</li>
+      <li>有可交付的ICC辅导产品（课纲+导师+案例）</li>
+    </ol>
+    这两个条件目前悦洋都需要从零搭建。建议<strong>先用最小可行产品测试路径A</strong>，再决定是否投入路径B/C。
+  </div>
+</div>
+</section>
+
+<!-- ===== 3 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 3</span>
+  <h2>结合路径详解</h2>
+
+  <h3>路径一：纳入现有竞赛矩阵（最快落地 · 零成本）</h3>
+  <div class="card card-green">
+    <p>将ICC直接加入<strong>AI商业创业竞赛营</strong>和<strong>5天科创竞赛营</strong>的目标赛事矩阵：</p>
+    <ul>
+      <li><strong>科创竞赛营（原版）</strong> → 产出AI发明原型，直接投ICC技术发明赛道</li>
+      <li><strong>AI商业创业竞赛营</strong> → 产出商业计划书+BPSM原型，投ICC社会价值商业赛道</li>
+      <li><strong>VIP保奖营</strong> → 将ICC列入保奖目标，增加一个可承诺的白名单出口</li>
+    </ul>
+    <p style="margin-top:12px;"><strong>操作</strong>：只需修改竞赛矩阵文档，在目标赛事列表中加入ICC。结合现场即可在课程中增加ICC评分标准对标环节。</p>
+  </div>
+
+  <h3>路径二：ICC专属辅导产品（新增SKU）</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>ICC专项冲刺营（3天）</h4>
+      <table>
+        <tr><td>定价</td><td><strong>¥4,980-¥6,800</strong></td></tr>
+        <tr><td>时长</td><td>3天（周末/假期）</td></tr>
+        <tr><td>核心交付</td><td>选题定向+AI原型搭建+发明日志+路演视频</td></tr>
+        <tr><td>转化目标</td><td>→ 竞赛冲刺营/背景提升陪跑</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h4>ICC参赛辅导（1对1）</h4>
+      <table>
+        <tr><td>定价</td><td><strong>¥2,980-¥5,800</strong></td></tr>
+        <tr><td>周期</td><td>2-4周线上+线下</td></tr>
+        <tr><td>核心交付</td><td>项目选题+技术实现+材料审核+模拟答辩</td></tr>
+        <tr><td>转化目标</td><td>→ 长期陪跑/留学申请</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3>路径三：嵌入爱创营，打通"社会创新"落地</h3>
+  <div class="card">
+    <p>ICC的9大竞赛主题（无障碍世界、健康老龄化、AI与生活、低碳未来等）可以直接成为<strong>爱创营Day 1选题工作坊</strong>的参考库。学生在爱创营5天产出的商业项目，同步满足ICC参赛要求↓</p>
+    <div class="grid-2" style="margin-top:12px;">
+      <div>
+        <strong>爱创营产出</strong>
+        <ul>
+          <li>商业计划书(BP)</li>
+          <li>商业模式画布(BMC)</li>
+          <li>项目路演PPT</li>
+          <li>AI项目原型</li>
+        </ul>
+      </div>
+      <div>
+        <strong>ICC需求</strong>
+        <ul>
+          <li>发明日志（PDF+视频+图片）</li>
+          <li>查新报告</li>
+          <li>发明展板+原型照片</li>
+          <li>路演视频（5分钟）</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:12px;color:var(--primary-light);font-weight:600;">💡 一个项目，两次价值——商业大赛+ICC白名单，升学背景提升双保险</p>
+  </div>
+
+  <h3>路径四：学校/机构渠道合作（长期护城河）</h3>
+  <div class="card">
+    <p>ICC在学校端的渗透率很高。广东赛区2025年覆盖广州、深圳、佛山、东莞等地多所中小学。悦洋可以以"ICC竞赛辅导合作伙伴"身份进入学校：</p>
+    <ul>
+      <li><strong>课后服务</strong>：为学校提供ICC备赛社团课（16课时/学期）</li>
+      <li><strong>科技节/发明节</strong>：承办学校科技节的ICC专项活动</li>
+      <li><strong>教师培训</strong>：为学校科技教师提供ICC辅导能力培训</li>
+      <li><strong>研学结合</strong>：ICC备赛 + 企业商业研学（学生走进企业寻找发明灵感）</li>
+    </ul>
+    <p style="margin-top:12px;"><strong>参考案例</strong>：北京赛区的核心承办方中科科技培训中心，三年累计服务2000+学生——这个模式在广东同样可行，关键是有没有学校渠道资源。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 4 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 4</span>
+  <h2>立刻行动：2026年ICC窗口作战计划</h2>
+
+  <p style="color:var(--accent);font-weight:700;">报名截止6月15日，还剩33天。以下是在今年窗口期内可执行的最小可行行动：</p>
+
+  <div class="timeline">
+    <div class="timeline-item urgent">
+      <span class="tl-date">第1-7天 · 即刻（5月13日-19日）</span>
+      <strong>需求测试</strong> — 在悦洋现有渠道（私域/家长群/朋友圈）发一次ICC辅导需求测试，形式可以是：
+      <ul>
+        <li>问卷："你的孩子是否在准备ICC？需要什么类型的辅导？"</li>
+        <li>或直接推一个早鸟价ICC辅导名额（限5-10人），看响应速度</li>
+      </ul>
+    </div>
+    <div class="timeline-item urgent">
+      <span class="tl-date">第8-14天 · 5月20日-26日</span>
+      <strong>产品定型</strong> — 根据测试反馈确定ICC辅导产品形态（集训营/1对1/线上课）和定价，出课程大纲
+    </div>
+    <div class="timeline-item">
+      <span class="tl-date">第15-21天 · 5月27日-6月2日</span>
+      <strong>正式招生</strong> — 发布ICC辅导招生简章，启动首批学员招募
+    </div>
+    <div class="timeline-item">
+      <span class="tl-date">第22-33天 · 6月3日-6月15日</span>
+      <strong>赛前冲刺</strong> — 首批辅导交付，同时持续招生（报名窗口关闭前可加报）
+    </div>
+    <div class="timeline-item">
+      <span class="tl-date">6月-7月 · 省赛期</span>
+      <strong>参赛+赛后转化</strong> — 跟进学员参赛情况，启动获奖学员的"高阶赛事升级"转化
+    </div>
+    <div class="timeline-item">
+      <span class="tl-date">8月 · 国赛期</span>
+      <strong>国赛+年度复盘</strong> — 辅导国赛选手，总结经验，规划2027年ICC赛季
+    </div>
+  </div>
+
+  <div class="card card-highlight" style="margin-top:24px;">
+    <h4>今年最低成本试水方案</h4>
+    <p>不用急于开发完整的ICC专项课程。先做最轻量的事情：</p>
+    <ol>
+      <li>确认悦洋已有客户中有没有正在准备ICC的学生 → <strong>至少找到1个案例</strong></li>
+      <li>用现有科创竞赛营/爱创营的内容，针对ICC评审标准做调整 → <strong>已有课程复用</strong></li>
+      <li>提供"ICC参赛材料审核+路演模拟"轻服务（¥980）→ <strong>低风险测需求</strong></li>
+      <li>跑通1个案例后，复盘转化数据 → <strong>决定是否投入</strong></li>
+    </ol>
+    <p style="margin-top:12px;"><strong>总投入</strong>：约20小时精力（调研+沟通+案例跟踪），<strong>零资金投入</strong>。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== 5 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 5</span>
+  <h2>产品设计与定价建议</h2>
+
+  <p>结合悦洋现有产品体系和ICC特性，建议的产品矩阵如下：</p>
+
+  <table>
+    <thead>
+      <tr><th>产品</th><th>定价</th><th>时长</th><th>定位</th><th>转化目标</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ICC参赛咨询</strong></td>
+        <td>免费/¥199</td>
+        <td>30分钟</td>
+        <td>获客钩子</td>
+        <td>→ 低价辅导</td>
+      </tr>
+      <tr>
+        <td><strong>ICC材料审核+模拟答辩</strong></td>
+        <td><strong>¥980</strong></td>
+        <td>线上2次</td>
+        <td>引流产品</td>
+        <td>→ 专项营/陪跑</td>
+      </tr>
+      <tr>
+        <td><strong>ICC 3天冲刺营</strong></td>
+        <td><strong>¥4,980-¥6,800</strong></td>
+        <td>3天线下</td>
+        <td>利润产品</td>
+        <td>→ 竞赛营/陪跑</td>
+      </tr>
+      <tr>
+        <td><strong>ICC 1对1导师辅导</strong></td>
+        <td><strong>¥2,980-¥5,800</strong></td>
+        <td>2-4周</td>
+        <td>利润产品</td>
+        <td>→ VIP陪跑</td>
+      </tr>
+      <tr>
+        <td><strong>科创竞赛营（含ICC赛道）</strong></td>
+        <td>¥12,800-¥19,800</td>
+        <td>5天</td>
+        <td>核心产品</td>
+        <td>→ 背景提升陪跑</td>
+      </tr>
+      <tr>
+        <td><strong>商科背景提升陪跑（含ICC）</strong></td>
+        <td>¥48,000-¥158,000</td>
+        <td>6-24个月</td>
+        <td>旗舰产品</td>
+        <td>→ 留学申请</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>定价逻辑</strong>：ICC辅导的低价层（¥980-¥2,980）对标的是"家长已付费报名参赛，额外花小钱买个安心"的心理价位，不靠这个赚钱，靠它筛人。高价层才赚钱。关键指标不是辅导课的营收，而是<strong>从辅导到高阶产品的转化率</strong>。
+  </div>
+</div>
+</section>
+
+<!-- ===== 6 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">PART 6</span>
+  <h2>团队讨论决策点</h2>
+
+  <p>以下是需要在团队内部达成共识的关键问题——建议会议中逐条讨论并做决策：</p>
+
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="dc-number">1</div>
+      <h4>做不做？</h4>
+      <p>ICC是纳入今年产品体系，还是先观望一年？如果做，投入多少资源（人力+资金）？</p>
+    </div>
+    <div class="decision-card">
+      <div class="dc-number">2</div>
+      <h4>获客还是产品？</h4>
+      <p>是把ICC定位为"获客入口"（低价引流），还是"产品线"（深度辅导赚钱）？两者定位不同，投入不同。</p>
+    </div>
+    <div class="decision-card">
+      <div class="dc-number">3</div>
+      <h4>谁来做？</h4>
+      <p>ICC辅导由杨辉（AI总教练）负责技术部分，还是由Tim（教育背景）负责赛事方法论？还是需要外部导师？</p>
+    </div>
+    <div class="decision-card">
+      <div class="dc-number">4</div>
+      <h4>渠道在哪？</h4>
+      <p>通过什么渠道触达ICC参赛者？私域/国际学校/合作机构/社群投放？哪个最快见效？</p>
+    </div>
+    <div class="decision-card">
+      <div class="dc-number">5</div>
+      <h4>2026还是2027？</h4>
+      <p>今年只剩33天窗口，是冲今年（快速试错）还是安心布局2027年赛季？</p>
+    </div>
+    <div class="decision-card">
+      <div class="dc-number">6</div>
+      <h4>合作还是自营？</h4>
+      <p>是否联系ICC广东承办机构（如新东方深圳）寻求合作？还是完全自营辅导服务？</p>
+    </div>
+  </div>
+
+  <div class="card card-highlight" style="margin-top:24px;">
+    <h4>建议讨论流程</h4>
+    <ol>
+      <li><strong>先定做不做</strong>（决策1）—— 如果否，存档明年再看。</li>
+      <li><strong>如果做，先定"轻还是重"</strong>—— 今年建议"极轻测试"：花20小时跑1个案例验证转化模型。</li>
+      <li><strong>如果轻测有信号，再定后续投入</strong>—— 渠道/团队/产品深度。</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- ===== 7 ===== -->
+<section>
+<div class="container">
+  <span class="section-label">APPENDIX</span>
+  <h2>ICC赛事完整参考信息</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>参赛组别</h4>
+      <table>
+        <tr><th>组别</th><th>年级</th><th>评分侧重</th></tr>
+        <tr><td>G组</td><td>一至二年级</td><td>发现问题的过程</td></tr>
+        <tr><td>P组</td><td>三至五年级/六年级</td><td>解决问题的过程</td></tr>
+        <tr><td>J组</td><td>七至九年级</td><td>作品的实用性</td></tr>
+        <tr><td>S组</td><td>十至十二年级</td><td>作品的创新性及科技感</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h4>省赛9大竞赛主题</h4>
+      <ol>
+        <li>低碳未来 — 能源采集、工业减排</li>
+        <li>可持续社区 — 城市资源循环、废弃物处理</li>
+        <li>生物多样性保护 — 生物监测、入侵物种防控</li>
+        <li>无障碍世界 — 残障人士辅助技术</li>
+        <li>健康老龄化 — 远程医疗、居家安全</li>
+        <li><strong>AI与生活</strong> — AI在家庭、公共安全等应用 ⭐ 最匹配</li>
+        <li>未来交通 — 低空物流、共享出行</li>
+        <li>气候变化应对 — 灾害预警、应急救援</li>
+        <li>粮食安全 — 农业生产、仓储运输</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>参赛材料清单</h4>
+      <ul>
+        <li>发明日志（PDF + 说明视频MP4 + 图片JPG）</li>
+        <li>查新报告（PDF，官网提供模板）</li>
+        <li>发明展板照片（JPG）</li>
+        <li>发明原型照片（JPG）</li>
+        <li>路演视频（MP4，不超过5分钟）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>奖项与晋级</h4>
+      <ul>
+        <li>省赛：一等奖10% | 二等奖20% | 三等奖50%</li>
+        <li>国赛：一等奖10% | 二等奖20% | 三等奖50%</li>
+        <li><strong>晋级规则</strong>：省赛一、二等奖 → 全国总决赛</li>
+        <li>国际交流赛：国赛优胜者推荐参加ICW全球赛</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px;">
+    <h4>官方渠道</h4>
+    <ul>
+      <li>官网报名：<a href="https://icc.cffpd.org.cn" target="_blank">icc.cffpd.org.cn</a></li>
+      <li>微信公众号：全球发明大会中国竞赛活动资讯 / 全球发明大会中国竞赛活动</li>
+      <li>主办单位：中国友好和平发展基金会（中国人民对外友好协会发起）</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>悦洋教育 · 内部讨论稿</p>
+  <p>编制：杨辉 | 2026年5月13日 | 版本 v1.0</p>
+  <p style="font-size:12px;margin-top:8px;">本文档基于公开赛事信息整理，具体规则以ICC官网最新公告为准。</p>
+</div>
+
+</body>
+</html>

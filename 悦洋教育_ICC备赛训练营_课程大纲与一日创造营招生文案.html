@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · ICC备赛训练营 & AI一日创造营招生文案</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b6cb0;
+    --accent: #e53e3e;
+    --gold: #d69e2e;
+    --green: #38a169;
+    --purple: #805ad5;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #2d3748;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --highlight: #ebf8ff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #1a365d 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 40px 20px; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+  }
+
+  .divider-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--accent), var(--purple));
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .section-label.gold { background: var(--gold); color: #744210; }
+  .section-label.green { background: var(--green); }
+  .section-label.purple { background: var(--purple); }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--primary);
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 28px 0 14px;
+    color: var(--primary-light);
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+  }
+  p { margin-bottom: 16px; }
+
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover { background: #f0f4ff; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .tag-green { background: #c6f6d5; color: #22543d; }
+  .tag-yellow { background: #fefcbf; color: #744210; }
+  .tag-red { background: #fed7d7; color: #742a2a; }
+  .tag-blue { background: #bee3f8; color: #2a4365; }
+  .tag-purple { background: #e9d8fd; color: #553c9a; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  .highlight-box {
+    background: var(--highlight);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    border: 1px solid #bee3f8;
+  }
+  .highlight-box.gold {
+    background: #fffff0;
+    border-color: var(--gold);
+  }
+  .highlight-box.green {
+    background: #f0fff4;
+    border-color: var(--green);
+  }
+
+  ul, ol { padding-left: 20px; margin-bottom: 16px; }
+  li { margin-bottom: 6px; }
+
+  /* ===== DAY AGENDA ===== */
+  .day-card {
+    background: var(--card);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .day-header {
+    padding: 16px 24px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+  }
+  .day-header.day1 { background: var(--primary-light); }
+  .day-header.day2 { background: var(--green); }
+  .day-header.day3 { background: var(--purple); }
+
+  .day-body { padding: 20px 24px; }
+
+  .session {
+    display: grid;
+    grid-template-columns: 100px 1fr 80px;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #edf2f7;
+    align-items: start;
+  }
+  .session:last-child { border-bottom: none; }
+  .session .time {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+  .session .title {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .session .title small {
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--text-light);
+    display: block;
+    margin-top: 2px;
+  }
+  .session .format {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ===== PRICING ===== */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  .pricing-card {
+    background: var(--card);
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+  }
+  .pricing-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(214,158,46,0.15);
+  }
+  .pricing-card .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #744210;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  .pricing-card .price {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 8px 0;
+  }
+  .pricing-card .price small {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 16px 0;
+  }
+  .pricing-card ul li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 14px;
+  }
+  .pricing-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* ===== MARKETING ===== */
+  .marketing-hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #38a169 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+  .marketing-hero h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .marketing-hero .m-sub {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 24px;
+  }
+  .marketing-hero .m-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: #744210;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 768px) {
+    .benefit-grid { grid-template-columns: 1fr; }
+  }
+  .benefit-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .benefit-card .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .benefit-card .icon.b1 { background: #ebf8ff; }
+  .benefit-card .icon.b2 { background: #f0fff4; }
+  .benefit-card .icon.b3 { background: #fffff0; }
+  .benefit-card .icon.b4 { background: #faf5ff; }
+  .benefit-card h4 { margin: 0 0 4px; font-size: 16px; }
+  .benefit-card p { margin: 0; font-size: 14px; color: var(--text-light); }
+
+  .faq-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { margin: 0 0 6px; }
+  .faq-item p { margin: 0; font-size: 14px; color: var(--text-light); }
+
+  .footer {
+    text-align: center;
+    padding: 40px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    background: var(--primary);
+  }
+
+  .timeline-dot {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .timeline-dot .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .timeline-dot .dot.green { background: var(--green); }
+  .timeline-dot .dot.blue { background: var(--primary-light); }
+  .timeline-dot .dot.gold { background: var(--gold); }
+  .timeline-dot .dot.red { background: var(--accent); }
+  .timeline-dot .dot.purple { background: var(--purple); }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>ICC备赛训练营 · 课程大纲</h1>
+  <div class="subtitle">全球发明大会中国区 · 白名单竞赛专项辅导</div>
+  <div class="hero-meta">
+    <span>版本：v1.0</span>
+    <span>2026年5月</span>
+    <span>悦洋教育</span>
+  </div>
+</div>
+<div class="divider-bar"></div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- PART 1: ICC备赛训练营 -->
+<!-- ============================================================ -->
+<section>
+  <span class="section-label">PART 1</span>
+  <h2>ICC备赛训练营 · 课程大纲</h2>
+
+  <h3>产品概览</h3>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:32px;font-weight:900;color:var(--primary-light);">3天</div>
+      <div style="font-size:14px;color:var(--text-light);">线下沉浸式集训<br>（周末/假期）</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:32px;font-weight:900;color:var(--green);">P/J/S组</div>
+      <div style="font-size:14px;color:var(--text-light);">三年级至十二年级<br>分组教学</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:32px;font-weight:900;color:var(--gold);">¥4,980</div>
+      <div style="font-size:14px;color:var(--text-light);">标准价 / 早鸟价¥3,980</div>
+    </div>
+  </div>
+
+  <h3>课程定位</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>🎯 核心产出</h4>
+      <p>一套可直接提交的ICC完整参赛材料包：</p>
+      <ul>
+        <li><strong>发明日志</strong>（PDF + 说明视频 + 过程图片）</li>
+        <li><strong>查新报告</strong>（填写完成）</li>
+        <li><strong>发明展板</strong>（设计成稿）</li>
+        <li><strong>发明原型</strong>（实物/AI数字原型 + 照片）</li>
+        <li><strong>路演视频</strong>（5分钟成片）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>🏆 ICC三维度精准对标</h4>
+      <table>
+        <tr><th>评审维度</th><th>课程对应</th></tr>
+        <tr><td>发明过程评委<br><small>发现/定义/解决问题的过程</small></td><td>Day 1 选题工作坊 + 发明日志全程辅导</td></tr>
+        <tr><td>发明影响评委<br><small>作品社会影响与实用价值</small></td><td>用户调研 + 社会价值画布 + 影响力论证</td></tr>
+        <tr><td>发明交流评委<br><small>路演表达与展示沟通</small></td><td>Day 3 路演训练 + 模拟答辩</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3>课程大纲（3天 × 7小时）</h3>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-header day1">📅 第一天：发现与定义 — 找到值得解决的问题</div>
+    <div class="day-body">
+      <p style="color:var(--text-light);font-size:14px;margin-bottom:16px;"><strong>目标</strong>：理解ICC评审标准，完成选题定向，掌握问题发现方法论</p>
+
+      <div class="session">
+        <div class="time">09:00-10:30</div>
+        <div class="title">
+          开营 · ICC赛事全景解读
+          <small>白名单含金量 / 9大主题深度解析 / G/P/J/S组别差异与评分侧重 / 往届获奖作品赏析</small>
+        </div>
+        <div class="format">讲座+案例</div>
+      </div>
+
+      <div class="session">
+        <div class="time">10:45-12:00</div>
+        <div class="title">
+          发现问题方法论
+          <small>设计思维入门：同理心地图 → 问题定义 → 痛点挖掘。从日常生活/校园/社区中识别真实需求</small>
+        </div>
+        <div class="format">工作坊</div>
+      </div>
+
+      <div class="session">
+        <div class="time">14:00-15:30</div>
+        <div class="title">
+          用户调研与需求验证
+          <small>如何做访谈 / 如何设计问卷 / 如何验证"这是个真问题"。小组完成至少3个用户访谈（现场/线上）</small>
+        </div>
+        <div class="format">实操</div>
+      </div>
+
+      <div class="session">
+        <div class="time">15:45-17:00</div>
+        <div class="title">
+          选题定稿 + 发明日志启动
+          <small>各小组汇报选题方向 → 导师点评 → 选题拍板。启动发明日志「问题发现」章节</small>
+        </div>
+        <div class="format">路演+辅导</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-header day2">📅 第二天：创造与实现 — 用AI快速搭建原型</div>
+    <div class="day-body">
+      <p style="color:var(--text-light);font-size:14px;margin-bottom:16px;"><strong>目标</strong>：用AI工具搭建发明原型，完成发明日志核心内容</p>
+
+      <div class="session">
+        <div class="time">09:00-10:30</div>
+        <div class="title">
+          方案设计：从问题到解决方案
+          <small>头脑风暴 → 方案筛选 → 功能定义。学习使用AI辅助创意生成工具（AI brainstorming + 方案评估矩阵）</small>
+        </div>
+        <div class="format">工作坊</div>
+      </div>
+
+      <div class="session">
+        <div class="time">10:45-12:00</div>
+        <div class="title">
+          AI原型搭建（上）
+          <small>分组教学：AI对话式编程 / 无代码工具 / AI设计工具。根据方案类型选择最佳工具链</small>
+        </div>
+        <div class="format">实操</div>
+      </div>
+
+      <div class="session">
+        <div class="time">14:00-15:30</div>
+        <div class="title">
+          AI原型搭建（下）+ 查新报告
+          <small>原型迭代完善 + ICC查新报告填写指导。学习如何做专利检索和查新论证</small>
+        </div>
+        <div class="format">实操+辅导</div>
+      </div>
+
+      <div class="session">
+        <div class="time">15:45-17:00</div>
+        <div class="title">
+          发明日志 + 展板设计
+          <small>分章节写作辅导（设计过程 → 迭代记录 → 最终方案）。展板视觉设计初稿</small>
+        </div>
+        <div class="format">项目+辅导</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-header day3">📅 第三天：冲刺与呈现 — 路演视频 + 模拟答辩</div>
+    <div class="day-body">
+      <p style="color:var(--text-light);font-size:14px;margin-bottom:16px;"><strong>目标</strong>：完成全部参赛材料，通过模拟答辩实战演练</p>
+
+      <div class="session">
+        <div class="time">09:00-10:30</div>
+        <div class="title">
+          路演视频拍摄
+          <small>路演脚本打磨 / 视频拍摄技巧 / 展板+原型展示设计。每人完成5分钟路演视频录制</small>
+        </div>
+        <div class="format">实操</div>
+      </div>
+
+      <div class="session">
+        <div class="time">10:45-12:00</div>
+        <div class="title">
+          材料终审 + 查漏补缺
+          <small>逐项核对ICC参赛材料清单：发明日志PDF / 说明视频 / 过程图片 / 查新报告 / 展板照片 / 原型照片 / 路演视频</small>
+        </div>
+        <div class="format">辅导</div>
+      </div>
+
+      <div class="session">
+        <div class="time">14:00-15:30</div>
+        <div class="title">
+          模拟答辩
+          <small>全真模拟ICC评审流程：5分钟路演 + 5分钟评委提问。评委从"过程/影响/交流"三维度打分+反馈</small>
+        </div>
+        <div class="format">模拟</div>
+      </div>
+
+      <div class="session">
+        <div class="time">15:45-17:00</div>
+        <div class="title">
+          结营 · 赛后规划
+          <small>导师1对1反馈 / 省赛准备建议 / 后续竞赛路径规划（ICC→国赛→ICW国际赛 / 商业竞赛 / 背景提升）</small>
+        </div>
+        <div class="format">结营</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>💡 悦洋差异化优势</strong>：普通ICC培训班只做"材料辅导"，悦洋的独特价值在于<strong>AI工具链大幅缩短原型搭建时间</strong>（对手3天只能做展板，我们可以做出可演示的AI原型）+ <strong>商业思维赋能社会创新</strong>（从ICC评审"发明影响"维度加分）。
+  </div>
+
+  <h3>定价与班型</h3>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <span class="tag tag-green" style="margin-bottom:8px">早鸟价</span>
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥3,980</div>
+      <div style="font-size:13px;color:var(--text-light);">开营前14天报名</div>
+    </div>
+    <div class="card" style="text-align:center;border-color:var(--gold);">
+      <span class="tag tag-yellow" style="margin-bottom:8px">标准价</span>
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥4,980</div>
+      <div style="font-size:13px;color:var(--text-light);">常规报名</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <span class="tag tag-red" style="margin-bottom:8px">VIP 1对1</span>
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥5,800</div>
+      <div style="font-size:13px;color:var(--text-light);">1对1导师全程辅导</div>
+    </div>
+  </div>
+
+  <h3>师资配置</h3>
+  <table>
+    <tr><th>角色</th><th>人数</th><th>职责</th></tr>
+    <tr><td>主讲导师（杨辉/AI龙虾教练）</td><td>1人</td><td>AI工具链教学 + 原型搭建指导</td></tr>
+    <tr><td>竞赛导师</td><td>1人</td><td>ICC赛事方法论 + 材料审核 + 评审对标</td></tr>
+    <tr><td>助教</td><td>1人/8学员</td><td>小组辅导 + 现场支持</td></tr>
+  </table>
+  <p style="font-size:13px;color:var(--text-light);">注：可根据报名人数灵活配置，6人开班，16人满班</p>
+
+  <h3>ICC赛道匹配建议</h3>
+  <table>
+    <tr><th>赛道</th><th>匹配度</th><th>推荐方向</th></tr>
+    <tr><td>AI与生活</td><td>⭐⭐⭐⭐⭐</td><td>AI在家庭/校园/公共安全中的应用——AI工具链最匹配</td></tr>
+    <tr><td>无障碍世界</td><td>⭐⭐⭐⭐</td><td>残障人士辅助技术——AI视觉/语音能力可快速落地</td></tr>
+    <tr><td>可持续社区</td><td>⭐⭐⭐⭐</td><td>城市资源循环——AI数据分析+社会创新视角</td></tr>
+    <tr><td>健康老龄化</td><td>⭐⭐⭐</td><td>远程医疗/居家安全——AI物联网方案</td></tr>
+    <tr><td>低碳未来</td><td>⭐⭐⭐</td><td>能源采集/减排——AI监测+数据可视化</td></tr>
+  </table>
+</section>
+
+<div class="divider-bar"></div>
+
+<!-- ============================================================ -->
+<!-- PART 2: 一日创造营招生文案 -->
+<!-- ============================================================ -->
+<section>
+  <span class="section-label gold">PART 2</span>
+  <h2>AI青少年一日创造营 · 招生文案</h2>
+
+  <!-- 主视觉 -->
+  <div class="marketing-hero">
+    <h2>一天时间，你的孩子能造出什么？</h2>
+    <p class="m-sub">AI青少年一日创造营 — 零基础完成人生第一个AI作品</p>
+    <div class="m-cta">🎯 限时早鸟价 ¥599（原价¥899）</div>
+  </div>
+
+  <h3>为什么参加这一日创造营？</h3>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="icon b1">🤖</div>
+      <div>
+        <h4>零基础 · 一天出作品</h4>
+        <p>不需要编程基础，不需要任何AI经验。从0到1，一天内用AI工具完成一个完整的创新作品，带回家给爸妈看。</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="icon b2">🧠</div>
+      <div>
+        <h4>不只是工具课，更是思维课</h4>
+        <p>学的是"发现问题→设计方案→做出原型"的完整创新闭环。不管以后学什么，这套思维终身受用。</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="icon b3">🏆</div>
+      <div>
+        <h4>竞赛前置体验</h4>
+        <p>一天的产出可直接衔接ICC全球发明大会、全国青年创业计划大赛等白名单竞赛。提前感受竞赛节奏，赢在起跑线。</p>
+      </div>
+    </div>
+    <div class="benefit-card">
+      <div class="icon b4">👨‍👩‍👧</div>
+      <div>
+        <h4>看得见的成长</h4>
+        <p>结营路演邀请家长参加，亲眼见证孩子的创意路演。每个孩子带着作品+路演视频+结营证书回家。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>一天安排</h3>
+  <table>
+    <tr><th>时间</th><th>环节</th><th>产出</th></tr>
+    <tr><td>09:00-10:00</td><td>开营 + AI初体验：AI能做什么？</td><td>认知刷新</td></tr>
+    <tr><td>10:15-12:00</td><td>发现身边的问题 + 定义你的创意</td><td>选题定稿</td></tr>
+    <tr><td>14:00-15:30</td><td>用AI工具搭建你的作品原型</td><td>作品雏形</td></tr>
+    <tr><td>15:45-16:30</td><td>作品打磨 + 路演准备</td><td>作品完成</td></tr>
+    <tr><td>16:30-17:00</td><td>🎤 路演展示 + 家长见证</td><td>路演视频</td></tr>
+  </table>
+
+  <div class="highlight-box gold" style="margin-top:20px;">
+    <strong>🎁 一日营专属福利</strong>：报名即送 ICC/商赛 参赛规划咨询一次（价值¥299），帮助家长了解孩子当前水平适合什么竞赛、如何规划升学背景提升路径。
+  </div>
+
+  <!-- 定价 -->
+  <h3>报名信息</h3>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥599</div>
+      <div style="font-size:14px;color:var(--text-light);margin:8px 0;">早鸟价</div>
+      <ul>
+        <li>全天课程 + 材料</li>
+        <li>AI工具账号使用权</li>
+        <li>结营证书</li>
+        <li>路演视频</li>
+        <li>竞赛规划咨询（¥299）</li>
+      </ul>
+    </div>
+    <div class="pricing-card featured">
+      <div class="badge">推荐</div>
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥899</div>
+      <div style="font-size:14px;color:var(--text-light);margin:8px 0;">标准价</div>
+      <ul>
+        <li>全天课程 + 材料</li>
+        <li>AI工具账号使用权</li>
+        <li>结营证书</li>
+        <li>路演视频</li>
+        <li>竞赛规划咨询（¥299）</li>
+        <li>可随时改期</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div style="font-size:32px;font-weight:900;color:var(--primary);">¥1,299</div>
+      <div style="font-size:14px;color:var(--text-light);margin:8px 0;">两人同行</div>
+      <ul>
+        <li>含2人报名（同班/亲友）</li>
+        <li>全部标准权益</li>
+        <li>可安排同组协作</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 适用对象 -->
+  <h3>适合谁参加？</h3>
+  <div class="grid-4">
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;margin-bottom:8px;">🎒</div>
+      <div style="font-weight:700;">小学生</div>
+      <div style="font-size:13px;color:var(--text-light);">三年级以上<br>AI启蒙 + 创造力培养</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;margin-bottom:8px;">📚</div>
+      <div style="font-weight:700;">初中生</div>
+      <div style="font-size:13px;color:var(--text-light);">竞赛前置体验<br>背景提升起步</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;margin-bottom:8px;">🎯</div>
+      <div style="font-weight:700;">高中生</div>
+      <div style="font-size:13px;color:var(--text-light);">快速产出作品<br>衔接高阶竞赛</div>
+    </div>
+    <div class="card" style="text-align:center;padding:20px;">
+      <div style="font-size:28px;margin-bottom:8px;">👀</div>
+      <div style="font-weight:700;">不确定的家长</div>
+      <div style="font-size:13px;color:var(--text-light);">先花一天低成本<br>试试孩子兴趣</div>
+    </div>
+  </div>
+
+  <!-- 转化路径 -->
+  <h3>从一日营到竞赛之路</h3>
+  <div class="card" style="border-left:4px solid var(--gold);">
+    <p style="margin-bottom:12px;">一日创造营是悦洋教育竞赛辅导体系的<strong>入门体验产品</strong>——家长花¥599低成本验证孩子的兴趣和能力，后续可选择进阶路径：</p>
+    <div class="timeline-dot">
+      <div class="dot green"></div>
+      <div>
+        <strong>一日创造营（¥599-¥899）</strong><br>
+        <span style="font-size:14px;color:var(--text-light);">AI启蒙 + 作品产出 + 兴趣验证</span>
+      </div>
+    </div>
+    <div style="margin-left:28px;" class="timeline-dot">
+      <div class="dot blue"></div>
+      <div>
+        <strong>↓ ICC 3天备赛训练营（¥3,980-¥4,980）</strong><br>
+        <span style="font-size:14px;color:var(--text-light);">完整参赛材料包 + 模拟答辩</span>
+      </div>
+    </div>
+    <div style="margin-left:56px;" class="timeline-dot">
+      <div class="dot gold"></div>
+      <div>
+        <strong>↓ AI商业创业竞赛营 5天（¥12,800-¥29,800）</strong><br>
+        <span style="font-size:14px;color:var(--text-light);">多竞赛覆盖 + VIP保奖</span>
+      </div>
+    </div>
+    <div style="margin-left:84px;" class="timeline-dot">
+      <div class="dot red"></div>
+      <div>
+        <strong>↓ 背景提升陪跑（¥48,000-¥158,000）</strong><br>
+        <span style="font-size:14px;color:var(--text-light);">长期规划 + 留学申请支撑</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h3>家长常问</h3>
+  <div class="card">
+    <div class="faq-item">
+      <h4>Q：孩子完全没有编程基础，能跟上吗？</h4>
+      <p>完全没问题。我们用的是AI对话式工具，孩子只要会说话、会打字就能操作。我们教的是"用AI"而不是"编AI"，零基础友好。</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q：一天时间真的能做出作品吗？</h4>
+      <p>可以的。我们的课程节奏经过精心设计，从选题到原型到展示，每个环节都有导师引导和模板支持。往期学员100%在一天内完成作品。</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q：孩子带走什么？</h4>
+      <p>带走一个属于自己的AI作品（可展示可分享）、5分钟路演视频、结营证书，以及一套创新思维方法。家长还能获得一份详细的竞赛规划建议。</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q：和ICC竞赛是什么关系？</h4>
+      <p>一日营的产出可以直接延伸为ICC参赛作品。我们的3天备赛训练营专门针对ICC赛制设计，一日营学员报名备赛训练营可享受额外优惠。</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q：家长需要陪同吗？</h4>
+      <p>早上送来，下午16:30来接就行。最后半小时路演展示欢迎家长参加，见证孩子的成果。如果家长想旁听全天，我们也预留了观摩席位。</p>
+    </div>
+  </div>
+
+  <!-- 号召行动 -->
+  <div class="marketing-hero" style="margin-top:30px;">
+    <h2>让孩子的第一个AI作品，<br>从今天开始</h2>
+    <p class="m-sub">限时早鸟价 ¥599（原价¥899）<br>每期限16人，满班即止</p>
+    <div class="m-cta">📞 立即咨询报名</div>
+    <p style="font-size:14px;opacity:0.7;margin-top:16px;">联系人：杨辉 13611414319</p>
+  </div>
+
+  <!-- 首批反馈 -->
+  <div class="highlight-box green">
+    <strong>📢 第一批一日创造营近期开营</strong> — 前3期学员享受早鸟价¥599。报名即送ICC参赛规划咨询（¥299）。<br>
+    适合年级：三年级至高二 | 地点：广州天河/悦洋海外集团场地
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p>悦洋教育 · Yueyang Education</p>
+  <p>联系人：杨辉 | 电话：13611414319</p>
+  <p style="font-size:12px;margin-top:8px;">版本 v1.0 | 2026年5月13日</p>
+</div>
+
+</body>
+</html>

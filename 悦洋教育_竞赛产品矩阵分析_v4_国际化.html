@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 竞赛产品矩阵分析 v4.0 — 走向国际赛道</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', -apple-system, sans-serif;
+    color: #2d3748;
+    background: #f7fafc;
+    line-height: 1.8;
+  }
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1a365d 30%, #2b6cb0 60%, #553c9a 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='g' patternUnits='userSpaceOnUse' width='40' height='40'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '🌍'; position: absolute; right: 40px; bottom: 20px;
+    font-size: 80px; opacity: 0.1;
+  }
+  .hero-badge {
+    display: inline-block; border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06); padding: 5px 18px;
+    border-radius: 20px; font-size: 12px; letter-spacing: 2px;
+    color: rgba(255,255,255,0.6); margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 38px; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
+  .hero h1 .accent { background: linear-gradient(135deg, #d69e2e, #f6e05e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .globe { color: #805ad5; }
+  .hero .subtitle { font-size: 17px; font-weight: 300; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+  .hero-meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; opacity: 0.6; margin-top: 10px; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 50px 0; border-bottom: 1px solid #e2e8f0; }
+
+  .section-label {
+    display: inline-block; background: #1a365d; color: white;
+    font-size: 11px; padding: 3px 12px; border-radius: 3px;
+    letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .section-label.gold { background: #d69e2e; color: #744210; }
+  .section-label.green { background: #38a169; }
+  .section-label.purple { background: #805ad5; }
+  .section-label.red { background: #e53e3e; }
+  .section-label.teal { background: #319795; }
+
+  h2 { font-size: 26px; font-weight: 700; margin-bottom: 20px; color: #1a365d; }
+  h2 .emoji { margin-right: 6px; }
+  h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: #2b6cb0; }
+  h4 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; }
+  p { margin-bottom: 14px; }
+
+  .card {
+    background: white; border-radius: 10px; padding: 24px;
+    margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+  }
+  .card-highlight { border-left: 4px solid #e53e3e; background: #fff5f5; }
+  .card-green { border-left: 4px solid #38a169; background: #f0fff4; }
+  .card-gold { border-left: 4px solid #d69e2e; background: #fffff0; }
+  .card-purple { border-left: 4px solid #805ad5; background: #faf5ff; }
+  .card-blue { border-left: 4px solid #2b6cb0; background: #ebf8ff; }
+  .card-teal { border-left: 4px solid #319795; background: #e6fffd; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px;
+  }
+  th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+  th {
+    background: #1a365d; color: white; font-weight: 600;
+    font-size: 11px; letter-spacing: 1px;
+  }
+  th:first-child { border-radius: 6px 0 0 0; }
+  th:last-child { border-radius: 0 6px 0 0; }
+  tr:hover { background: #f0f4ff; }
+
+  .tag {
+    display: inline-block; padding: 2px 10px; border-radius: 10px;
+    font-size: 11px; font-weight: 600;
+  }
+  .tag-green { background: #c6f6d5; color: #22543d; }
+  .tag-yellow { background: #fefcbf; color: #744210; }
+  .tag-red { background: #fed7d7; color: #742a2a; }
+  .tag-blue { background: #bee3f8; color: #2a4365; }
+  .tag-purple { background: #e9d8fd; color: #553c9a; }
+  .tag-teal { background: #b2f5ea; color: #234e52; }
+
+  .funnel {
+    display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 16px 0;
+  }
+  .funnel-step {
+    width: 100%; text-align: center; padding: 14px 18px;
+    border-radius: 8px; color: white; font-weight: 600; font-size: 14px;
+  }
+  .funnel-step .sub { display: block; font-weight: 300; font-size: 12px; opacity: 0.8; margin-top: 3px; }
+  .funnel-arrow { color: #a0aec0; font-size: 16px; }
+
+  .path-card {
+    background: white; border-radius: 12px; border: 1px solid #e2e8f0;
+    padding: 24px; margin-bottom: 20px; position: relative;
+    overflow: hidden;
+  }
+  .path-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .path-card.path-a::before { background: linear-gradient(90deg, #38a169, #2b6cb0); }
+  .path-card.path-b::before { background: linear-gradient(90deg, #805ad5, #d69e2e); }
+  .path-card.path-c::before { background: linear-gradient(90deg, #e53e3e, #d69e2e, #38a169); }
+  .path-card .path-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .path-card .flow {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px; background: #f7fafc; border-radius: 8px;
+    margin: 10px 0; font-size: 14px; flex-wrap: wrap;
+  }
+  .path-card .flow .step {
+    background: white; padding: 6px 14px; border-radius: 6px;
+    border: 1px solid #e2e8f0; font-weight: 500;
+  }
+  .path-card .flow .arrow { color: #a0aec0; font-weight: 700; }
+
+  .highlight-box {
+    background: #ebf8ff; border-radius: 8px; padding: 18px;
+    margin: 14px 0; border: 1px solid #bee3f8;
+  }
+  .highlight-box.gold { background: #fffff0; border-color: #d69e2e; }
+  .highlight-box.green { background: #f0fff4; border-color: #38a169; }
+  .highlight-box.purple { background: #faf5ff; border-color: #805ad5; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 14px; }
+  li { margin-bottom: 5px; }
+
+  .timeline-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; } }
+  .tl-month {
+    background: white; border-radius: 10px; padding: 16px;
+    border: 1px solid #e2e8f0; border-top: 3px solid #2b6cb0;
+  }
+  .tl-month .month { font-weight: 700; font-size: 15px; color: #1a365d; margin-bottom: 8px; }
+  .tl-month .event { font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f7fafc; }
+  .tl-month .event:last-child { border-bottom: none; }
+  .tl-month .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
+  .dot-red { background: #e53e3e; }
+  .dot-green { background: #38a169; }
+  .dot-blue { background: #2b6cb0; }
+  .dot-gold { background: #d69e2e; }
+  .dot-purple { background: #805ad5; }
+
+  .comp-detail {
+    background: white; border-radius: 12px; border: 1px solid #e2e8f0;
+    padding: 20px 24px; margin-bottom: 14px;
+  }
+  .comp-detail .cd-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 8px; gap: 12px;
+  }
+  .comp-detail .cd-name { font-size: 16px; font-weight: 700; color: #1a365d; }
+  .comp-detail .cd-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+
+  .score { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; }
+  .score-5 { color: #38a169; }
+  .score-4 { color: #d69e2e; }
+  .score-3 { color: #2b6cb0; }
+  .score-2 { color: #a0aec0; }
+
+  .intl-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: linear-gradient(135deg, #553c9a, #805ad5);
+    color: white; padding: 2px 10px; border-radius: 10px;
+    font-size: 11px; font-weight: 600;
+  }
+
+  .footer {
+    text-align: center; padding: 30px;
+    color: rgba(255,255,255,0.6); font-size: 13px;
+    background: linear-gradient(135deg, #0a1628, #1a365d);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">内部讨论稿 · v4.0 · 国际化版</div>
+  <h1>悦洋教育 · <span class="accent">竞赛产品矩阵</span> 分析</h1>
+  <div class="subtitle">10 大赛事 × 4 级产品体系 — <span class="accent">聚焦能走向国际的赛道</span></div>
+  <div class="hero-meta">
+    <span>版本：v4.0</span>
+    <span>2026年5月14日</span>
+    <span>编制：杨辉</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== PART 1: 国际路径全景 ===== -->
+<section>
+  <span class="section-label teal">PART 1</span>
+  <h2>🌍 国际路径全景</h2>
+  <p>10大赛事按<strong>国际化潜力</strong>重新分级：</p>
+
+  <h3>🌍 直达国际赛道（赛事本身即为国际级）</h3>
+  <table>
+    <tr><th>赛事</th><th>国际化程度</th><th>主办方</th><th>晋级路径</th></tr>
+    <tr>
+      <td><b>CTB 全球青年研究创新论坛</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>哈佛大学</td>
+      <td>中国站 → 全球站（哈佛校园）</td>
+    </tr>
+    <tr>
+      <td><b>ICW 世界青少年发明展</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>IFIA国际发明协会</td>
+      <td>ICC国赛获奖 → 直接晋级</td>
+    </tr>
+    <tr>
+      <td><b>全球青少年AI峰会竞赛</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>UNESCO等</td>
+      <td>各国选拔 → 国际峰会</td>
+    </tr>
+  </table>
+
+  <h3>🚪 国内→国际晋级通道</h3>
+  <table>
+    <tr><th>赛事</th><th>国际通道</th><th>路径说明</th></tr>
+    <tr>
+      <td><b>ICC 全球发明大会</b></td>
+      <td><span class="tag tag-green">→ ICW世界展</span></td>
+      <td>全国总决赛优胜者获推荐参加ICW全球展，60+国家参与</td>
+    </tr>
+    <tr>
+      <td><b>NOC AI创新赛项</b></td>
+      <td><span class="tag tag-blue">→ 国际邀请赛</span></td>
+      <td>部分赛项设有国际交流环节</td>
+    </tr>
+    <tr>
+      <td><b>蓝桥杯（青少年AI组）</b></td>
+      <td><span class="tag tag-purple">→ 国际邀请</span></td>
+      <td>国赛一等奖可获国际邀请赛资格</td>
+    </tr>
+  </table>
+
+  <h3>🛠️ 国内基础赛（为国际化打基础）</h3>
+  <table>
+    <tr><th>赛事</th><th>对国际赛的价值</th></tr>
+    <tr><td>互联网+萌芽赛道</td><td>BP写作+路演能力 → CTB/全球AI峰会直接复用</td></tr>
+    <tr><td>宋庆龄少年儿童发明奖</td><td>社会创新案例 → ICC/ICW的作品素材</td></tr>
+    <tr><td>全国青少年AI创新挑战赛</td><td>AI技术基础 → 全球AI峰会技术储备</td></tr>
+    <tr><td>全国青少年科创大赛</td><td>科研方法论 → 所有国际赛的研究基础</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <strong>核心战略转换</strong>：从"白名单升学"叙事 → <strong>"从国内到国际"成长叙事</strong>。<br>
+    家长购买的不是一个赛事辅导，而是一条完整的国际化成长路径。
+  </div>
+</section>
+
+<!-- ===== PART 2: 国际化深度分析 ===== -->
+<section>
+  <span class="section-label gold">PART 2</span>
+  <h2>十大竞赛国际化深度分析</h2>
+
+  <!-- Tier S: CTB -->
+  <div class="comp-detail" style="border-left:4px solid #805ad5;">
+    <div class="cd-header">
+      <div class="cd-name">1️⃣ CTB 全球青年研究创新论坛</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 国际级</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>国际级（哈佛上海中心主办）</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>14-18岁 · 全英文</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td>中国赛区 → 全球站（哈佛校园）→ 论文发表</td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-4">★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>BP/路演/社会创新方向高度匹配；英文辅导需额外准备</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>哈佛背书，海外升学含金量最高的赛事之一</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier S: ICW -->
+  <div class="comp-detail" style="border-left:4px solid #805ad5;">
+    <div class="cd-header">
+      <div class="cd-name">2️⃣ ICW 世界青少年发明展</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 国际级</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>国际级（IFIA国际发明协会）</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>8-18岁 · 全英文</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td>ICC全国赛获奖 → ICW全球展（60+国家）</td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-3">★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>ICC的自然延伸，是悦洋学员的"进阶故事"</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>ICC获奖学员的国际化出口，最自然的高端转化</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier S: 全球AI峰会 -->
+  <div class="comp-detail" style="border-left:4px solid #805ad5;">
+    <div class="cd-header">
+      <div class="cd-name">3️⃣ 全球青少年AI峰会竞赛</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 国际级</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>国际级（UNESCO等）</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>10-18岁 · 全英文 · SDGs议题</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td>各国选拔 → 全球峰会</td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-3">★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>悦洋海外集团客户直接对接；Tim教育学背景可做英文辅导</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>联合国背景，海外升学重磅背书</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier A: ICC -->
+  <div class="comp-detail" style="border-left:4px solid #38a169;">
+    <div class="cd-header">
+      <div class="cd-name">4️⃣ ICC 全球发明大会 <span style="color:#d69e2e;font-size:12px;">⭐ 首选</span></div>
+      <div class="cd-badges"><span class="tag tag-green">白名单</span><span class="tag tag-teal">→ ICW</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>教育部白名单 + 国际晋级通道</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>8-16岁（P/J/S组）</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td><strong>🏆 全国总决赛优胜 → ICW世界青少年发明展（60+国家）</strong></td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-5">★★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>AI工具链缩短原型搭建时间；商业思维为"发明影响"加分；路演训练为"发明交流"加分</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>入局门槛最低的国际通道：国内白名单获奖→直接晋级国际展</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier A: NOC -->
+  <div class="comp-detail" style="border-left:4px solid #38a169;">
+    <div class="cd-header">
+      <div class="cd-name">5️⃣ NOC AI创新赛项</div>
+      <div class="cd-badges"><span class="tag tag-green">白名单</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>教育部白名单</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>10-18岁</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td>部分赛项设有国际交流/邀请环节</td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-5">★★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>AI专项赛道，悦洋AI工具链天然匹配；与ICC共享课程体系</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>全国最大AI赛事，获奖成果可写入国际申请材料</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier A: 蓝桥杯 -->
+  <div class="comp-detail" style="border-left:4px solid #38a169;">
+    <div class="cd-header">
+      <div class="cd-name">6️⃣ 蓝桥杯（青少年AI组）</div>
+      <div class="cd-badges"><span class="tag tag-green">白名单</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>教育部白名单</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>8-17岁</td></tr>
+      <tr><td style="font-weight:600;">国际路径</td><td>国赛一等奖可获国际邀请赛资格</td></tr>
+      <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-5">★★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>三赛复用率75%；STEMA评测可作为能力评估工具</td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>参赛20万+，国奖在国际升学中受认可</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Tier B: 基础赛 -->
+  <h3 style="margin-top:30px;">基础赛（国际化跳板）</h3>
+  <div class="grid-2">
+    <div class="card card-blue">
+      <h4 style="margin-top:0;">7️⃣ 互联网+ 萌芽赛道</h4>
+      <p style="font-size:13px;">白名单 · 14-18岁</p>
+      <p style="font-size:13px;">BP写作+路演能力 → CTB/全球AI峰会直接复用</p>
+      <p style="font-size:13px;">匹配度：<span class="score score-4">★★★★</span></p>
+    </div>
+    <div class="card card-green">
+      <h4 style="margin-top:0;">8️⃣ 宋庆龄少年儿童发明奖</h4>
+      <p style="font-size:13px;">白名单 · 8-18岁</p>
+      <p style="font-size:13px;">社会创新案例 → ICC/ICW的作品素材</p>
+      <p style="font-size:13px;">匹配度：<span class="score score-4">★★★★</span></p>
+    </div>
+    <div class="card card-gold">
+      <h4 style="margin-top:0;">9️⃣ 全国青少年AI创新挑战赛</h4>
+      <p style="font-size:13px;">白名单 · 8-18岁</p>
+      <p style="font-size:13px;">AI技术基础 → 全球AI峰会技术储备</p>
+      <p style="font-size:13px;">匹配度：<span class="score score-4">★★★★</span></p>
+    </div>
+    <div class="card card-purple">
+      <h4 style="margin-top:0;">🔟 全国青少年科创大赛</h4>
+      <p style="font-size:13px;">白名单 · 12-18岁</p>
+      <p style="font-size:13px;">科研方法论 → 所有国际赛的研究基础</p>
+      <p style="font-size:13px;">匹配度：<span class="score score-3">★★★</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PART 3: 三条国际路径 ===== -->
+<section>
+  <span class="section-label purple">PART 3</span>
+  <h2>三条国际路径详解</h2>
+
+  <div class="path-card path-a">
+    <div class="path-title">🛤️ 路径A：国内白名单 → 国际展演 <span style="font-size:13px;font-weight:400;color:#718096;">（性价比最高）</span></div>
+    <div class="flow">
+      <span class="step">ICC报名</span>
+      <span class="arrow">→</span>
+      <span class="step">ICC省赛/国赛</span>
+      <span class="arrow">→</span>
+      <span class="step" style="border-color:#805ad5;background:#faf5ff;">ICW全球展</span>
+    </div>
+    <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
+      <span class="tag tag-green">一日营 ¥599</span>
+      <span class="tag tag-blue">→ 3天营 ¥3,980</span>
+      <span class="tag tag-purple">→ 陪跑 ¥48,000+</span>
+    </div>
+    <p style="font-size:13px;margin-top:8px;"><strong>优势：</strong>国内白名单赛事打底，获奖后自然晋级国际，双重收益。<br>
+    <strong>话术：</strong>"一份学费，国内拿奖+国际展演"</p>
+  </div>
+
+  <div class="path-card path-b">
+    <div class="path-title">🛤️ 路径B：直接国际赛事 <span style="font-size:13px;font-weight:400;color:#718096;">（高客单价）</span></div>
+    <div class="flow">
+      <span class="step">CTB/全球AI峰会</span>
+      <span class="arrow">→</span>
+      <span class="step" style="border-color:#805ad5;background:#faf5ff;">全球站/国际峰会</span>
+    </div>
+    <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
+      <span class="tag tag-purple">研究型辅导 ¥48,000+</span>
+      <span class="tag tag-purple">英文答辩导师1对1</span>
+    </div>
+    <p style="font-size:13px;margin-top:8px;"><strong>优势：</strong>直接国际奖项，海外升学含金量最高。<br>
+    <strong>悦洋资源：</strong>海外集团赋能，Tim教育学背景做英文辅导</p>
+  </div>
+
+  <div class="path-card path-c">
+    <div class="path-title">🛤️ 路径C：多赛叠加路径 <span style="font-size:13px;font-weight:400;color:#718096;">（最优组合）</span></div>
+    <div class="flow">
+      <span class="step">ICC</span>
+      <span class="arrow">+</span>
+      <span class="step">NOC/蓝桥杯</span>
+      <span class="arrow">+</span>
+      <span class="step" style="border-color:#805ad5;background:#faf5ff;">CTB/AI峰会</span>
+      <span class="arrow">=</span>
+      <span class="step" style="border-color:#d69e2e;background:#fffff0;">完整国际升学Portfolio</span>
+    </div>
+    <p style="font-size:13px;margin-top:8px;"><strong>悦洋优势：</strong>75%课程复用率 → 一份学费覆盖多个赛事 → 家长感知价值极高</p>
+  </div>
+
+  <div class="highlight-box green">
+    <strong>💡 核心叙事转换</strong>：过去的卖点是"白名单竞赛加分"，现在的卖点是<strong>"从广州走到世界"</strong>。<br>
+    家长不是在买课程，是在买一条让孩子被世界看见的路径。
+  </div>
+</section>
+
+<!-- ===== PART 4: 产品体系 ===== -->
+<section>
+  <span class="section-label">PART 4</span>
+  <h2>四级产品体系（国际化版）</h2>
+
+  <div class="funnel">
+    <div class="funnel-step" style="background:#38a169;width:95%;">
+      L1 · 引流体验 · ¥599-¥899
+      <span class="sub">AI一日创造营 → 埋下国际竞赛的种子</span>
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:#2b6cb0;width:80%;">
+      L2 · 专项备赛 · ¥3,980-¥9,800
+      <span class="sub">ICC/NOC/蓝桥杯 3天营 → 国内获奖，获取国际晋级资格</span>
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:#d69e2e;width:60%;">
+      L3 · 国际冲刺 · ¥29,800-¥59,800
+      <span class="sub">ICW/CTB/全球AI峰会专项 → 英文答辩+国际评审+海外导师</span>
+    </div>
+    <div class="funnel-arrow">▼</div>
+    <div class="funnel-step" style="background:#805ad5;width:40%;">
+      L4 · 长期陪跑 · ¥98,000-¥198,000
+      <span class="sub">全赛覆盖+海外升学规划 → 从国内到国际的完整竞赛生涯管理</span>
+    </div>
+  </div>
+
+  <h3>新增国际化产品线</h3>
+  <table>
+    <tr><th>产品</th><th>定价</th><th>说明</th></tr>
+    <tr>
+      <td><b>ICW国际展辅导</b></td>
+      <td>¥29,800-¥49,800</td>
+      <td>ICC获奖学员的国际化冲刺：英文展板+英文路演+国际评委模拟</td>
+    </tr>
+    <tr>
+      <td><b>CTB全球站冲刺</b></td>
+      <td>¥39,800-¥59,800</td>
+      <td>研究论文+英文答辩+Harvard导师辅导</td>
+    </tr>
+    <tr>
+      <td><b>全球AI峰会备战</b></td>
+      <td>¥29,800-¥49,800</td>
+      <td>SDGs项目+英文展示+国际评委模拟答辩</td>
+    </tr>
+    <tr>
+      <td><b>国际竞赛陪跑包</b></td>
+      <td>¥98,000-¥198,000</td>
+      <td>全部国际赛+海外升学规划+Tim教育学背景资源</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ===== PART 5: 年度国际化节奏 ===== -->
+<section>
+  <span class="section-label teal">PART 5</span>
+  <h2>年度国际化竞赛节奏</h2>
+
+  <div class="timeline-grid">
+    <div class="tl-month" style="border-top-color:#e53e3e;">
+      <div class="month">5-6月 🔥</div>
+      <div class="event"><span class="dot dot-red"></span>ICC报名截止</div>
+      <div class="event"><span class="dot dot-blue"></span>ICW晋级预备</div>
+      <div class="event" style="font-size:11px;color:#718096;">ICC备赛营招生黄金期</div>
+    </div>
+    <div class="tl-month" style="border-top-color:#2b6cb0;">
+      <div class="month">7-8月 🎯</div>
+      <div class="event"><span class="dot dot-blue"></span>ICC省赛/国赛</div>
+      <div class="event"><span class="dot dot-purple"></span>ICC→ICW晋级确认</div>
+      <div class="event" style="font-size:11px;color:#718096;">ICW辅导启动</div>
+    </div>
+    <div class="tl-month" style="border-top-color:#38a169;">
+      <div class="month">9-10月 📚</div>
+      <div class="event"><span class="dot dot-green"></span>NOC/蓝桥杯报名</div>
+      <div class="event"><span class="dot dot-purple"></span>CTB启动报名</div>
+      <div class="event" style="font-size:11px;color:#718096;">三赛复用+CTB战队组建</div>
+    </div>
+    <div class="tl-month" style="border-top-color:#d69e2e;">
+      <div class="month">11-12月 📊</div>
+      <div class="event"><span class="dot dot-gold"></span>NOC/蓝桥杯省赛</div>
+      <div class="event"><span class="dot dot-purple"></span>全球AI峰会报名</div>
+      <div class="event" style="font-size:11px;color:#718096;">国际赛辅导启动</div>
+    </div>
+    <div class="tl-month" style="border-top-color:#805ad5;">
+      <div class="month">1-2月 ❄️</div>
+      <div class="event"><span class="dot dot-purple"></span>寒假竞赛营</div>
+      <div class="event"><span class="dot dot-purple"></span>CTB中国站</div>
+      <div class="event" style="font-size:11px;color:#718096;">国际赛冲刺</div>
+    </div>
+    <div class="tl-month" style="border-top-color:#38a169;">
+      <div class="month">3-4月 🌸</div>
+      <div class="event"><span class="dot dot-green"></span>科创大赛/宋庆龄</div>
+      <div class="event"><span class="dot dot-purple"></span>CTB全球站</div>
+      <div class="event" style="font-size:11px;color:#718096;">获奖案例传播</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PART 6: 悦洋国际化优势 ===== -->
+<section>
+  <span class="section-label green">PART 6</span>
+  <h2>悦洋国际化差异化优势</h2>
+
+  <div class="grid-2">
+    <div class="card card-highlight">
+      <h4 style="margin-top:0;">🔥 核心壁垒：别人做不到的事</h4>
+      <table>
+        <tr><th style="background:#e53e3e;">维度</th><th style="background:#e53e3e;">普通机构</th><th style="background:#e53e3e;">悦洋教育</th></tr>
+        <tr><td>AI工具链</td><td>无/基础</td><td>自研AI工具链，原型搭建快3倍</td></tr>
+        <tr><td>国内赛事</td><td>单一赛事</td><td>ICC+NOC+蓝桥杯三赛复用</td></tr>
+        <tr><td>国际化资源</td><td>无</td><td>海外集团 + Tim教育学背景</td></tr>
+        <tr><td>商业思维</td><td>纯技术导向</td><td>AI+商业创新双驱动</td></tr>
+        <tr><td>英文辅导</td><td>外包/无</td><td>Tim教育学博士背景，英文+教育双专业</td></tr>
+      </table>
+    </div>
+
+    <div class="card card-teal">
+      <h4 style="margin-top:0;">🌍 海外资源赋能</h4>
+      <ol>
+        <li><b>悦洋海外集团</b> — 可直接对接口AI峰会/ICW等国际赛事</li>
+        <li><b>Tim Yang（杨辉）</b> — 教育学背景 + 海外经历 + AI工具专家</li>
+        <li><b>英文辅导能力</b> — ICW/CTB/全球AI峰会的英文答辩辅导</li>
+        <li><b>海外升学链路</b> — 竞赛获奖 → 留学背景提升 → 海外名校申请</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>国际化定价策略</h3>
+  <table>
+    <tr><th>产品线</th><th>国内版</th><th>国际化版</th><th>溢价</th></tr>
+    <tr><td>3天备赛营</td><td>¥3,980</td><td>¥5,980（含英文材料辅导）</td><td>+50%</td></tr>
+    <tr><td>竞赛冲刺</td><td>¥12,800</td><td>¥29,800（含英文答辩）</td><td>+133%</td></tr>
+    <tr><td>VIP保奖</td><td>¥19,800</td><td>¥49,800（保国际赛奖项）</td><td>+152%</td></tr>
+    <tr><td>长期陪跑</td><td>¥48,000</td><td>¥98,000-¥198,000（含海外升学）</td><td>+104%</td></tr>
+  </table>
+  <p style="font-size:13px;color:#718096;">国际化版本定价翻倍以上：英文辅导成本更高 + 国际赛事家长支付意愿更强（海外升学的"刚需"属性）+ 悦洋海外资源的稀缺性溢价</p>
+</section>
+
+<!-- ===== PART 7: 营收预估 ===== -->
+<section>
+  <span class="section-label gold">PART 7</span>
+  <h2>国际化营收预估</h2>
+
+  <div class="highlight-box gold">
+    <b>💰 全年营收预估（国际化版）</b><br>
+    L1 引流：120人 × ¥599 = ¥71,880<br>
+    L2 专项：60人 × ¥4,500（均价）= ¥270,000<br>
+    L3 国际冲刺：15人 × ¥39,800（均价）= ¥597,000<br>
+    L4 陪跑：6人 × ¥128,000（均价）= ¥768,000<br>
+    <b style="font-size:18px;">合计约 ¥170万</b><br>
+    <span style="font-size:12px;">较v3国内版（¥130万）增加31%。增量主要来自L3产品客单价提升（国内¥16,000 → 国际¥39,800）<br>
+    L3/L4人数减少但单价翻倍，利润率更高（国际赛辅导为纯智力交付，边际成本低）</span>
+  </div>
+</section>
+
+<!-- ===== PART 8: 执行清单 ===== -->
+<section>
+  <span class="section-label red">PART 8</span>
+  <h2>本周执行清单（国际化版）</h2>
+
+  <div class="card" style="background:#fff5f5;border:1px solid #fed7d7;">
+    <p style="font-weight:700;color:#e53e3e;">距ICC报名截止还有32天 — ICC是悦洋国际化的第一张门票</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>🔥 本周必做</h4>
+      <ol>
+        <li>确认ICC首批辅导学员（1-2人）→ 目标：产出国际晋级案例</li>
+        <li>朋友圈发ICC测试 → 话术强调"ICC获奖→国际舞台"</li>
+        <li>对接悦洋海外集团 → 确认ICW/全球AI峰会资源支持</li>
+        <li>整理CTB往届获奖案例 → 建立国际赛事信任素材</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h4>📅 本月内</h4>
+      <ol>
+        <li>ICC备赛营课程定型 → 预留15%内容给ICW晋级规划</li>
+        <li>制作"国际化竞赛路径图" → 给家长看的可视化路线</li>
+        <li>录制英文路演示范视频 → CTB/ICW预备素材</li>
+        <li>确认CTB 2026-2027赛季报名时间</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>关键结论</strong><br>
+    1. <b>ICC是悦洋最核心的国际化入口赛事</b> — 国内白名单+国际晋级通道，双重价值<br>
+    2. <b>三赛复用（ICC+NOC+蓝桥杯）是效率引擎</b> — 75%内容重合，一次开发覆盖三赛<br>
+    3. <b>CTB+ICW+全球AI峰会构成高端产品线</b> — 客单价¥29,800-¥198,000，海外资源是竞争壁垒<br>
+    4. <b>"从国内到国际"是核心叙事</b> — 家长购买的不是一个赛事辅导，是一条完整的国际化成长路径<br>
+    5. <b>国际化版本定价是国内版的2-3倍</b> — 海外升学家长的支付意愿和价格敏感度完全不同
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p>悦洋教育 · Yueyang Education</p>
+  <p>联系人：杨辉 | 电话：13611414319</p>
+  <p style="font-size:11px;margin-top:6px;">本文档基于公开赛事信息整理，具体规则以各竞赛官网最新公告为准</p>
+</div>
+
+</body>
+</html>
