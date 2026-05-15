@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · 国际商赛 · 全球商业领袖之路</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a16; --card: #14142a; --border: #1e1e3a;
+    --text: #e8e8f0; --text-muted: #8888b0;
+    --accent: #7c5cfc; --accent-light: #a88cff;
+    --gradient: linear-gradient(135deg, #7c5cfc, #ff6b9d);
+    --gold: #f6c842; --green: #00d4aa; --blue: #5b8def; --cyan: #00e5ff; --orange: #ff8a50;
+  }
+  body { font-family: 'Noto Sans SC','Inter',sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 40px 20px;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(0,229,255,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 50%, rgba(124,92,252,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(255,138,80,0.04) 0%, transparent 60%),
+      var(--bg);
+    position: relative;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,229,255,0.10);
+    border: 1px solid rgba(0,229,255,0.20); color: var(--cyan);
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    padding: 6px 18px; border-radius: 20px; margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 56px); font-weight: 900;
+    letter-spacing: -2px; line-height: 1.12; margin-bottom: 10px;
+  }
+  .hero h1 .g { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero .subtitle {
+    font-size: clamp(14px, 2.2vw, 17px); color: var(--text-muted);
+    max-width: 500px; margin-bottom: 24px;
+  }
+
+  .advantage-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; max-width: 560px; margin: 0 auto 28px; width: 100%;
+  }
+  .adv-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 10px; text-align: center;
+  }
+  .adv-item .icon { font-size: 20px; margin-bottom: 2px; }
+  .adv-item h4 { font-size: 12px; font-weight: 600; }
+  .adv-item p { font-size: 10px; color: var(--text-muted); }
+
+  .comp-list {
+    max-width: 560px; margin: 0 auto 24px; width: 100%; text-align: left;
+  }
+  .comp-item {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 8px;
+  }
+  .comp-item .num {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .comp-item .info { flex: 1; }
+  .comp-item .info h4 { font-size: 13px; font-weight: 600; }
+  .comp-item .info p { font-size: 10px; color: var(--text-muted); }
+  .comp-item .tag {
+    font-size: 9px; padding: 3px 10px; border-radius: 10px;
+    background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.12);
+    color: var(--green); flex-shrink: 0;
+  }
+
+  .timeline {
+    max-width: 560px; margin: 0 auto 28px; text-align: left; width: 100%;
+    position: relative;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+  .tl-item { display: flex; gap: 16px; margin-bottom: 16px; position: relative; }
+  .tl-dot {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .tl-dot.blue { background: var(--blue); }
+  .tl-dot.purple { background: var(--accent); }
+  .tl-dot.gold { background: var(--gold); color: #1a1a2a; }
+  .tl-dot.green { background: var(--green); color: #1a1a2a; }
+  .tl-dot.cyan { background: var(--cyan); color: #1a1a2a; }
+  .tl-content .period { font-size: 10px; color: var(--accent-light); font-weight: 600; letter-spacing: 1px; }
+  .tl-content .action { font-size: 13px; font-weight: 600; }
+  .tl-content .result { font-size: 11px; color: var(--text-muted); }
+
+  .price-block {
+    background: rgba(124,92,252,0.06);
+    border: 1px solid rgba(124,92,252,0.15);
+    border-radius: 16px; padding: 20px 28px;
+    max-width: 420px; margin: 0 auto 24px; width: 100%;
+  }
+  .price-block .row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; }
+  .price-block .row .name { font-size: 13px; color: var(--text-muted); }
+  .price-block .row .price { font-size: 17px; font-weight: 700; }
+  .price-block .row .price em { font-size: 12px; color: var(--text-muted); font-style: normal; }
+  .price-block .divider { border-top: 1px solid var(--border); margin: 6px 0; }
+  .price-block .total { display: flex; justify-content: space-between; align-items: center; padding-top: 2px; }
+  .price-block .total .name { font-size: 14px; font-weight: 700; color: var(--accent-light); }
+  .price-block .total .price { font-size: 22px; font-weight: 900; color: var(--accent-light); }
+  .price-block .total .price em { font-size: 13px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 40px; border-radius: 12px; font-size: 16px;
+    font-weight: 600; text-decoration: none; transition: all 0.2s;
+    cursor: default;
+  }
+  .btn-primary {
+    background: var(--gradient); color: #fff;
+    box-shadow: 0 4px 24px rgba(124,92,252,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,92,252,0.45); }
+
+  .footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 500px) {
+    .advantage-grid { grid-template-columns: 1fr; }
+    .comp-item { flex-wrap: wrap; }
+  }
+  .cat-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(0,229,255,0.08));
+    border: 1px solid rgba(124,92,252,0.3);
+    color: var(--accent-light); font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; padding: 4px 14px; border-radius: 20px; margin-bottom: 8px;
+  }
+  .cat-badge .dot {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light);
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
+</style>
+</head>
+<body>
+
+<div class="hero">
+
+  <div class="cat-badge"><span class="dot"></span> AI商科教育 · 品类开创者</div>
+
+  <div class="badge">🌍 国际青少年商业创新竞赛</div>
+
+  <h1>用AI创造商业价值<br>走向<span class="g">全球商业舞台</span></h1>
+  <p class="subtitle">MEC哥大商赛 · CBPA · ASDAN · SAGE · JA中国<br>悦洋爱创营 — 一套项目参加五大国际商赛</p>
+
+  <!-- 五大竞赛 -->
+  <div class="comp-list">
+    <div class="comp-item">
+      <div class="num" style="background:var(--blue);">1</div>
+      <div class="info">
+        <h4>MEC 全球模拟企业家大赛</h4>
+        <p>哥伦比亚大学商学院主办 · 藤校官方背书</p>
+      </div>
+      <span class="tag">9-12年级</span>
+    </div>
+    <div class="comp-item">
+      <div class="num" style="background:var(--accent);">2</div>
+      <div class="info">
+        <h4>CBPA 未来商业领袖研习社</h4>
+        <p>全球三大商赛之一 · 6-12年级均可参加</p>
+      </div>
+      <span class="tag">6-12年级</span>
+    </div>
+    <div class="comp-item">
+      <div class="num" style="background:var(--cyan);">3</div>
+      <div class="info">
+        <h4>ASDAN 阿思丹模拟商战</h4>
+        <p>全国覆盖最广 · AI主题方向明确</p>
+      </div>
+      <span class="tag">小初高</span>
+    </div>
+    <div class="comp-item">
+      <div class="num" style="background:var(--gold); color:#1a1a2a;">4</div>
+      <div class="info">
+        <h4>SAGE 赛智全球创业大赛</h4>
+        <p>SDG主题 · 全球总决赛每年8月</p>
+      </div>
+      <span class="tag">13-19岁</span>
+    </div>
+    <div class="comp-item">
+      <div class="num" style="background:var(--green); color:#1a1a2a;">5</div>
+      <div class="info">
+        <h4>JA中国学生公司全国赛</h4>
+        <p>真实创业实践 · 运营真正的学生公司</p>
+      </div>
+      <span class="tag">高中</span>
+    </div>
+  </div>
+
+  <!-- 核心优势 -->
+  <div class="advantage-grid">
+    <div class="adv-item">
+      <div class="icon">🤖</div>
+      <h4>AI项目通吃</h4>
+      <p>爱创营产出AI商业项目<br>一套作品参加所有商赛</p>
+    </div>
+    <div class="adv-item">
+      <div class="icon">🎯</div>
+      <h4>全年无空档</h4>
+      <p>从7月到次年8月<br>每个月都有赛事可参加</p>
+    </div>
+  </div>
+
+  <!-- 全年赛程 -->
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot purple">7</div>
+      <div class="tl-content">
+        <div class="period">7月 · 暑假营</div>
+        <div class="action">爱创营产出AI商业项目</div>
+        <div class="result">为全年赛事打好基础</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot blue">10</div>
+      <div class="tl-content">
+        <div class="period">10月 · SAGE+康莱德</div>
+        <div class="action">国际赛事报名启动</div>
+        <div class="result">SAGE中国区选拔 · 康莱德早鸟报名</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot cyan">12</div>
+      <div class="tl-content">
+        <div class="period">12月 · CBPA+康莱德</div>
+        <div class="action">CBPA区域赛 · 康莱德初选</div>
+        <div class="result">密集参赛季开启</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gold">3</div>
+      <div class="tl-content">
+        <div class="period">次年3月 · 巅峰赛季</div>
+        <div class="action">MEC+CBPA中国站 · 康莱德决选</div>
+        <div class="result">🏆 密集收获季 · 冲击最高荣誉</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 价格 -->
+  <div class="price-block">
+    <div class="row">
+      <span class="name">🎯 爱创营（5天BP+AI原型）</span>
+      <span class="price"><em>早鸟</em> ¥9,800</span>
+    </div>
+    <div class="row">
+      <span class="name">🌍 国际商赛冲刺营（5天特训）</span>
+      <span class="price"><em>早鸟</em> ¥15,840</span>
+    </div>
+    <div class="divider"></div>
+    <div class="total">
+      <span class="name">🔥 国际商赛全包（爱创营+冲刺）</span>
+      <span class="price"><em>省</em> ¥24,800</span>
+    </div>
+  </div>
+
+  <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">一套作品参加5+国际商赛 · 覆盖全年赛程 · 早鸟期5.20-6.10</div>
+
+  <span class="btn btn-primary">📱 咨询报名 · 开启全球商赛之旅</span>
+  <div style="margin-top:12px;font-size:13px;color:var(--text-muted);">适合6-12年级 · AI+商科培养 · 藤校认可的国际竞赛经历</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · 中国AI商科教育品类开创者 | 国际商业竞赛辅导专家
+</div>
+
+</body>
+</html>
