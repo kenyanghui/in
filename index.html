@@ -28,24 +28,24 @@
     border-bottom: 3px solid #f1c40f;
     gap: 16px;
   }
-  .topbar .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; white-space: nowrap; }
+  .topbar .logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; white-space: nowrap; }
   .topbar .logo span { color: #f1c40f; }
   .topbar .nav-links {
-    display: flex; gap: 6px; overflow-x: auto; flex: 1; justify-content: flex-end;
+    display: flex; gap: 10px; overflow-x: auto; flex: 1; justify-content: flex-end;
     -ms-overflow-style: none; scrollbar-width: none;
   }
   .topbar .nav-links::-webkit-scrollbar { display: none; }
   .topbar .nav-links a {
     color: rgba(255,255,255,.5);
     text-decoration: none;
-    font-size: 13px;
-    padding: 4px 10px;
+    font-size: 15px;
+    padding: 6px 14px;
     border-radius: 6px;
     transition: all .2s;
     white-space: nowrap;
   }
   .topbar .nav-links a:hover { color: #fff; background: rgba(255,255,255,.08); }
-  .topbar .badge { font-size: 11px; color: rgba(255,255,255,.35); white-space: nowrap; }
+  .topbar .badge { font-size: 12px; color: rgba(255,255,255,.35); white-space: nowrap; }
 
   /* ===== Layout ===== */
   .wrapper { display: flex; max-width: 1440px; margin: 0 auto; padding: 24px 20px; gap: 24px; }
@@ -53,7 +53,7 @@
 
   /* ===== Sidebar ===== */
   .sidebar {
-    width: 220px;
+    width: 230px;
     flex-shrink: 0;
     position: sticky;
     top: 88px;
@@ -68,8 +68,8 @@
   .sidebar::-webkit-scrollbar { width: 4px; }
   .sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
   .sidebar-logo {
-    padding: 18px 14px 14px;
-    font-size: 18px;
+    padding: 20px 14px 16px;
+    font-size: 20px;
     font-weight: 700;
     color: #1a1a2e;
     border-bottom: 1px solid #eee;
@@ -82,11 +82,11 @@
   .sidebar .menu li { margin-bottom: 1px; }
   .sidebar .menu a {
     display: block;
-    padding: 7px 14px 7px 16px;
+    padding: 8px 14px 8px 16px;
     border-radius: 0;
     color: #444;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     transition: all .15s;
     border-left: 3px solid transparent;
   }
@@ -97,22 +97,22 @@
     font-weight: 600;
   }
   .sidebar .menu .sec-title {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #bbb;
-    padding: 16px 14px 3px 16px;
+    padding: 18px 14px 4px 16px;
     letter-spacing: 1.5px;
     font-weight: 600;
   }
   .sidebar .menu .sub-item a {
     padding-left: 36px !important;
-    font-size: 12.5px;
+    font-size: 14px;
     color: #777;
   }
   .sidebar .menu .sub-item a:hover { color: #444; }
   .sidebar .menu .has-sub > a::after {
     content: "\25BC";
-    font-size: 8px;
+    font-size: 10px;
     opacity: .45;
     margin-left: 4px;
     transition: transform .2s;
