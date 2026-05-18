@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技特长生升学规划 · 家长讲座 · 悦洋教育</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    padding: 80px 40px 60px;
+    text-align: center;
+  }
+  .hero .tag {
+    display: inline-block;
+    background: #f1c40f;
+    color: #1a1a2e;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+  .hero h1 { font-size: 42px; margin-bottom: 12px; }
+  .hero h1 span { color: #f1c40f; }
+  .hero .sub { font-size: 18px; opacity: .7; margin-bottom: 20px; }
+  .hero .meta { font-size: 14px; opacity: .5; }
+
+  .wrapper { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+
+  .section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 44px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  }
+  .section h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section .subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .section h3 {
+    font-size: 17px;
+    margin: 20px 0 8px;
+    color: #2e86c1;
+  }
+  .section p { font-size: 15px; color: #444; margin-bottom: 10px; }
+  .section ul, .section ol { padding-left: 20px; margin-bottom: 12px; }
+  .section li { font-size: 15px; color: #444; margin-bottom: 6px; }
+
+  .highlight-box {
+    background: #fef9e7;
+    border-left: 5px solid #f1c40f;
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+  .highlight-box p { font-size: 15px; color: #333; margin-bottom: 4px; }
+
+  .blue-box {
+    background: #eaf2f8;
+    border-left: 5px solid #2e86c1;
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 12px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 12px 0;
+  }
+  .card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+  }
+  .card h4 { font-size: 14px; margin-bottom: 6px; color: #2e86c1; }
+  .card p { font-size: 13px; color: #555; margin-bottom: 0; }
+  .card .big-num {
+    font-size: 32px; font-weight: 700; color: #2e86c1;
+    line-height: 1.2;
+  }
+  .card.gold { border-top: 3px solid #f1c40f; }
+  .card.blue { border-top: 3px solid #2e86c1; }
+  .card.green { border-top: 3px solid #27ae60; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  table th {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table th:first-child { border-radius: 8px 0 0 0; }
+  table th:last-child { border-radius: 0 8px 0 0; }
+  table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eee;
+  }
+  table tr:hover td { background: #f8f9fa; }
+
+  .flow-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .flow-v .step {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    min-width: 180px;
+  }
+  .flow-v .step.gold { background: #f1c40f; color: #1a1a2e; }
+  .flow-v .step.blue { background: #2e86c1; }
+  .flow-v .arrow { font-size: 18px; color: #ccc; padding: 4px 0; }
+  .flow-v .branch {
+    display: flex; gap: 16px; margin-top: 4px; flex-wrap: wrap; justify-content: center;
+  }
+  .flow-v .branch-item {
+    background: #eaf2f8;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    border: 1px solid #cce5f7;
+  }
+
+  .tag-label {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .tag-red { background: #fde8e8; color: #c0392b; }
+  .tag-green { background: #e8f8f0; color: #27ae60; }
+  .tag-blue { background: #eaf2f8; color: #2e86c1; }
+  .tag-yellow { background: #fef9e7; color: #d4a017; }
+
+  .testimonial {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-style: italic;
+    margin: 12px 0;
+    border: 1px solid #eee;
+  }
+  .testimonial .author {
+    font-style: normal;
+    font-weight: 600;
+    color: #2e86c1;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 50px 20px 40px; }
+    .section { padding: 24px 20px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 封面 -->
+<div class="hero">
+  <div class="tag">悦洋教育 · 家长讲座</div>
+  <h1>AI+<span>科技特长生</span>升学规划</h1>
+  <p class="sub">用AI和商业思维，为孩子找到一条不一样的成长路径</p>
+  <div class="meta">悦洋教育AI学院院长 杨辉 &nbsp;|&nbsp; 2026年5月</div>
+</div>
+
+<div class="wrapper">
+
+<!-- 一、为什么要关注科技特长生 -->
+<div class="section">
+  <h2>🤔 为什么要关注科技特长生？</h2>
+  <p class="subtitle">世界在变，升学的逻辑也在变</p>
+
+  <p><strong>未来10年，AI将重塑每一个行业。</strong>世界经济论坛《未来就业报告》显示，到2027年全球将新增6900万个与AI和科技相关的工作岗位。我们的孩子未来面对的竞争，已经不是"跟谁比分数高"，而是"谁能用AI创造价值"。</p>
+
+  <div class="highlight-box">
+    <p><strong>核心判断：</strong>未来只有两种人——用AI的人和被AI替代的人。科技特长生不是"捷径"，而是让孩子提前站上未来赛道的起点。</p>
+  </div>
+
+  <h3>家长面临的三个难题</h3>
+  <div class="grid-3">
+    <div class="card gold">
+      <h4>❓ 信息差</h4>
+      <p>白名单竞赛、强基计划、科技特长生……政策年年变，不知道从哪入手。</p>
+    </div>
+    <div class="card gold">
+      <h4>❓ 选择难</h4>
+      <p>编程、机器人、AI、科创……这么多方向，孩子适合哪个？</p>
+    </div>
+    <div class="card gold">
+      <h4>❓ 坚持难</h4>
+      <p>很多孩子报了班去两次就不想去了，钱花了、时间花了，什么都没留下。</p>
+    </div>
+  </div>
+
+  <div class="blue-box">
+    <p><strong>悦洋的答案：</strong>以孩子为中心，以天赋为起点，用AI+商科创造教育，让孩子的兴趣变成能力，让能力变成升学竞争力。</p>
+  </div>
+</div>
+
+<!-- 二、什么是科技特长生 -->
+<div class="section">
+  <h2>📖 什么是科技特长生？</h2>
+  <p class="subtitle">官方定义 + 广东政策 + 升学价值</p>
+
+  <p><strong>科技特长生</strong>是指在科技创新、信息学、人工智能、机器人等领域有突出特长和潜力的学生。广东省各地高中（华附、省实、执信、广雅等）每年划出一定名额，通过自主招生/特长生的方式录取。</p>
+
+  <h3>2025年广东科技特长生招生学校（部分）</h3>
+  <div style="display:flex; flex-wrap:wrap; gap:8px; margin:12px 0;">
+    <span class="tag-label tag-blue">华师附中</span>
+    <span class="tag-label tag-blue">省实验中学</span>
+    <span class="tag-label tag-blue">执信中学</span>
+    <span class="tag-label tag-blue">广雅中学</span>
+    <span class="tag-label tag-blue">广州二中</span>
+    <span class="tag-label tag-blue">广州六中</span>
+    <span class="tag-label tag-blue">广大附中</span>
+    <span class="tag-label tag-blue">铁一中学</span>
+    <span class="tag-label tag-blue">广州外国语</span>
+    <span class="tag-label tag-blue">深圳中学</span>
+    <span class="tag-label tag-blue">深圳实验</span>
+    <span class="tag-label tag-blue">东莞中学</span>
+    <span class="tag-label tag-blue">佛山一中</span>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>升学价值：</strong>科技特长生不是"降分录取"，而是通过<strong>综合评价+自主招生</strong>通道，让孩子的科创能力被名校看到。2023年广东高考约93万人通过综合评价录取，这条路越来越宽。</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card blue">
+      <div class="big-num">2025-2028</div>
+      <h4>白名单赛事新周期</h4>
+      <p>教育部最新公示：47项白名单竞赛，AI/科创类大幅增加，蓝桥杯等13项旧赛事出局，ICC全球发明大会等新赛事上位。</p>
+    </div>
+    <div class="card blue">
+      <div class="big-num">47项</div>
+      <h4>白名单竞赛</h4>
+      <p>自然科学素养类23项、人文综合素养类12项、艺术体育类12项。科技特长生重点关注自然科学素养类。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 三、哪些比赛含金量最高 -->
+<div class="section">
+  <h2>🏆 哪些比赛真正有用？</h2>
+  <p class="subtitle">2025-2028白名单 · 科技特长生重点赛事</p>
+
+  <table>
+    <tr><th style="width:40%">赛事名称</th><th style="width:20%">主办</th><th>推荐理由</th></tr>
+    <tr>
+      <td><strong>ICC 全球发明大会</strong> <span class="tag-label tag-green">白名单</span></td>
+      <td>中国友好和平发展基金会</td>
+      <td>AI+创造，适合零基础入门，省奖对升学有用，可升级国际赛</td>
+    </tr>
+    <tr>
+      <td><strong>全国青少年人工智能大赛</strong> <span class="tag-label tag-green">白名单</span></td>
+      <td>中国儿童中心</td>
+      <td>AI方向新赛事，与悦洋AI课程高度对接</td>
+    </tr>
+    <tr>
+      <td><strong>全国青少年科技创新大赛</strong> <span class="tag-label tag-green">白名单</span></td>
+      <td>中国科协</td>
+      <td>科协主办，含金量高，但难度较大</td>
+    </tr>
+    <tr>
+      <td><strong>全国中小学信息技术创新与实践（NOC）</strong></td>
+      <td>城乡统筹发展研究中心</td>
+      <td>2025-2028已出局，但过往成绩仍有参考价值</td>
+    </tr>
+    <tr>
+      <td><strong>全国学生信息学奥林匹克（NOI）</strong> <span class="tag-label tag-green">白名单</span></td>
+      <td>中国计算机学会</td>
+      <td>信奥赛，含金量最高但难度极大，适合有编程基础的孩子</td>
+    </tr>
+    <tr>
+      <td><strong>Conrad Challenge 康莱德创新挑战赛</strong> <span class="tag-label tag-blue">国际</span></td>
+      <td>康莱德基金会</td>
+      <td>国际STEM+商赛，ICC升级路径之一</td>
+    </tr>
+    <tr>
+      <td><strong>ICW 世界青少年发明展</strong> <span class="tag-label tag-blue">国际</span></td>
+      <td>IFIA</td>
+      <td>40+国家参与，ICC获奖作品可直接升级</td>
+    </tr>
+  </table>
+
+  <div class="blue-box">
+    <p><strong>最新变化：</strong>2025-2028周期白名单大洗牌，蓝桥杯、NOC等13项被移除，AI/人工智能类赛事大幅增加。这意味着——主攻旧赛事的机构面临转型，而<strong>悦洋的AI+商科方向正好踩在政策风口上</strong>。</p>
+  </div>
+</div>
+
+<!-- 四、一个作品走多远 -->
+<div class="section">
+  <h2>🎯 一个作品，打通N个比赛</h2>
+  <p class="subtitle">ICC是入口——获奖了升级国际赛，没获奖对赌兜底</p>
+
+  <div class="flow-v">
+    <div class="step gold">孩子用AI工具做一个作品（3天）</div>
+    <div class="arrow">↓</div>
+    <div class="step blue">投稿ICC全球发明大会（白名单）</div>
+    <div class="arrow">↓</div>
+    <div class="branch">
+      <div class="branch-item">🏆 获奖 → 国赛/ICW/康莱德/Diamond</div>
+      <div class="branch-item">❌ 未获奖 → 免费转入国际赛（对赌）</div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step gold">收获：获奖证书 + 路演视频 + 作品集 + 申请素材</div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>核心优势：</strong>一个作品，国内比赛能用，国际比赛也能用。3天的投入，拿到的是两三年的升学材料。这就是悦洋"AI+商科"跟其他机构最大的不同。</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card green">
+      <h4>📌 对赌机制</h4>
+      <p>ICC省赛没获奖？免费转入国际赛辅导。家长不用担心"钱白花了"，孩子不用担心"白忙一场"。</p>
+    </div>
+    <div class="card green">
+      <h4>📌 启蒙营 ¥980</h4>
+      <p>1天体验，零基础做出AI作品。做不出来全额退。先让孩子试试，觉得好玩再考虑正式备赛。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 五、谁适合走科技特长生 -->
+<div class="section">
+  <h2>👨‍👩‍👧‍👦 谁适合走科技特长生？</h2>
+  <p class="subtitle">适合什么样的孩子？家长要做什么？</p>
+
+  <h3>适合的孩子</h3>
+  <div class="grid-3">
+    <div class="card">
+      <h4>🧪 爱动手、爱创造</h4>
+      <p>喜欢拆东西、搭乐高、做手工——这类孩子有"创造者"天赋，适合做项目制学习。</p>
+    </div>
+    <div class="card">
+      <h4>💻 喜欢电子产品</h4>
+      <p>爱玩手机/电脑、对AI好奇——与其限制，不如引导他把兴趣变成能力。</p>
+    </div>
+    <div class="card">
+      <h4>🤔 思维活跃、想法多</h4>
+      <p>成绩可能不是最拔尖的，但点子多、有主见——这正是创业者/产品经理的苗子。</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>教育理念：</strong>没有缺点的孩子，只有还没被发现的闪光点。我们的方法——先通过天赋测评了解孩子的特质，再匹配适合的方向，而不是盲目跟风学编程。</p>
+  </div>
+
+  <h3>家长要做的三件事</h3>
+  <ol>
+    <li><strong>打开信息差</strong>——了解白名单赛事、科技特长生政策，不要等孩子初三了才后悔没早点规划。</li>
+    <li><strong>找到孩子的天赋方向</strong>——不是所有孩子都适合学编程，AI创造、商业设计、科创发明……方向比努力重要。</li>
+    <li><strong>给孩子一个尝试的机会</strong>——¥980的启蒙营，1天时间，让孩子做一个AI作品出来。喜欢再继续，不喜欢也没损失。</li>
+  </ol>
+</div>
+
+<!-- 六、悦洋怎么做 -->
+<div class="section">
+  <h2>💡 悦洋AI+商科创造教育</h2>
+  <p class="subtitle">跟其他机构不一样——我们不教刷题，我们教创造</p>
+
+  <div class="grid-3">
+    <div class="card gold">
+      <h4>🤖 AI工具链</h4>
+      <p>不写代码，不刷题。用AI工具让孩子直接做出可演示的作品。像用PPT一样简单，3年级就能上手。</p>
+    </div>
+    <div class="card gold">
+      <h4>💼 商业思维</h4>
+      <p>孩子不光做作品，还要讲清楚"我这个东西能解决什么问题、谁会买单"——这是ICC评分的重要部分，也是名校最看重的思维。</p>
+    </div>
+    <div class="card gold">
+      <h4>🌐 国际视野</h4>
+      <p>ICC只是起点。获奖后升级ICW世界发明展、康莱德挑战赛、Diamond Challenge——每一步都有清晰路径。</p>
+    </div>
+  </div>
+
+  <h3>产品体系</h3>
+  <table>
+    <tr><th>产品</th><th>价格</th><th>时长</th><th>适合谁</th></tr>
+    <tr><td>启蒙营</td><td>¥980</td><td>1天</td><td>零基础，想先体验AI创造的孩子</td></tr>
+    <tr><td>ICC 3天备赛营</td><td>¥3,980-¥6,800</td><td>3天</td><td>已报名ICC，需要完整参赛材料的孩子</td></tr>
+    <tr><td>一稿三赛包奖</td><td>¥15,800</td><td>全程</td><td>想拿奖项、同时冲击多个赛事的孩子</td></tr>
+    <tr><td>背景提升陪跑</td><td>¥48,000+</td><td>长期</td><td>有留学规划，需要完整背景提升方案的孩子</td></tr>
+  </table>
+
+  <div class="blue-box">
+    <p><strong>后续拓展：</strong>AI+商科只是开始。我们正在拓展HTML网页制作、数据可视化等更多方向，让孩子有更丰富的产出，匹配更多赛事和申请需求。</p>
+  </div>
+</div>
+
+<!-- 七、常见问题 -->
+<div class="section">
+  <h2>❓ 家长最常问的四个问题</h2>
+
+  <table>
+    <tr><th style="width:30%">问题</th><th>回答</th></tr>
+    <tr>
+      <td><strong>"孩子零基础能参加吗？"</strong></td>
+      <td>完全可以。我们的AI工具链就是为零基础设计的——不写代码，用拖拽+对话式操作，3年级就能上手。启蒙营1天就能做出作品。</td>
+    </tr>
+    <tr>
+      <td><strong>"这个跟编程课有什么区别？"</strong></td>
+      <td>编程课教的是"写代码"，我们教的是"用AI创造"。目标不是培养程序员，而是培养会用AI工具解决真实问题的创造者。视野更宽、路径更多。</td>
+    </tr>
+    <tr>
+      <td><strong>"花这么多时间搞竞赛，影响学习怎么办？"</strong></td>
+      <td>ICC备赛营只需要3天（寒假/假期集中完成），不占用平时上课时间。而且做项目过程中锻炼的解决问题能力、表达能力、逻辑思维，对学科学习反而是促进。</td>
+    </tr>
+    <tr>
+      <td><strong>"参加ICC就能上名校吗？"</strong></td>
+      <td>不能保证。但ICC省奖是写在申请材料里的硬通货——无论是国内综评还是海外申请。而且我们设计了升级路径+对赌机制，确保孩子每一次投入都有产出。</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 八、下一步 -->
+<div class="section">
+  <h2>👉 下一步：从一次体验开始</h2>
+  <p class="subtitle">不用马上决定，先让孩子试一试</p>
+
+  <div class="grid-2">
+    <div class="card green" style="text-align:center; padding:28px;">
+      <div style="font-size:36px; margin-bottom:8px;">🎮</div>
+      <h4>启蒙营 · ¥980</h4>
+      <p>1天时间，孩子做出第一个AI作品。零基础、不写代码。<br><strong>做不出来全额退。</strong></p>
+    </div>
+    <div class="card blue" style="text-align:center; padding:28px;">
+      <div style="font-size:36px; margin-bottom:8px;">📋</div>
+      <h4>免费咨询</h4>
+      <p>联系我们，了解更多科技特长生规划信息。<br>悦洋海外集团客户享专属服务通道。</p>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="text-align:center; font-size:16px; margin-top:16px;">
+    <p><strong>📌 ICC 2026年报名截止：6月15日。</strong>现在开始，还来得及。</p>
+  </div>
+</div>
+
+<div class="footer">
+  悦洋教育 · AI+商科青少年创造教育开创者<br>
+  本讲座内容仅供参考，具体政策以各地教育局最新文件为准。
+</div>
+
+</div>
+
+</body>
+</html>
