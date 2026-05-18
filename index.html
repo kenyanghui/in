@@ -263,6 +263,15 @@
     background: #eaf2f8; color: #2e86c1; white-space: nowrap;
   }
   .sub-nav a:hover { background: #d4e6f1; text-decoration: none; }
+
+  /* ===== Sidebar Toggle ===== */
+  .sidebar .menu .has-sub > a::after {
+    content: "▼"; font-size: 9px; opacity: .5; margin-left: 4px;
+    transition: transform .2s; display: inline-block;
+  }
+  .sidebar .menu .has-sub.collapsed > a::after { content: "▶"; }
+  .sidebar .menu .sub-item { display: block; }
+  .sidebar .menu .sub-item.collapsed { display: none; }
 </style>
 </head>
 <body>
@@ -290,60 +299,60 @@
 <!-- ===== Sidebar ===== -->
 <aside class="sidebar">
   <ul class="menu">
-    <li class="sec-title">品牌核心</li>
+    <li class="sec-title">悦洋教育规划</li>
     <li><a href="#brand">品牌与哲学</a></li>
     <li><a href="#chain">全链路闭环</a></li>
-
-    <li class="sec-title">产品体系</li>
-    <li><a href="#product">产品全景</a></li>
+    <li class="has-sub"><a href="#product">产品全景</a></li>
+    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v3_10赛事.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">📊 国内竞赛产品</a></li>
+    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v4_国际化.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">📊 国际竞赛产品</a></li>
+    <li class="sub-item"><a href="悦洋·五大成果国际化竞赛与展示机会分析.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">🏆 五大成果竞赛分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" class="sub">🔁 全链路闭环海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" class="sub">☀️ 暑假5天出项目海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank" class="sub">🎓 升学背书版海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank" class="sub">😰 家长焦虑版海报</a></li>
+    <li class="has-sub"><a href="#race">📊 赛事全景</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_NOC全国中小学信息技术创新与实践大赛.md" target="_blank" class="sub">📄 NOC大赛分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_中国国际大学生创新大赛萌芽赛道.md" target="_blank" class="sub">📄 萌芽赛道分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_全国青少年人工智能创新挑战赛.md" target="_blank" class="sub">📄 AI挑战赛分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_宋庆龄少年儿童发明奖.md" target="_blank" class="sub">📄 宋庆龄奖分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_康莱德创新挑战赛.md" target="_blank" class="sub">📄 康莱德分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_国际青少年商业竞赛.md" target="_blank" class="sub">📄 国际商赛分析</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="#race-au" class="sub" style="font-size:13px;color:#888;">🇦🇺 澳洲赛事库</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" class="sub">🏅 赛事直通车海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank" class="sub">📊 NOC大赛海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank" class="sub">🌱 萌芽赛道海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank" class="sub">🤖 AI挑战赛海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank" class="sub">🏆 宋庆龄发明奖海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank" class="sub">🚀 康莱德挑战赛海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank" class="sub">🌍 国际商赛海报</a></li>
 
     <li class="sec-title">重点板块</li>
-    <li><a href="#icc">🏅 ICC全球发明大会</a></li>
-    <li><a href="#race">📊 赛事全景</a></li>
-    <li><a href="#race-au" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">🇦🇺 澳洲赛事库</a></li>
+    <li class="has-sub"><a href="#icc">🏅 ICC全球发明大会</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank" class="sub">🏅 ICC海报</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC完整资料合集.html" target="_blank" class="sub">📚 ICC完整资料合集</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC参赛手册_官方版.html" target="_blank" class="sub">📖 ICC参赛手册（官方版）</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC智能制造主题赛通知.html" target="_blank" class="sub">🏭 智能制造主题赛通知</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank" class="sub">🎤 ICC内部宣讲（海外版）</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC辅导系统_AI商科升级版_v1.html" target="_blank" class="sub" style="color:#7c5cfc;">🚀 ICC辅导系统AI商科升级版</a></li>
+    <li class="has-sub"><a href="#course">🚀 AI商科启蒙一日营</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_一日创造营_招生海报文案.html" target="_blank" class="sub">📝 招生文案</a></li>
+    <li class="has-sub"><a href="#parent-lecture">🗣 家长宣讲会</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="科技特长生升学规划_家长讲座.html" target="_blank" class="sub">📚 科技特长生升学规划</a></li>
 
+    <li><a href="游学营市场对比分析.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">✈️ 游学营对比分析</a></li>
     <li class="sec-title">物料中心</li>
-    <li><a href="#poster">🎨 招生海报库</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank" class="sub">🏅 ICC全球发明大会</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" class="sub">🔁 全链路闭环</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" class="sub">☀️ 暑假5天出项目</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" class="sub">🏅 赛事直通车</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank" class="sub">😰 家长焦虑版</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank" class="sub">🎓 升学背书版</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank" class="sub">📊 NOC大赛</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank" class="sub">🌱 萌芽赛道</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank" class="sub">🤖 AI挑战赛</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank" class="sub">🏆 宋庆龄发明奖</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank" class="sub">🚀 康莱德挑战赛</a></li>
-    <li style="padding-left:28px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank" class="sub">🌍 国际商赛</a></li>
-
-    <li class="sec-title">文档</li>
-    <li><a href="悦洋教育_ICC市场竞争分析报告_v1.html" target="_blank" class="sub">📊 ICC竞争分析报告</a></li>
-    <li><a href="悦洋教育_竞赛产品矩阵分析_v3_10赛事.html" target="_blank" class="sub">📊 竞赛矩阵v3</a></li>
-    <li><a href="悦洋教育_竞赛产品矩阵分析_v4_国际化.html" target="_blank" class="sub">📊 竞赛矩阵v4</a></li>
-    <li><a href="悦洋·五大成果国际化竞赛与展示机会分析.html" target="_blank" class="sub">🏆 五大成果竞赛分析</a></li>
-    <li><a href="游学营市场对比分析.html" target="_blank" class="sub">✈️ 游学营对比分析</a></li>
-    <li><a href="悦洋教育_ICC辅导系统_AI商科升级版_v1.html" target="_blank" class="sub" style="color:#7c5cfc;font-weight:600;">🚀 ICC辅导系统AI商科升级版</a></li>
-
-    <li class="sec-title">内容物料</li>
-    <li><a href="AI青少年一日创造营-6小时体验课.html" target="_blank" class="sub">🚀 一日创造营体验课</a></li>
-    <li><a href="悦洋教育_一日创造营_招生海报文案.html" target="_blank" class="sub">📝 创造营招生文案</a></li>
-    <li><a href="悦洋教育_全球发明大会ICC结合方案_v1.html" target="_blank" class="sub">📋 ICC结合方案v1</a></li>
-    <li><a href="悦洋教育_ICC广东省赛_备赛执行计划.html" target="_blank" class="sub">📋 ICC备赛执行计划</a></li>
-    <li><a href="悦洋教育_ICC备赛训练营_课程大纲与一日创造营招生文案.html" target="_blank" class="sub">📋 ICC课程大纲+文案</a></li>
-    <li><a href="悦洋教育_ICC备赛训练营_招生海报文案.html" target="_blank" class="sub">📋 ICC海报文案</a></li>
-    <li><a href="悦洋教育_ICC参赛材料模板_学员版.html" target="_blank" class="sub">📋 ICC参赛材料模板</a></li>
-    <li><a href="悦洋教育_ICC辅导需求测试_朋友圈文案.html" target="_blank" class="sub">📋 ICC辅导需求测试</a></li>
-    <li><a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank" class="sub">🎤 ICC内部宣讲（海外版）</a></li>
-    <li><a href="科技特长生升学规划_家长讲座.html" target="_blank" class="sub">📚 科技特长生升学规划</a></li>
-
-    <li class="sec-title">赛事分析文档</li>
-    <li><a href="../Enjoy/analysis/赛事分析_NOC全国中小学信息技术创新与实践大赛.md" target="_blank" class="sub">📄 NOC大赛分析</a></li>
-    <li><a href="../Enjoy/analysis/赛事分析_中国国际大学生创新大赛萌芽赛道.md" target="_blank" class="sub">📄 萌芽赛道分析</a></li>
-    <li><a href="../Enjoy/analysis/赛事分析_全国青少年人工智能创新挑战赛.md" target="_blank" class="sub">📄 AI挑战赛分析</a></li>
-    <li><a href="../Enjoy/analysis/赛事分析_宋庆龄少年儿童发明奖.md" target="_blank" class="sub">📄 宋庆龄奖分析</a></li>
-    <li><a href="../Enjoy/analysis/赛事分析_康莱德创新挑战赛.md" target="_blank" class="sub">📄 康莱德分析</a></li>
-    <li><a href="../Enjoy/analysis/赛事分析_国际青少年商业竞赛.md" target="_blank" class="sub">📄 国际商赛分析</a></li>
+    <li class="has-sub"><a href="#poster">🎨 招生海报库</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" class="sub">🔁 全链路闭环</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" class="sub">☀️ 暑假5天出项目</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" class="sub">🏅 赛事直通车</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank" class="sub">😰 家长焦虑版</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank" class="sub">🎓 升学背书版</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank" class="sub">📊 NOC大赛</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank" class="sub">🌱 萌芽赛道</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank" class="sub">🤖 AI挑战赛</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank" class="sub">🏆 宋庆龄发明奖</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank" class="sub">🚀 康莱德挑战赛</a></li>
+    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank" class="sub">🌍 国际商赛</a></li>
 
     <li class="sec-title">运营</li>
     <li><a href="#price">定价策略</a></li>
@@ -630,7 +639,7 @@
     <a href="#icc-materials">参赛材料</a>
     <a href="#icc-judge">评审标准</a>
     <a href="#icc-competition">竞争分析</a>
-    <a href="#icc-poster">海报物料</a>
+    <a href="#icc-poster">全部物料</a>
   </div>
 
   <!-- ICC海报：原图完整嵌入 -->
@@ -681,14 +690,18 @@
   <div class="callout green"><strong>⚡ 悦洋核心差异化：</strong>普通培训机构只教技术——学生参赛只有代码。悦洋学生拥有完整的商业计划书+AI原型+市场分析+路演视频。ICC尤其看重"技术如何转化为社会价值"——这正是AI商科赋予的竞争力。</div>
 
   <div class="poster-links">
-    <strong>📦 ICC相关物料</strong>：
+    <strong>📦 全部ICC物料</strong>：
     <a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank">🏅 海报</a> ·
+    <a href="悦洋教育_ICC市场竞争分析报告_v1.html" target="_blank">📊 竞争分析报告</a> ·
     <a href="悦洋教育_全球发明大会ICC结合方案_v1.html" target="_blank">📋 结合方案v1</a> ·
     <a href="悦洋教育_ICC广东省赛_备赛执行计划.html" target="_blank">📋 备赛执行计划</a> ·
-    <a href="悦洋教育_ICC备赛训练营_课程大纲与一日创造营招生文案.html" target="_blank">📋 课程大纲+招生文案</a> ·
+    <a href="悦洋教育_ICC备赛训练营_课程大纲与一日创造营招生文案.html" target="_blank">📋 课程大纲+文案</a> ·
     <a href="悦洋教育_ICC备赛训练营_招生海报文案.html" target="_blank">📋 海报文案</a> ·
     <a href="悦洋教育_ICC参赛材料模板_学员版.html" target="_blank">📋 参赛材料模板</a> ·
-    <a href="悦洋教育_ICC辅导需求测试_朋友圈文案.html" target="_blank">📋 辅导需求测试文案</a>
+    <a href="悦洋教育_ICC辅导需求测试_朋友圈文案.html" target="_blank">📋 辅导需求测试</a> ·
+    <a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank">🎤 内部宣讲（海外版）</a> ·
+    <a href="科技特长生升学规划_家长讲座.html" target="_blank">📚 科技特长生升学规划</a> ·
+    <a href="悦洋教育_ICC辅导系统_AI商科升级版_v1.html" target="_blank">🚀 ICC辅导系统AI商科升级版</a>
   </div>
 
   <hr>
@@ -733,6 +746,55 @@
     <div class="poster-card"><div class="ptitle">🏅 ICC全球发明大会版 <span class="tag confirmed">v1</span></div><div class="pdesc">"用AI解决真实问题，站上全球舞台发声"</div><div style="margin-top:4px;"><a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank">📄 打开 →</a></div></div>
     <div class="poster-card"><div class="ptitle">🎤 ICC内部宣讲（海外版）</div><div class="pdesc">悦洋海外集团内部ICC项目宣讲材料</div><div style="margin-top:4px;"><a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank">📄 打开 →</a></div></div>
     <div class="poster-card"><div class="ptitle">📚 科技特长生升学规划</div><div class="pdesc">家长讲座完整HTML版</div><div style="margin-top:4px;"><a href="科技特长生升学规划_家长讲座.html" target="_blank">📄 打开 →</a></div></div>
+  </div>
+
+  <!-- ICC竞赛冲刺班说明 -->
+  <div style="background:#fef9e7; border:2px solid #f1c40f; border-radius:14px; padding:28px 32px; margin-top:20px; line-height:1.8;">
+    <div style="font-size:18px; font-weight:700; margin-bottom:12px;">🤖 ICC 全球发明大会竞赛冲刺班</div>
+    <p style="font-size:15px; color:#444; margin-bottom:14px;">AI 商科导师全程陪跑，做 AI 科创发明，冲击国际大奖</p>
+
+    <div style="background:#eaf2f8; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+      <strong style="color:#2e86c1;">✨ ICC含金量：</strong>
+      <span style="color:#444; font-size:14px;">【官方权威定调】、【精准赋能升学跳板（⚠重点！）】、【悦洋 AI 商科教育的竞赛呈现】</span>
+    </div>
+
+    <div style="background:#eafaf1; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+      <strong style="color:#27ae60;">✨ 全面指导竞赛交付：</strong>
+      <span style="color:#444; font-size:14px;">AI作品原型、AI发明日志、查新报告、发明展板/发明原型照片、路演视频</span>
+    </div>
+
+    <div style="background:#fdedec; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+      <strong style="color:#c0392b;">🔥</strong>
+      <span style="color:#444; font-size:14px;">当下时代，提升认知比填充知识更重要。AI科创让孩子主动探索，培养独立决策与创造能力</span>
+    </div>
+
+    <div style="background:#f8f9fa; border-radius:10px; padding:16px 18px; margin-bottom:14px;">
+      <strong style="font-size:15px;">🤝 为什么选择悦洋？</strong>
+      <ul style="font-size:14px; color:#444; margin-top:8px; padding-left:18px;">
+        <li><strong>【"AI 商科"品类开创者】：</strong> 为"发明影响"维度叠加社会创新+商业价值</li>
+        <li><strong>【AI最顶尖工具链】：</strong> 别人做展板，我们做 AI 原型＋商业计划书</li>
+        <li><strong>【AI 产业导师团护航】</strong> 依托国际人工智能产业联盟，从选题到路演全流程陪伴，作品后续接更多赛项、展览、会议、论文、专利等成果</li>
+      </ul>
+      <div style="margin-top:10px; font-size:14px;">
+        <span style="color:#e74c3c;">❌</span> 我们拒绝流水线作业
+        <span style="color:#27ae60;">✅</span> 我们是从备赛到参赛全程负责！！
+      </div>
+    </div>
+
+    <div style="background:#f0e6f6; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+      <strong style="color:#7c5cfc;">✨ 顶尖竞赛教练</strong>
+      <span style="color:#444; font-size:14px;">— AI商科行业内最顶尖的竞赛教练【杨辉 KEN YANG】；海外认证全职教育专家【潘天杨 TIM PAN】</span>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:12px; font-size:14px; color:#555; padding:10px 0;">
+      <span>👩‍🎓 适合对象：<strong>10-18岁</strong></span>
+      <span>💰 费用：<strong style="color:#e74c3c;">¥19,800/人</strong></span>
+      <span>📅 时间：<strong>2026年5月30日-5月31日</strong>（本项目总时长不低于 20 课时，含一对一教练辅导跟进）</span>
+    </div>
+
+    <div style="background:#1a1a2e; color:#fff; border-radius:10px; padding:12px 18px; text-align:center; margin-top:10px;">
+      ⚠ 报名截止时间：<strong>2026年5月25日</strong> — 如果你对商业培养感兴趣、想用 AI 做原创发明、拿国际大奖背书，冲击国内外名校，快来报名吧～
+    </div>
   </div>
 </div>
 
@@ -994,6 +1056,25 @@
 
 </div><!-- /main -->
 </div><!-- /wrapper -->
+
+<script>
+(function() {
+  // Sidebar toggle: click parent → hide/show sub-items
+  var parents = document.querySelectorAll('.sidebar .has-sub > a');
+  parents.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var li = this.parentElement;
+      li.classList.toggle('collapsed');
+      var el = li.nextElementSibling;
+      while (el && el.classList.contains('sub-item')) {
+        el.classList.toggle('collapsed');
+        el = el.nextElementSibling;
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
