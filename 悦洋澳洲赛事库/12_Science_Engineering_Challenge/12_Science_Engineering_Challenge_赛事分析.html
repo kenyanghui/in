@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science & Engineering Challenge · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #1a1a0e, #16213e); border-bottom: 2px solid #f0883e; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #f0883e; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(240,136,62,.1); color: #f0883e; border: 1px solid rgba(240,136,62,.2); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #f0883e; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.orange { background: rgba(240,136,62,.06); border: 1px solid rgba(240,136,62,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.blue { background: rgba(88,166,255,.06); border: 1px solid rgba(88,166,255,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.free { background: rgba(46,160,67,.15); color: #3fb950; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #f0883e; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .activity-card { background: #0d1117; border: 1px solid #30363d; border-radius: 10px; padding: 16px; font-size: 12.5px; }
+  .activity-card .icon { font-size: 28px; margin-bottom: 6px; }
+  .activity-card h4 { font-size: 14px; color: #f0883e; margin-bottom: 4px; }
+  .activity-card .eng-field { font-size: 10px; color: #8b949e; margin-bottom: 6px; }
+  .activity-card p { color: #8b949e; font-size: 12px; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🔧 <span>Science & Engineering Challenge</span> 科学工程挑战赛</h1>
+  <div class="subtitle">悦洋教育 · 澳洲学员赛事分析与辅导方案</div>
+  <div class="tag-row">
+    <span>Y9–10 核心挑战日</span>
+    <span>纽卡斯尔大学</span>
+    <span class="tag free">$0–440 可免费</span>
+    <span>全澳最大STEM动手赛</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>📋 赛事总览</h2>
+  <p>Science & Engineering Challenge（SEC）由澳大利亚纽卡斯尔大学创办，是<strong>全澳规模最大的动手STEM竞赛</strong>。25年来累计超过48万名学生参与。与编程/AI类赛事不同，SEC强调"做中学"——学生在一天之内轮转完成多项真实工程挑战，体验从土木到电气、从机械到生物医学的多元工程领域。</p>
+  <div class="callout orange">
+    <strong>🔧 核心优势</strong>
+    全澳最大STEM动手赛 · 50%女生参与率 · 2025年Eureka STEM Inclusion大奖 · 可免费参加（Rotary赞助） · 无需编程基础
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 2026 赛季时间线</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>挑战日</strong> (2026.02–09)<br>各州陆续举办Challenge Days，学校报名参加</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>州决赛</strong> (2026.07–09)<br>各州高分学校晋级州决赛，争夺唯一州冠军名额</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>全国总决赛</strong> (2026.10)<br>8支州冠军校齐聚，争夺全国总冠军</div></div>
+</div>
+
+<div class="section">
+  <h2>🔬 竞赛项目</h2>
+  <p>每场挑战日从以下活动库中选取5–6个项目，覆盖多元工程领域：</p>
+  <div class="grid-3">
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🏗️</div>
+      <h4>抗震塔</h4>
+      <div class="eng-field">土木/结构工程</div>
+      <p>有限材料建造能承受震动台模拟地震的塔结构</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🌉</div>
+      <h4>桥梁承重</h4>
+      <div class="eng-field">结构工程</div>
+      <p>木棒+胶水建造承重比最高的桥梁</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🛸</div>
+      <h4>悬浮滑板</h4>
+      <div class="eng-field">机械/航空工程</div>
+      <p>设计气垫悬浮滑板，比拼悬浮高度与移动性能</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🦾</div>
+      <h4>仿生手</h4>
+      <div class="eng-field">生物医学/机械工程</div>
+      <p>制作可抓取物体的机械手，比拼灵巧度和抓取力</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🎯</div>
+      <h4>弹射器</h4>
+      <div class="eng-field">物理/机械工程</div>
+      <p>建造精准弹射器，测试投射距离与命中精度</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">⚡</div>
+      <h4>电网调度</h4>
+      <div class="eng-field">电气/能源工程</div>
+      <p>搭建模拟电网，实现最高效稳定的电力分配</p>
+    </div>
+    <div class="activity-card" style="border-left:3px solid #f0883e;">
+      <div class="icon">🐟</div>
+      <h4>原住民鱼栅</h4>
+      <div class="eng-field">原住民科学/环境工程</div>
+      <p>结合原住民传统知识与流体力学，设计捕鱼装置</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎯 参赛资格</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left:3px solid #f0883e;">
+      <div class="lbl" style="font-weight:700;">🧑‍🔧 核心挑战日</div>
+      <div class="val" style="font-size:12px;">Y9–10 · 16–32人/校</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">✅ 有州决赛+全国决赛晋级路径<br>✅ 每项活动2–4名队员<br>✅ 全员轮转参与</div>
+    </div>
+    <div class="card" style="border-left:3px solid #58a6ff;">
+      <div class="lbl" style="font-weight:700;">🎒 Discovery Days</div>
+      <div class="val" style="font-size:12px;">Y5–6 体验型活动</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">🔹 无晋级路径<br>🔹 动手体验STEM<br>🔹 培养科学兴趣</div>
+    </div>
+  </div>
+  <div class="card" style="border-left:3px solid #3fb950;margin-top:10px;">
+    <div class="lbl" style="font-weight:700;">🔨 Build ME a Future Days</div>
+    <div class="val" style="font-size:12px;">Y7–8 工程职业体验</div>
+    <div style="font-size:12px;color:#8b949e;margin-top:6px;">🔹 无晋级路径 · 🔹 动手体验工程职业 · 🔹 无编程要求</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🛤️ 晋级路径</h2>
+  <div class="step"><div class="num">🏫</div><div class="content"><strong>挑战日</strong> — 学校组队参与一日挑战，按总分排名</div></div>
+  <div class="step"><div class="num">🏆</div><div class="content"><strong>州决赛</strong> — 各州高分学校晋级，争夺唯一州冠军名额</div></div>
+  <div class="step"><div class="num">🇦🇺</div><div class="content"><strong>全国总决赛</strong> — 8支州冠军校争夺全国总冠军</div></div>
+</div>
+
+<div class="section">
+  <h2>💰 费用与评审</h2>
+  <div class="grid-2">
+    <div>
+      <h3>费用</h3>
+      <table>
+        <tr><th>项目</th><th>费用</th></tr>
+        <tr><td>Challenge Day</td><td>$0–440（视承办方）</td></tr>
+        <tr><td>Discovery Days</td><td>通常免费</td></tr>
+        <tr><td>Rotary赞助场次</td><td>免费</td></tr>
+        <tr><td>JCU承办场次</td><td>免费</td></tr>
+      </table>
+      <div class="callout green" style="margin-top:8px;">
+        <strong>✅ 绝大多数可免费参加</strong>
+        Rotary Clubs或大学赞助，学校实际承担费用很低甚至为零。
+      </div>
+    </div>
+    <div>
+      <h3>评审标准</h3>
+      <table>
+        <tr><th>维度</th><th>说明</th></tr>
+        <tr><td>性能指标</td><td>每项活动按量化指标评分（承重/精准度/高度等）</td></tr>
+        <tr><td>总分累积</td><td>各校所有活动得分累加</td></tr>
+        <tr><td>客观量化</td><td>基于可测量性能指标，最大限度减少主观评分</td></tr>
+      </table>
+      <h3 style="margin-top:12px;">奖项</h3>
+      <table>
+        <tr><th>奖项</th><th>说明</th></tr>
+        <tr><td>Challenge Day冠军</td><td>晋级州决赛</td></tr>
+        <tr><td>州冠军</td><td>晋级全国总决赛</td></tr>
+        <tr><td>全国总冠军</td><td>8校争冠，全国最高荣誉</td></tr>
+        <tr><td>参与证书</td><td>所有参与者获得证书</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📊 历年参与数据</h2>
+  <div class="grid-3">
+    <div class="card">
+      <div class="lbl">2025年参与学生</div>
+      <div class="val" style="color:#f0883e;">~26,800人</div>
+    </div>
+    <div class="card">
+      <div class="lbl">2025年参与学校</div>
+      <div class="val" style="color:#f0883e;">873+所</div>
+    </div>
+    <div class="card">
+      <div class="lbl">自2000年累计</div>
+      <div class="val" style="color:#f0883e;">480,000+名学生</div>
+    </div>
+    <div class="card">
+      <div class="lbl">女生比例</div>
+      <div class="val" style="color:#3fb950;">~50%</div>
+    </div>
+    <div class="card">
+      <div class="lbl">乡村/偏远地区</div>
+      <div class="val" style="color:#3fb950;">55%</div>
+    </div>
+    <div class="card">
+      <div class="lbl">原住民学生</div>
+      <div class="val" style="color:#3fb950;">5–6%</div>
+    </div>
+  </div>
+  <div class="callout orange" style="margin-top:10px;">
+    <strong>🏆 2025 Australian Museum Eureka Prize for STEM Inclusion</strong>
+    凭借25年来在STEM包容性方面的杰出贡献，SEC获得澳大利亚最高科学传播奖项。
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎓 悦洋辅导方案</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left:3px solid #f0883e;">
+      <div class="lbl" style="color:#f0883e;font-weight:700;">🔧 团队备赛包</div>
+      <div class="val">AUD $680</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">6周 · 适合已有校内队伍的Y9–10学生<br>校内团队训练+模拟挑战赛+活动指导手册+材料包</div>
+    </div>
+    <div class="card" style="border-left:3px solid #58a6ff;">
+      <div class="lbl" style="color:#58a6ff;font-weight:700;">🏫 学校合作计划</div>
+      <div class="val">AUD $2,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">一学期 · 适合整校参与的学校<br>教师培训+设备材料包+课程整合方案+校内挑战赛组织</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · Science & Engineering Challenge 赛事分析 · 2026.05 · edu@joy1996.com
+</div>
+
+</body>
+</html>

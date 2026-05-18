@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotics for Good · 联合国机器人挑战赛 · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #0a1a0e, #1a2a1e); border-bottom: 2px solid #3fb950; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #3fb950; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(63,185,80,.1); color: #3fb950; border: 1px solid rgba(63,185,80,.2); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #3fb950; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.green { background: rgba(63,185,80,.06); border: 1px solid rgba(63,185,80,.15); }
+  .callout.blue { background: rgba(88,166,255,.06); border: 1px solid rgba(88,166,255,.15); }
+  .callout.yellow { background: rgba(210,153,34,.06); border: 1px solid rgba(210,153,34,.15); }
+  .callout.red { background: rgba(248,81,73,.06); border: 1px solid rgba(248,81,73,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.free { background: rgba(63,185,80,.15); color: #3fb950; }
+  .tag.un { background: rgba(88,166,255,.15); color: #58a6ff; }
+  .tag.top { background: rgba(210,153,34,.2); color: #d29922; }
+  .tag.bot { background: rgba(139,148,158,.15); color: #8b949e; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #3fb950; color: #0d1117; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🌱 <span>Robotics for Good</span> Youth Challenge</h1>
+  <div class="subtitle">悦洋教育 · 联合国直属青少年机器人赛事分析</div>
+  <div class="tag-row">
+    <span>10–18岁</span>
+    <span>💰 完全免费</span>
+    <span>UN ITU · FAO</span>
+    <span>🇨🇭 日内瓦总决赛</span>
+    <span>SDG 2 零饥饿</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>📋 赛事总览</h2>
+  <div class="grid-3">
+    <div class="card"><div class="lbl">主办方</div><div class="val">ITU（联合国专门机构）</div></div>
+    <div class="card"><div class="lbl">合作伙伴</div><div class="val">FAO · 瑞士政府 · 40+ UN机构</div></div>
+    <div class="card"><div class="lbl">年龄要求</div><div class="val">10–18岁</div></div>
+    <div class="card"><div class="lbl">团队规模</div><div class="val">1–8人（可个人参赛）</div></div>
+    <div class="card"><div class="lbl">参赛费用</div><div class="val" style="color:#3fb950;">💰 完全免费</div></div>
+    <div class="card"><div class="lbl">全球决赛</div><div class="val">Palexpo, 日内瓦, 瑞士</div></div>
+  </div>
+  <div class="callout green">
+    <strong>🌍 全球唯一联合国直属青少年机器人竞赛</strong>
+    由ITU（国际电信联盟）主办、FAO（联合国粮农组织）合作，聚焦机器人+农业，支持SDG 2零饥饿。任意平台均可参赛，所有阶段完全免费。2026年首次在澳洲举办全国决赛。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 2025-2026 赛季时间线</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>赛季启动</strong> (2025年7月)<br>日内瓦AI for Good Global Summit发布，主题：机器人+农业</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>🇦🇺 澳洲全国决赛</strong> (2026.03.28 · 已完成)<br>@ Glenunga International High School, Adelaide<br>首届澳洲决赛 · 免费参加 · 获胜者晋级日内瓦</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>🇨🇭 日内瓦全球总决赛</strong> (2026.07.07-08 · 即将到来)<br>@ Palexpo, Geneva · 50+国家参赛 · AI for Good Global Summit期间</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>2026-2027新赛季发布</strong> (2026.07.10 · 未来)<br>日内瓦发布新主题 · 新赛季注册将开启</div></div>
+  <div class="callout yellow">
+    <strong>🔔 当前最佳行动时机</strong>
+    2025-2026赛季澳洲决赛已结束，但2026-2027新赛季将于2026年7月10日发布。现在是开始准备、提前学习机器人+编程的最佳时间！
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎯 赛季主题：机器人+农业</h2>
+  <p>与FAO（联合国粮农组织）合作，聚焦机器人技术在农业中的应用，支持SDG 2：零饥饿。游戏板包含两项自主任务（每项2分钟）。</p>
+
+  <h3>任务一：选择性种植与灌溉</h3>
+  <table>
+    <thead><tr><th>要素</th><th>描述</th></tr></thead>
+    <tbody>
+      <tr><td>目标</td><td>识别彩色地块 → 移动到正确网格位置 → "播种" → 投放蓝色球体"浇水"</td></tr>
+      <tr><td>核心技能</td><td>颜色识别、精确定位导航、物体操作</td></tr>
+      <tr><td>技术挑战</td><td>复杂背景中分辨彩色标记、精准移动到指定坐标</td></tr>
+    </tbody>
+  </table>
+
+  <h3>任务二：水果采摘与分拣</h3>
+  <table>
+    <thead><tr><th>要素</th><th>描述</th></tr></thead>
+    <tbody>
+      <tr><td>目标</td><td>识别、抓取彩色"水果"（红、黑、绿）→ 从高架平台分拣到对应容器</td></tr>
+      <tr><td>核心技能</td><td>物体识别与分类、机械臂/抓取机构控制、颜色分拣</td></tr>
+      <tr><td>技术挑战</td><td>高架平台取物、多色分类、精确放置</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout green">
+    <strong>🌿 赛事哲学</strong>
+    Robotics for Good强调工程问题解决能力，要求选手为真实农业挑战设计机器人解决方案——而非速度或对战竞赛。
+  </div>
+</div>
+
+<div class="section">
+  <h2>👥 参赛要求</h2>
+  <div class="grid-4">
+    <div class="card"><div class="lbl">年龄</div><div class="val">10–18岁</div></div>
+    <div class="card"><div class="lbl">组别</div><div class="val">Junior / Senior</div><div class="lbl" style="font-size:11px;">按最大年龄成员定组</div></div>
+    <div class="card"><div class="lbl">团队</div><div class="val">1–8人</div><div class="lbl" style="font-size:11px;">可个人参赛</div></div>
+    <div class="card"><div class="lbl">费用</div><div class="val" style="color:#3fb950;">完全免费</div></div>
+    <div class="card"><div class="lbl">平台</div><div class="val">任意平台</div><div class="lbl" style="font-size:11px;">LEGO/Arduino/RPi/自定义</div></div>
+    <div class="card"><div class="lbl">强制套件</div><div class="val">无</div><div class="lbl" style="font-size:11px;">无厂商锁定，鼓励回收材料</div></div>
+    <div class="card"><div class="lbl">语言</div><div class="val">英文</div></div>
+    <div class="card"><div class="lbl">开放</div><div class="val">全球所有国家</div></div>
+  </div>
+
+  <h3>晋级队伍额外提交</h3>
+  <table>
+    <thead><tr><th>材料</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>Robot Concept Note</td><td>2–4页：团队信息、机器人设计、系统架构、成本分解、搭建说明、电力需求、任务策略、挑战</td></tr>
+      <tr><td>Pitch Deck</td><td>路演PPT：问题陈述、解决方案、目标用户、可扩展性、成本、影响力</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📐 评审标准</h2>
+  <table>
+    <thead><tr><th>评审维度</th><th>描述</th><th>悦洋对应能力</th></tr></thead>
+    <tbody>
+      <tr><td>Innovation & Strategy</td><td>原创性、工程巧思、任务策略设计</td><td>✅ AI辅助创意设计 + 机器人搭建课程</td></tr>
+      <tr><td>Cost-to-Impact Efficiency</td><td>以最小资源产生最大影响</td><td>✅ 使用回收/低成本材料的设计理念</td></tr>
+      <tr><td>Practical Relevance</td><td>方案对真实农业的适用性</td><td>✅ SDG + 农业科技知识</td></tr>
+      <tr><td>Technical Performance</td><td>自主性、可靠性、任务完成度</td><td>✅ 编程 + 传感器 + 机械设计</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue">
+    <strong>🏆 特别奖项：Best Low-Cost Innovation Award</strong>
+    鼓励使用回收材料和低成本方案。使用LEGO、Arduino等开放平台+自制传感器的方案更容易获得评委青睐。这与悦洋"创造者精神"高度一致。
+  </div>
+</div>
+
+<div class="section">
+  <h2>🇨🇭 日内瓦全球总决赛</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="lbl">日期</div>
+      <div class="val">2026年7月7–8日</div>
+    </div>
+    <div class="card">
+      <div class="lbl">地点</div>
+      <div class="val">Palexpo, 日内瓦, 瑞士</div>
+    </div>
+    <div class="card">
+      <div class="lbl">参与国家</div>
+      <div class="val">50+个国家</div>
+    </div>
+    <div class="card">
+      <div class="lbl">配套活动</div>
+      <div class="val">AI for Good Global Summit</div>
+    </div>
+  </div>
+
+  <h3>获胜队伍权益</h3>
+  <div class="grid-3">
+    <div class="card">🎫 全球总决赛门票（全免）</div>
+    <div class="card">🛠 专属练习区</div>
+    <div class="card">🍱 峰会午餐</div>
+    <div class="card">🎪 AI for Good峰会全通证</div>
+    <div class="card">🏛 展览空间展示方案</div>
+    <div class="card">🤝 UN官员直接社交</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🌍 联合国背书的价值</h2>
+  <p>Robotics for Good Youth Challenge由联合国专门机构ITU直接主办，与FAO及40+联合国机构合作。其权威性和含金量在同类竞赛中无可比拟。</p>
+  <table>
+    <thead><tr><th>价值维度</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>权威性</td><td>全球唯一联合国直属青少年机器人竞赛</td></tr>
+      <tr><td>证书认可</td><td>官方ITU证书，大学申请含金量极高</td></tr>
+      <tr><td>社交网络</td><td>直接接触联合国官员、各国代表</td></tr>
+      <tr><td>SDG契合</td><td>与SDG 2（零饥饿）直接挂钩</td></tr>
+      <tr><td>国际视野</td><td>50+国家参赛，真正的全球舞台</td></tr>
+      <tr><td>公平性</td><td>完全免费，无厂商绑定，发展中国家平等参与</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🇦🇺 澳洲参赛指南</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>ITU官网注册</strong> — 免费注册，组队1-8人</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>搭建机器人</strong> — 任意平台（LEGO/Arduino/RPi/自定义）</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>参加国家决赛</strong> — 获胜后提交Concept Note + Pitch Deck</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>日内瓦全球总决赛</strong> — 50+国家队伍同台竞技</div></div>
+
+  <h3>澳洲全国决赛回顾</h3>
+  <table>
+    <thead><tr><th>项目</th><th>详情</th></tr></thead>
+    <tbody>
+      <tr><td>届次</td><td>第一届（2026年首次在澳洲举办）</td></tr>
+      <tr><td>日期</td><td>2026年3月28日（已结束）</td></tr>
+      <tr><td>地点</td><td>Glenunga International High School, Adelaide SA</td></tr>
+      <tr><td>主办方</td><td>Opportune Foundation（ITU澳洲合作伙伴）</td></tr>
+      <tr><td>结果</td><td>Junior组1队 + Senior组1队 → 晋级日内瓦</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout yellow">
+    <strong>📌 未来赛季规划</strong>
+    2026-2027赛季将于2026年7月10日在日内瓦发布。新主题预计与另一SDG/UN机构合作。澳洲全国决赛预计2027年3月举行，注册将于2026年下半年开放。
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎓 悦洋教育参赛方案</h2>
+
+  <h3>方案定位</h3>
+  <p>全球唯一联合国直属机器人赛事，与悦洋"AI+机器人+SDG"教学体系高度匹配。强调低成本创新、开放平台、解决真实世界问题。</p>
+
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #3fb950;">
+      <div class="lbl" style="color:#3fb950;font-weight:700;">🤖 Robotics入门包</div>
+      <div class="val">AUD $680</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 6周 · 适合零基础10-14岁<br>
+        机器人搭建 → 编程基础 → 农业任务模拟 → 传感器应用
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #58a6ff;">
+      <div class="lbl" style="color:#58a6ff;font-weight:700;">🚀 Geneva冲刺营</div>
+      <div class="val">AUD $1,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 8周 · 适合有基础13-18岁<br>
+        高级机器人 → AI集成 → 比赛策略 → Concept Note辅导
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #d29922;">
+      <div class="lbl" style="color:#d29922;font-weight:700;">🏫 学校团体营</div>
+      <div class="val">AUD $480/人</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 定制课时 · 适合学校组团（10人+）<br>
+        校内机器人社团 + 定制课程 + 团队备赛指导
+      </div>
+    </div>
+  </div>
+
+  <h3>辅导流程 - Robotics入门包</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>机器人基础</strong> (Week 1-2)<br>底盘设计搭建（LEGO/Arduino/自定义）· 核心传感器入门 · 电机控制</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>编程与自主控制</strong> (Week 3-4)<br>自主导航算法 · 颜色识别编程 · 物体抓取机制设计</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>农业任务实战</strong> (Week 5-6)<br>Mission 1种植与灌溉模拟 · Mission 2采摘与分拣模拟 · 综合测试优化</div></div>
+
+  <h3>辅导流程 - Geneva冲刺营</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>高级机器人设计</strong> (Week 1-2)<br>机械臂进阶 · 多传感器融合 · 任务策略优化</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>AI集成</strong> (Week 3-4)<br>视觉识别模型训练 · AI辅助导航 · 低成本传感器方案</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>比赛策略</strong> (Week 5-6)<br>全自动运行优化 · 稳定性测试 · 快速重置技术</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>文档+路演</strong> (Week 7-8)<br>Concept Note 2-4页 · Pitch Deck · 模拟评审反馈</div></div>
+
+  <h3>师资配置</h3>
+  <table>
+    <thead><tr><th>角色</th><th>资质</th><th>职责</th></tr></thead>
+    <tbody>
+      <tr><td>机器人导师</td><td>机器人工程/机电一体化背景</td><td>硬件搭建 + 机械设计指导</td></tr>
+      <tr><td>编程导师</td><td>计算机科学/AI工程师背景</td><td>自主导航 + AI视觉编程指导</td></tr>
+      <tr><td>竞赛教练</td><td>机器人赛事获奖者/裁判经验</td><td>比赛策略 + 任务优化训练</td></tr>
+      <tr><td>UN/SDG导师</td><td>国际关系/可持续发展背景</td><td>Concept Note + SDG叙事指导</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>❓ 常见问题</h2>
+  <p><strong>Robotics for Good和其他机器人比赛有什么不同？</strong><br>这是全球唯一联合国直属的青少年机器人竞赛。强调低成本创新和解决真实世界问题，而非速度/对战。任意平台均可参赛，所有阶段完全免费。</p>
+  <p style="margin-top:10px;"><strong>澳洲学生去日内瓦需要签证吗？</strong><br>澳大利亚护照持有人前往瑞士短期停留（不超过90天）不需要签证。悦洋可提供出行指导。</p>
+  <p style="margin-top:10px;"><strong>必须买指定机器人套件吗？</strong><br>完全不需要。开放平台竞赛，可使用LEGO、Arduino、Raspberry Pi、Micro:bit或自定义搭建。鼓励使用回收和低成本材料。</p>
+  <p style="margin-top:10px;"><strong>2026年3月决赛已过，还来得及吗？</strong><br>2025-2026赛季已结束，但2026-2027赛季将于2026年7月10日发布。现在开始准备新赛季是最佳时机！</p>
+  <p style="margin-top:10px;"><strong>零基础可以参加吗？</strong><br>完全可以。10-18岁均可参赛，Junior组为初学者设计。悦洋Robotics入门包从零开始教学。</p>
+  <p style="margin-top:10px;"><strong>参赛真的完全免费？</strong><br>是的。所有阶段——注册、参赛、全国决赛、全球总决赛——全部免费。日内瓦峰会对18岁以下同样免费。</p>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · Robotics for Good Youth Challenge 赛事分析 · 2026.05 · 悦洋海外集团成员<br>
+  edu@joy1996.com · 粤ICP备13046921号
+</div>
+
+</body>
+</html>

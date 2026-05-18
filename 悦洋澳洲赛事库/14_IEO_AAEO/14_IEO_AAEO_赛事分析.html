@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEO/AAEO 国际经济学奥林匹克 · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #0a0e1a, #1a1a2e); border-bottom: 2px solid #f1c40f; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { background: linear-gradient(135deg, #f1c40f, #f39c12); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(241,196,15,.1); color: #f1c40f; border: 1px solid rgba(241,196,15,.2); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #f1c40f; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.yellow { background: rgba(241,196,15,.06); border: 1px solid rgba(241,196,15,.15); }
+  .callout.blue { background: rgba(88,166,255,.06); border: 1px solid rgba(88,166,255,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.purple { background: rgba(163,113,247,.06); border: 1px solid rgba(163,113,247,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2,.grid-3 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.gold { background: rgba(241,196,15,.2); color: #f1c40f; }
+  .tag.silver { background: rgba(201,209,217,.15); color: #c9d1d9; }
+  .tag.blue { background: rgba(88,166,255,.15); color: #58a6ff; }
+  .tag.green { background: rgba(46,160,67,.15); color: #3fb950; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #f1c40f; color: #0d1117; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+  .pathway { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+  .pathway .node { background: #21262d; border: 1px solid #30363d; border-radius: 8px; padding: 8px 16px; font-size: 12px; text-align: center; }
+  .pathway .node strong { color: #f1c40f; }
+  .pathway .arrow { color: #484f58; font-size: 18px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1><span>IEO / AAEO</span> 国际经济学奥林匹克</h1>
+  <div class="subtitle">悦洋教育 · 澳洲学员赛事分析与辅导方案</div>
+  <div class="tag-row">
+    <span>Y10-12</span>
+    <span>AUD $25</span>
+    <span>Nobel Foundation</span>
+    <span>UNSW Sydney</span>
+    <span>13大国际科学奥赛之一</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>赛事概览</h2>
+  <div class="grid-3">
+    <div class="card"><div class="lbl">创办人</div><div class="val">Prof. Eric Maskin</div><div style="font-size:11px;color:#8b949e;">2007 Nobel Laureate, Harvard</div></div>
+    <div class="card"><div class="lbl">联合赞助</div><div class="val">Prof. Daron Acemoglu</div><div style="font-size:11px;color:#8b949e;">2024 Nobel Laureate</div></div>
+    <div class="card"><div class="lbl">AAEO主办方</div><div class="val">UNSW Business School</div><div style="font-size:11px;color:#8b949e;">+ CIEE</div></div>
+    <div class="card"><div class="lbl">参赛费用</div><div class="val">AUD $25/人</div><div style="font-size:11px;color:#8b949e;">AEO校内笔试</div></div>
+    <div class="card"><div class="lbl">语言</div><div class="val">Senior: 全英文</div><div style="font-size:11px;color:#8b949e;">Junior: 中英双语</div></div>
+    <div class="card"><div class="lbl">全球决赛</div><div class="val">Suzhou, China</div><div style="font-size:11px;color:#8b949e;">2026.07.12-20</div></div>
+  </div>
+  <div class="callout yellow">
+    <strong>核心定位</strong>
+    IEO是全球仅13个国际科学奥林匹克之一，诺奖得主创办。AAEO由UNSW商学院主办，是亚太区通往IEO全球决赛的核心区域站。费用仅AUD$25，是性价比最高的国际学术竞赛之一。
+  </div>
+</div>
+
+<div class="section">
+  <h2>澳洲参赛路径</h2>
+  <div class="pathway">
+    <div class="node"><strong>AEO</strong><br>澳大利亚奥赛<br><span style="color:#8b949e;font-size:11px;">校内笔试</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>AAEO</strong><br>UNSW悉尼站<br><span style="color:#8b949e;font-size:11px;">Top 5代表澳洲</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>IEO Global</strong><br>全球决赛<br><span style="color:#8b949e;font-size:11px;">苏州·中国</span></div>
+  </div>
+  <div class="callout blue">
+    <strong>参赛资格</strong>
+    澳洲学生通过学校经济学老师报名AEO（不可个人注册）。全国Top 5优胜者代表澳大利亚参加AAEO（UNSW悉尼站），AAEO优胜者晋级IEO全球决赛。
+  </div>
+</div>
+
+<div class="section">
+  <h2>2025-2026 赛季时间线</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>AEO Round 1</strong> (2025.05.24)<br>2小时校内笔试，选择题+简答题</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>AEO Round 2</strong> (2025.06.14)<br>48小时在线案例分析，Top 40晋级</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>AAEO @ UNSW</strong> (2025.07.03-06)<br>UNSW商学院线下站，含RBA参访</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>IEO全球决赛</strong> (2026.07.12-20)<br>中国苏州，全球顶尖经济学学子同台</div></div>
+  <div class="callout yellow">
+    <strong>2026年AEO尚未公布</strong>
+    预计2026年5月下旬公布具体日期。参考2025年安排，建议提前准备，密切关注 aeo.org.au。
+  </div>
+</div>
+
+<div class="section">
+  <h2>三大竞赛模块</h2>
+
+  <h3>模块1：经济学概念与分析（30%）</h3>
+  <p>60分钟笔试 — 选择题+开放式问题。Senior覆盖微观、宏观、国际经济学；Junior含个人理财（2026新增）。答对+4分，答错-1分。</p>
+
+  <h3>模块2：金融素养评估（20%）</h3>
+  <p>60分钟在线模拟 — 个人资产配置决策。涵盖财务规划、复利、投资、风险等。2026新增：加密货币、区块链、ESG投资。Senior组需Python/Stata/R能力。</p>
+
+  <h3>模块3：商业/政策案例研究（50%）</h3>
+  <p>团队24小时准备 → 英文陈述 + Q&A答辩。2026评分标准如下：</p>
+  <table>
+    <thead><tr><th>评审维度</th><th>权重</th><th>悦洋对应</th></tr></thead>
+    <tbody>
+      <tr><td>模型假设合理性</td><td>30%</td><td>✅ 商业模型构建训练</td></tr>
+      <tr><td>财务预测准确性</td><td>25%</td><td>✅ 数据分析+Excel/Python建模</td></tr>
+      <tr><td>ESG价值创造</td><td>20%</td><td>✅ SDG/ESG案例分析</td></tr>
+      <tr><td>创新性与可行性</td><td>15%</td><td>✅ Design Thinking工作坊</td></tr>
+      <tr><td>团队展示与Q&A</td><td>10%</td><td>✅ 路演+模拟答辩</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>2026年三级体系</h2>
+  <table>
+    <thead><tr><th>组别</th><th>年级</th><th>团队规模</th><th>语言</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag green">Junior-SL</span></td><td>7-9</td><td>1人 或 3-5人</td><td>中英双语</td></tr>
+      <tr><td><span class="tag blue">Junior-HL</span></td><td>9-12</td><td>必须3-5人</td><td>中英双语</td></tr>
+      <tr><td><span class="tag gold">Senior</span></td><td>10-12</td><td>必须3-5人</td><td>全英文</td></tr>
+    </tbody>
+  </table>
+  <p>澳洲AEO学生参加Senior组别。IEO全球决赛团队规模4人/队，推荐角色：理论分析师、数据处理员、策略设计师、陈述负责人。</p>
+</div>
+
+<div class="section">
+  <h2>AAEO悉尼站详情</h2>
+  <p>AAEO由UNSW Business School主办，是IEO在澳大拉西亚地区的官方区域站。</p>
+  <table>
+    <thead><tr><th>活动</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>赛前论文</td><td>线上提交，提前准备案例分析素材</td></tr>
+      <tr><td>数据与定量方法讲座</td><td>Prof. Gigi Foster (UNSW, Yale BA, Maryland PhD)</td></tr>
+      <tr><td>经济政策案例研究</td><td>线下1天，UNSW教授+NSW Treasury分析师评审</td></tr>
+      <tr><td>实地参访</td><td>RBA（澳大利亚储备银行）+ NSW Treasury</td></tr>
+    </tbody>
+  </table>
+  <div class="callout purple">
+    <strong>2025年参与国家/地区</strong>
+    澳大利亚、新西兰、中国、日本、新加坡、马来西亚、蒙古、尼泊尔、罗马尼亚、中国香港、中国澳门
+  </div>
+</div>
+
+<div class="section">
+  <h2>奖项设置与升学价值</h2>
+  <table>
+    <thead><tr><th>奖项</th><th>等级</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag gold">AEO National Winner</span></td><td>Top 5</td><td>代表澳大利亚参加AAEO</td></tr>
+      <tr><td><span class="tag gold">AAEO Gold/Silver/Bronze</span></td><td>Top 6</td><td>UNSW商学院颁奖</td></tr>
+      <tr><td><span class="tag silver">AAEO Honourable Mention</span></td><td>7-10名</td><td>荣誉提名</td></tr>
+      <tr><td><span class="tag gold">IEO Global Gold</span></td><td>Top 3%</td><td>全球金奖</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green">
+    <strong>升学数据</strong>
+    60%+ IEO决赛选手进入世界Top 50大学。85%中国区决赛选手被G5/常春藤录取。IEO作为国际科学奥赛，学术认可度远高于普通商赛。
+  </div>
+</div>
+
+<div class="section">
+  <h2>IEO vs DECA vs FBLA</h2>
+  <table>
+    <thead><tr><th>维度</th><th>IEO</th><th>FBLA</th><th>DECA</th></tr></thead>
+    <tbody>
+      <tr><td>类型</td><td>学术奥林匹克</td><td>商业概念竞赛</td><td>应用商业竞赛</td></tr>
+      <tr><td>难度</td><td>最高</td><td>入门友好</td><td>中等</td></tr>
+      <tr><td>核心能力</td><td>理论+数据+案例</td><td>商业知识</td><td>角色扮演+展示</td></tr>
+      <tr><td>认可度</td><td>诺奖背书，科学奥赛</td><td>广泛但层级较低</td><td>偏职业导向</td></tr>
+      <tr><td>适合人群</td><td>学术型，志在经济/金融</td><td>商业入门</td><td>实践型学生</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue">
+    <strong>悦洋建议</strong>
+    IEO适合学术能力强、有志于经济学/金融方向的学员。偏实践或入门学员可先参加FBLA/DECA过渡。三个赛事不冲突，可同时准备。
+  </div>
+</div>
+
+<div class="section">
+  <h2>悦洋教育参赛方案</h2>
+
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #3fb950;">
+      <div class="lbl" style="color:#3fb950;font-weight:700;">AEO入门冲刺</div>
+      <div class="val">AUD $980</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 6周 · Y10-11，有经济学基础<br>
+        经济学基础强化（Mankiw核心章节）→ 模块1模拟测试 → AEO Round 1备战
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #f1c40f;">
+      <div class="lbl" style="color:#f1c40f;font-weight:700;">IEO全程孵化</div>
+      <div class="val">AUD $3,200</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 12周 · Y10-12，目标AAEO/IEO<br>
+        三大模块全覆盖（理论+金融模拟+案例）+ 数据分析工具（Python/Stata）+ AAEO备战
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">1对1论文/路演</div>
+      <div class="val">AUD $2,400</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 4周 · 已晋级AAEO学员<br>
+        案例模型构建深度指导 → 英文路演精修 → 模拟Q&A答辩
+      </div>
+    </div>
+  </div>
+
+  <h3>辅导流程</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>理论筑基/诊断</strong> (Week 1-2)<br>AEO入门：Mankiw核心章节精讲+真题拆解。IEO全程：三大模块诊断</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>工具训练+金融模拟</strong> (Week 3-4)<br>Python/Stata入门（模块2 Senior要求）+ 个人资产配置模拟演练</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>案例研究深度训练</strong> (Week 5-8)<br>真实经济政策案例分析 + ESG价值创造框架 + 财务模型构建</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>冲刺与模拟</strong> (Week 9-12)<br>全真模拟模块1-3 + 路演打磨 + 模拟Q&A + AAEO注册指导</div></div>
+</div>
+
+<div class="section">
+  <h2>师资团队</h2>
+  <table>
+    <thead><tr><th>角色</th><th>资质</th><th>职责</th></tr></thead>
+    <tbody>
+      <tr><td>经济学导师</td><td>经济学博士/硕士背景</td><td>理论教学+案例分析指导</td></tr>
+      <tr><td>数据分析导师</td><td>数据科学/量化背景</td><td>Python/Stata工具教学</td></tr>
+      <tr><td>竞赛教练</td><td>前IEO/AAEO获奖者</td><td>赛事策略+答辩训练</td></tr>
+      <tr><td>英语导师</td><td>英语母语/雅思8+</td><td>英文陈述润色</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>预期成果</h2>
+  <table>
+    <thead><tr><th>学员水平</th><th>预期成绩</th><th>保底产出</th></tr></thead>
+    <tbody>
+      <tr><td>AEO入门（Y10-11）</td><td>AEO Round 1高分/晋级Round 2</td><td>经济学知识体系+参赛证书</td></tr>
+      <tr><td>AAEO备赛（Y10-12）</td><td>AAEO获奖/晋级IEO全球决赛</td><td>三大模块全真训练+数据分析能力</td></tr>
+      <tr><td>顶尖学员</td><td>IEO全球决赛获奖</td><td>Top 50大学申请素材+学术背书</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>常见问题</h2>
+  <p><strong>澳洲学生如何参加IEO？</strong><br>通过AEO选拔：校内笔试（Round 1）→ 在线案例分析（Round 2）→ Top 5代表澳洲参加AAEO（UNSW）→ AAEO优胜者晋级IEO全球决赛。</p>
+  <p style="margin-top:10px;"><strong>AEO报名需要什么条件？</strong><br>必须通过学校经济学老师报名，学生不能个人注册。费用仅AUD $25/人。</p>
+  <p style="margin-top:10px;"><strong>IEO对大学申请有多大帮助？</strong><br>IEO是13个国际科学奥林匹克之一，学术认可度远高于普通商赛。60%+全球决赛选手进入世界Top 50大学。在英美澳本科申请中是极强的学术证明。</p>
+  <p style="margin-top:10px;"><strong>AAEO需要去悉尼线下参加吗？</strong><br>是的。AAEO在UNSW悉尼线下举行，包括讲座、案例研究和实地参访（RBA、NSW Treasury）。悦洋提供参赛行程指导。</p>
+</div>
+
+<div class="section">
+  <h2>推荐准备资源</h2>
+  <table>
+    <thead><tr><th>类型</th><th>资源</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>核心教材</td><td>Mankiw《经济学原理》第10版</td><td>IEO核心参考教材</td></tr>
+      <tr><td>免费教材</td><td>CORE Econ《The Economy 2.0》</td><td>core-econ.org 免费在线</td></tr>
+      <tr><td>日常阅读</td><td>The Economist / Financial Times</td><td>每周精读，培养经济直觉</td></tr>
+      <tr><td>数据工具</td><td>Python (pandas/numpy) / Stata / R</td><td>模块2 Senior组要求</td></tr>
+      <tr><td>试题资源</td><td>ieoeconomics.org.cn</td><td>历年真题下载</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · IEO/AAEO 赛事分析 · 2026.05 · 悦洋海外集团成员<br>
+  edu@joy1996.com · 粤ICP备13046921号
+</div>
+
+</body>
+</html>

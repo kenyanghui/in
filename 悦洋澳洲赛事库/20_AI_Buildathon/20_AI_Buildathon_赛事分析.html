@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Buildathon / NEXTGEN Hackathon · 悦洋教育</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7}
+.banner{background:linear-gradient(135deg,#0a1628,#0a2a2e);border-bottom:3px solid #00d4ff;padding:50px 40px 36px;text-align:center}
+.banner h1{font-size:30px;font-weight:800;letter-spacing:1px}
+.banner h1 span{color:#00d4ff}
+.banner .subtitle{color:#8b949e;font-size:14px;margin-top:8px}
+.banner .tag-row{margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.banner .tag-row span{display:inline-block;font-size:11px;padding:3px 12px;border-radius:10px;background:rgba(0,212,255,.1);color:#00d4ff;border:1px solid rgba(0,212,255,.2)}
+.container{max-width:1000px;margin:0 auto;padding:24px 20px 40px}
+.section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:26px 28px;margin-bottom:16px}
+.section h2{font-size:19px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #30363d}
+.section h3{font-size:15px;margin:16px 0 8px;color:#00d4ff}
+.section p{font-size:13px;color:#8b949e;margin-bottom:8px}
+.section ul{font-size:13px;color:#8b949e;margin:6px 0 10px 18px}
+.section ul li{margin-bottom:4px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+table th{background:#21262d;color:#c9d1d9;padding:7px 10px;text-align:left;font-weight:600;font-size:11px}
+table td{padding:7px 10px;border-bottom:1px solid #21262d}
+table tr:nth-child(even) td{background:#0d1117}
+.callout{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13px}
+.callout.cyan{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15)}
+.callout.green{background:rgba(46,160,67,.06);border:1px solid rgba(46,160,67,.15)}
+.callout.yellow{background:rgba(210,153,34,.06);border:1px solid rgba(210,153,34,.15)}
+.callout strong{display:block;margin-bottom:4px;color:#e6edf3}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.card{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:14px 16px;font-size:13px}
+.card .lbl{color:#8b949e;font-size:11px}
+.card .val{font-weight:600}
+.tag{display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600}
+.tag.free{background:rgba(0,212,255,.15);color:#00d4ff}
+.tag.prize{background:rgba(210,153,34,.15);color:#d29922}
+.step{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #21262d;font-size:13px}
+.step .num{width:28px;height:28px;background:#00d4ff;color:#0d1117;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.step .content{flex:1}
+.step .content strong{color:#e6edf3}
+.event-card{border-radius:10px;background:#0d1117;border:1px solid #30363d;padding:20px;margin-bottom:14px;border-left:3px solid #00d4ff}
+.event-card h3{color:#00d4ff;font-size:15px;margin-bottom:6px;border-bottom:none;padding-bottom:0}
+.event-card .meta{font-size:12px;color:#8b949e;margin-bottom:8px}
+.event-card .meta span{margin-right:14px}
+.event-card ul{font-size:12.5px;color:#c9d1d9;list-style:none;padding:0}
+.event-card ul li{padding:3px 0;padding-left:16px;position:relative}
+.event-card ul li::before{content:'\25B8';position:absolute;left:0;color:#00d4ff}
+.footer{text-align:center;color:#484f58;font-size:12px;padding:24px;border-top:1px solid #21262d;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="banner">
+<h1>AI <span>Buildathon</span> / NEXTGEN Hackathon</h1>
+<div class="subtitle">悦洋教育 · 澳洲AI黑客马拉松赛事分析与辅导方案</div>
+<div class="tag-row">
+<span>免费参赛</span><span>Y10-11 / 大学生</span><span class="tag free">零代码友好</span><span>WA · QLD</span>
+</div>
+</div>
+<div class="container">
+
+<div class="section">
+<h2>赛事总览</h2>
+<p>AI Buildathon 是澳大利亚新兴的赛事类型——以<strong>生成式AI（GenAI）</strong>和<strong>大语言模型（LLM）</strong>为核心工具，要求参赛者在短时间内完成从创意到原型的全流程开发。目前已在西澳Cockburn和昆州Gold Coast出现两个代表性赛事，代表了本地化AI教育竞赛的兴起趋势。</p>
+<div class="callout cyan"><strong>悦洋推荐理由</strong>免费参赛、零门槛、快速产出。一日营/爱创营AI项目可直接转化参赛。赛前冲刺包仅<strong>$280（2天）</strong>，即可完成从AI工具集训到项目孵化的完整准备。</div>
+</div>
+
+<div class="section">
+<h2>两个代表赛事</h2>
+
+<div class="event-card">
+<h3>Next GenAI 2026 Hackathon — Cockburn, WA</h3>
+<div class="meta"><span>主办：City of Cockburn</span><span>已结束（2026.03.26）</span><span>Y10-11高中生</span></div>
+<ul>
+<li>西澳首个面向高中生的GenAI专属赛事</li>
+<li>主题领域：国防（Defence）与蓝色经济（Blue Economy）</li>
+<li>使用ChatGPT等生成式AI解决行业问题</li>
+<li>免费参赛 · 1天高强度项目孵化</li>
+</ul>
+</div>
+
+<div class="event-card" style="border-left-color:#d29922;">
+<h3>The NextGen AI Hackathon — Gold Coast, QLD</h3>
+<div class="meta"><span>主办：Cohort Innovation Space / Griffith</span><span>2026.05.21-22</span><span>大学本科生</span></div>
+<ul>
+<li>跨学科——商科、营销、金融、健康、科学、CS、工程、设计均欢迎</li>
+<li>零代码友好——不强制编程背景</li>
+<li>工作坊+创意孵化+原型构建+创业指导+路演竞赛</li>
+<li>奖金 $500 AUD · 免费参赛</li>
+</ul>
+</div>
+</div>
+
+<div class="section">
+<h2>参赛资格与形式对比</h2>
+<table>
+<thead><tr><th>维度</th><th>Cockburn（WA）</th><th>Gold Coast（QLD）</th></tr></thead>
+<tbody>
+<tr><td>目标年龄</td><td>Y10-11高中生</td><td>大学本科生</td></tr>
+<tr><td>时长</td><td>1天</td><td>2天</td></tr>
+<tr><td>技术门槛</td><td>低-中（GenAI使用）</td><td>低-中（零代码+技术AI）</td></tr>
+<tr><td>奖金</td><td>无</td><td>$500 AUD</td></tr>
+<tr><td>状态</td><td>已结束</td><td>即将举行</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>与悦洋课程的联系</h2>
+<table>
+<thead><tr><th>悦洋课程模块</th><th>对应赛事需求</th></tr></thead>
+<tbody>
+<tr><td><strong>一日营·AI工具探索</strong></td><td>ChatGPT/生成式AI使用、提示词工程</td></tr>
+<tr><td><strong>爱创营·AI项目孵化</strong></td><td>从创意到原型的完整项目流程</td></tr>
+<tr><td><strong>零代码AI工具</strong></td><td>Bubble, Glide, Cursor等低代码平台</td></tr>
+<tr><td><strong>路演演示技能</strong></td><td>Pitch Deck制作、演讲训练</td></tr>
+</tbody>
+</table>
+<div class="callout green" style="margin-top:12px;"><strong>核心价值</strong>赛事强调"AI解决真实问题"，与悦洋"学以致用"理念一致。参赛经验可直接用于后续更大规模的AI竞赛。</div>
+</div>
+
+<div class="section">
+<h2>悦洋辅导方案</h2>
+<div class="grid-2">
+<div class="card" style="border-left:3px solid #00d4ff;">
+<div class="lbl" style="color:#00d4ff;font-weight:700;">AI Buildathon 赛前冲刺包</div>
+<div class="val">AUD $280</div>
+<div style="font-size:12px;color:#8b949e;margin-top:6px;">2天 · Y9-12 / 大学新生<br>AI工具集训+项目孵化</div>
+</div>
+<div class="card" style="border-left:3px solid #58a6ff;">
+<div class="lbl" style="color:#58a6ff;font-weight:700;">AI项目孵化营</div>
+<div class="val">AUD $680</div>
+<div style="font-size:12px;color:#8b949e;margin-top:6px;">4周 · 有AI基础学员<br>AI能力进阶+竞赛项目打磨</div>
+</div>
+</div>
+
+<h3 style="margin-top:18px;">赛前冲刺包（$280 / 2天）日程</h3>
+<div class="step"><div class="num">D1</div><div class="content"><strong>AI工具集训（4h）</strong><br>高级提示词工程 · 零代码AI工具实操 · AI创意工作坊 · 案例拆解</div></div>
+<div class="step"><div class="num">D2</div><div class="content"><strong>项目孵化与路演（4h）</strong><br>快速原型构建 · AI模型集成 · Pitch Deck制作 · 模拟评审</div></div>
+<div class="callout cyan" style="margin-top:12px;"><strong>产出</strong>一个可演示的AI原型 + 5分钟路演展示</div>
+</div>
+
+</div>
+<div class="footer">悦洋教育 · AI Buildathon 赛事分析 · 2026.05 · edu@joy1996.com</div>
+</body>
+</html>

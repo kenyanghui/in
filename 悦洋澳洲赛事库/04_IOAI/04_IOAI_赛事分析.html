@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOAI 国际人工智能奥林匹克 · 澳洲赛道 · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #0f0a2e, #1a1040, #0d1b3e); border-bottom: 2px solid #8b5cf6; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #a78bfa; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(139,92,246,.1); color: #a78bfa; border: 1px solid rgba(139,92,246,.2); }
+  .banner .tag-row span.free { background: rgba(46,160,67,.15); color: #3fb950; border-color: rgba(46,160,67,.3); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #a78bfa; }
+  .section h4 { font-size: 13px; margin: 12px 0 6px; color: #c9d1d9; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.purple { background: rgba(139,92,246,.06); border: 1px solid rgba(139,92,246,.15); }
+  .callout.blue { background: rgba(59,130,246,.06); border: 1px solid rgba(59,130,246,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.yellow { background: rgba(210,153,34,.06); border: 1px solid rgba(210,153,34,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.free { background: rgba(46,160,67,.15); color: #3fb950; }
+  .tag.paid { background: rgba(248,81,73,.15); color: #f85149; }
+  .tag.top { background: rgba(139,92,246,.2); color: #a78bfa; }
+  .tag.bot { background: rgba(139,148,158,.15); color: #8b949e; }
+  .tag.gold { background: rgba(210,153,34,.2); color: #d29922; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #8b5cf6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .step .content strong { color: #e6edf3; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+  ul.dash { list-style: none; padding: 0; font-size: 13px; color: #8b949e; }
+  ul.dash li { padding: 3px 0; padding-left: 16px; position: relative; }
+  ul.dash li::before { content: '-'; position: absolute; left: 4px; color: #484f58; }
+  ul.check { list-style: none; padding: 0; font-size: 13px; color: #8b949e; }
+  ul.check li { padding: 4px 0; padding-left: 20px; position: relative; }
+  ul.check li::before { content: '\2713'; position: absolute; left: 0; color: #3fb950; font-weight: 700; }
+  .flow-row { display: flex; gap: 0; margin: 10px 0; flex-wrap: wrap; }
+  .flow-step { flex: 1; min-width: 120px; background: #0d1117; border: 1px solid #30363d; border-left: none; padding: 10px 12px; text-align: center; font-size: 12px; }
+  .flow-step:first-child { border-left: 1px solid #30363d; border-radius: 6px 0 0 6px; }
+  .flow-step:last-child { border-radius: 0 6px 6px 0; }
+  .flow-step .fnum { display: inline-block; background: #8b5cf6; color: #fff; width: 22px; height: 22px; border-radius: 50%; line-height: 22px; font-weight: 700; font-size: 11px; margin-bottom: 4px; }
+  .flow-step .flbl { color: #c9d1d9; font-weight: 600; }
+  .flow-step .fsub { color: #484f58; font-size: 10px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🤖 <span>IOAI</span> 国际人工智能奥林匹克</h1>
+  <div class="subtitle">悦洋教育 · 澳洲赛道赛事分析与辅导方案 · NOAI Australia</div>
+  <div class="tag-row">
+    <span>Y7–12</span>
+    <span class="free">💰 免费参赛</span>
+    <span>NOAI Australia</span>
+    <span>国家队选拔</span>
+    <span>🌏 阿斯塔纳2026</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>📋 赛事总览</h2>
+  <div class="grid-3">
+    <div class="card"><div class="lbl">主办方</div><div class="val">IOAI Foundation / NOAI Australia</div></div>
+    <div class="card"><div class="lbl">年龄要求</div><div class="val">Y7–12（赛前≤20岁）</div></div>
+    <div class="card"><div class="lbl">参赛形式</div><div class="val">线上多轮 → 混合国际赛</div></div>
+    <div class="card"><div class="lbl">参赛费用</div><div class="val" style="color:#3fb950;">全部免费</div><div style="font-size:11px;color:#8b949e;">国际赛注册费由组委会承担</div></div>
+    <div class="card"><div class="lbl">澳洲国家队</div><div class="val">8人（2队×4人）</div></div>
+    <div class="card"><div class="lbl">国际赛地点</div><div class="val">Astana, Kazakhstan</div><div style="font-size:11px;color:#8b949e;">2026.08.02–08</div></div>
+  </div>
+  <div class="callout purple">
+    <strong>🎯 悦洋核心推荐理由</strong>
+    IOAI是全球首个AI奥林匹克，澳洲选拔全程免费。Round 1无需编程基础，Y7即可参加。澳洲队曾获全球金奖，仅26%国家在实践和理论轮均获过奖牌。悦洋Python ML课程直接对应Round 2技能要求。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 2026年赛程</h2>
+  <table>
+    <thead><tr><th>阶段</th><th>日期</th><th>形式</th><th>时长</th><th>关键信息</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Registration</strong></td><td>2025.11.08 — 2026.03.27</td><td>在线</td><td>—</td><td>NOAI官网注册</td></tr>
+      <tr><td><strong>Round 1</strong> NOAI Level Assessment</td><td>2026.03.29 (Late: 04.05)</td><td>在线MCQ</td><td>45min</td><td>A-E选择，无需编程</td></tr>
+      <tr><td><strong>Round 2</strong> Advanced AI & Theory Test</td><td>2026.04.26</td><td>在线+编程</td><td>~90min</td><td>Python + sklearn生态</td></tr>
+      <tr><td><strong>Final</strong> APOAI Stage</td><td>2026.06.13</td><td>线上GPU</td><td>—</td><td>理论80%+实践20%</td></tr>
+      <tr><td><strong>IOAI International</strong></td><td>2026.08.02–08</td><td>混合·阿斯塔纳</td><td>6h×2天</td><td>仅国家队8人</td></tr>
+    </tbody>
+  </table>
+  <div class="callout yellow">
+    <strong>⚠️ 重要提醒</strong>
+    Round 1有Late Entry（04.05），建议尽量参加主轮次。Junior学生（Y7以下）可参加R1-R2作为体验，但不可入选国家队。
+  </div>
+</div>
+
+<div class="section">
+  <h2>🏗️ 四轮赛制详解</h2>
+
+  <h3>Round 1 — NOAI Level Assessment</h3>
+  <p>入门级AI素养测试，<strong>不要求编程基础</strong>。适合Y7–12所有学生。</p>
+  <table>
+    <thead><tr><th>项目</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>时长</td><td>45分钟</td></tr>
+      <tr><td>形式</td><td>线上选择题（A-E五选一）</td></tr>
+      <tr><td>内容</td><td>AI推理与思维、基础AI概念、基础概率/统计/逻辑推理</td></tr>
+      <tr><td>编程要求</td><td><span class="tag free">无</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Round 2 — Advanced AI & Theory Test</h3>
+  <p>进阶AI理论与编程能力测试。需Python基础。</p>
+  <table>
+    <thead><tr><th>项目</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>时长</td><td>~90分钟</td></tr>
+      <tr><td>形式</td><td>在线评估 + 编程挑战</td></tr>
+      <tr><td>内容</td><td>AI理论MCQ+简答+编程题</td></tr>
+      <tr><td>技术要求</td><td>矩阵/向量运算、概率、微积分、ML基础</td></tr>
+      <tr><td>允许库</td><td><code>numpy</code>, <code>pandas</code>, <code>scikit-learn</code>, Python标准库</td></tr>
+      <tr><td>禁止库</td><td>PyTorch, TensorFlow, Keras, JAX, scipy.signal</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Final — APOAI Stage</h3>
+  <p>国家队选拔核心轮次。理论80% + 实践20%。</p>
+  <table>
+    <thead><tr><th>项目</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>形式</td><td>线上GPU环境（Bohrium/Kaggle风格）</td></tr>
+      <tr><td>评分</td><td>理论 80% + 实践 20%</td></tr>
+      <tr><td>实践任务</td><td>Python + sklearn/pandas 完成ML任务</td></tr>
+    </tbody>
+  </table>
+
+  <h3>IOAI International Round（国家队专用）</h3>
+  <table>
+    <thead><tr><th>日程</th><th>时长</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>Day 1 个人赛</td><td>6小时</td><td>3道编程/AI问题</td></tr>
+      <tr><td>Day 2 个人赛</td><td>6小时</td><td>2-3道进阶问题（新主题）</td></tr>
+      <tr><td>团队挑战</td><td>协作</td><td>机器人/ML合作任务</td></tr>
+    </tbody>
+  </table>
+
+  <h3>国际赛库限制</h3>
+  <table>
+    <thead><tr><th>类别</th><th>允许</th><th>禁止</th></tr></thead>
+    <tbody>
+      <tr><td>ML框架</td><td>PyTorch, sklearn, xgboost, transformers</td><td>TensorFlow, Keras, AutoML</td></tr>
+      <tr><td>外部资源</td><td>内置GPT-4o（仅调试）</td><td>GitHub, Stack Overflow, arXiv, 预训练模型</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🇦🇺 澳洲国家队选拔机制</h2>
+  <div class="flow-row">
+    <div class="flow-step"><div class="fnum">1</div><div class="flbl">APOAI总排名</div><div class="fsub">理论80%+实践20%</div></div>
+    <div class="flow-step"><div class="fnum">2</div><div class="flbl">综合Top 12</div><div class="fsub">直接晋级选拔池</div></div>
+    <div class="flow-step"><div class="fnum">3</div><div class="flbl">理论追加4人</div><div class="fsub">理论单项最高分</div></div>
+    <div class="flow-step"><div class="fnum">4</div><div class="flbl">Training Camp</div><div class="fsub">Top 20受邀</div></div>
+    <div class="flow-step"><div class="fnum">5</div><div class="flbl">国家队8人</div><div class="fsub">2队×4人赴阿斯塔纳</div></div>
+  </div>
+
+  <div class="callout blue">
+    <strong>选拔规则</strong>
+    APOAI Final总分前12名 + 理论单项最高分追加4人 = 共16人进入选拔池。Top 20受邀参加NOAI Training Camp（免费）。最终8人代表澳洲参加IOAI国际赛。
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎓 参赛要求与准备</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="lbl" style="color:#a78bfa;font-weight:600;">基本资格</div>
+      <ul class="check" style="margin-top:6px;">
+        <li>Y7–12澳洲中学生</li>
+        <li>2026年7月1日前≤20岁</li>
+        <li>澳洲居民</li>
+        <li>Home-schooled亦可</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#a78bfa;font-weight:600;">各轮技能要求</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        <strong>R1:</strong> 无需编程<br>
+        <strong>R2:</strong> Python + numpy/pandas/sklearn<br>
+        <strong>APOAI:</strong> sklearn ML流程<br>
+        <strong>国际赛:</strong> PyTorch + 深度学习
+      </div>
+    </div>
+  </div>
+
+  <h3>推荐Python环境</h3>
+  <p><code>Python 3.9+ | numpy>=1.21 | pandas>=1.3 | scikit-learn>=1.0</code></p>
+
+  <h3>轮次工具需求对比</h3>
+  <table>
+    <thead><tr><th>轮次</th><th>编程</th><th>MCQ</th><th>理论</th><th>实践ML</th><th>GPU</th><th>外部库</th></tr></thead>
+    <tbody>
+      <tr><td>Round 1</td><td>✗</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr>
+      <tr><td>Round 2</td><td>✓</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td><td>numpy/pandas/sklearn</td></tr>
+      <tr><td>APOAI Final</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>sklearn生态</td></tr>
+      <tr><td>国际赛</td><td>✓</td><td>✗</td><td>✓</td><td>✓</td><td>✓</td><td>PyTorch等全栈</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🏆 历年成绩</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left:3px solid #d29922;">
+      <div class="lbl" style="color:#d29922;font-weight:700;">🥇 2024 · 保加利亚</div>
+      <div style="font-size:13px;color:#c9d1d9;margin-top:4px;"><strong>金奖 — 实践轮</strong></div>
+      <div style="font-size:12px;color:#8b949e;">Team A全球第3，最年轻参赛队，与MIT/斯坦福新生美国队并列</div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">🥉 2025 · 北京</div>
+      <div style="font-size:13px;color:#c9d1d9;margin-top:4px;"><strong>铜奖 — 理论轮</strong></div>
+      <div style="font-size:12px;color:#8b949e;">澳洲首枚理论奖牌，来自墨尔本选手</div>
+    </div>
+  </div>
+  <div class="callout green">
+    <strong>全球数据</strong>
+    仅16/61国家（26%）在实践轮和理论轮均获得过奖牌。澳洲是其中之一。澳洲2025年Round 1参赛人数同比增长30倍（~500人），覆盖150+所高中。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📚 免费学习资源</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="lbl" style="color:#a78bfa;font-weight:600;">官方推荐</div>
+      <ul class="dash" style="margin-top:4px;">
+        <li>Elements of AI — 免费AI基础课程</li>
+        <li>Google ML Crash Course — ML入门</li>
+        <li>IOAI 2025 Tasks (GitHub) — 历年真题</li>
+        <li>awesome-ioai-tasks — 社区资源合集</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="lbl" style="color:#a78bfa;font-weight:600;">澳洲专享</div>
+      <ul class="dash" style="margin-top:4px;">
+        <li>NOAI School Training Program — $60/学期</li>
+        <li>AI Olympiad High-Performance Program — 仅受邀</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout blue">
+    <strong>推荐学习路径</strong><br>
+    R1: Elements of AI + 逻辑推理练习 (2-4周)<br>
+    R2: Google ML Crash Course + Python/numpy/pandas实战 (4-6周)<br>
+    APOAI: sklearn实战 + 历年IOAI真题 (4-6周)<br>
+    国际赛: PyTorch入门 + 深度学习 (受邀国家队)
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎯 悦洋教育参赛方案</h2>
+
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #8b5cf6;">
+      <div class="lbl" style="color:#8b5cf6;font-weight:700;">🚀 IOAI Round 1冲刺包</div>
+      <div class="val">AUD $580</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 4周 · 零基础Y7–10<br>
+        AI基础概念+逻辑推理+概率统计+模拟测试+真题训练
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #3b82f6;">
+      <div class="lbl" style="color:#3b82f6;font-weight:700;">⚡ IOAI全程晋级</div>
+      <div class="val">AUD $2,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 12周 · Y9–12有编程基础<br>
+        Python ML + 三轮通关辅导 + 模拟APOAI
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">👑 国家队特训</div>
+      <div class="val">AUD $4,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 8周 · 晋级APOAI的Top学员<br>
+        PyTorch+深度学习+国际赛题型+团队协作+全真模拟
+      </div>
+    </div>
+  </div>
+
+  <h3>辅导流程</h3>
+
+  <h4>🏁 Round 1冲刺包（4周）</h4>
+  <div class="step"><div class="num">1</div><div class="content"><strong>AI概念入门</strong> (Week 1)<br>什么是AI、ML vs DL、监督/无监督/强化学习</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>逻辑推理与概率</strong> (Week 2)<br>条件概率、贝叶斯思维、统计推断</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>AI伦理与社会影响</strong> (Week 3)<br>算法偏见、AI安全、可解释性</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>全真模拟+真题精讲</strong> (Week 4)<br>限时MCQ+错题分析</div></div>
+
+  <h4>⚡ 全程晋级追加（12周，含冲刺包）</h4>
+  <div class="step"><div class="num">5-6</div><div class="content"><strong>Python编程入门</strong><br>变量/函数/数据结构（有基础可跳过）</div></div>
+  <div class="step"><div class="num">7-8</div><div class="content"><strong>numpy+矩阵运算</strong><br>向量化操作、线性代数基础</div></div>
+  <div class="step"><div class="num">9-10</div><div class="content"><strong>pandas数据处理</strong><br>DataFrame操作、数据清洗、特征工程</div></div>
+  <div class="step"><div class="num">11-12</div><div class="content"><strong>scikit-learn ML实战</strong><br>分类/回归/聚类、模型评估</div></div>
+
+  <h4>👑 国家队特训（8周，受邀学员）</h4>
+  <div class="step"><div class="num">1-2</div><div class="content"><strong>PyTorch基础</strong><br>张量、自动求导、简单神经网络</div></div>
+  <div class="step"><div class="num">3-4</div><div class="content"><strong>深度学习进阶</strong><br>CNN/RNN、迁移学习、Transformer基础</div></div>
+  <div class="step"><div class="num">5-6</div><div class="content"><strong>IOAI国际赛题型</strong><br>历年真题实战、限时6小时模拟</div></div>
+  <div class="step"><div class="num">7-8</div><div class="content"><strong>最终模拟+策略优化</strong><br>全真模拟+专家评审反馈</div></div>
+</div>
+
+<div class="section">
+  <h2>👨‍🏫 师资团队</h2>
+  <table>
+    <thead><tr><th>角色</th><th>资质</th><th>职责</th></tr></thead>
+    <tbody>
+      <tr><td>AI竞赛导师</td><td>计算机科学/AI方向硕士+</td><td>IOAI考点解析+编程辅导</td></tr>
+      <tr><td>Python导师</td><td>软件工程师/数据科学家</td><td>numpy/pandas/sklearn实战</td></tr>
+      <tr><td>深度学习导师</td><td>AI研究员/博士候选人</td><td>PyTorch+深度学习（国家队特训）</td></tr>
+      <tr><td>竞赛教练</td><td>NOAI往届选手/国家队成员</td><td>赛事策略+模拟答辩</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🏆 预期成果</h2>
+  <table>
+    <thead><tr><th>学员水平</th><th>推荐产品</th><th>预期成绩</th><th>保底产出</th></tr></thead>
+    <tbody>
+      <tr><td>零基础（Y7-10）</td><td>Round 1冲刺包</td><td>Round 1通过</td><td>AI基础概念体系+参赛证书</td></tr>
+      <tr><td>有编程基础（Y9-12）</td><td>全程晋级</td><td>Round 1-2通过+APOAI</td><td>Python ML项目+竞赛经历</td></tr>
+      <tr><td>顶尖选手（晋级APOAI）</td><td>国家队特训</td><td>国家队选拔+国际赛奖牌</td><td>深度学习项目+IOAI国际赛经历</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>💰 费用明细</h2>
+  <table>
+    <thead><tr><th>项目</th><th>费用</th></tr></thead>
+    <tbody>
+      <tr><td>Round 1注册</td><td><span class="tag free">免费</span></td></tr>
+      <tr><td>Round 2参赛</td><td><span class="tag free">免费</span></td></tr>
+      <tr><td>APOAI Final参赛</td><td><span class="tag free">免费</span></td></tr>
+      <tr><td>NOAI Training Camp</td><td><span class="tag free">免费</span>（受邀学员）</td></tr>
+      <tr><td>国际赛注册费</td><td>组委会承担</td></tr>
+      <tr><td>阿斯塔纳差旅</td><td>学生/家庭自理（可申请资助）</td></tr>
+      <tr><td>School Training Program</td><td>$60/学期/学生（可选）</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>❓ 常见问题</h2>
+  <p><strong>IOAI和Kaggle有什么区别？</strong><br>IOAI是定时监考的国家奥赛模式（类似数学奥赛），测试限时环境下的AI理解和编程能力。采用国家组队模式，不是Kaggle那种持续数周的个人数据竞赛。</p>
+  <p style="margin-top:10px;"><strong>完全没有编程基础可以参加吗？</strong><br>可以。Round 1不要求任何编程基础，主要考察AI概念理解+逻辑推理+基础概率统计。Round 2开始需要Python。</p>
+  <p style="margin-top:10px;"><strong>Junior学生（Y7以下）可以参加吗？</strong><br>可以参加Round 1和Round 2作为"挑战体验"，但不能入选国家队。建议先积累经验。</p>
+  <p style="margin-top:10px;"><strong>悦洋Python ML课程和IOAI对应吗？</strong><br>高度对应。悦洋课程覆盖numpy/pandas/sklearn全栈，与Round 2允许库完全一致。ML项目经验可直接用于APOAI实践环节。</p>
+  <p style="margin-top:10px;"><strong>国际赛要去哈萨克斯坦，费用高吗？</strong><br>国际赛注册费由澳洲组委会承担，差旅费需自理。组委会提供Financial Aid。悦洋提供签证指导。</p>
+  <p style="margin-top:10px;"><strong>澳洲国家队选拔竞争激烈吗？</strong><br>2025年R1近500人参赛，最终国家队8人，选拔比例约1.6%。APOAI Final前12+理论前4共16人进入训练营，最终选8人。</p>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · IOAI 国际人工智能奥林匹克赛事分析 · 2026.05 · 悦洋海外集团成员<br>
+  edu@joy1996.com · 粤ICP备13046921号
+</div>
+
+</body>
+</html>

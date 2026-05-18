@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Imagine Cup Junior · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #0a1628, #0d2b1e); border-bottom: 2px solid #00bc70; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #00bc70; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(0,188,112,.1); color: #00bc70; border: 1px solid rgba(0,188,112,.2); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #00bc70; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.teal { background: rgba(0,188,112,.06); border: 1px solid rgba(0,188,112,.15); }
+  .callout.blue { background: rgba(0,164,239,.06); border: 1px solid rgba(0,164,239,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.purple { background: rgba(163,113,247,.06); border: 1px solid rgba(163,113,247,.15); }
+  .callout.red { background: rgba(248,81,73,.06); border: 1px solid rgba(248,81,73,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2,.grid-3 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.free { background: rgba(0,188,112,.15); color: #00bc70; }
+  .tag.paid { background: rgba(248,81,73,.15); color: #f85149; }
+  .tag.top { background: rgba(0,164,239,.2); color: #00a4ef; }
+  .tag.bot { background: rgba(139,148,158,.15); color: #8b949e; }
+  .tag.ms { background: rgba(0,188,112,.15); color: #00bc70; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #00bc70; color: #0d1117; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 10px; border-radius: 8px; font-weight: 600; }
+  .badge.ai { background: rgba(0,164,239,.15); color: #00a4ef; }
+  .badge.tech { background: rgba(163,113,247,.15); color: #a371f7; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🧠 <span>Imagine Cup Junior</span> 微软全球青少年AI挑战赛</h1>
+  <div class="subtitle">悦洋教育 · 澳洲学员赛事分析与辅导方案</div>
+  <div class="tag-row">
+    <span>5–18岁</span>
+    <span>Microsoft</span>
+    <span>🎫 完全免费</span>
+    <span>零编程基础</span>
+    <span>🌏 全球AI for Good</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>📋 赛事总览</h2>
+  <div class="grid-3">
+    <div class="card"><div class="lbl">主办方</div><div class="val">Microsoft</div></div>
+    <div class="card"><div class="lbl">参赛费用</div><div class="val" style="color:#00bc70;">完全免费</div></div>
+    <div class="card"><div class="lbl">是否需编程</div><div class="val" style="color:#00bc70;">不需要</div></div>
+    <div class="card"><div class="lbl">AI for Good 组</div><div class="val">13–18岁</div><div class="lbl" style="font-size:11px;">2–6人+领队</div></div>
+    <div class="card"><div class="lbl">Tech for Good 组</div><div class="val">5–12岁</div><div class="lbl" style="font-size:11px;">2–40人+领队</div></div>
+    <div class="card"><div class="lbl">提交内容</div><div class="val">PPT 10页 + 视频2分钟</div></div>
+  </div>
+  <div class="callout teal">
+    <strong>🎯 核心亮点</strong>
+    Imagine Cup Junior是微软官方面向青少年的AI创意竞赛。<strong>完全免费 · 零编程基础 · 纯创意竞赛</strong>。学生只需用PPT和视频表达AI创意方案，即可站上微软全球舞台。澳洲团队已多次获得Global Top 10。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 赛季时间线（参考历史周期）</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>注册开放</strong> (每年1月)<br>领队在imaginecup.com/junior免费注册，下载资源包</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>课程学习+团队创作</strong> (1月–4月)<br>完成5-6节课程，组建团队，制作PPT+视频</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>作品提交截止</strong> (每年5月上旬)<br>上传PPT（最多10页）+ 视频（最多2分钟）</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>全球Top 10公布</strong> (6–7月)<br>3大区域（Americas / Asia / EMEA）分别评选</div></div>
+  <div class="callout red" style="margin-top:8px;">
+    <strong>⚠️ 2025-2026赛季状态</strong>
+    截至2026年5月，2026年度ICJ的具体日期尚未公布。ICJ在2020-2024年连续5年每年举办，预计未来赛季将继续。建议关注 imaginecup.com/junior。
+  </div>
+</div>
+
+<div class="section">
+  <h2>👥 两大组别对比</h2>
+  <table>
+    <thead><tr><th>维度</th><th>🧠 AI for Good</th><th>🎮 Technology for Good</th></tr></thead>
+    <tbody>
+      <tr><td>年龄</td><td>13–18岁</td><td>5–12岁</td></tr>
+      <tr><td>团队人数</td><td>2–6人</td><td>2–40人</td></tr>
+      <tr><td>主题</td><td>AI for Good 5大主题</td><td>Technology for Good 5大主题</td></tr>
+      <tr><td>编程要求</td><td><span class="tag free">无</span></td><td><span class="tag free">无</span></td></tr>
+      <tr><td>适合年级</td><td>Y7–12</td><td>K–Y6</td></tr>
+      <tr><td>悦洋推荐</td><td><span class="tag top">主力参赛组别</span></td><td>低龄启蒙</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue">两个组别不冲突。领队可同时带领多个团队，一人可带多队。</div>
+</div>
+
+<div class="section">
+  <h2>🎪 五大主题（AI for Good）</h2>
+  <table>
+    <thead><tr><th>#</th><th>主题</th><th>英文</th><th>问题方向</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>🌍 AI for Earth</td><td>AI for Earth</td><td>气候变化、环境保护、生物多样性、可再生能源</td></tr>
+      <tr><td>2</td><td>🤝 AI for Humanitarian Action</td><td>AI for Humanitarian Action</td><td>灾害响应、难民援助、扶贫减贫</td></tr>
+      <tr><td>3</td><td>♿ AI for Accessibility</td><td>AI for Accessibility</td><td>残障辅助技术、无障碍设计</td></tr>
+      <tr><td>4</td><td>🏛️ AI for Cultural Heritage</td><td>AI for Cultural Heritage</td><td>文化遗产保护、传统传承、语言保护</td></tr>
+      <tr><td>5</td><td>🏥 AI for Health</td><td>AI for Health</td><td>医疗可及性、疾病诊断、心理健康</td></tr>
+    </tbody>
+  </table>
+  <div class="callout teal">Technology for Good（5-12岁组）使用完全相同的5大主题，强调"技术"解决方案而非"AI"。</div>
+</div>
+
+<div class="section">
+  <h2>📄 提交格式</h2>
+
+  <h3>(A) PowerPoint 演示文稿（最多10页）</h3>
+  <p>使用微软提供的官方PPT模板，内容结构如下：</p>
+  <table>
+    <thead><tr><th>页数</th><th>内容</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>封面</td><td>团队名称、国家、主题类别</td></tr>
+      <tr><td>2-3</td><td>问题描述</td><td>问题是什么？影响范围？为什么值得解决？</td></tr>
+      <tr><td>4-5</td><td>研究过程</td><td>调研方法、数据来源、用户访谈</td></tr>
+      <tr><td>6-7</td><td>AI伦理考虑</td><td>微软6大负责任AI原则：Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability</td></tr>
+      <tr><td>8-10</td><td>解决方案</td><td>AI方案如何工作？预期效果？</td></tr>
+    </tbody>
+  </table>
+
+  <h3>(B) 视频（最多2分钟）</h3>
+  <p>形式不限（手机拍摄、录屏、动画均可），需包含：团队介绍（队名、国家、组别）、要解决的问题、解决方案核心概念、团队收获。</p>
+
+  <div class="callout green">
+    <strong>✅ 无需提交的内容</strong>
+    不要求工作原型 · 不要求代码 · 不要求可运行软件 · 不要求硬件。ICJ纯评创意，评分重点是<strong>想法质量</strong>而非制作水平。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📐 评审标准</h2>
+  <table>
+    <thead><tr><th>#</th><th>评审维度</th><th>说明</th><th>悦洋对应辅导</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Problem Identification</td><td>问题定义清晰、具体、有社会价值</td><td>✅ Design Thinking + SDG选题工作坊</td></tr>
+      <tr><td>2</td><td>Innovation & Creativity</td><td>解决方案新颖有创意</td><td>✅ AI工具辅助创意发散</td></tr>
+      <tr><td>3</td><td>Potential Impact</td><td>影响范围及可扩展性</td><td>✅ Impact Assessment方法论</td></tr>
+      <tr><td>4</td><td>Use of AI/Technology</td><td>AI运用合理有意义</td><td>✅ AI素养课程全面覆盖</td></tr>
+      <tr><td>5</td><td>Ethical Considerations</td><td>充分考虑AI伦理（6大原则）</td><td>✅ 微软Responsible AI专项模块</td></tr>
+      <tr><td>6</td><td>Research Process</td><td>调研深入、方法严谨</td><td>✅ 研究能力+信息素养训练</td></tr>
+      <tr><td>7</td><td>Presentation Quality</td><td>PPT和视频表达清晰有力</td><td>✅ 路演训练+PPT制作+视频指导</td></tr>
+    </tbody>
+  </table>
+  <div class="callout teal">ICJ评审注重<strong>创意质量和伦理深度</strong>而非技术复杂度，这与悦洋AI商科"AI思维+社会影响力"的教学理念高度一致。</div>
+</div>
+
+<div class="section">
+  <h2>🏆 奖项设置</h2>
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #00bc70;">
+      <div class="lbl" style="color:#00bc70;font-weight:700;">🌍 Global Top 10</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        教室庆祝礼包 + 班级奖杯 + 微软官方认证<br>
+        <span style="color:#484f58;">无现金奖金</span>
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #00a4ef;">
+      <div class="lbl" style="color:#00a4ef;font-weight:700;">🏅 ANZ区域奖</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        澳洲新西兰区域奖项<br>
+        <span style="color:#484f58;">过往赛季存在，2026待确认</span>
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">📜 参与证书</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        所有提交作品的团队均获得<br>
+        Certificate of Participation
+      </div>
+    </div>
+  </div>
+  <div class="callout blue">ICJ以荣誉认证和微软品牌背书著称，虽然没有现金奖金，但在STEM/AI方向的升学申请中认可度极高。也是通往Imagine Cup主赛（$100K奖金，18+可参加）的路径。</div>
+</div>
+
+<div class="section">
+  <h2>📚 免费学习资源</h2>
+  <div class="grid-2">
+    <div class="card" style="border-left:3px solid #00bc70;">
+      <div class="lbl" style="color:#00bc70;font-weight:700;">🧒 Beginners Kit（5-12岁）</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        5 x 45分钟课程<br>
+        学生手册 + PPT模板<br>
+        适合Technology for Good组别
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #00a4ef;">
+      <div class="lbl" style="color:#00a4ef;font-weight:700;">🧑 Getting Started Kit（13-18岁）</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        6 x 45分钟课程<br>
+        学生指南 + PPT模板<br>
+        适合AI for Good组别
+      </div>
+    </div>
+  </div>
+  <h3>深度学习模块</h3>
+  <p style="margin-bottom:6px;">额外免费模块：AI基础 · 机器学习 · 深度学习 · 神经网络 · 生成式AI · 网络安全</p>
+  <h3>Microsoft Learn路径</h3>
+  <p>"AI Foundations: Imagine Cup Junior" — 完成可获官方徽章，无需Azure订阅</p>
+</div>
+
+<div class="section">
+  <h2>🇦🇺 澳洲学生参赛指南</h2>
+  <div class="grid-2">
+    <div class="card"><div class="lbl">年龄要求</div><div class="val">5–18岁（按组别）</div></div>
+    <div class="card"><div class="lbl">语言</div><div class="val">英文</div></div>
+    <div class="card"><div class="lbl">国籍</div><div class="val">全球开放，澳洲学生均可</div></div>
+    <div class="card"><div class="lbl">费用</div><div class="val" style="color:#00bc70;">完全免费</div></div>
+  </div>
+
+  <h3>澳洲获奖历史</h3>
+  <table>
+    <thead><tr><th>团队</th><th>年份</th><th>项目</th><th>成就</th></tr></thead>
+    <tbody>
+      <tr><td><strong>TA Cubed</strong></td><td>2023</td><td>焦虑缓解AI应用</td><td><span class="tag top">Global Top 10</span></td></tr>
+      <tr><td><strong>Clean Up Crew</strong></td><td>2022</td><td>AI垃圾分类</td><td><span class="tag top">Global Winner</span></td></tr>
+      <tr><td><strong>St Stephen's College</strong></td><td>2022</td><td>—</td><td>全国Top 10</td></tr>
+    </tbody>
+  </table>
+
+  <h3>时间成本</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>课程学习</strong> (1-2周) — 5-6课时微软官方课程</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>选题+调研</strong> (1-2周) — 选定5大主题之一，用户调研</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>PPT制作</strong> (1-2周) — 使用微软模板，覆盖全部板块</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>视频拍摄+提交</strong> (1周) — 脚本+拍摄+剪辑+最终提交</div></div>
+  <div style="margin-top:8px;font-size:13px;color:#00bc70;font-weight:600;">总用时：4-7周</div>
+</div>
+
+<div class="section">
+  <h2>🎓 悦洋辅导方案</h2>
+
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #00bc70;">
+      <div class="lbl" style="color:#00bc70;font-weight:700;">🌱 ICJ AI入门包</div>
+      <div class="val">AUD $480</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 4周 · 零基础Y5-10<br>
+        AI素养基础 + 微软AI课程 + 选题辅导 + PPT模板 + 视频指导 + 作品提交
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #00a4ef;">
+      <div class="lbl" style="color:#00a4ef;font-weight:700;">🚀 ICJ全球冲刺</div>
+      <div class="val">AUD $980</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 6周 · 有基础Y7-12<br>
+        深度AI主题 + 微软AI伦理 + 路演打磨 + PPT精修 + 视频制作 + 专家反馈
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">🏫 学校团体营</div>
+      <div class="val">AUD $380/人</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 定制 · 学校组团（10人+）<br>
+        全套AI课程 + 赛事辅导 + 根据学校时间定制
+      </div>
+    </div>
+  </div>
+
+  <h3>辅导流程</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>AI素养入门</strong> (Week 1)<br>AI是什么 + AI for Good 5大主题 + 微软负责任AI 6大原则 + 观看往届获奖作品</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>选题+调研</strong> (Week 2)<br>头脑风暴 + Design Thinking + 问题验证 + 用户调研 + 确定主题方向</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>方案设计+PPT制作</strong> (Week 3)<br>AI解决方案设计 + 伦理分析（覆盖6大原则）+ 使用微软模板制作PPT</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>视频+提交</strong> (Week 4-6)<br>脚本撰写 + 视频拍摄 + 剪辑 + 最终打磨 + 提交作品 + 证书获取</div></div>
+
+  <h3>预期成果</h3>
+  <table>
+    <thead><tr><th>学员水平</th><th>预期成绩</th><th>保底产出</th></tr></thead>
+    <tbody>
+      <tr><td>基础学员（Y5-8）</td><td>完成提交</td><td>参与证书 + 完整AI项目作品 + 微软AI素养学习证书</td></tr>
+      <tr><td>进阶学员（Y7-10）</td><td>区域入围/ANZ获奖</td><td>同上 + 竞赛经历 + 升学素材</td></tr>
+      <tr><td>顶尖学员（Y10-12）</td><td>冲击Global Top 10</td><td>微软全球舞台经验 + 名校申请亮点</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>❓ 常见问题</h2>
+  <p><strong>参加Imagine Cup Junior需要会编程吗？</strong><br>完全不需要。ICJ是概念创意竞赛，不是编程竞赛。评委评估的是你的创意和表达能力，而不是代码水平。</p>
+  <p style="margin-top:10px;"><strong>ICJ和正式Imagine Cup有什么区别？</strong><br>ICJ是青少年版（5-18岁免费参加），正式Imagine Cup面向18岁以上大学生，最高奖金$100,000。ICJ是完美的"预热赛"。</p>
+  <p style="margin-top:10px;"><strong>一个领队可以带多个队吗？</strong><br>可以。领队（Team Leader）可同时指导多个团队。每个学生只能加入一个团队。</p>
+  <p style="margin-top:10px;"><strong>2025-2026赛季什么时候开始？</strong><br>截至2026年5月，2026年度ICJ日期尚未公布。ICJ 2020-2024连续5年举办，预计将继续。</p>
+  <p style="margin-top:10px;"><strong>悦洋ICJ辅导和爱创营课程是什么关系？</strong><br>ICJ AI入门包是爱创营的前置预备课程；ICJ全球冲刺作为爱创营的出口项目——学员完成的AI项目稍加调整即可提交ICJ参赛。</p>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · Microsoft Imagine Cup Junior 赛事分析 · 2026.05 · 悦洋海外集团成员<br>
+  edu@joy1996.com · 粤ICP备13046921号
+</div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DECA · 赛事分析 · 悦洋教育</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7}
+.banner{background:linear-gradient(135deg,#1a1a2e,#1e162e);border-bottom:3px solid #0055b7;padding:50px 40px 36px;text-align:center}
+.banner h1{font-size:30px;font-weight:800;letter-spacing:1px}
+.banner h1 span{color:#0055b7}
+.banner .subtitle{color:#8b949e;font-size:14px;margin-top:8px}
+.banner .tag-row{margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.banner .tag-row span{display:inline-block;font-size:11px;padding:3px 12px;border-radius:10px;background:rgba(0,85,183,.1);color:#58a6ff;border:1px solid rgba(0,85,183,.2)}
+.container{max-width:1000px;margin:0 auto;padding:24px 20px 40px}
+.section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:26px 28px;margin-bottom:16px}
+.section h2{font-size:19px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #30363d}
+.section p{font-size:13px;color:#8b949e;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+table th{background:#21262d;color:#c9d1d9;padding:7px 10px;text-align:left;font-weight:600;font-size:11px}
+table td{padding:7px 10px;border-bottom:1px solid #21262d}
+table tr:nth-child(even) td{background:#0d1117}
+.callout{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13px}
+.callout.red{background:rgba(248,81,73,.06);border:1px solid rgba(248,81,73,.15)}
+.callout.blue{background:rgba(0,85,183,.06);border:1px solid rgba(0,85,183,.15)}
+.callout.green{background:rgba(46,160,67,.06);border:1px solid rgba(46,160,67,.15)}
+.callout strong{display:block;margin-bottom:4px;color:#e6edf3}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+.card{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:14px 16px;font-size:13px}
+.card .lbl{color:#8b949e;font-size:11px}
+.card .val{font-weight:600}
+.tag{display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600}
+.tag.defunct{background:rgba(248,81,73,.15);color:#f85149}
+.tag.alt{background:rgba(46,160,67,.15);color:#3fb950}
+.alt-card{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:14px 16px;font-size:13px;border-left:3px solid #0055b7;margin:8px 0}
+.alt-card .name{font-weight:700;color:#58a6ff;font-size:14px}
+.alt-card .desc{color:#8b949e;font-size:12px;margin-top:4px}
+.footer{text-align:center;color:#484f58;font-size:12px;padding:24px;border-top:1px solid #21262d;margin-top:16px}
+.cluster-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:700px){.cluster-grid{grid-template-columns:1fr}}
+.cluster-item{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:14px;text-align:center}
+.cluster-item .cluster-icon{font-size:24px;margin-bottom:4px}
+.cluster-item .cluster-name{color:#c9d1d9;font-weight:600;font-size:13px}
+.cluster-item .cluster-desc{color:#8b949e;font-size:11px;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="banner">
+<h1>📊 <span>DECA</span> 赛事分析</h1>
+<div class="subtitle">悦洋教育 · 澳洲学员赛事参考</div>
+<div class="tag-row">
+<span>14-19岁</span><span>250K+年参与</span><span>1946-至今</span><span class="tag defunct">⛔ 澳洲无分会</span>
+</div>
+</div>
+<div class="container">
+
+<div class="section">
+<h2>⚠️ 澳洲状态</h2>
+<div class="callout red"><strong>⛔ DECA 在澳洲没有国家分会</strong>全球约20个成员国中不包括澳大利亚。DECA 不向个人开放注册，必须通过学校分会。澳洲学生无法直接参赛。</div>
+<p>DECA 成立于1946年，是全球最大的商业与市场营销中学生竞赛组织，每年超过25万学生参与。设有Marketing、Business Management、Finance、Hospitality & Tourism四个职业集群。ICDC决赛每年在亚特兰大举行，约20,000人参加。</p>
+</div>
+
+<div class="section">
+<h2>📋 赛事概览</h2>
+<table>
+<thead><tr><th>项目</th><th>详情</th></tr></thead>
+<tbody>
+<tr><td><strong>主办方</strong></td><td>DECA Inc.（弗吉尼亚州雷斯顿）</td></tr>
+<tr><td><strong>成立年份</strong></td><td>1946</td></tr>
+<tr><td><strong>参赛年龄</strong></td><td>14-19岁（高中）</td></tr>
+<tr><td><strong>参赛形式</strong></td><td>角色扮演 + 书面报告 + 线上模拟</td></tr>
+<tr><td><strong>决赛</strong></td><td>ICDC（亚特兰大，每年4-5月）</td></tr>
+<tr><td><strong>赛事数量</strong></td><td>60+ 细分赛事</td></tr>
+<tr><td><strong>覆盖</strong></td><td>美国、加拿大、中国、德国等约20国</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>🏢 四个职业集群</h2>
+<div class="cluster-grid">
+<div class="cluster-item" style="border-left:3px solid #ff6b6b;">
+<div class="cluster-icon">📣</div>
+<div class="cluster-name">Marketing</div>
+<div class="cluster-desc">专业销售、广告活动、时尚营销</div>
+</div>
+<div class="cluster-item" style="border-left:3px solid #58a6ff;">
+<div class="cluster-icon">🏢</div>
+<div class="cluster-name">Business Management</div>
+<div class="cluster-desc">商业法、创业、人力资源</div>
+</div>
+<div class="cluster-item" style="border-left:3px solid #3fb950;">
+<div class="cluster-icon">💰</div>
+<div class="cluster-name">Finance</div>
+<div class="cluster-desc">投资管理、企业金融、银行服务</div>
+</div>
+<div class="cluster-item" style="border-left:3px solid #d29922;">
+<div class="cluster-icon">✈️</div>
+<div class="cluster-name">Hospitality & Tourism</div>
+<div class="cluster-desc">酒店管理、旅行与旅游、休闲娱乐</div>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🎯 比赛形式</h2>
+<div class="grid-2">
+<div class="card">
+<div class="lbl" style="font-weight:700;">角色扮演</div>
+<div style="font-size:12px;color:#c9d1d9;margin-top:4px;">现场抽取商业场景，10-30分钟准备，5-10分钟展示</div>
+</div>
+<div class="card">
+<div class="lbl" style="font-weight:700;">准备项目</div>
+<div style="font-size:12px;color:#c9d1d9;margin-top:4px;">提前提交10-20页商业报告，决赛展示+问答</div>
+</div>
+<div class="card">
+<div class="lbl" style="font-weight:700;">线上模拟</div>
+<div style="font-size:12px;color:#c9d1d9;margin-top:4px;">Virtual Business Challenge，模拟酒店/零售/投资</div>
+</div>
+<div class="card">
+<div class="lbl" style="font-weight:700;">ICDC决赛</div>
+<div style="font-size:12px;color:#c9d1d9;margin-top:4px;">亚特兰大，20,000人规模，"中学生商赛奥运会"</div>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🔄 替代推荐</h2>
+
+<div class="alt-card">
+<div class="name">💎 Diamond Challenge</div>
+<div class="desc">University of Delaware 创业中心主办，14-18岁全球开放。商业概念/社会创业方案，$25,000+奖金池。DECA 最佳替代，线上参赛无国家限制。</div>
+</div>
+
+<div class="alt-card">
+<div class="name">📈 IEO（国际经济奥赛）</div>
+<div class="desc">国际奥赛体系商业类竞赛（经济学+金融+商业案例），与IMO/IOI并列。澳洲可组队参加，有国家级选拔。悦洋提供辅导。</div>
+</div>
+
+<div class="alt-card">
+<div class="name">🌐 ICAC（校际商业竞赛）</div>
+<div class="desc">线上商业模拟，Marketing/Finance/HR等赛道。澳洲多校参与，DECA 式商业模拟体验的绝佳替代。</div>
+</div>
+
+<div class="alt-card">
+<div class="name">🤝 SAGE（全球学生企业家奖）</div>
+<div class="desc">社会创业项目竞赛，14-19岁。全球/澳洲均有参与。适合关注社会影响力的学生。</div>
+</div>
+
+<div class="callout green" style="margin-top:12px;"><strong>💡 悦洋建议</strong>DECA 澳洲无分会无法参赛。替代首选 Diamond Challenge（商业实践类）和 IEO（学术类）。悦洋提供双赛道辅导。</div>
+</div>
+
+</div>
+<div class="footer">悦洋教育 · DECA 赛事分析 · 2026.05 · edu@joy1996.com</div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conrad Challenge · 全球顶级AI+商科竞赛 · 悦洋教育</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 50%, #0a0e1a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .poster {
+    max-width: 520px;
+    width: 100%;
+    background: linear-gradient(160deg, #121828, #1e2a45, #121828);
+    border-radius: 24px;
+    border: 1px solid rgba(241,196,15,.2);
+    padding: 36px 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(241,196,15,.03) 0%, transparent 70%);
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(241,196,15,.15);
+    border: 1px solid rgba(241,196,15,.3);
+    color: #f1c40f;
+    font-size: 11px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  h1 .highlight {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sub {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .sub strong { color: #e6edf3; }
+
+  .org-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .org-tag {
+    font-size: 11px;
+    color: #8b949e;
+    background: rgba(255,255,255,.04);
+    border: 1px solid #30363d;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+
+  .highlight-box {
+    background: rgba(241,196,15,.06);
+    border: 1px solid rgba(241,196,15,.15);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .highlight-box h2 {
+    color: #f1c40f;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .highlight-box ul li {
+    color: #c9d1d9;
+    font-size: 13px;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .highlight-box ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #3fb950;
+    font-weight: 700;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .info-item {
+    background: rgba(255,255,255,.03);
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .info-item .label { color: #8b949e; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-item .value { color: #fff; font-size: 14px; font-weight: 600; margin-top: 2px; }
+  .info-item .note { color: #484f58; font-size: 11px; }
+
+  .cta {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    color: #0a0e1a;
+    text-align: center;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: transform .2s;
+    text-decoration: none;
+    display: block;
+  }
+  .cta:hover { transform: scale(1.02); }
+
+  .cta-sub {
+    text-align: center;
+    color: #484f58;
+    font-size: 11px;
+  }
+
+  .testimonial {
+    border-top: 1px solid #30363d;
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+  .testimonial p {
+    color: #8b949e;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .testimonial .author {
+    color: #484f58;
+    font-size: 11px;
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  .footer-note {
+    text-align: center;
+    color: #484f58;
+    font-size: 10px;
+    margin-top: 16px;
+    border-top: 1px solid #21262d;
+    padding-top: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <div class="badge">🏆 NASA x Conrad Foundation</div>
+
+  <h1>你的AI项目，<br><span class="highlight">值得站上全球舞台</span></h1>
+  <div class="sub">
+    <strong>Conrad Challenge 康莱德创新挑战赛</strong> — MIT官方推荐，NASA合作伙伴认证。<br>
+    用你的AI项目+商业计划，征服世界顶尖评委。
+  </div>
+
+  <div class="org-row">
+    <span class="org-tag">🚀 NASA</span>
+    <span class="org-tag">🛸 Space Center Houston</span>
+    <span class="org-tag">🎓 MIT推荐</span>
+    <span class="org-tag">🌍 全球13-18岁</span>
+  </div>
+
+  <div class="highlight-box">
+    <h2>🎯 悦洋AI商科 · 康莱德直通车</h2>
+    <ul>
+      <li><strong>爱创营产出直接参赛</strong> — BP+AI原型+路演视频=Conrad入场券</li>
+      <li><strong>无需额外备赛</strong> — 悦洋教学内容覆盖90%+评分标准</li>
+      <li><strong>双导师制</strong> — AI技术导师+商业导师联合辅导</li>
+      <li><strong>全球决赛辅导</strong> — 晋级团队获模拟答辩+签证指导</li>
+    </ul>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="label">适合年龄</div>
+      <div class="value">13–18岁</div>
+      <div class="note">Y7–12年级</div>
+    </div>
+    <div class="info-item">
+      <div class="label">团队</div>
+      <div class="value">2–5人+导师</div>
+      <div class="note">可组队/个人加入</div>
+    </div>
+    <div class="info-item">
+      <div class="label">关键日期</div>
+      <div class="value">8月–1月提交</div>
+      <div class="note">4月全球决赛@休斯顿</div>
+    </div>
+    <div class="info-item">
+      <div class="label">参赛语言</div>
+      <div class="value">全英文</div>
+      <div class="note">有语言辅导支持</div>
+    </div>
+  </div>
+
+  <a class="cta" href="#">🚀 立即咨询 · 康莱德直通车</a>
+  <div class="cta-sub">📞 edu@joy1996.com · 悦洋教育澳洲事业部</div>
+
+  <div class="testimonial">
+    <p>"我在爱创营做了一个用AI识别海洋塑料的项目，悦洋导师帮我改成了Conrad参赛方案。没想到真的晋级全球决赛了！站在Space Center Houston答辩的感觉，我一辈子都忘不了。"</p>
+    <div class="author">— Kevin Z., 悉尼 Y11, Conrad Challenge 2025 Finalist</div>
+  </div>
+
+  <div class="footer-note">
+    Conrad Challenge is a program of the Conrad Foundation. 悦洋教育提供赛事辅导服务，非赛事主办方。
+  </div>
+
+</div>
+
+</body>
+</html>

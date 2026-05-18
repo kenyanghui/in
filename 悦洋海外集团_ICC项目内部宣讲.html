@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICC项目内部宣讲 · 悦洋海外集团</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+  }
+
+  .slide {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 60px 70px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+  }
+  .slide:first-child { margin-top: 0; border-radius: 0 0 20px 20px; }
+
+  .cover { text-align: center; padding: 80px 70px; }
+  .cover .tag {
+    display: inline-block;
+    background: #f1c40f;
+    color: #1a1a2e;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-size: 44px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .cover h1 span { color: #2e86c1; }
+  .cover .sub {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .cover .meta {
+    font-size: 14px;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .cover .meta span { display: flex; align-items: center; gap: 6px; }
+
+  .section-title {
+    font-size: 13px;
+    color: #2e86c1;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .core-box {
+    background: #fef9e7;
+    border: 2px solid #f1c40f;
+    border-radius: 14px;
+    padding: 28px 32px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .pitch-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 10px; }
+  .pitch-card {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 28px 22px;
+    border-top: 4px solid #2e86c1;
+  }
+  .pitch-card .num {
+    display: inline-block;
+    width: 32px; height: 32px;
+    background: #2e86c1;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .pitch-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .pitch-card p { font-size: 14px; color: #555; line-height: 1.6; }
+
+  .sell-box {
+    background: #eaf2f8;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    border-left: 4px solid #2e86c1;
+  }
+  .sell-box .label {
+    font-size: 11px;
+    color: #2e86c1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .sell-box p { font-size: 15px; line-height: 1.5; }
+
+  .scenario-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .scenario-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .scenario-table th:first-child { border-radius: 8px 0 0 0; }
+  .scenario-table th:last-child { border-radius: 0 8px 0 0; }
+  .scenario-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .scenario-table td:first-child { font-weight: 600; color: #2e86c1; white-space: nowrap; width: 140px; }
+
+  .flow-container { display: flex; flex-direction: column; align-items: center; margin: 16px 0; }
+  .flow-row { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
+  .flow-box {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    min-width: 110px;
+  }
+  .flow-box.highlight { background: #2e86c1; }
+  .flow-box.gold { background: #f1c40f; color: #1a1a2e; }
+  .flow-arrow { font-size: 20px; color: #999; padding: 0 6px; }
+  .flow-branch { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+  .flow-branch .box {
+    background: #eaf2f8;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    border: 1px solid #cce5f7;
+  }
+  .flow-branch .box.green { background: #e8f8f0; border-color: #a3e4c1; }
+  .flow-label {
+    font-size: 12px; color: #999; margin: 6px 0 0 0; text-align: center;
+  }
+
+  .highlight-box {
+    background: #fef9e7;
+    border-radius: 14px;
+    padding: 24px 28px;
+    border-left: 5px solid #f1c40f;
+    margin: 16px 0;
+  }
+  .highlight-box p { font-size: 15px; line-height: 1.6; color: #333; }
+
+  .card-cheat {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .cheat-item {
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .cheat-item .big { font-size: 26px; font-weight: 700; display: block; margin-bottom: 6px; }
+  .cheat-item .small { font-size: 13px; opacity: .7; }
+
+  .footer-note {
+    margin-top: auto;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .slide { padding: 30px 24px; }
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    .pitch-grid { grid-template-columns: 1fr; }
+    .card-cheat { grid-template-columns: 1fr; }
+    .scenario-table td:first-child { white-space: normal; width: auto; display: block; }
+  }
+
+  .print-hide { }
+  @media print {
+    .slide { page-break-after: always; margin: 0; border-radius: 0; min-height: 100vh; box-shadow: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="slide cover">
+  <div class="tag">悦洋海外集团 · 内部宣讲</div>
+  <h1>ICC全球发明大会<br><span>青少年AI+商科</span>辅导项目</h1>
+  <p class="sub">一 个 作 品 · N 个 比 赛 · 一 站 式 升 学 背 景 提 升</p>
+  <div class="meta">
+    <span>🗓️ 2026年5月</span>
+    <span>👤 悦洋教育 × 悦洋海外</span>
+  </div>
+</div>
+
+<!-- ==================== 核心逻辑 ==================== -->
+<div class="slide">
+  <div class="section-title">一句话记住</div>
+  <h2>ICC是什么、跟我们有什么关系</h2>
+  <p class="lead">ICC = 全球发明大会，教育部白名单竞赛。孩子用AI工具做一个作品参赛，省奖对升学有用。<br><br>
+  <strong>跟我们移民客户的关系：</strong>客户花几百万办移民，最操心的就是孩子出去以后能不能上好学校。ICC项目就是给孩子的海外升学"加码"——花3天做一个作品，能用在好几个比赛和申请材料里。</p>
+
+  <div class="core-box">
+    💡 家长花一份钱、孩子做一次作品，<br>
+    能拿去参加好几个比赛，升学背景一下子就有了。
+  </div>
+
+  <div style="margin-top:24px; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; font-size:14px; color:#888; border-top:1px solid #eee; padding-top:20px;">
+    <span>✅ 国内白名单竞赛</span>
+    <span>✅ 国际发明展</span>
+    <span>✅ 留学申请作品集</span>
+    <span>✅ 路演视频素材</span>
+  </div>
+</div>
+
+<!-- ==================== 卖点一 ==================== -->
+<div class="slide">
+  <div class="section-title">卖点 ①</div>
+  <h2>一次投入，N次使用</h2>
+  <p class="lead">孩子花3天做一个AI作品，ICC、国际发明展、商赛……都能投。不用重复做。</p>
+
+  <div class="pitch-grid">
+    <div class="pitch-card">
+      <div class="num">1</div>
+      <h3>一个作品</h3>
+      <p>孩子用我们的AI工具链，零基础、不写代码，3天做出一个可演示的作品原型。</p>
+    </div>
+    <div class="pitch-card">
+      <div class="num">2</div>
+      <h3>多个比赛</h3>
+      <p>同一个作品，ICC、ICW世界发明展、康莱德创新挑战赛、Diamond Challenge…一个接一个地投。</p>
+    </div>
+    <div class="pitch-card">
+      <div class="num">3</div>
+      <h3>N份材料</h3>
+      <p>获奖证书、路演视频、作品照片、商业画布——全都是将来申请海外大学时用的上的素材。</p>
+    </div>
+  </div>
+
+  <div class="sell-box">
+    <div class="label">🎯 销售直接这么说</div>
+    <p>"您孩子做一个作品，国内比赛能用，国际比赛也能用。3天的投入，拿到的是两三年升学材料里都能写的东西。您说划不划算？"</p>
+  </div>
+</div>
+
+<!-- ==================== 卖点二 ==================== -->
+<div class="slide">
+  <div class="section-title">卖点 ②</div>
+  <h2>孩子真的喜欢，不用逼</h2>
+  <p class="lead">不是又多了一门补习班——孩子玩AI做创造，做出作品特有成就感，回家主动跟爸妈讲。</p>
+
+  <div class="pitch-grid">
+    <div class="pitch-card" style="border-top-color:#f1c40f;">
+      <div class="num" style="background:#f1c40f; color:#1a1a2e;">🧠</div>
+      <h3>AI工具链教学</h3>
+      <p>不需要编程基础。用AI工具做作品，就像用PPT做演示一样简单。我们的方法：先用启蒙营（¥980，1天）让孩子先玩起来。</p>
+    </div>
+    <div class="pitch-card" style="border-top-color:#f1c40f;">
+      <div class="num" style="background:#f1c40f; color:#1a1a2e;">💼</div>
+      <h3>商业思维训练</h3>
+      <p>孩子不光做作品，还要讲清楚"我这个东西能解决什么社会问题、谁会买单"——这是ICC评分的重要部分，也是海外大学最看重的思维。</p>
+    </div>
+    <div class="pitch-card" style="border-top-color:#f1c40f;">
+      <div class="num" style="background:#f1c40f; color:#1a1a2e;">🌐</div>
+      <h3>持续拓展新方向</h3>
+      <p>AI+商科只是开始。我们接下来还会拓展到HTML网页制作等方向，让孩子有更多产出，家长能看到更多的成长。</p>
+    </div>
+  </div>
+
+  <div class="sell-box">
+    <div class="label">🎯 销售直接这么说</div>
+    <p>"您有没有发现，很多补习班孩子是硬着头皮去的？ICC不一样——孩子自己玩AI、做作品、拍路演视频，做完特有成就感。我见过好多孩子，做完第二天主动来问'老师我们还能做什么'——这种状态，家长花钱才花得值。"</p>
+  </div>
+</div>
+
+<!-- ==================== 卖点三 ==================== -->
+<div class="slide">
+  <div class="section-title">卖点 ③</div>
+  <h2>ICC是入口，不是终点</h2>
+  <p class="lead">ICC只是第一步——获奖了往国际赛走、往申请材料里写；没获奖对赌兜底，免费转国际赛，不白干。</p>
+
+  <div class="flow-container">
+    <div class="flow-row">
+      <div class="flow-box gold">¥980 启蒙营</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box">3天备赛营</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box highlight">ICC省赛</div>
+    </div>
+    <div style="display:flex; gap:40px; margin-top:20px; flex-wrap:wrap; justify-content:center;">
+      <div style="text-align:center;">
+        <div style="background:#27ae60; color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600;">🏆 获奖</div>
+        <div style="margin-top:8px; font-size:13px; color:#555;">
+          国赛 → ICW世界发明展<br>
+          康莱德 / Diamond Challenge
+        </div>
+        <div style="margin-top:6px; font-size:12px; color:#999;">↓ 写入申请材料</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:#e74c3c; color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600;">❌ 未获奖</div>
+        <div style="margin-top:8px; font-size:13px; color:#555;">
+          免费转入国际赛辅导<br>
+          对赌机制保障
+        </div>
+        <div style="margin-top:6px; font-size:12px; color:#999;">↓ 一样出成果</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:24px;">
+    <p><strong>对赌机制：</strong>ICC省赛没获奖？免费转到国际赛继续辅导。家长不用担心"钱白花了"，孩子不用担心"白忙一场"。</p>
+  </div>
+
+  <div class="sell-box">
+    <div class="label">🎯 销售直接这么说</div>
+    <p>"孩子2年后申请的时候，材料里能拿出什么？ICC只是开始，后面的路我们都铺好了。获奖有获奖的走法，没获奖有没获奖的走法——怎么都有一份拿得出手的东西。"</p>
+  </div>
+</div>
+
+<!-- ==================== 一张图 ==================== -->
+<div class="slide">
+  <div class="section-title">一目了然</div>
+  <h2>一个作品，能走多远？</h2>
+  <p class="lead" style="margin-bottom:20px;">孩子用3天做的一个AI作品，从这里出发——</p>
+
+  <div style="display:flex; flex-direction:column; align-items:center;">
+    <div style="background:#1a1a2e; color:#fff; padding:18px 40px; border-radius:12px; font-size:20px; font-weight:700;">一个AI作品</div>
+
+    <div style="width:2px; height:20px; background:#ccc; margin:8px 0;"></div>
+
+    <div style="background:#2e86c1; color:#fff; padding:12px 30px; border-radius:10px; font-size:16px; font-weight:600;">ICC全球发明大会（国内白名单）</div>
+
+    <div style="width:2px; height:20px; background:#ccc; margin:8px 0;"></div>
+
+    <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+      <div style="background:#eaf2f8; border:1px solid #cce5f7; border-radius:10px; padding:12px 24px; text-align:center;">
+        <div style="font-weight:600; font-size:15px;">🏆 省奖/国奖</div>
+        <div style="font-size:12px; color:#666;">国内升学</div>
+      </div>
+      <div style="background:#eaf2f8; border:1px solid #cce5f7; border-radius:10px; padding:12px 24px; text-align:center;">
+        <div style="font-weight:600; font-size:15px;">🌍 ICW世界发明展</div>
+        <div style="font-size:12px; color:#666;">40+国家参与</div>
+      </div>
+      <div style="background:#eaf2f8; border:1px solid #cce5f7; border-radius:10px; padding:12px 24px; text-align:center;">
+        <div style="font-weight:600; font-size:15px;">💼 康莱德挑战赛</div>
+        <div style="font-size:12px; color:#666;">国际商赛</div>
+      </div>
+      <div style="background:#eaf2f8; border:1px solid #cce5f7; border-radius:10px; padding:12px 24px; text-align:center;">
+        <div style="font-weight:600; font-size:15px;">💎 Diamond Challenge</div>
+        <div style="font-size:12px; color:#666;">国际创业赛</div>
+      </div>
+    </div>
+
+    <div style="width:2px; height:20px; background:#ccc; margin:8px 0;"></div>
+
+    <div style="background:#f1c40f; color:#1a1a2e; padding:14px 40px; border-radius:10px; font-size:17px; font-weight:700;">🎓 海外升学申请材料</div>
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:30px; margin-top:30px; flex-wrap:wrap; font-size:14px; color:#555;">
+    <span>📄 获奖证书</span>
+    <span>🎬 路演视频</span>
+    <span>📸 作品照片</span>
+    <span>📝 商业画布</span>
+    <span>✨ 作品集（Portfolio）</span>
+  </div>
+</div>
+
+<!-- ==================== 销售速记 ==================== -->
+<div class="slide">
+  <div class="section-title">照着说就行</div>
+  <h2>四句话搞定四种家长</h2>
+  <p class="lead">不用背术语，不用记数据，就这四句——</p>
+
+  <table class="scenario-table">
+    <tr><th>家长问</th><th>你这么答</th></tr>
+    <tr>
+      <td>"跟补习班有什么区别？"</td>
+      <td>补习班是学了不一定能用上。ICC是孩子做一个作品，好多个比赛都能投。而且不是刷题，是玩AI做创造——孩子自己喜欢。</td>
+    </tr>
+    <tr>
+      <td>"对出国到底有没有用？"</td>
+      <td>ICC是教育部白名单，省奖在海外申请里实实在在有用。而且获奖作品还能继续升级国际赛，这个轨迹海外大学非常认可。</td>
+    </tr>
+    <tr>
+      <td>"孩子零基础能行吗？"</td>
+      <td>零基础最好——我们就是用AI工具帮孩子跳过学编程那一步，直接做作品。3天出成果，而且孩子做完特别有成就感。</td>
+    </tr>
+    <tr>
+      <td>"价格多少？"</td>
+      <td>有个¥980的启蒙营，半天先体验一下。做不出来全额退，没风险。孩子要是喜欢，再考虑正式的备赛营。</td>
+    </tr>
+  </table>
+
+  <div class="card-cheat" style="margin-top:20px;">
+    <div class="cheat-item">
+      <span class="big">🎯</span>
+      <span class="small">"一个作品，打N个比赛"</span>
+    </div>
+    <div class="cheat-item">
+      <span class="big">❤️</span>
+      <span class="small">"孩子自己就喜欢"</span>
+    </div>
+    <div class="cheat-item">
+      <span class="big">🛤️</span>
+      <span class="small">"ICC只是入口，后面路铺好了"</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 附：速览卡 ==================== -->
+<div class="slide">
+  <div class="section-title">随手查</div>
+  <h2>ICC项目速览卡</h2>
+  <p class="lead">客户突然问细节时，看一眼这个——</p>
+
+  <table class="scenario-table">
+    <tr><th>项目</th><th>内容</th></tr>
+    <tr><td>赛事名称</td><td>全球发明大会（ICC）</td></tr>
+    <tr><td>赛事性质</td><td>教育部白名单竞赛（2025-2028周期）</td></tr>
+    <tr><td>适合年龄</td><td>3年级 ~ 高二</td></tr>
+    <tr><td>报名截止</td><td>2026年6月15日</td></tr>
+    <tr><td>参赛费用</td><td>免费</td></tr>
+    <tr><td>辅导时长</td><td>3天备赛营 → 完成全套参赛材料</td></tr>
+    <tr><td>启蒙营</td><td>¥980，1天，零基础体验（做不出来全额退）</td></tr>
+    <tr><td>悦洋特色</td><td>AI+商科双引擎 / 对赌机制 / 国际赛升级路径</td></tr>
+    <tr><td>后续方向</td><td>AI+商科 → 拓展到HTML网页制作等更多产出方向</td></tr>
+  </table>
+
+  <div class="footer-note">悦洋教育 × 悦洋海外集团 · 内部宣讲使用</div>
+</div>
+
+</body>
+</html>

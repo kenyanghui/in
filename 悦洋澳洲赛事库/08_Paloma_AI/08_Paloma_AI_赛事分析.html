@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paloma AI Challenge HI-5 · 悦洋教育</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7}
+.banner{background:linear-gradient(135deg,#150a28,#1a2a3a);border-bottom:3px solid #a371f7;padding:50px 40px 36px;text-align:center}
+.banner h1{font-size:30px;font-weight:800;letter-spacing:1px}
+.banner h1 span{color:#a371f7}
+.banner .subtitle{color:#8b949e;font-size:14px;margin-top:8px}
+.banner .tag-row{margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.banner .tag-row span{display:inline-block;font-size:11px;padding:3px 12px;border-radius:10px;background:rgba(163,113,247,.1);color:#a371f7;border:1px solid rgba(163,113,247,.2)}
+.banner .tag-row .tag{display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600}
+.banner .tag-row .tag.free{background:rgba(46,160,67,.15);color:#3fb950;display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600}
+.container{max-width:1000px;margin:0 auto;padding:24px 20px 40px}
+.section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:26px 28px;margin-bottom:16px}
+.section h2{font-size:19px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #30363d}
+.section h2 .accent{color:#a371f7}
+.section h3{font-size:15px;margin:16px 0 8px;color:#a371f7}
+.section h3 .teal{color:#56d4dd}
+.section p{font-size:13px;color:#8b949e;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+table th{background:#21262d;color:#c9d1d9;padding:7px 10px;text-align:left;font-weight:600;font-size:11px}
+table td{padding:7px 10px;border-bottom:1px solid #21262d}
+table tr:nth-child(even) td{background:#0d1117}
+.callout{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13px}
+.callout.purple{background:rgba(163,113,247,.06);border:1px solid rgba(163,113,247,.15)}
+.callout.teal{background:rgba(86,212,221,.06);border:1px solid rgba(86,212,221,.15)}
+.callout strong{display:block;margin-bottom:4px;color:#e6edf3}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+.card{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:14px 16px;font-size:13px}
+.card .lbl{color:#8b949e;font-size:11px}
+.card .val{font-weight:600}
+.tag{display:inline-block;font-size:10px;padding:1px 8px;border-radius:8px;font-weight:600}
+.tag.free{background:rgba(46,160,67,.15);color:#3fb950}
+.step{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid #21262d;font-size:13px}
+.step .num{width:28px;height:28px;background:#a371f7;color:#0d1117;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.step .content{flex:1}
+.step .content strong{color:#e6edf3}
+.step .content small{color:#8b949e;font-size:11px}
+.footer{text-align:center;color:#484f58;font-size:12px;padding:24px;border-top:1px solid #21262d;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="banner">
+<h1><span>Paloma AI Challenge</span> HI-5 Grand Challenge</h1>
+<div class="subtitle">悦洋教育 · 全球去中心化AI共建竞赛分析</div>
+<div class="tag-row">
+<span>全球参赛</span><span>Y11-12 / 大学生 / 自由组队</span><span class="tag free">免费</span><span>10个月 · 2026.02-11</span>
+</div>
+</div>
+<div class="container">
+
+<div class="section">
+<h2>赛事总览</h2>
+<p>Paloma AI Challenge（HI-5 Grand Challenge）是由凯恩斯社会企业 PALOMA AI Pty Ltd（CEO Regina Meyer, CTO Andrew Lizzio）与詹姆斯库克大学联合发起的全球10个月共建竞赛。参赛者共同构建"mypaloma"——运行在个人设备上的去中心化、合乎道德的AI平台。</p>
+<div class="callout purple"><strong>不同于传统黑客马拉松</strong>这是一场长期"共创"竞赛，融合编程与讲故事（storytelling），以真人秀总决赛收尾。参赛者保留100% IP，US$600万利润分成奖池。</div>
+</div>
+
+<div class="section">
+<h2>HI-5 Grand Challenge 格式</h2>
+<p>竞赛分为5大类别（"系统支柱"），共计约20个里程碑事件，分布在10个月中。</p>
+<table>
+<thead><tr><th>类别</th><th>说明</th><th>适合悦洋学员</th></tr></thead>
+<tbody>
+<tr><td><strong>The Story（叙事）</strong></td><td>纪录片式内容创作，记录整个构建过程</td><td><span style="color:#56d4dd;font-weight:600;">非常适合</span> — 不写代码</td></tr>
+<tr><td><strong>Pillar 2-5</strong></td><td>平台核心组件、去中心化AI基础设施、隐私与安全、用户体验</td><td>有编程基础学员</td></tr>
+</tbody>
+</table>
+<div class="callout teal"><strong>The Story 类别亮点</strong>不需要编程能力，适合擅长写作、视频制作、纪录片拍摄的学员。悦洋学员可将英语表达与内容创作能力直接转化参赛。</div>
+</div>
+
+<div class="section">
+<h2>关键时间线</h2>
+<div class="step"><div class="num">1</div><div class="content"><strong>竞赛启动</strong><br><small>2026年2月 — 全球开放报名</small></div></div>
+<div class="step"><div class="num">2</div><div class="content"><strong>里程碑事件</strong><br><small>约20个里程碑，平均每月2个</small></div></div>
+<div class="step"><div class="num">3</div><div class="content"><strong>每周直播</strong><br><small>从JCU Cairns演播室全球直播</small></div></div>
+<div class="step"><div class="num">4</div><div class="content"><strong>真人秀总决赛</strong><br><small>2026年11月 — 3支入围团队现场对决</small></div></div>
+</div>
+
+<div class="section">
+<h2>参赛资格</h2>
+<table>
+<thead><tr><th>条件</th><th>详情</th></tr></thead>
+<tbody>
+<tr><td><strong>地域</strong></td><td>全球（不限国家）</td></tr>
+<tr><td><strong>年龄</strong></td><td>Y11-12、大学生、独立开发者、自由职业者</td></tr>
+<tr><td><strong>团队</strong></td><td>至少3人</td></tr>
+<tr><td><strong>角色</strong></td><td>编程人员（Coders）+ 叙事创作者（Storytellers）均受欢迎</td></tr>
+<tr><td><strong>费用</strong></td><td><span style="color:#3fb950;font-weight:600;">完全免费</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>评审标准：Humane Intelligence</h2>
+<p>竞赛基于"人道智能"价值观评审：</p>
+<table>
+<thead><tr><th>价值观</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td><strong>Compassion</strong></td><td>技术是否以人类福祉为中心</td></tr>
+<tr><td><strong>Trust</strong></td><td>系统是否可解释、可问责</td></tr>
+<tr><td><strong>Privacy</strong></td><td>数据是否在用户设备本地处理</td></tr>
+<tr><td><strong>Sustainability</strong></td><td>是否节能、低碳</td></tr>
+<tr><td><strong>Ethical AI</strong></td><td>是否公平、无偏见、透明</td></tr>
+</tbody>
+</table>
+<div class="callout purple"><strong>IP 归属 — 参赛者保留100%知识产权</strong>提交作品采用 CC BY-NC-SA 4.0 许可。这与悦洋教育尊重原创、鼓励创新的理念高度一致。</div>
+</div>
+
+<div class="section">
+<h2>奖项设置</h2>
+<table>
+<thead><tr><th>项目</th><th>详情</th></tr></thead>
+<tbody>
+<tr><td><strong>奖金池</strong></td><td>US$6,000,000（利润分成）</td></tr>
+<tr><td><strong>形式</strong></td><td>基于会员费+未来收入的<strong>未来收益分成</strong>，非现金</td></tr>
+<tr><td><strong>IP归属</strong></td><td>参赛者保留全部知识产权</td></tr>
+</tbody>
+</table>
+<div class="callout teal"><strong>收益分成说明</strong>奖池来自Paloma平台未来会员费和收入。适合愿意长期投入的团队，非追求短期回报。</div>
+</div>
+
+<div class="section">
+<h2>与悦洋课程衔接</h2>
+<table>
+<thead><tr><th>悦洋课程模块</th><th>Paloma 关联点</th></tr></thead>
+<tbody>
+<tr><td>AI伦理（一日营/爱创营）</td><td>Humane Intelligence 价值观高度匹配</td></tr>
+<tr><td>去中心化技术概念</td><td>Paloma 平台核心理念</td></tr>
+<tr><td>项目式学习（PBL）</td><td>10个月长期项目经验</td></tr>
+<tr><td>英语表达与展示</td><td>The Story 类别（内容创作）</td></tr>
+<tr><td>团队协作</td><td>团队参赛（3人+）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>悦洋辅导方案</h2>
+<div class="grid-2">
+<div class="card" style="border-left:3px solid #a371f7;">
+<div class="lbl" style="color:#a371f7;font-weight:700;">HI-5 参赛支持包</div>
+<div class="val">AUD $980</div>
+<div style="font-size:12px;color:#8b949e;margin-top:6px;">6周 · Y9-12 / 大学生<br>团队组建+项目规划+AI伦理培训</div>
+</div>
+<div class="card" style="border-left:3px solid #56d4dd;">
+<div class="lbl" style="color:#56d4dd;font-weight:700;">The Story 专项</div>
+<div class="val">询价</div>
+<div style="font-size:12px;color:#8b949e;margin-top:6px;">定制 · 非编程学员<br>内容创作+纪录片制作指导</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="footer">悦洋教育 · Paloma AI Challenge HI-5 Grand Challenge 赛事分析 · 2026.05 · edu@joy1996.com</div>
+</body>
+</html>

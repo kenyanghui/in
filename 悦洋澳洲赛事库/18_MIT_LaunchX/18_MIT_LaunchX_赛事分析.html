@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIT LaunchX 青年创业加速器 · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #1a0a0a, #2d0f0f, #0d1117); border-bottom: 2px solid #a31f34; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #a31f34; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(163,31,52,.1); color: #e05a6f; border: 1px solid rgba(163,31,52,.25); }
+  .banner .tag-row .tag-paid { background: rgba(163,31,52,.15); color: #ff7b8a; border-color: rgba(163,31,52,.35); font-weight: 600; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; color: #e6edf3; }
+  .section h2 .icon { color: #a31f34; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #e05a6f; }
+  .section h4 { font-size: 13px; margin: 12px 0 6px; color: #c9d1d9; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.red { background: rgba(163,31,52,.06); border: 1px solid rgba(163,31,52,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.blue { background: rgba(56,139,253,.06); border: 1px solid rgba(56,139,253,.15); }
+  .callout.yellow { background: rgba(210,153,34,.06); border: 1px solid rgba(210,153,34,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .callout.red strong { color: #e05a6f; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-3 { grid-template-columns: 1fr; } }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .lbl.accent { color: #e05a6f; font-weight: 700; }
+  .card .val { font-weight: 600; }
+  .card .price { font-size: 18px; font-weight: 800; color: #e05a6f; }
+  .card ul { list-style: none; padding: 0; margin-top: 6px; }
+  .card ul li { color: #8b949e; font-size: 12px; padding: 2px 0; padding-left: 16px; position: relative; }
+  .card ul li::before { content: '>'; position: absolute; left: 0; color: #a31f34; font-weight: 700; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.paid { background: rgba(163,31,52,.15); color: #e05a6f; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step:last-child { border-bottom: none; }
+  .step .num { width: 28px; height: 28px; background: #a31f34; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .step .content strong { color: #e6edf3; }
+  .flow-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px; margin: 12px 0; font-size: 13px; }
+  .flow-row .f-item { background: #21262d; padding: 6px 14px; border-radius: 6px; color: #c9d1d9; font-size: 12px; }
+  .flow-row .f-arrow { color: #a31f34; font-weight: 700; font-size: 16px; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+  .score-table td:first-child { font-weight: 600; color: #e6edf3; }
+  .testimonial { background: rgba(163,31,52,.04); border-left: 3px solid #a31f34; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 10px 0; font-size: 13px; color: #8b949e; font-style: italic; }
+  .testimonial .author { color: #c9d1d9; font-style: normal; font-weight: 600; margin-top: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🚀 <span>MIT LaunchX</span> 青年创业加速器</h1>
+  <div class="subtitle">悦洋教育 · 澳洲学员赛事分析与辅导方案</div>
+  <div class="tag-row">
+    <span>14-18岁</span>
+    <span>MIT</span>
+    <span>创业加速器</span>
+    <span class="tag-paid">$1,995-$11,495</span>
+    <span>在线/线下</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 一、赛事概览 -->
+<div class="section">
+  <h2><span class="icon">⚡</span> 赛事/项目概览</h2>
+  <p>MIT LaunchX 发源于麻省理工学院，是全球最具影响力的<strong>青年创业实战项目</strong>之一。与Conrad Challenge偏重"STEM+商业方案"、Diamond Challenge偏重"商业计划书比赛"不同，LaunchX的核心定位是<strong>"做一家真公司"</strong>——学员不是写一份BP参加比赛，而是在6-8周内从0到1创建一家真实的、有收入的创业公司。</p>
+  <table>
+    <tr><th>项目</th><th>详情</th></tr>
+    <tr><td><strong>主办方</strong></td><td>LaunchX Organisation（MIT校友创立，现独立运营）</td></tr>
+    <tr><td><strong>创办年份</strong></td><td>2012年（MIT校园内启动）</td></tr>
+    <tr><td><strong>年龄要求</strong></td><td>14-18岁（Grades 9-12）；在线项目接受18-22岁</td></tr>
+    <tr><td><strong>录取率</strong></td><td>旗舰项目约<strong>30%</strong></td></tr>
+    <tr><td><strong>项目形式</strong></td><td>线上/线下实战营（非传统竞赛）</td></tr>
+    <tr><td><strong>费用</strong></td><td><strong>USD $1,995 - $11,495</strong>（付费项目，非免费竞赛）</td></tr>
+    <tr><td><strong>语言</strong></td><td>全英文</td></tr>
+    <tr><td><strong>项目地点</strong></td><td>在线 / 美国圣地亚哥 / 其他LocationX城市</td></tr>
+    <tr><td><strong>核心理念</strong></td><td><em>Build a real startup. Not a plan — a business.</em></td></tr>
+  </table>
+  <div class="callout red">
+    <strong>⚠️ 重要说明</strong>
+    MIT LaunchX 是一项<strong>付费创业教育项目</strong>（paid entrepreneurship program），而非传统意义上的免费竞赛。它适合追求<strong>高质量创业实战体验</strong>、希望在大学申请中展示真实创业经历的学生。悦洋定位为"Premium Entrepreneurial Experience"。
+  </div>
+</div>
+
+<!-- 二、项目特色 -->
+<div class="section">
+  <h2><span class="icon">🔥</span> 项目特色</h2>
+  <table>
+    <tr><th>特色</th><th>说明</th></tr>
+    <tr><td><strong>MIT基因</strong></td><td>2012年创立于MIT，MIT校友+教授参与课程设计，全球创业教育标杆</td></tr>
+    <tr><td><strong>真实创业</strong></td><td>不是写BP比赛，而是创建<strong>有真实收入的创业公司</strong>（$250+ pre-sales benchmark）</td></tr>
+    <tr><td><strong>严选录取</strong></td><td>旗舰项目~30%录取率，确保学员质量和高强度投入</td></tr>
+    <tr><td><strong>全球校友网络</strong></td><td>累计8,000+校友，来自90+国家，持续创业支持</td></tr>
+    <tr><td><strong>导师制</strong></td><td>1:1行业导师匹配，每周coaching sessions</td></tr>
+    <tr><td><strong>成果导向</strong></td><td>结业时拥有：MVP产品 + 付费客户 + 路演Pitch</td></tr>
+  </table>
+</div>
+
+<!-- 三、适合人群 -->
+<div class="section">
+  <h2><span class="icon">🎯</span> 适合人群</h2>
+  <table>
+    <tr><th>类型</th><th>说明</th></tr>
+    <tr><td><strong>年龄</strong></td><td>14-18岁（在线项目可到22岁）</td></tr>
+    <tr><td><strong>背景</strong></td><td>不限——不需要编程/商科背景，需要的是<strong>创业思维和行动力</strong></td></tr>
+  </table>
+  <div style="margin-top:10px;">
+    <div class="callout green">
+      <strong>✅ 适合谁</strong>
+      <div style="color:#8b949e;">想真正体验创业、不只是写BP的学生</div>
+      <div style="color:#8b949e;">有创业想法但不知道怎么落地的学生</div>
+      <div style="color:#8b949e;">大学申请需要"真实创业经历"亮点的学生</div>
+      <div style="color:#8b949e;">想进入全球青年创业者社群的学生</div>
+      <div style="color:#8b949e;">悦洋爱创营毕业、想继续进阶的学员</div>
+    </div>
+    <div class="callout red">
+      <strong>❌ 不适合谁</strong>
+      <div style="color:#8b949e;">只想参加免费竞赛的学生</div>
+      <div style="color:#8b949e;">不能投入每周15-20小时的学生（旗舰项目强度大）</div>
+    </div>
+  </div>
+</div>
+
+<!-- 四、2026项目选择 -->
+<div class="section">
+  <h2><span class="icon">📅</span> 2026年项目选择</h2>
+  <table>
+    <tr><th>项目名称</th><th>时间</th><th>时长</th><th>形式</th><th>费用(USD)</th><th>适合谁</th></tr>
+    <tr><td><strong>Winter Online BootCamp</strong></td><td>Dec 29 - Jan 16</td><td>3周</td><td>在线</td><td><strong>$1,995</strong></td><td>入门/寒假体验</td></tr>
+    <tr><td><strong>Spring Online BootCamp</strong></td><td>Apr 6 - Apr 24</td><td>3周</td><td>在线</td><td><strong>$1,995</strong></td><td>入门/春假体验</td></tr>
+    <tr><td><strong>Summer Online Startup Experience</strong></td><td>Jun 1 - Jul 24</td><td>8周</td><td>在线</td><td><strong>$4,495</strong></td><td>深度在线创业</td></tr>
+    <tr><td><strong>Summer Online Innovation</strong></td><td>Jun 8 - Jun 26</td><td>3周FT</td><td>在线</td><td><strong>$4,995</strong></td><td>高强度创新冲刺</td></tr>
+    <tr><td><strong>Summer Online Entrepreneurship Flagship</strong></td><td>Jul 13 - Aug 14</td><td>5周</td><td>在线</td><td><strong>$6,495</strong></td><td>旗舰在线创业</td></tr>
+    <tr><td><strong>Summer In-Person San Diego</strong></td><td>Jun 28 - Jul 11</td><td>2周</td><td>线下</td><td><strong>$6,495</strong></td><td>面对面沉浸体验</td></tr>
+    <tr style="background:rgba(163,31,52,.06);"><td><strong>Summer In-Person LocationX Flagship</strong></td><td>Jul 12 - Aug 8</td><td>4周</td><td>线下</td><td><strong>$11,495</strong></td><td>顶级旗舰全体验</td></tr>
+  </table>
+  <div class="callout blue">
+    <strong>💡 澳洲学员推荐</strong>
+    在线项目（Online BootCamp / Online Startup Experience）性价比最高，不受地域限制，无需赴美。
+  </div>
+</div>
+
+<!-- 五、申请流程 -->
+<div class="section">
+  <h2><span class="icon">📋</span> 申请流程</h2>
+
+  <h3>申请截止日期</h3>
+  <table>
+    <tr><th>轮次</th><th>截止日期</th><th>申请费</th><th>说明</th></tr>
+    <tr><td><strong>Priority Deadline</strong></td><td>11月（提前一年）</td><td><strong>$45</strong></td><td>最早提交，录取机会最大</td></tr>
+    <tr><td><strong>Early Deadline</strong></td><td>1月7日</td><td>$45-$55</td><td>早鸟轮</td></tr>
+    <tr><td><strong>Financial Award Deadline</strong></td><td>2月11日</td><td>视轮次</td><td>申请奖助金</td></tr>
+    <tr><td><strong>Regular Deadline</strong></td><td>3月4日</td><td><strong>$75</strong></td><td>最终轮，席位有限</td></tr>
+  </table>
+  <p style="font-size:12px;color:#484f58;">申请费减免(waiver)可申请。</p>
+
+  <h3>申请材料</h3>
+  <table>
+    <tr><th>项目</th><th>内容</th></tr>
+    <tr><td><strong>个人信息</strong></td><td>基本资料+教育背景</td></tr>
+    <tr><td><strong>视频回答</strong></td><td>2-3分钟视频，展示创业动机和个人特质</td></tr>
+    <tr><td><strong>书面问题</strong></td><td>短问答（创业经历/想法/团队合作等）</td></tr>
+    <tr><td><strong>推荐信</strong></td><td>可选，但推荐提交</td></tr>
+    <tr><td><strong>成绩单</strong></td><td>部分项目要求</td></tr>
+  </table>
+
+  <h3>录取流程</h3>
+  <div class="flow-row">
+    <span class="f-item">提交申请</span>
+    <span class="f-arrow">→</span>
+    <span class="f-item">材料审核（2-4周）</span>
+    <span class="f-arrow">→</span>
+    <span class="f-item">面试（部分项目）</span>
+    <span class="f-arrow">→</span>
+    <span class="f-item">录取通知</span>
+    <span class="f-arrow">→</span>
+    <span class="f-item">确认入读</span>
+    <span class="f-arrow">→</span>
+    <span class="f-item">项目开始</span>
+  </div>
+</div>
+
+<!-- 六、评审标准 -->
+<div class="section">
+  <h2><span class="icon">⭐</span> 评审标准</h2>
+  <p>LaunchX采用<strong>综合评审（Holistic Review）</strong>，不是简单的打分竞赛：</p>
+  <table class="score-table">
+    <tr><th>维度</th><th>权重</th><th>描述</th></tr>
+    <tr><td>Creativity & Innovation</td><td>高</td><td>创业想法是否新颖、有差异化</td></tr>
+    <tr><td>Feasibility</td><td>高</td><td>想法在6-8周内能否落地为MVP</td></tr>
+    <tr><td>Business Acumen</td><td>中高</td><td>对商业基本逻辑的理解</td></tr>
+    <tr><td>Market Research</td><td>中高</td><td>是否了解目标市场、客户需求</td></tr>
+    <tr><td>Teamwork & Leadership</td><td>中</td><td>团队协作能力、领导潜力</td></tr>
+    <tr><td>Passion & Grit</td><td>高</td><td>创业热情和抗挫能力</td></tr>
+    <tr><td>Prototype Progress</td><td>中</td><td>项目期间的MVP开发进度</td></tr>
+    <tr><td>Customer Validation</td><td>高</td><td>是否获得真实客户反馈/预购</td></tr>
+    <tr><td>Revenue / Traction</td><td>高</td><td><strong>$250+ pre-sales benchmark</strong></td></tr>
+    <tr><td>Final Pitch</td><td>中</td><td>结业路演的质量</td></tr>
+  </table>
+  <div class="callout yellow">
+    <strong>⚡ 关键区别</strong>
+    LaunchX评审的不是"你提交的材料"，而是<strong>你在项目期间的真实表现</strong>。录取时看重潜力，结业时看重成果。
+  </div>
+</div>
+
+<!-- 七、成果与收益 -->
+<div class="section">
+  <h2><span class="icon">🏆</span> 成果与收益</h2>
+
+  <h3>直接成果</h3>
+  <table>
+    <tr><th>成果</th><th>说明</th></tr>
+    <tr><td><strong>一家真实公司</strong></td><td>完成注册/有MVP/有客户/有收入</td></tr>
+    <tr><td><strong>LaunchX证书</strong></td><td>项目完成证书（可写入大学申请）</td></tr>
+    <tr><td><strong>路演Pitch Deck</strong></td><td>专业投资人级别的路演材料</td></tr>
+    <tr><td><strong>推荐信</strong></td><td>优秀学员可获得LaunchX导师推荐信</td></tr>
+    <tr><td><strong>校友身份</strong></td><td>LaunchX全球校友网络终身访问</td></tr>
+  </table>
+
+  <h3>大学申请价值</h3>
+  <table>
+    <tr><th>维度</th><th>价值</th></tr>
+    <tr><td><strong>活动列表</strong></td><td>"Founder & CEO of [公司名]" — 极有分量的课外活动</td></tr>
+    <tr><td><strong>文书素材</strong></td><td>真实创业经历 → 独特的个人陈述素材</td></tr>
+    <tr><td><strong>面试话题</strong></td><td>创业故事 → 差异化面试表现</td></tr>
+    <tr><td><strong>推荐信</strong></td><td>LaunchX导师 = 第三方权威背书</td></tr>
+    <tr><td><strong>竞争力</strong></td><td>与"商赛获奖"相比，"真实公司+真实收入"是降维打击</td></tr>
+  </table>
+</div>
+
+<!-- 八、澳洲学生指南 -->
+<div class="section">
+  <h2><span class="icon">🌏</span> 澳洲学生指南</h2>
+
+  <h3>最佳项目选择</h3>
+  <table>
+    <tr><th>学生类型</th><th>推荐项目</th><th>理由</th></tr>
+    <tr><td><strong>Y9-10 首次尝试</strong></td><td>Winter/Spring Online BootCamp</td><td>$1,995入门，3周体验，风险低</td></tr>
+    <tr><td><strong>Y10-11 暑假进阶</strong></td><td>Summer Online Startup Experience</td><td>8周深度创业，时间充裕</td></tr>
+    <tr><td><strong>Y11-12 大学申请冲刺</strong></td><td>Summer Online Flagship</td><td>5周旗舰，含金量最高</td></tr>
+    <tr><td><strong>有家长陪同/美西行程</strong></td><td>San Diego In-Person</td><td>2周线下体验美国创业生态</td></tr>
+  </table>
+
+  <h3>时间适配</h3>
+  <table>
+    <tr><th>澳洲假期</th><th>适配项目</th></tr>
+    <tr><td><strong>澳洲暑假（Dec-Feb）</strong></td><td>Winter Online BootCamp 完美适配</td></tr>
+    <tr><td><strong>澳洲秋假（Apr）</strong></td><td>Spring Online BootCamp 适配</td></tr>
+    <tr><td><strong>澳洲寒假（Jun-Jul）</strong></td><td>所有Summer项目适配</td></tr>
+  </table>
+
+  <h3>澳洲学生案例</h3>
+  <div class="testimonial">
+    "参加了2025 Summer Online Startup Experience，在导师指导下做了一个AI学习工具。8周时间获得了127个用户、$580收入。这段经历让我在申请悉尼大学Commerce时获得了early offer，面试官全部在问我的创业故事。"
+    <div class="author">— James C., 悉尼 Y12, 2025 LaunchX Alumni</div>
+  </div>
+  <div class="testimonial">
+    "Online BootCamp是完美的入门体验。3周时间不长，但足以让我确认'创业是我想要的方向'。第二年我又参加了Flagship，做得更深入。"
+    <div class="author">— Sophia L., 墨尔本 Y11, 2024-2025 LaunchX Alumni</div>
+  </div>
+</div>
+
+<!-- 九、与悦洋衔接 -->
+<div class="section">
+  <h2><span class="icon">🔗</span> 与悦洋爱创营衔接</h2>
+  <table>
+    <tr><th>阶段</th><th>悦洋爱创营</th><th>MIT LaunchX</th><th>衔接路径</th></tr>
+    <tr><td><strong>Stage 1: 启蒙</strong></td><td>5天创业工作坊，完成BP初稿</td><td>—</td><td>爱创营BP → 参赛基础</td></tr>
+    <tr><td><strong>Stage 2: 进阶</strong></td><td>AI商科一对一，市场验证</td><td>Online BootCamp</td><td>爱创营后直通LaunchX</td></tr>
+    <tr><td><strong>Stage 3: 实战</strong></td><td>—</td><td>Startup Experience / Flagship</td><td>在LaunchX中创建真实公司</td></tr>
+    <tr><td><strong>Stage 4: 持续</strong></td><td>赛后复盘+迭代辅导</td><td>LaunchX Alumni资源</td><td>持续运营公司+大学申请</td></tr>
+  </table>
+  <div class="callout red">
+    <strong>🚀 悦洋路径</strong>
+    爱创营（BP启蒙）→ LaunchX（真实创业）→ 收入+大学申请亮点 → 终生创业社群
+  </div>
+</div>
+
+<!-- 十、悦洋方案 -->
+<div class="section">
+  <h2><span class="icon">🎓</span> 悦洋教育方案</h2>
+  <p>悦洋教育提供结构化辅导，帮助学生完成LaunchX的申请和项目全程：</p>
+  <div class="grid-2">
+    <div class="card" style="border-left:3px solid #a31f34;">
+      <div class="lbl accent">📝 LaunchX申请辅导</div>
+      <div class="price">AUD $980</div>
+      <div style="color:#8b949e;font-size:12px;margin:4px 0;">4周 · 适合已完成爱创营或有创业想法的学生</div>
+      <ul>
+        <li>申请策略规划（项目选择+轮次策略）</li>
+        <li>视频回答脚本打磨（2-3分钟）</li>
+        <li>书面问题深度辅导（创业故事+个人特质）</li>
+        <li>模拟面试（2轮）</li>
+        <li>推荐信策略建议</li>
+      </ul>
+      <div style="color:#c9d1d9;font-size:12px;margin-top:6px;padding-top:6px;border-top:1px solid #30363d;"><strong>成果：</strong>完整的申请材料包+面试准备</div>
+    </div>
+    <div class="card" style="border-left:3px solid #e05a6f;">
+      <div class="lbl accent">🌟 LaunchX全程支持</div>
+      <div class="price">AUD $2,800</div>
+      <div style="color:#8b949e;font-size:12px;margin:4px 0;">8周（含项目期间）· 适合已录取LaunchX的学生</div>
+      <ul>
+        <li>项目前：目标设定+行业研究预热</li>
+        <li>项目中：每周1次中文复盘辅导</li>
+        <li>项目后：结业复盘+大学申请材料转化</li>
+        <li>家长沟通进度同步（每周update）</li>
+      </ul>
+      <div style="color:#c9d1d9;font-size:12px;margin-top:6px;padding-top:6px;border-top:1px solid #30363d;"><strong>成果：</strong>最大化LaunchX产出 + 大学申请无缝衔接</div>
+    </div>
+  </div>
+</div>
+
+<!-- 十一、FAQ -->
+<div class="section">
+  <h2><span class="icon">❓</span> 常见问题</h2>
+
+  <div class="callout red" style="margin:6px 0;">
+    <strong>Q: MIT LaunchX是免费的吗？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 不是。LaunchX是一项付费创业教育项目，费用从USD $1,995到$11,495不等。它提供的是高质量的创业实战教育体验，而非传统的免费竞赛。</div>
+  </div>
+
+  <div class="callout blue" style="margin:6px 0;">
+    <strong>Q: 澳洲学生可以参加吗？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 可以。LaunchX欢迎国际学生，在线项目特别适合澳洲学生，无需赴美即可参加。</div>
+  </div>
+
+  <div class="callout green" style="margin:6px 0;">
+    <strong>Q: 需要什么背景才能申请？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 不需要编程或商科背景。LaunchX看重的是创业思维、学习能力和行动力。悦洋的申请辅导可以帮助零基础学生准备。</div>
+  </div>
+
+  <div class="callout yellow" style="margin:6px 0;">
+    <strong>Q: 录取率多少？难不难？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 旗舰项目约30%录取率。难度适中——不是"选最优秀的人"，而是"选最合适的人"。真诚、有创业热情、愿意付诸行动的学生录取机会很大。</div>
+  </div>
+
+  <div class="callout red" style="margin:6px 0;">
+    <strong>Q: 和悦洋爱创营是什么关系？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 爱创营是创业启蒙和BP入门，LaunchX是进阶实战。推荐路径：爱创营 → 申请辅导 → LaunchX项目 → 大学申请材料。爱创营毕业生申请LaunchX有天然优势。</div>
+  </div>
+
+  <div class="callout blue" style="margin:6px 0;">
+    <strong>Q: 项目结束后还能获得支持吗？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: 可以。悦洋的全程支持包含项目后的大学申请材料转化服务。同时，LaunchX校友网络也提供持续支持。</div>
+  </div>
+
+  <div class="callout green" style="margin:6px 0;">
+    <strong>Q: 如果项目期间遇到困难（语言、文化、技术）怎么办？</strong>
+    <div style="color:#8b949e;font-weight:400;">A: LaunchX本身提供导师支持。选择悦洋全程支持的学生，每周有中文复盘辅导，帮助克服语言和文化障碍。</div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · MIT LaunchX 赛事分析 · 2026.05 · edu@joy1996.com
+</div>
+
+</body>
+</html>

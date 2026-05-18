@@ -13,7 +13,7 @@
     line-height: 1.8;
     padding: 40px;
   }
-  .container { max-width: 960px; margin: 0 auto; }
+  .container { max-width: 1000px; margin: 0 auto; }
 
   .hero {
     background: linear-gradient(135deg, #1a1a2e 0%, #2a1a4e 50%, #1a2a3e 100%);
@@ -59,7 +59,7 @@
   .hero h1 { font-size: 28px; font-weight: 900; letter-spacing: -1px; margin-bottom: 6px; position: relative; z-index: 1; }
   .hero h1 .g { background: linear-gradient(135deg, #7c5cfc, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero .sub { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 20px; position: relative; z-index: 1; }
-  .hero .stats { display: flex; gap: 24px; position: relative; z-index: 1; }
+  .hero .stats { display: flex; gap: 24px; position: relative; z-index: 1; flex-wrap: wrap; }
   .hero .stats div { font-size: 12px; color: rgba(255,255,255,.5); }
   .hero .stats strong { color: #fff; font-size: 14px; }
 
@@ -98,6 +98,7 @@
   .callout.green { background: #eafaf1; border-left: 4px solid #27ae60; }
   .callout.purple { background: #f5f0ff; border-left: 4px solid #7c5cfc; }
   .callout.yellow { background: #fef9e7; border-left: 4px solid #f1c40f; }
+  .callout.red { background: #fdedec; border-left: 4px solid #e74c3c; }
 
   table {
     width: 100%; border-collapse: collapse; font-size: 13px;
@@ -117,20 +118,33 @@
   .card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
   .card p { font-size: 12px; color: #666; line-height: 1.6; }
 
+  .foundation-card { padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; margin-bottom: 14px; }
+  .foundation-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .foundation-card ul { font-size: 12px; color: #555; padding-left: 18px; margin: 6px 0; }
+  .foundation-card ul li { margin-bottom: 3px; }
+  .foundation-card .quote { font-size: 12px; color: #888; font-style: italic; border-left: 3px solid #ddd; padding-left: 12px; margin-top: 8px; }
+
   .mode-card {
-    background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 10px;
-    padding: 18px 20px; margin-bottom: 14px;
+    border: 1px solid #e0e0e0; border-radius: 10px;
+    padding: 20px; margin-bottom: 18px;
   }
-  .mode-card .mode-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .mode-card .mode-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
   .mode-card .mode-tag {
     font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 8px;
     background: #7c5cfc; color: #fff; letter-spacing: 0.5px;
   }
   .mode-card .mode-title { font-size: 16px; font-weight: 700; }
-  .mode-card .mode-desc { font-size: 13px; color: #555; margin-bottom: 8px; }
-  .mode-card .mode-detail { font-size: 12px; color: #777; line-height: 1.7; }
+  .mode-card .mode-desc { font-size: 13px; color: #555; margin-bottom: 6px; }
 
-  .diff-table td:first-child { font-weight: 600; width: 140px; background: #fafafa; }
+  .insight-tag {
+    display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 6px; margin-right: 4px;
+  }
+  .insight-tag.li { background: #fef9e7; color: #b7950b; }
+  .insight-tag.lean { background: #e8f8f0; color: #27ae60; }
+  .insight-tag.icc { background: #e8f0fe; color: #2e86c1; }
+
+  .diff-table td:first-child { font-weight: 600; width: 120px; background: #fafafa; }
   .diff-table .old { color: #c0392b; }
   .diff-table .new { color: #27ae60; }
 
@@ -144,17 +158,27 @@
   .flow-step .step-content h4 { margin: 0 0 2px; font-size: 14px; }
   .flow-step .step-content p { font-size: 12px; color: #666; margin: 0; }
 
-  .checklist { list-style: none; padding: 0; margin: 8px 0 12px; }
-  .checklist li { font-size: 12px; padding: 4px 0 4px 24px; position: relative; color: #555; }
-  .checklist li::before { content: '☐'; position: absolute; left: 0; color: #999; }
-  .checklist li.done::before { content: '☑'; color: #27ae60; }
-  .checklist li.done { color: #333; }
-
-  .tag { font-size: 10px; padding: 2px 10px; border-radius: 8px; display: inline-block; font-weight: 600; }
+  .tag { font-size: 10px; padding: 2px 10px; border-radius: 8px; display: inline-block; font-weight: 600; margin-right: 3px; }
   .tag.purple { background: #f0e6ff; color: #7c5cfc; }
   .tag.green { background: #e8f8f0; color: #27ae60; }
   .tag.blue { background: #e8f0fe; color: #2e86c1; }
   .tag.gold { background: #fef9e7; color: #b7950b; }
+  .tag.red { background: #fdedec; color: #e74c3c; }
+
+  .adv-box {
+    background: linear-gradient(135deg, #f5f0ff, #eafaf1);
+    border: 2px solid #7c5cfc;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0 20px;
+  }
+  .adv-box h3 { color: #2a1a4e; margin: 0 0 8px; }
+  .adv-box ul { font-size: 13px; color: #444; padding-left: 20px; margin: 0; }
+  .adv-box ul li { margin-bottom: 6px; }
+
+  .checklist { list-style: none; padding: 0; margin: 8px 0 12px; }
+  .checklist li { font-size: 12px; padding: 4px 0 4px 24px; position: relative; color: #555; }
+  .checklist li::before { content: '☐'; position: absolute; left: 0; color: #999; }
 
   @media (max-width: 640px) {
     body { padding: 16px; }
@@ -171,8 +195,9 @@
 <div class="hero">
   <div class="badge"><span class="dot"></span> AI商科教育 · 品类开创者</div>
   <h1>ICC全球发明大会 · 悦洋<span class="g">AI商科</span>辅导系统</h1>
-  <p class="sub">不是比赛辅导，是AI商科教育。比赛是副产品，能力才是目的。<br>用AI创造商业价值——从悦洋爱创营到全球发明大会舞台</p>
+  <p class="sub">以ICC规则为骨架 × 以李善友哲科思维为顶层 × 以精益创业方法论为执行层<br>不是比赛辅导，是AI商科教育。比赛是副产品，能力才是目的。</p>
   <div class="stats">
+    <div><strong>3大思维底座</strong><br>ICC + 李善友 + 精益创业</div>
     <div><strong>6大辅导模块</strong><br>全流程覆盖</div>
     <div><strong>爱创营→ICC</strong><br>无缝衔接</div>
     <div><strong>一套项目</strong><br>多赛联动</div>
@@ -181,7 +206,8 @@
 
 <!-- ===== NAV ===== -->
 <div class="nav-bar">
-  <a href="#upgrade">升级总览</a>
+  <a href="#foundation">三大底座</a>
+  <a href="#advantage">竞争壁垒</a>
   <a href="#mode1">📋 规则解读</a>
   <a href="#mode2">💡 创意激发</a>
   <a href="#mode3">📝 发明日志</a>
@@ -189,173 +215,238 @@
   <a href="#mode5">🎤 路演答辩</a>
   <a href="#mode6">🔄 全流程</a>
   <a href="#aicamp">爱创营衔接</a>
-  <a href="#matrix">多赛联动</a>
 </div>
 
-<!-- ===== 升级总览 ===== -->
-<div class="section" id="upgrade">
-  <h2>🚀 从"ICC辅导"到"AI商科教育"的全面升级</h2>
+<!-- ===== 三大思维底座 ===== -->
+<div class="section" id="foundation">
+  <h2>🧠 三大思维底座 · 构筑不可复制的辅导体系</h2>
+  <div class="callout purple"><strong>核心洞察：</strong>传统ICC辅导机构只懂"比赛规则"。悦洋的差异化在于——用哲学思维（李善友）定方向，用创业方法论（精益创业）定执行，用ICC规则做检验。三者合一，形成降维打击。</div>
 
-  <div class="callout purple"><strong>核心理念：</strong>传统的ICC辅导教孩子"完成比赛材料"；悦洋的AI商科教育教孩子"用AI创造商业价值"——ICC参赛是自然成果，不是最终目的。</div>
+  <div class="grid-3">
+    <div class="foundation-card" style="border-left:4px solid #2e86c1;">
+      <h4>📋 ICC比赛规则体系</h4>
+      <p style="font-size:12px;color:#555;">"知道比赛要什么"——这是所有辅导机构都会的，但只是起点。</p>
+      <ul>
+        <li>12项评审标准 × 分值权重</li>
+        <li>4阶段发明日志框架</li>
+        <li>展板/路演/原型评分要求</li>
+        <li>年龄组别差异化策略（G/P/J/S）</li>
+      </ul>
+      <div class="quote">这是基本功。没有这个，其他都是空谈。</div>
+    </div>
 
-  <table class="diff-table">
-    <thead><tr><th>维度</th><th class="old">传统ICC辅导</th><th class="new">悦洋AI商科·ICC辅导</th></tr></thead>
+    <div class="foundation-card" style="border-left:4px solid #b7950b;">
+      <h4>💡 李善友哲科思维</h4>
+      <p style="font-size:12px;color:#555;">"知道怎么想问题"——这是大多数辅导机构完全缺失的维度。</p>
+      <ul>
+        <li><strong>第一性原理：</strong>回到问题本质，不被现有方案限制</li>
+        <li><strong>第二曲线：</strong>识别极限点，找到非连续创新机会</li>
+        <li><strong>"一"思维：</strong>找到项目的"击穿点"——一个问题击穿，其他自然生长</li>
+        <li><strong>与其更好不如不同：</strong>避开同质化竞争，找到独特生态位</li>
+      </ul>
+      <div class="quote">"不是发明，是创造。发明是做出新东西，创造是让东西有价值。"</div>
+    </div>
+
+    <div class="foundation-card" style="border-left:4px solid #27ae60;">
+      <h4>🔄 精益创业方法论</h4>
+      <p style="font-size:12px;color:#555;">"知道怎么做出来"——从想法到验证的工程化执行体系。</p>
+      <ul>
+        <li><strong>MVP构建：</strong>最小可行产品快速验证核心假设</li>
+        <li><strong>Build-Measure-Learn：</strong>迭代反馈闭环驱动改进</li>
+        <li><strong>创新核算：</strong>用数据衡量进展，而非"我感觉"</li>
+        <li><strong>转型决策树：</strong>何时坚持？何时转向？数据说了算</li>
+      </ul>
+      <div class="quote">"创业不是造火箭，是一步一步摸索出来的。发明也是。"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 竞争壁垒 ===== -->
+<div class="section" id="advantage">
+  <h2>🏰 悦洋ICC辅导 · 五重竞争壁垒</h2>
+  <div class="callout red"><strong>⚠ 竞品分析：</strong>市面上ICC辅导机构要么是"比赛材料代写"（无教育价值），要么是"通用发明课"（无差异化）。悦洋是唯一一个将哲科思维+精益创业+AI商科融合到ICC辅导中的机构。</div>
+
+  <table>
+    <thead><tr><th>#</th><th>壁垒</th><th>来源</th><th>竞品能否复制</th></tr></thead>
     <tbody>
-      <tr><td>定位</td><td class="old">帮学生完成比赛</td><td class="new">AI商科教育的成果展示平台</td></tr>
-      <tr><td>起点</td><td class="old">从比赛规则倒推选题</td><td class="new">从真实商业需求出发</td></tr>
-      <tr><td>工具</td><td class="old">手工制作、基础材料</td><td class="new">AI工具链（原型设计、数据分析、商业模拟）</td></tr>
-      <tr><td>方法论</td><td class="old">发明法（发现问题→做原型）</td><td class="new">AI商科法（发现商机→BP→AI原型→验证迭代）</td></tr>
-      <tr><td>产出</td><td class="old">一套比赛材料</td><td class="new">一个AI商业项目 + 可用于5+赛事的材料包</td></tr>
-      <tr><td>能力培养</td><td class="old">动手能力、表达能力</td><td class="new">AI思维 + 商业思维 + 创造力 + 影响力四维一体</td></tr>
-      <tr><td>后续</td><td class="old">比赛结束即结束</td><td class="new">可延续为长期项目、升学作品集、创业实践</td></tr>
+      <tr>
+        <td>1</td>
+        <td><strong>哲科思维顶层设计</strong></td>
+        <td>李善友第一性原理 + 第二曲线 + "一"思维</td>
+        <td style="color:#c0392b;">❌ 难以复制——需要教练本身的认知深度</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>精益创业执行体系</strong></td>
+        <td>MVP + Build-Measure-Learn + 创新核算</td>
+        <td style="color:#e67e22;">⚠ 可学但需体系——碎片化使用效果减半</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>AI商科项目基底</strong></td>
+        <td>爱创营产出BP+AI原型+市场分析→直接转化参赛</td>
+        <td style="color:#c0392b;">❌ 悦洋独有——爱创营是自有产品线</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>多赛联动放大效益</strong></td>
+        <td>一套项目参加6+赛事，投入产出比是竞品6倍</td>
+        <td style="color:#e67e22;">⚠ 需产品矩阵支撑——悦洋已有完整赛事链</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>品类开创者认知</strong></td>
+        <td>"AI商科教育"而非"比赛辅导"的定位</td>
+        <td style="color:#c0392b;">❌ 品牌定位一旦建立，竞品只能跟随</td>
+      </tr>
     </tbody>
   </table>
 
-  <div class="grid-3">
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h4>AI思维</h4>
-      <p>用AI工具辅助商业分析、原型设计、数据验证，而不是纯手工制作</p>
-    </div>
-    <div class="card">
-      <div class="icon">💼</div>
-      <h4>商业思维</h4>
-      <p>从"发明了什么"到"创造了什么价值"——商业计划书+市场分析是核心竞争力</p>
-    </div>
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h4>多赛联动</h4>
-      <p>同一AI商业项目可同时参加ICC+NOC+宋庆龄奖+国际商赛，放大投入产出比</p>
-    </div>
+  <div class="adv-box">
+    <h3>🎯 一句话竞争优势</h3>
+    <ul>
+      <li><strong>对家长：</strong>"别家帮孩子完成比赛，悦洋帮孩子建立商业思维和AI能力——获奖只是顺便的事。"</li>
+      <li><strong>对学生：</strong>"别家教你做展板，悦洋教你像马斯克一样思考问题，像创业者一样验证想法。"</li>
+      <li><strong>对竞品：</strong>"你教规则，我教思维。你管材料，我管能力。你收比赛费，我收教育费。"</li>
+    </ul>
   </div>
 </div>
 
 <!-- ===== 模块1: 规则解读 ===== -->
 <div class="section" id="mode1">
-  <h2>📋 模块一 · ICC规则与AI商科融合解读 <span class="tag purple">升级版</span></h2>
+  <h2>📋 模块一 · ICC规则 × 哲科思维 × 精益创业融合解读 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法：告诉学生"评分标准是什么"。悦洋做法：告诉学生"评分标准背后的商业逻辑是什么，AI商科怎么帮你拿分"。</div>
+  <div class="callout blue">传统做法：告诉学生"评分标准是什么"。<br>悦洋做法：用李善友的视角追问"为什么评委看重这个" + 用精益创业的方法"怎么做到最好"。</div>
 
-  <h3>ICC评分 × 悦洋AI商科对应策略</h3>
+  <h3>ICC评分 × 悦洋三维融合策略</h3>
   <table>
-    <thead><tr><th>评审维度</th><th>分值</th><th>悦洋AI商科优势</th><th>辅导策略</th></tr></thead>
+    <thead><tr><th>评审维度</th><th>分值</th><th><span class="insight-tag icc">ICC规则</span></th><th><span class="insight-tag li">李善友视角</span></th><th><span class="insight-tag lean">精益创业</span></th></tr></thead>
     <tbody>
       <tr>
-        <td><strong>发明过程</strong><br>发现需求</td>
+        <td><strong>发现需求</strong></td>
         <td>10</td>
-        <td>用户调研、市场分析、痛点验证——这是商业计划书的基本功</td>
-        <td>用AI商科的"用户画像+需求验证"方法替代随意访谈，让调研有数据支撑</td>
+        <td>问题从哪来？调研是否充分？</td>
+        <td><strong>第一性原理：</strong>追问"用户真正的痛点是什么"——去掉所有假设，回到原始场景<br><strong>"一"思维：</strong>找到那个"最痛的点"，击穿它</td>
+        <td><strong>用户访谈+问题验证：</strong>不能假设痛点，要走出去验证。MVP的第一步是验证"这真的是个问题吗"</td>
       </tr>
       <tr>
-        <td><strong>发明过程</strong><br>方案构思</td>
+        <td><strong>方案构思</strong></td>
         <td>10</td>
-        <td>头脑风暴+商业模式画布+竞品分析——系统化构思而非灵光一闪</td>
-        <td>用商业分析工具（SWOT/波特五力/蓝海策略）辅助方案选择</td>
+        <td>方案怎么想到的？有没有比较？</td>
+        <td><strong>与其更好不如不同：</strong>如果在现有方案上"好10%"，不如换个赛道<br><strong>第二曲线：</strong>现有方案已经到了极限点，你的方案是下一个曲线</td>
+        <td><strong>MVP假设清单：</strong>列出关键假设→设计最低成本验证方案→用Build-Measure-Learn快速试错</td>
       </tr>
       <tr>
-        <td><strong>发明过程</strong><br>设计制作</td>
+        <td><strong>设计制作</strong></td>
         <td>10</td>
-        <td>AI原型工具（即梦/可灵/Claude）快速制作可交互原型</td>
-        <td>记录AI工具使用过程——从草图到高保真原型的迭代本身就值高分</td>
+        <td>原型怎么做？用了什么材料？</td>
+        <td><strong>形式因决定质料因：</strong>先想清楚"这个方案的本质是什么"，再决定用什么形式实现</td>
+        <td><strong>最小可行产品（MVP）：</strong>用最低成本做出可测试的原型。AI工具（即梦/Claude）就是最好的"材料"</td>
       </tr>
       <tr>
-        <td><strong>发明过程</strong><br>测试优化</td>
+        <td><strong>测试优化</strong></td>
         <td>10</td>
-        <td>AB测试、用户反馈收集、数据驱动迭代——创业公司的精益方法</td>
-        <td>用真实用户测试数据说话，展示迭代过程（V1→V2→V3）</td>
+        <td>测试了什么？改进了什么？</td>
+        <td><strong>认知升级：</strong>测试不仅是"验证好不好用"，更是"我对这个问题的认知有没有升级"</td>
+        <td><strong>Build-Measure-Learn循环：</strong>每次测试→收集数据→学习→改进→再测试。创新核算跟踪进展</td>
       </tr>
       <tr>
-        <td rowspan="4"><strong>发明影响</strong><br>25分</td>
+        <td><strong>发明影响</strong><br>25分</td>
         <td>—</td>
-        <td colspan="2"><strong>这里就是悦洋的"得分区"</strong>——商业项目天然具备市场分析、价值主张、社会价值。这些对纯技术发明学生来说最难，但对悦洋学生来说最自然</td>
-      </tr>
-      <tr><td></td><td>独创性</td><td>AI+商科交叉本身就是创新——市场里找不到第二个AI商科项目</td></tr>
-      <tr><td></td><td>市场潜力</td><td>商业计划书中的市场规模估算、目标用户分析就是最好的论证</td></tr>
-      <tr><td></td><td>社会价值</td><td>悦洋"道商"理念——商业向善、二代传承、文化自信是天然选题</td></tr>
-      <tr>
-        <td rowspan="2"><strong>发明交流</strong><br>35分</td>
-        <td>展板10</td>
-        <td>商业画布视觉化——比传统展板更简洁有力</td>
-        <td>用商业画布逻辑组织展板：问题→方案→商业模式→影响</td>
+        <td>原创性+市场潜力+价值主张+社会价值</td>
+        <td><strong>击穿阈值：</strong>社会价值不是"顺便做的事"，而是项目能被击穿的那个"一"<br><strong>不藏私：</strong>真正有价值的发明是愿意分享的</td>
+        <td><strong>价值假设验证：</strong>谁会为此付钱？愿意付多少？市场规模的创新核算</td>
       </tr>
       <tr>
-        <td>路演10</td>
-        <td>投资人pitch训练——比路演更高标准</td>
-        <td>用YC创业路演框架打磨ICC路演，降维打击</td>
+        <td><strong>发明交流</strong><br>展板/路演/日志</td>
+        <td>35</td>
+        <td>信息清晰、有视觉吸引力</td>
+        <td><strong>理念世界：</strong>展板不只是"展示信息"，而是"让评委进入你的理念世界"</td>
+        <td><strong>路演=投资人pitch：</strong>像YC Demo Day一样讲项目，降维打击ICC路演</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout green"><strong>🎯 悦洋独特优势：</strong>ICC评分中"发明影响"（25分）对纯技术型学生是难点——市场分析、价值主张、社会价值都是他们的弱项。但对悦洋AI商科学生来说，这25分是"送分题"——商业思维本身就是答案。</div>
+  <div class="callout green"><strong>🎯 悦洋得分策略：</strong>发明影响25分——传统纯技术型学生的弱项（他们不懂市场/商业/价值主张），但悦洋AI商科学生的天然强项。当其他学生还在想"我发明了什么"，悦洋学生已经回答了"我的发明创造了什么商业价值和社会价值"。</div>
 </div>
 
 <!-- ===== 模块2: 创意激发 ===== -->
 <div class="section" id="mode2">
-  <h2>💡 模块二 · AI商科创意激发 <span class="tag purple">升级版</span></h2>
+  <h2>💡 模块二 · 创意激发 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法："想想生活中有什么不方便"。悦洋做法："想一个产品/服务，能让某群人愿意付钱——然后用AI把它做出来"。</div>
+  <div class="callout blue">传统做法："想想生活中有什么不方便"（随机试错）。<br>悦洋做法：第一性原理追问本质问题 + 精益创业验证真伪需求 + 爱创营AI商科项目池做起点</div>
 
-  <h3>悦洋创意激发四步法</h3>
+  <h3>悦洋创意激发五步法（融合三大底座）</h3>
 
   <div class="flow-step">
-    <div class="step-num" style="background:#7c5cfc;">1</div>
+    <div class="step-num" style="background:#b7950b;">1</div>
     <div class="step-content">
-      <h4>锁定商机方向</h4>
-      <p>从悦洋五大选题池出发，每个方向都包含"商业场景+AI解决方案"的完整命题：</p>
-      <table>
-        <tr><th>选题方向</th><th>商业场景</th><th>AI解决方案</th><th>适合人群</th></tr>
-        <tr><td>AI+家族传承</td><td>二代如何用AI管理家族企业信息</td><td>智能知识库、企业数据看板</td><td>企二代</td></tr>
-        <tr><td>AI+校园创业</td><td>学生身边的小商业机会</td><td>校园二手交易AI匹配、AI自习室预约</td><td>国际学校学生</td></tr>
-        <tr><td>AI+社会创新</td><td>用商业手段解决社会问题</td><td>AI助老、AI环保、AI教育公平</td><td>所有学生</td></tr>
-        <tr><td>AI+文化传承</td><td>传统文化现代化</td><td>AI非遗体验、AI方言保护、AI国学助手</td><td>有文化背景的学生</td></tr>
-        <tr><td>AI+生活效率</td><td>日常生活中的效率痛点</td><td>AI学习助手、AI时间管理、AI兴趣推荐</td><td>低龄段学生</td></tr>
-      </table>
+      <h4>第一性原理追问 <span class="insight-tag li">李善友</span></h4>
+      <p>不让学生在现有方案里微创新，而是回到问题本质重新推导：</p>
+      <ul style="font-size:12px;color:#666;padding-left:20px;margin-top:4px;">
+        <li><strong>追问三层：</strong>这个问题的表象是什么？→ 背后的结构是什么？→ 最底层的公理是什么？</li>
+        <li><strong>案例：</strong>不是"做个智能垃圾桶"（表象），而是"为什么垃圾不分类？因为分类太麻烦"（本质）</li>
+        <li><strong>教练话术：</strong>"如果没有任何限制，这个问题的完美解决方案是什么？——好，现在我们来看现实限制下怎么靠近它。"</li>
+      </ul>
     </div>
   </div>
 
   <div class="flow-step">
     <div class="step-num" style="background:#2e86c1;">2</div>
     <div class="step-content">
-      <h4>需求验证（用商业方法论）</h4>
-      <p>不是"我觉得这是个问题"，而是"数据证明这是个问题"：</p>
-      <ul style="font-size:12px;color:#555;padding-left:20px;">
-        <li><strong>用户画像：</strong>目标用户是谁？年龄/身份/痛点/频次</li>
-        <li><strong>痛点量化：</strong>这个痛点有多痛？频率？愿意付多少钱解决？</li>
-        <li><strong>竞品分析：</strong>现有方案为什么不够好？AI能带来什么本质不同？</li>
-        <li><strong>市场规模：</strong>有多少人愿意为这个方案付钱？（TAM/SAM/SOM初步估算）</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="flow-step">
-    <div class="step-num" style="background:#27ae60;">3</div>
-    <div class="step-content">
-      <h4>AI方案构思</h4>
-      <p>用AI工具辅助方案设计，而非仅靠头脑风暴：</p>
+      <h4>需求验证（精益创业） <span class="insight-tag lean">精益创业</span></h4>
+      <p>用精益创业的方法验证"这是不是一个真问题"：</p>
       <table>
-        <tr><th>步骤</th><th>AI工具应用</th><th>商业价值</th></tr>
-        <tr><td>竞品调研</td><td>用AI搜索+分析竞品定位和差距</td><td>找到市场空白</td></tr>
-        <tr><td>方案设计</td><td>用AI生成多个方案并对比可行性</td><td>扩大创意空间</td></tr>
-        <tr><td>商业画布</td><td>用AI辅助填写商业模式画布</td><td>系统化思考</td></tr>
-        <tr><td>原型速做</td><td>用AI工具（即梦/可灵/Claude）做UI原型</td><td>快速验证</td></tr>
-        <tr><td>BP撰写</td><td>用AI辅助写商业计划书初稿</td><td>降低写作门槛</td></tr>
+        <tr><th>验证步骤</th><th>精益创业方法</th><th>ICC对应得分点</th></tr>
+        <tr><td>假设提出</td><td>"我认为XX人群有XX问题，他们愿意为解决方案付XX"</td><td>日志"发现需求"基础</td></tr>
+        <tr><td>最低成本验证</td><td>访谈5-10个目标用户 → 记录真实反馈</td><td>日志"调研过程"加分项</td></tr>
+        <tr><td>数据评估</td><td>多少人说"这真的是个问题"？多少人说"我会用"？</td><td>发明影响"市场潜力"论据</td></tr>
+        <tr><td>转型or坚持</td><td>数据不够→换方向；数据支持→继续</td><td>日志"迭代过程"天然素材</td></tr>
       </table>
     </div>
   </div>
 
   <div class="flow-step">
-    <div class="step-num" style="background:#f1c40f;color:#333;">4</div>
+    <div class="step-num" style="background:#7c5cfc;">3</div>
     <div class="step-content">
-      <h4>输出：创意方案单（含商业分析）</h4>
-      <p>相比传统ICC的《创意方案单》，悦洋版本增加了商业分析维度：</p>
+      <h4>第二曲线定位 <span class="insight-tag li">李善友</span></h4>
+      <p>找到"与其更好不如不同"的创新生态位：</p>
+      <ul style="font-size:12px;color:#666;padding-left:20px;margin-top:4px;">
+        <li><strong>竞品极限点分析：</strong>现有方案为什么不够好？它们在哪个维度已经到极限了？</li>
+        <li><strong>10倍速信号：</strong>AI技术就是这个时代的10倍速信号——用AI能做以前做不到的事</li>
+        <li><strong>案例：</strong>所有"校园垃圾桶"都在比容量/比传感器精度（同质化竞争），悦洋学生可以做"AI驱动的垃圾价值变现平台"（换赛道）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <div class="step-num" style="background:#27ae60;">4</div>
+    <div class="step-content">
+      <h4>MVP快速原型 <span class="insight-tag lean">精益创业</span></h4>
+      <p>用最小可行产品验证核心假设：</p>
+      <ul style="font-size:12px;color:#666;padding-left:20px;margin-top:4px;">
+        <li><strong>最简原型：</strong>不需要硬件实物。AI项目的MVP可以是UI界面+交互流程+模拟数据</li>
+        <li><strong>AI工具链：</strong>即梦做UI设计图 → Claude写交互逻辑 → 可灵做演示视频</li>
+        <li><strong>验证指标：</strong>"原型能不能让用户理解我在做什么？""用户看了原型后想不想用？"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <div class="step-num" style="background:#e74c3c;">5</div>
+    <div class="step-content">
+      <h4>输出：创意方案单（三维融合） <span class="insight-tag icc">ICC</span><span class="insight-tag li">李善友</span><span class="insight-tag lean">精益创业</span></h4>
+      <p>相比传统ICC方案单，悦洋版本包含三个思维层级的完整论证：</p>
       <div class="grid-2" style="margin-top:8px;">
         <div class="card">
           <h4>传统ICC方案单</h4>
-          <p>项目名 + 问题 + 方案简述<br>最小可行内容</p>
+          <p>项目名 + 问题 + 方案简述<br>单一维度，无竞争分析</p>
         </div>
         <div class="card" style="border-color:#7c5cfc;">
-          <h4>悦洋AI商科方案单</h4>
-          <p>项目名 + 核心问题 + 目标用户 + AI方案 + 商业价值 + 竞品差距 + 初步市场规模 + 可行性评估</p>
+          <h4>悦洋三维方案单</h4>
+          <p><span class="insight-tag icc">ICC层</span> 项目名+目标用户+核心问题+AI方案<br>
+          <span class="insight-tag li">哲科层</span> 第一性原理分析+第二曲线定位+击穿点<br>
+          <span class="insight-tag lean">验证层</span> MVP方案+验证假设+最小验证计划</p>
         </div>
       </div>
     </div>
@@ -364,173 +455,278 @@
 
 <!-- ===== 模块3: 发明日志 ===== -->
 <div class="section" id="mode3">
-  <h2>📝 模块三 · AI商科发明日志辅导 <span class="tag purple">升级版</span></h2>
+  <h2>📝 模块三 · 发明日志辅导 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法：记录"我做了什么"。悦洋做法：记录"我怎么用AI和商业思维解决了一个真实问题"——日志本身就是一份迷你商业计划书。</div>
+  <div class="callout blue">传统做法：记录"我做了什么"——线性叙述，流水账。<br>悦洋做法：用精益创业的"Build-Measure-Learn"循环组织日志结构，用李善友的"认知升级"提升深度——日志是一份创业者的成长记录。</div>
 
-  <h3>悦洋日志框架（4阶段 × AI商科融合）</h3>
+  <div class="callout green"><strong>核心升级：</strong>日志不只是"证明我做了"，而是"展示我怎么思考、怎么验证、怎么迭代"——这恰恰是ICC评委最看重的，也是传统辅导最缺失的。</div>
 
+  <h3>悦洋日志框架（4阶段 × 三大底座融合）</h3>
   <table>
-    <thead><tr><th>阶段</th><th>分值</th><th>传统日志侧重</th><th>悦洋AI商科日志要求</th></tr></thead>
+    <thead><tr><th>阶段</th><th>分值</th><th><span class="insight-tag icc">ICC要求</span></th><th><span class="insight-tag li">李善友深度</span></th><th><span class="insight-tag lean">精益创业记录</span></th></tr></thead>
     <tbody>
       <tr>
         <td><strong>发现需求</strong></td>
         <td>10</td>
-        <td>发现问题、访谈记录</td>
-        <td>用户画像 + 需求调研数据 + AI辅助分析的用户痛点报告 + 市场规模初步估算</td>
+        <td>记录调研过程、访谈记录、数据来源</td>
+        <td>记录"追问本质"的思考过程：从表象到本质的三层追问<br>附1-2个"被推翻的假设"及其发现</td>
+        <td>记录验证假设的过程：假设→验证方法→数据→结论<br>附用户访谈摘要</td>
       </tr>
       <tr>
         <td><strong>方案构思</strong></td>
         <td>10</td>
-        <td>几个方案、草图、选择理由</td>
-        <td>商业模式画布 + 竞品分析表 + AI生成方案对比 + 商业可行性评估 + 手绘/数字草图</td>
+        <td>展示方案演变、草图、对比分析</td>
+        <td>记录第二曲线定位分析：为什么现有方案已到极限点<br>记录"与其更好不如不同"的决策过程</td>
+        <td>记录MVP方案选型：为什么选这个方案作为MVP<br>展示至少2个候选方案的对比评估</td>
       </tr>
       <tr>
         <td><strong>设计制作</strong></td>
         <td>10</td>
         <td>材料清单、制作步骤、困难解决</td>
-        <td>AI工具使用记录（提示词/迭代过程） + 原型版本记录 + 从BP到UI的转化过程 + 技术实现说明</td>
+        <td>记录"形式因决定质料因"的思考：为什么选择AI工具实现？为什么是UI界面而非硬件？</td>
+        <td>记录MVP构建过程：从V1到Vn的迭代<br>每次迭代的"改了啥→为啥改→效果如何"</td>
       </tr>
       <tr>
         <td><strong>测试优化</strong></td>
         <td>10</td>
-        <td>测试记录、用户反馈、迭代</td>
-        <td>用户试用数据 + AB测试结果 + 从用户反馈到产品改进的闭环 + MVP迭代日志</td>
+        <td>测试数据、用户反馈、迭代改进</td>
+        <td>记录认知升级：通过测试，你对这个问题的理解有什么变化？</td>
+        <td>完整的Build-Measure-Learn循环记录<br>创新核算表：假设→预测→实际→差距→行动</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout purple"><strong>💡 AI商科日志加分技巧：</strong>
-  <br>① 在每个阶段末尾加一段"商业反思"：这个选择对商业模式有什么影响？
-  <br>② 记录AI工具使用过程：用了什么prompt？生成了什么？怎么修改的？——展示AI素养
-  <br>③ 用数据说话：哪怕只有5个人的调研数据也比"我问了几个同学"更有说服力
-  <br>④ 展示失败：记录一个被淘汰的方案及其商业理由——比只写成功更有深度</div>
+  <h3>悦洋日志加分项（竞品不会的）</h3>
+  <table>
+    <tr><th style="width:30px;">#</th><th>加分项</th><th>对应评审维度</th><th>为什么竞品做不到</th></tr>
+    <tr><td>1</td><td>每个阶段末尾的"商业反思"段落</td><td>发明影响-市场潜力/价值主张</td><td>竞品教练没有商业背景</td></tr>
+    <tr><td>2</td><td>AI工具使用记录（prompt+迭代+反思）</td><td>发明过程-设计制作</td><td>不懂AI工具，不知道怎么指导学生用</td></tr>
+    <tr><td>3</td><td>被推翻的假设记录（比成功更值钱）</td><td>发明过程-方案构思/测试优化</td><td>传统辅导只让写"做对了什么"</td></tr>
+    <tr><td>4</td><td>Build-Measure-Learn循环图</td><td>发明过程-全部四项</td><td>精益创业方法论的专项训练缺失</td></tr>
+    <tr><td>5</td><td>"击穿点"的发现与验证过程</td><td>发明影响-独创性</td><td>"一"思维的教练训练缺失</td></tr>
+  </table>
+
+  <div class="callout yellow"><strong>💡 辅导策略：</strong>不要让学生"补日志"——这是在比赛前集中补出来的，评委一眼就能看出。正确的做法是项目进展中同步写日志，每次辅导后花5分钟记录本次进展。Build-Measure-Learn循环本身就是日志的最佳结构。</div>
 </div>
 
 <!-- ===== 模块4: 展板设计 ===== -->
 <div class="section" id="mode4">
-  <h2>🎨 模块四 · 展板设计 <span class="tag purple">升级版</span></h2>
+  <h2>🎨 模块四 · 发明展板设计 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法：问题→方案→制作过程。悦洋做法：问题→商业模式→AI方案→市场影响——让评委看到的不只是一个发明，而是一个商业机会。</div>
+  <div class="callout blue">传统做法：问题→方案→制作过程（线性叙述）。<br>悦洋做法：用李善友的"理念世界"框架重新定义展板——让评委"进入你的世界观"；用精益创业的"商业画布"组织信息层级。</div>
 
-  <h3>悦洋AI商科展板框架（升级三分栏）</h3>
-
+  <h3>悦洋AI商科展板框架（三维信息架构）</h3>
   <table>
-    <thead><tr><th>区域</th><th>内容</th><th>AI商科升级点</th></tr></thead>
+    <thead><tr><th>区域</th><th>传统展板内容</th><th>悦洋升级内容</th><th>设计原则</th></tr></thead>
     <tbody>
       <tr>
-        <td><strong>标题区</strong></td>
-        <td>项目名 + 一句话商业主张</td>
-        <td>不是"XX智能垃圾桶"，而是"AI驱动校园垃圾分类——让每吨垃圾创造¥XX价值"</td>
+        <td><strong>标题区</strong><br>(顶部通栏)</td>
+        <td>项目名 + 学校 + 姓名</td>
+        <td><strong>项目名 + 一句话商业主张 + 核心数据钩子</strong><br>例："AI校园碳账本——让每吨碳排放创造¥XX价值"</td>
+        <td>15秒内让评委理解"这是什么+为什么重要"</td>
       </tr>
       <tr>
-        <td><strong>左栏</strong></td>
-        <td>问题 + 用户 + 市场</td>
-        <td>不只展示问题，还展示市场规模和用户画像——证明这不是一个人的问题</td>
+        <td><strong>左栏</strong><br>(问题与洞见)</td>
+        <td>问题背景 + 目标用户</td>
+        <td><strong>第一性原理追问 + 用户画像 + 市场规模</strong><br>从本质问题出发，证明这不是"我觉得"而是"数据证明"</td>
+        <td>「与其更好不如不同」——用数据和洞见建立信任</td>
       </tr>
       <tr>
-        <td><strong>中栏</strong></td>
-        <td>方案 + AI技术 + 商业模式</td>
-        <td>不只展示发明原理，还展示怎么赚钱——商业画布核心要素</td>
+        <td><strong>中栏</strong><br>(方案与验证)</td>
+        <td>方案描述 + 原理图</td>
+        <td><strong>AI方案 + MVP迭代路径 + Build-Measure-Learn循环图</strong><br>展示从V1到Vn的迭代，而非最终版本</td>
+        <td>「击穿阈值」——展示一个点上的深度</td>
       </tr>
       <tr>
-        <td><strong>右栏</strong></td>
-        <td>测试 + 迭代 + 影响</td>
-        <td>不只展示测试结果，还展示商业验证——用户愿意付多少钱？复购率？</td>
+        <td><strong>右栏</strong><br>(影响与未来)</td>
+        <td>测试结果 + 致谢</td>
+        <td><strong>商业价值 + 社会价值 + 第二曲线未来规划</strong><br>展示项目的社会影响力和商业可行性</td>
+        <td>「不藏私」——分享你的发现，邀请更多人加入</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="grid-2">
-    <div class="card">
-      <h4>传统展板视觉</h4>
-      <p>三折展板，手工绘制<br>文字密集，图片有限<br>以"过程记录"为主</p>
-    </div>
-    <div class="card" style="border-color:#7c5cfc;">
-      <h4>悦洋AI商科展板</h4>
-      <p>三折展板 / AI设计数字展板<br>商业画布式信息架构<br>加入数据图表和商业模型图<br>以"价值创造"为主</p>
-    </div>
-  </div>
+  <h3>年龄组别差异化策略（保留原有ICC分组）</h3>
+  <table>
+    <tr><th>组别</th><th>原有要求</th><th>悦洋三维升级</th></tr>
+    <tr><td>G组(1-2年级)</td><td>大图为主，文字≤50字</td><td>保留原要求 + 加入"你觉得什么最重要"的第一性原理启蒙</td></tr>
+    <tr><td>P组(3-6年级)</td><td>图文并茂，文字≤150字</td><td>保留原要求 + 加入"你是怎么知道这是个问题的"验证思维</td></tr>
+    <tr><td>J组(7-9年级)</td><td>结构完整，文字≤300字</td><td>保留原要求 + 加入MVP迭代路径 + 精益创业循环图</td></tr>
+    <tr><td>S组(10-12年级)</td><td>可加入深度内容</td><td>保留原要求 + 加入完整商业画布 + 创新核算表 + 第二曲线规划</td></tr>
+  </table>
+
+  <div class="callout purple"><strong>🎯 视觉设计总原则：</strong>① 主色不超过3种 ② 标题≥72pt 副标题≥36pt 正文≥24pt ③ 图文比例40-50% ④ 阅读顺序从左到右、从上到下 ⑤ 留白充足——这些是ICC官方推荐标准，全部保留。在此基础上融入"商业画布"的信息组织逻辑。</div>
 </div>
 
 <!-- ===== 模块5: 路演答辩 ===== -->
 <div class="section" id="mode5">
   <h2>🎤 模块五 · 路演答辩辅导 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法：教学生"讲清楚发明过程"。悦洋做法：教学生"像创始人一样做pitch"——用YC创业路演标准打磨ICC路演，降维打击。</div>
+  <div class="callout blue">传统做法：教学生"讲清楚发明过程"——背稿式路演。<br>悦洋做法：用YC创业路演标准打磨 + 李善友"理念世界"演讲法——让评委记住的不是项目细节，而是你思考问题的方式。</div>
 
-  <h3>悦洋路演结构（投资人pitch版本）</h3>
+  <h3>悦洋路演结构（YC Demo Day × 李善友叙事）</h3>
   <table>
-    <thead><tr><th>时间</th><th>传统ICC路演</th><th>悦洋AI商科路演</th></tr></thead>
+    <thead><tr><th>时间</th><th>传统ICC路演</th><th>悦洋AI商科路演</th><th>方法来源</th></tr></thead>
     <tbody>
-      <tr><td>0:00-0:30</td><td>我是谁 + 项目名</td><td>一句话说清"我为什么做这个项目" + 核心数据钩子</td></tr>
-      <tr><td>0:30-1:30</td><td>我发现了什么问题</td><td>问题 + 数据 + 用户痛点——"这是个XX亿的市场机会"</td></tr>
-      <tr><td>1:30-2:30</td><td>我的发明方案</td><td>AI解决方案 + 商业模式 + 竞品对比——"为什么AI能做得更好"</td></tr>
-      <tr><td>2:30-3:30</td><td>测试和迭代</td><td>用户验证数据 + 商业验证——"我们已经证明了XX人愿意使用"</td></tr>
-      <tr><td>3:30-4:30</td><td>社会价值</td><td>商业价值 + 社会影响 + 未来规划——"下一步我们要做XX"</td></tr>
-      <tr><td>4:30-5:00</td><td>致谢</td><td>"如果你是这个项目的投资人，你会投吗？"——留下思考</td></tr>
+      <tr><td>0:00-0:20</td><td>"我叫XX，来自XX学校"</td><td><strong>数据钩子开场：</strong>"你知道吗，XX学校每年产生XX吨垃圾，其中XX%..."</td><td>YC路演第一句必须抓住注意力</td></tr>
+      <tr><td>0:20-1:00</td><td>"我发现了一个问题…"</td><td><strong>本质追问：</strong>"表面上看是XX问题，但追问三层后发现真正的痛点是XX"</td><td><span class="insight-tag li">第一性原理</span></td></tr>
+      <tr><td>1:00-2:00</td><td>"我的方案是…"</td><td><strong>第二曲线定位：</strong>"现有方案都在做XX，但我们发现真正能解决问题的方式是XX"</td><td><span class="insight-tag li">第二曲线</span></td></tr>
+      <tr><td>2:00-3:00</td><td>"我做了测试…"</td><td><strong>MVP验证故事：</strong>展示Build-Measure-Learn循环，用数据说话</td><td><span class="insight-tag lean">精益创业</span></td></tr>
+      <tr><td>3:00-4:00</td><td>"这个发明很有意义…"</td><td><strong>商业+社会价值：</strong>"这不仅是发明，这是一个可持续的商业模式"</td><td>悦洋AI商科</td></tr>
+      <tr><td>4:00-5:00</td><td>"谢谢大家"</td><td><strong>理念世界收尾：</strong>"如果你是这个世界的设计者，你会让这个问题继续存在吗？"</td><td><span class="insight-tag li">理念世界</span></td></tr>
     </tbody>
   </table>
 
-  <h3>悦洋评委问题库（升级版）</h3>
-  <div class="grid-2">
+  <h3>悦洋评委问题库（三维分层）</h3>
+  <div class="grid-3">
     <div class="card">
-      <h4 style="color:#c0392b;">❓ 常规问题</h4>
-      <p style="font-size:12px;">你的发明和市场上已有的有什么不同？<br>你做了哪些测试？<br>你在团队中的角色？</p>
+      <h4 style="color:#2e86c1;"><span class="insight-tag icc">ICC规则层</span></h4>
+      <p style="font-size:12px;">你的发明和现有方案有什么不同？<br>你做了哪些测试？<br>你在团队中承担什么角色？</p>
     </div>
-    <div class="card" style="border-color:#7c5cfc;">
-      <h4 style="color:#7c5cfc;">❓ AI商科加分问题</h4>
-      <p style="font-size:12px;">你这个项目怎么赚钱？成本结构是怎样的？<br>你怎么用AI来验证你的想法？<br>你最大的竞争对手是谁？你的优势是什么？<br>如果给你10万启动资金，你会怎么花？</p>
+    <div class="card" style="border-color:#b7950b;">
+      <h4 style="color:#b7950b;"><span class="insight-tag li">哲科思维层</span></h4>
+      <p style="font-size:12px;">你为什么觉得这个问题值得解决？<br>如果给你无限资源，你会怎么做？<br>你的方案背后最底层的假设是什么？</p>
+    </div>
+    <div class="card" style="border-color:#27ae60;">
+      <h4 style="color:#27ae60;"><span class="insight-tag lean">商业验证层</span></h4>
+      <p style="font-size:12px;">你怎么验证这是个真需求？<br>谁会为这个方案付钱？<br>你最大的竞争对手是谁？<br>如果给你10万启动资金，怎么花？</p>
     </div>
   </div>
 
-  <div class="callout yellow"><strong>🎯 辅导策略：</strong>不要让学生背稿。用"投资人视角"反复追问——评委最喜欢看到学生真正理解自己的项目，而不是背出一段漂亮话。</div>
+  <h3>保留原有ICC路演检查清单</h3>
+  <div class="grid-2">
+    <div>
+      <h4>原有ICC标准（全部保留）</h4>
+      <ul class="checklist">
+        <li>5分钟内能完整讲完</li>
+        <li>开场15秒内说清"什么问题"</li>
+        <li>展示了原型/模型</li>
+        <li>提到了测试和迭代</li>
+        <li>准备好了2-3个深度问题的回答</li>
+        <li>练习了至少3遍</li>
+      </ul>
+    </div>
+    <div>
+      <h4>悦洋新增标准</h4>
+      <ul class="checklist">
+        <li>第一句话是否抓住了注意力？</li>
+        <li>是否展示了"追问本质"的思考过程？</li>
+        <li>是否有数据支撑每一个主张？</li>
+        <li>是否回答了"谁会为这个方案付钱"？</li>
+        <li>是否有Build-Measure-Learn的迭代故事？</li>
+        <li>收尾是否给人留下了"理念"层面的印象？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout yellow"><strong>🎯 辅导策略：</strong>不要让学生背稿。用"YC式追问"反复训练——"所以呢？""那又怎样？""你怎么知道？"——评委最喜欢看到学生真正理解自己的项目，而不是背出一段漂亮话。李善友说"不是内容，是结构"——路演的结构比内容更重要。</div>
 </div>
 
 <!-- ===== 模块6: 全流程 ===== -->
 <div class="section" id="mode6">
   <h2>🔄 模块六 · 全流程辅导 <span class="tag purple">升级版</span></h2>
 
-  <div class="callout blue">传统做法：按比赛倒计时推进。悦洋做法：从"爱创营"到"ICC参赛"到"多赛联动"——一个项目跑通全年赛事。</div>
+  <div class="callout blue">传统做法：按比赛倒计时推进——"第1周做日志，第2周做展板…"（任务驱动）。<br>悦洋做法：从爱创营出发，经历精益创业的验证循环，最终走向ICC舞台——"一个项目的完整商业化旅程"（价值驱动）。</div>
 
-  <h3>悦洋AI商科 × ICC全流程时间线</h3>
+  <h3>悦洋AI商科 × ICC全流程（5阶段 × 三维融合）</h3>
   <table>
-    <thead><tr><th>阶段</th><th>时间</th><th>行动</th><th>AI商科产出</th></tr></thead>
+    <thead><tr><th>阶段</th><th>时间</th><th>行动</th><th><span class="insight-tag li">哲科思维</span></th><th><span class="insight-tag lean">精益创业</span></th><th>产出</th></tr></thead>
     <tbody>
       <tr style="background:#f5f0ff;">
         <td><strong>🎯 爱创营</strong></td>
         <td>暑假/学期中</td>
-        <td>5天集中营，从0到1产出AI商业项目<br>BP + AI原型 + 市场分析 + 路演</td>
-        <td>项目基础 + AI原型<br><span class="tag green">已可参赛</span></td>
+        <td>5天集中营，从0到1产出AI商业项目</td>
+        <td>第一性原理选题<br>"一"思维聚焦</td>
+        <td>MVP原型<br>验证假设清单</td>
+        <td>BP+AI原型+市场分析<br><span class="tag green">已可参赛</span></td>
       </tr>
       <tr>
         <td><strong>📋 赛事匹配</strong></td>
         <td>爱创营后</td>
-        <td>评估项目适合哪些赛事<br>ICC/NOC/宋庆龄奖/国际商赛</td>
+        <td>评估项目适合哪些赛事，制定多赛策略</td>
+        <td>"与其更好不如不同"<br>匹配最有利赛道</td>
+        <td>资源投入产出分析<br>选择验证效率最高的赛事</td>
         <td>多赛联动策略<br><span class="tag blue">最大化回报</span></td>
       </tr>
       <tr style="background:#f5f0ff;">
         <td><strong>📝 材料转化</strong></td>
         <td>赛前4-6周</td>
-        <td>将BP+原型转化为ICC材料<br>发明日志 + 展板 + 路演视频</td>
-        <td>一套材料覆盖ICC<br><span class="tag purple">效率最高</span></td>
+        <td>将BP+原型转化为ICC参赛材料</td>
+        <td>"形式因决定质料因"<br>用最适合的形式呈现</td>
+        <td>日志=BML循环记录<br>展板=商业画布视觉化</td>
+        <td>全套ICC材料<br><span class="tag purple">效率最高</span></td>
       </tr>
       <tr>
         <td><strong>🎤 赛前冲刺</strong></td>
         <td>赛前1-2周</td>
-        <td>模拟路演 + 评委问答训练<br>项目表达从"讲得清"到"讲得动人"</td>
-        <td>路演视频 + 答辩准备<br><span class="tag gold">冲刺打磨</span></td>
+        <td>模拟路演 + 评委问答深度训练</td>
+        <td>"理念世界"演讲法<br>从"讲得清"到"讲得动人"</td>
+        <td>路演=投资人pitch<br>用YC标准打磨</td>
+        <td>路演视频+答辩准备<br><span class="tag gold">冲刺打磨</span></td>
       </tr>
       <tr style="background:#f5f0ff;">
         <td><strong>🏆 赛后放大</strong></td>
         <td>比赛后</td>
-        <td>获奖成果→升学综评/作品集/媒体报道<br>未获奖→迭代后参加其他赛事</td>
+        <td>成果放大：升学综评/作品集/媒体报道/迭代再参赛</td>
+        <td>"第二曲线"——一个项目<BR>的终点是另一个项目的起点</td>
+        <td>迭代循环继续——下一轮BML为下一个赛事准备</td>
         <td>成果长期价值<br><span class="tag green">不止于比赛</span></td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout purple"><strong>核心差异：</strong>传统辅导是"为了比赛而做项目"，悦洋是"项目本就有价值，比赛只是用来放大价值"。哪怕不参赛，爱创营产出的商业项目也可以用于综评、升学作品集、家族企业创新提案——这才是"能力才是目的"的真正含义。</div>
+  <h3>保留原有ICC全流程检查清单（全部保留，三维增强）</h3>
+  <div class="grid-2">
+    <div>
+      <h4>阶段1-2: 启动+创意（赛前8-6周）</h4>
+      <ul class="checklist">
+        <li>了解ICC规则和评分标准</li>
+        <li>确定参赛形式（个人/团队）</li>
+        <li>讨论9大赛项，确定方向</li>
+        <li>制定备赛时间表</li>
+        <li class="done">+ 用第一性原理完成选题本质追问</li>
+        <li class="done">+ 完成MVP假设清单</li>
+      </ul>
+    </div>
+    <div>
+      <h4>阶段3: 发明（赛前4-6周）</h4>
+      <ul class="checklist">
+        <li>制作原型</li>
+        <li>进行测试</li>
+        <li>记录全过程（发明日志）</li>
+        <li>迭代改进</li>
+        <li class="done">+ 用BML循环记录日志</li>
+        <li class="done">+ 用创新核算追踪进展</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div>
+      <h4>阶段4: 材料准备（赛前2-4周）</h4>
+      <ul class="checklist">
+        <li>完成发明日志（PDF）</li>
+        <li>完成发明展板</li>
+        <li>完成路演视频（≤5分钟）</li>
+        <li>准备查新报告</li>
+        <li>拍摄原型和展板照片</li>
+        <li class="done">+ 展板商业画布升级</li>
+        <li class="done">+ 路演YC标准打磨</li>
+      </ul>
+    </div>
+    <div>
+      <h4>阶段5: 赛前冲刺（赛前1-2周）</h4>
+      <ul class="checklist">
+        <li>模拟路演答辩</li>
+        <li>准备评委问题回答</li>
+        <li>检查所有材料完整性</li>
+        <li>确认材料命名符合要求</li>
+        <li class="done">+ 三维评委问题模拟</li>
+        <li class="done">+ "理念世界"收尾打磨</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout purple"><strong>核心差异：</strong>传统辅导是"为了比赛而做项目"，悦洋是"项目本就有价值，比赛只是用来放大价值"。李善友说"不是内容，是结构"——我们不是在教学生"完成比赛"，而是在帮学生建立一个"用第一性原理思考、用精益创业验证、用AI工具创造"的能力结构。这个结构，比任何比赛奖项都值钱。</div>
 </div>
 
 <!-- ===== 爱创营衔接 ===== -->
@@ -540,70 +736,56 @@
   <div class="callout green"><strong>悦洋模式的核心竞争力：</strong>爱创营5天产出一个AI商业项目（BP+AI原型+市场分析），这个项目可以直接转化为ICC参赛材料。不需要"为了ICC专门做一个发明"——你已经在爱创营做出了更有价值的东西。</div>
 
   <table>
-    <thead><tr><th>爱创营产出</th><th>→ ICC材料</th><th>转化难度</th></tr></thead>
+    <thead><tr><th>爱创营产出</th><th>→ ICC材料</th><th><span class="insight-tag li">哲科视角</span></th><th>转化难度</th></tr></thead>
     <tbody>
-      <tr><td>📄 商业计划书</td><td>→ 发明日志"发现需求" + "方案构思"部分</td><td><span class="tag green">低 — 直接复用</span></td></tr>
-      <tr><td>🤖 AI原型（UI/交互）</td><td>→ 原型照片 + 展板"方案"区域</td><td><span class="tag green">低 — 截图+描述</span></td></tr>
-      <tr><td>📊 市场分析</td><td>→ 展板"市场影响" + 日志"商业价值"</td><td><span class="tag green">低 — 直接复用</span></td></tr>
-      <tr><td>📈 用户调研数据</td><td>→ 发明日志"发现需求" — 最强得分点</td><td><span class="tag green">低 — 直接复用</span></td></tr>
-      <tr><td>🎤 路演展示</td><td>→ 路演视频脚本和素材</td><td><span class="tag blue">中 — 需调整时长</span></td></tr>
-      <tr><td>📐 商业模式画布</td><td>→ 展板"商业价值" + 路演论证</td><td><span class="tag green">低 — 视觉化即可</span></td></tr>
+      <tr><td>📄 商业计划书</td><td>→ 发明日志"发现需求"+"方案构思"</td><td>BP本身就是"方案构思"的最好记录</td><td><span class="tag green">低</span></td></tr>
+      <tr><td>🤖 AI原型（UI/交互）</td><td>→ 原型照片 + 展板"方案"区域</td><td>AI工具就是最好的"材料"</td><td><span class="tag green">低</span></td></tr>
+      <tr><td>📊 市场分析</td><td>→ 展板"市场影响" + 日志"商业价值"</td><td>市场分析=发明影响的20分</td><td><span class="tag green">低</span></td></tr>
+      <tr><td>📈 用户调研数据</td><td>→ 发明日志"发现需求"最强得分点</td><td>精益验证=ICC满分标准</td><td><span class="tag green">低</span></td></tr>
+      <tr><td>🎤 路演展示</td><td>→ 路演视频脚本和素材</td><td>YC路演标准降维打击</td><td><span class="tag blue">中</span></td></tr>
+      <tr><td>📐 商业画布</td><td>→ 展板"商业模式" + 路演论证</td><td>商业画布=最清晰的信息架构</td><td><span class="tag green">低</span></td></tr>
     </tbody>
   </table>
-
-  <div class="callout yellow"><strong>💡 举例说明：</strong>爱创营做了一套"AI校园失物招领平台"——BP写了市场分析（某校每年丢失物品XXX件），原型做了小程序交互，用户调研访谈了50个同学。这些直接就是ICC的"发现需求"+"方案构思"+"市场分析"的满分素材，只需要按照日志格式整理即可。</div>
 </div>
 
-<!-- ===== 多赛联动 ===== -->
-<div class="section" id="matrix">
-  <h2>🌍 多赛联动 · 一套项目跑通全年</h2>
-
-  <div class="callout purple">ICC不是终点。爱创营产出的AI商业项目可以同时参加5+赛事——每个赛事侧重点不同，但核心材料一致。这是悦洋"AI商科品类开创者"策略的核心竞争力。</div>
-
-  <table>
-    <thead><tr><th>赛事</th><th>侧重点</th><th>对应爱创营产出</th><th>时间</th></tr></thead>
-    <tbody>
-      <tr><td><strong>🏅 ICC全球发明大会</strong></td><td>发明过程 + 社会价值</td><td>发明日志 + 展板 + 路演</td><td>5-8月</td></tr>
-      <tr><td><strong>📊 NOC大赛</strong></td><td>AI技术创新</td><td>AI原型 + 技术文档</td><td>3-8月</td></tr>
-      <tr><td><strong>🏆 宋庆龄发明奖</strong></td><td>创新性 + 完整性</td><td>作品说明书 + 演示视频</td><td>5-8月</td></tr>
-      <tr><td><strong>🌱 萌芽赛道</strong></td><td>商业计划 + 创新</td><td>BP + 路演</td><td>6-10月</td></tr>
-      <tr><td><strong>🌍 国际商赛</strong></td><td>商业价值 + 英文</td><td>BP + 英文路演</td><td>全年</td></tr>
-      <tr><td><strong>🚀 康莱德挑战赛</strong></td><td>创新 + 商业可行性</td><td>BP + 原型 + 商业分析</td><td>11-3月</td></tr>
-    </tbody>
-  </table>
-
-  <div class="card" style="border-left:4px solid #7c5cfc;">
-    <h4>🎯 悦洋AI商科 · 全年参赛路线图</h4>
-    <p style="font-size:13px;">
-    <strong>暑假爱创营</strong> → 产出AI商业项目<br>
-    <strong>7-8月</strong> → ICC / NOC / 宋庆龄奖（用同一套项目参赛）<br>
-    <strong>9-10月</strong> → 萌芽赛道（BP直接参赛）<br>
-    <strong>11-3月</strong> → 康莱德挑战赛（BP+原型迭代升级）<br>
-    <strong>全年</strong> → 国际商赛（英文路演+商业分析）<br><br>
-    <strong>一套投入，5+次参赛机会。这才是"品类开创者"的效率。</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ===== 对比总结 ===== -->
+<!-- ===== 总结 ===== -->
 <div class="section">
-  <h2>📊 总结 · 为什么悦洋AI商科做ICC是降维打击</h2>
+  <h2>📊 总结 · 悦洋AI商科 × 李善友哲科思维 × 精益创业 = ICC降维打击</h2>
+
+  <div class="adv-box">
+    <h3>🚀 三维能力矩阵</h3>
+    <div class="grid-3" style="margin-top:8px;">
+      <div style="font-size:12px;">
+        <strong style="color:#2e86c1;">📋 ICC规则</strong>
+        <p style="color:#666;margin-top:4px;">知道比赛要什么<br>12项评审标准+分值<br>参赛流程管理<br>材料规范把控</p>
+      </div>
+      <div style="font-size:12px;">
+        <strong style="color:#b7950b;">💡 李善友哲科</strong>
+        <p style="color:#666;margin-top:4px;">知道怎么想问题<br>第一性原理追问本质<br>第二曲线超越竞争<br>"一"思维击穿突破</p>
+      </div>
+      <div style="font-size:12px;">
+        <strong style="color:#27ae60;">🔄 精益创业</strong>
+        <p style="color:#666;margin-top:4px;">知道怎么做出来<br>MVP快速验证假设<br>BML循环驱动迭代<br>创新核算数据说话</p>
+      </div>
+    </div>
+  </div>
 
   <table>
     <thead><tr><th>对比维度</th><th>传统ICC辅导机构</th><th>悦洋AI商科</th></tr></thead>
     <tbody>
-      <tr><td>学生来源</td><td>临时招募，比赛结束即散</td><td>爱创营/长期学员，持续成长</td></tr>
-      <tr><td>项目起点</td><td>从零开始"想一个发明"</td><td>已有AI商业项目，转化即可</td></tr>
-      <tr><td>辅导范围</td><td>ICC单项比赛</td><td>AI商科教育体系的一部分</td></tr>
-      <tr><td>核心竞争力</td><td>熟悉比赛规则</td><td>商业思维 + AI能力 + 比赛经验</td></tr>
-      <tr><td>学生收获</td><td>一个比赛奖项</td><td>AI项目作品集 + 商业能力 + 多项赛事奖项 + 升学背书</td></tr>
-      <tr><td>定价逻辑</td><td>按比赛收费</td><td>按教育价值收费——比赛是赠品</td></tr>
-      <tr><td>家长认知</td><td>"花了钱参加比赛"</td><td>"孩子真的学会了用AI创造商业价值"</td></tr>
+      <tr><td>思维层级</td><td>执行层："怎么做材料"</td><td>三层贯通：哲学层→方法层→执行层</td></tr>
+      <tr><td>项目起点</td><td>从零开始"想一个发明"</td><td>爱创营AI商业项目直接转化</td></tr>
+      <tr><td>辅导范围</td><td>ICC单项比赛</td><td>AI商科教育体系的一部分（比赛是副产品）</td></tr>
+      <tr><td>方法论</td><td>经验主义："上届获奖作品是这样做的"</td><td>第一性原理：从问题本质推导，而非模仿</td></tr>
+      <tr><td>迭代思维</td><td>一次成型，修改到交稿为止</td><td>BML循环：持续迭代，赛后继续优化再参赛</td></tr>
+      <tr><td>学生收获</td><td>一个比赛奖项+一套参赛材料</td><td>哲科思维能力+精益创业方法+AI项目作品集+多项赛事奖项+升学背书</td></tr>
+      <tr><td>定价逻辑</td><td>按比赛收费（¥8,800-¥15,000/赛）</td><td>按教育价值收费——比赛是赠品</td></tr>
+      <tr><td>家长认知</td><td>"花了钱参加比赛，拿了个奖"</td><td>"孩子真的学会了用AI创造商业价值，学会了像创业者一样思考"</td></tr>
     </tbody>
   </table>
 
   <div class="callout purple" style="font-size:14px;font-weight:600;text-align:center;">
-    🚀 不是比赛辅导，是AI商科教育。比赛是副产品，能力才是目的。
+    🚀 李善友说："不是更好，是不同。" <br>悦洋的ICC辅导不是"比竞品做更好"，而是"从根本上不同"。<br>不是比赛辅导，是AI商科教育。比赛是副产品，能力才是目的。
   </div>
 </div>
 

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conrad Challenge 康莱德挑战赛 · 悦洋教育赛事分析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.7; }
+  .banner { background: linear-gradient(135deg, #0a1628, #1a2332); border-bottom: 2px solid #f1c40f; padding: 50px 40px 36px; text-align: center; }
+  .banner h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .banner h1 span { color: #f1c40f; }
+  .banner .subtitle { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .banner .tag-row { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .banner .tag-row span { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 10px; background: rgba(241,196,15,.1); color: #f1c40f; border: 1px solid rgba(241,196,15,.2); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; }
+  .section h2 { font-size: 19px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+  .section h3 { font-size: 15px; margin: 16px 0 8px; color: #f1c40f; }
+  .section p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  table th { background: #21262d; color: #c9d1d9; padding: 7px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+  table th:first-child { border-radius: 6px 0 0 0; }
+  table th:last-child { border-radius: 0 6px 0 0; }
+  table td { padding: 7px 10px; border-bottom: 1px solid #21262d; }
+  table tr:nth-child(even) td { background: #0d1117; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; }
+  .callout.yellow { background: rgba(241,196,15,.06); border: 1px solid rgba(241,196,15,.15); }
+  .callout.blue { background: rgba(88,166,255,.06); border: 1px solid rgba(88,166,255,.15); }
+  .callout.green { background: rgba(46,160,67,.06); border: 1px solid rgba(46,160,67,.15); }
+  .callout.red { background: rgba(248,81,73,.06); border: 1px solid rgba(248,81,73,.15); }
+  .callout strong { display: block; margin-bottom: 4px; color: #e6edf3; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width:700px) { .grid-2,.grid-3 { grid-template-columns: 1fr; } }
+  .card { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; font-size: 13px; }
+  .card .lbl { color: #8b949e; font-size: 11px; margin-bottom: 2px; }
+  .card .val { font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+  .tag.free { background: rgba(46,160,67,.15); color: #3fb950; }
+  .tag.paid { background: rgba(248,81,73,.15); color: #f85149; }
+  .tag.top { background: rgba(241,196,15,.2); color: #f1c40f; }
+  .tag.bot { background: rgba(139,148,158,.15); color: #8b949e; }
+  .step { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 13px; }
+  .step .num { width: 28px; height: 28px; background: #f1c40f; color: #0d1117; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step .content { flex: 1; }
+  .footer { text-align: center; color: #484f58; font-size: 12px; padding: 24px; border-top: 1px solid #21262d; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>🚀 <span>Conrad Challenge</span> 康莱德创新挑战赛</h1>
+  <div class="subtitle">悦洋教育 · 澳洲学员赛事分析与辅导方案</div>
+  <div class="tag-row">
+    <span>13–18岁</span>
+    <span>NASA/Conrad Foundation</span>
+    <span>$499/队</span>
+    <span>4月全球决赛@休斯顿</span>
+    <span>🎯 悦洋匹配度最高</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <h2>📋 赛事总览</h2>
+  <div class="grid-3">
+    <div class="card"><div class="lbl">主办方</div><div class="val">Conrad Foundation + NASA</div></div>
+    <div class="card"><div class="lbl">年龄要求</div><div class="val">13–18岁</div></div>
+    <div class="card"><div class="lbl">团队规模</div><div class="val">2–5人 + 1教练</div></div>
+    <div class="card"><div class="lbl">参赛费用</div><div class="lbl" style="font-size:11px;">激活阶段免费 → 创新阶段 $499/队</div></div>
+    <div class="card"><div class="lbl">语言</div><div class="val">全英文</div></div>
+    <div class="card"><div class="lbl">全球决赛</div><div class="val">Space Center Houston, USA</div></div>
+  </div>
+  <div class="callout yellow">
+    <strong>🎯 悦洋核心推荐理由</strong>
+    Conrad Challenge要求团队提交<strong>创新方案+商业计划书+技术原型</strong>——这与悦洋AI商科的教学产出（BP+AI原型+路演视频）高度重合。学员在爱创营完成的项目可直接转化参赛，备赛效率极高。
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 2025-2026 赛季时间线</h2>
+  <div class="step"><div class="num">1</div><div class="content"><strong>激活阶段</strong> (2025.08.28–10.30)<br>注册组队、选题确认、免费参与</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>创新阶段</strong> (2025.10.31–2026.01.08)<br>提交完整方案，缴纳 $499/队</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>全球决赛</strong> (2026.04.22–04.25)<br>线下 @ Space Center Houston，现场答辩</div></div>
+</div>
+
+<div class="section">
+  <h2>🎪 竞赛赛道</h2>
+  <table>
+    <thead><tr><th>赛道</th><th>AI相关性</th><th>悦洋匹配</th><th>推荐指数</th></tr></thead>
+    <tbody>
+      <tr><td>Cyber-Technology & Security</td><td>高</td><td>AI原型+BP直接对应</td><td><span class="tag top">⭐⭐⭐⭐⭐</span></td></tr>
+      <tr><td>Innovation for a Better Future</td><td>高</td><td>SDG选题+社会价值叙事</td><td><span class="tag top">⭐⭐⭐⭐⭐</span></td></tr>
+      <tr><td>Technology for a Better World</td><td>高</td><td>AI+社会影响力</td><td><span class="tag top">⭐⭐⭐⭐⭐</span></td></tr>
+      <tr><td>Energy & Environment</td><td>中</td><td>环保SDG选题</td><td>⭐⭐⭐⭐</td></tr>
+      <tr><td>Health & Nutrition</td><td>中</td><td>健康科技应用</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Aerospace & Aviation</td><td>中</td><td>航天+AI交叉</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Water & Maritime</td><td>中</td><td>海洋科技</td><td>⭐⭐⭐</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📐 评审标准 vs 悦洋产出映射</h2>
+  <table>
+    <thead><tr><th>评审维度</th><th>权重</th><th>悦洋对应产出</th></tr></thead>
+    <tbody>
+      <tr><td>Innovation & Creativity</td><td>30%</td><td>✅ AI工具辅助创意发散 + Design Thinking工作坊</td></tr>
+      <tr><td>STEM Principles</td><td>25%</td><td>✅ AI编程+无代码工具搭建可交互原型</td></tr>
+      <tr><td>Commercial Viability</td><td>25%</td><td>✅ 商业计划书(BP): 市场分析+商业模式+财务预测</td></tr>
+      <tr><td>Presentation & Communication</td><td>20%</td><td>✅ 路演视频录制+模拟答辩+PPT制作</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green">覆盖了赛事评分标准的 <strong>90%+</strong>。不需要额外"备赛"——学员完成爱创营课程的同时，参赛材料已基本就绪。</div>
+</div>
+
+<div class="section">
+  <h2>🎓 悦洋辅导方案</h2>
+
+  <div class="grid-3">
+    <div class="card" style="border-left:3px solid #f1c40f;">
+      <div class="lbl" style="color:#f1c40f;font-weight:700;">🚀 Conrad直通车</div>
+      <div class="val">AUD $2,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 8周 · 适合有爱创营基础的学员<br>
+        BP优化→AI原型升级→路演辅导→模拟答辩→注册指导
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #58a6ff;">
+      <div class="lbl" style="color:#58a6ff;font-weight:700;">🌱 Conrad全程营</div>
+      <div class="val">AUD $4,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 14周 · 适合零基础但有项目想法<br>
+        选题辅导→技术实现→BP撰写→路演→全程跟踪
+      </div>
+    </div>
+    <div class="card" style="border-left:3px solid #a371f7;">
+      <div class="lbl" style="color:#a371f7;font-weight:700;">👑 一对一VIP冲刺</div>
+      <div class="val">AUD $3,800</div>
+      <div style="font-size:12px;color:#8b949e;margin-top:6px;">
+        ✅ 6周 · 适合已有完整项目<br>
+        1对1专家+赛道匹配+材料精修+3轮模拟答辩
+      </div>
+    </div>
+  </div>
+
+  <h3>辅导流程</h3>
+  <div class="step"><div class="num">1</div><div class="content"><strong>赛道选择+选题验证</strong> (Week 1-2)<br>评估学员项目所属赛道，验证社会价值/商业可行性</div></div>
+  <div class="step"><div class="num">2</div><div class="content"><strong>AI原型开发+BP撰写</strong> (Week 3-6)<br>AI工具辅助技术实现，商业模式画布+市场分析+财务预测</div></div>
+  <div class="step"><div class="num">3</div><div class="content"><strong>材料整合+提交</strong> (Week 7)<br>创新方案+商业计划书+演示视频整合，注册辅助+材料提交</div></div>
+  <div class="step"><div class="num">4</div><div class="content"><strong>答辩冲刺</strong> (Week 8，如晋级)<br>3轮+模拟答辩，专家反馈+精修</div></div>
+</div>
+
+<div class="section">
+  <h2>👨‍🏫 师资团队</h2>
+  <table>
+    <thead><tr><th>角色</th><th>资质</th><th>职责</th></tr></thead>
+    <tbody>
+      <tr><td>AI技术导师</td><td>AI工程师/计算机科学背景</td><td>原型开发指导</td></tr>
+      <tr><td>商业导师</td><td>商学院背景/企业高管</td><td>BP+商业模式指导</td></tr>
+      <tr><td>竞赛教练</td><td>前Conrad获奖者/评委</td><td>赛事策略+答辩训练</td></tr>
+      <tr><td>语言导师</td><td>英语母语/雅思8+</td><td>英文材料润色</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>🏆 预期成果</h2>
+  <table>
+    <thead><tr><th>学员水平</th><th>预期成绩</th><th>保底产出</th></tr></thead>
+    <tbody>
+      <tr><td>基础学员（Y7-9）</td><td>激活阶段完成</td><td>完整的创新方案+参赛证书</td></tr>
+      <tr><td>进阶学员（Y9-10）</td><td>创新阶段完成/入围全球决赛</td><td>商业计划书+AI原型+Finalist称号</td></tr>
+      <tr><td>顶尖学员（Y10-12）</td><td>全球决赛获奖</td><td>Pete Conrad Scholar+名校申请素材</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>❓ 常见问题</h2>
+  <p><strong>Conrad和Diamond Challenge有什么区别？</strong><br>Conrad偏重"STEM创新+商业计划"（需要技术原型），Diamond偏重"纯创业BP"（更侧重商业模式和市场规模）。悦洋AI商科学员两个赛事可以同时参加——一份BP产出，稍加调整即可对应两套评审标准。</p>
+  <p style="margin-top:10px;"><strong>澳洲学生需要签证去美国参赛吗？</strong><br>晋级全球决赛的团队需持有效护照和美国签证（ESTA或B1/B2）前往休斯顿。悦洋提供签证指导服务。</p>
+  <p style="margin-top:10px;"><strong>$499/队的费用是否包含旅行费用？</strong><br>不包含。$499仅为创新阶段的参赛费。全球决赛的旅行、住宿费用需团队自行承担。</p>
+</div>
+
+</div>
+
+<div class="footer">
+  悦洋教育 · Conrad Challenge 赛事分析 · 2026.05 · 悦洋海外集团成员<br>
+  edu@joy1996.com · 粤ICP备13046921号
+</div>
+
+</body>
+</html>

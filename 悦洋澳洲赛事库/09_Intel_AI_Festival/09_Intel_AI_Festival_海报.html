@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intel AI Global Impact Festival · 英特尔AI全球影响力节 · 悦洋教育</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0a0e1a 0%, #0a1a2e 50%, #0a0e1a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .poster {
+    max-width: 520px;
+    width: 100%;
+    background: linear-gradient(160deg, #0a1a2e, #122a45, #0a1a2e);
+    border-radius: 24px;
+    border: 1px solid rgba(0,113,197,.25);
+    padding: 36px 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,113,197,.04) 0%, transparent 70%);
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(0,113,197,.15);
+    border: 1px solid rgba(0,113,197,.3);
+    color: #58a6ff;
+    font-size: 11px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  h1 .highlight {
+    background: linear-gradient(135deg, #58a6ff, #0071c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sub {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .sub strong { color: #e6edf3; }
+
+  .org-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .org-tag {
+    font-size: 11px;
+    color: #8b949e;
+    background: rgba(255,255,255,.04);
+    border: 1px solid #30363d;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+
+  .free-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(63,185,80,.15), rgba(46,160,67,.1));
+    border: 1px solid rgba(63,185,80,.3);
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #3fb950;
+    letter-spacing: 0.5px;
+  }
+
+  .highlight-box {
+    background: rgba(0,113,197,.06);
+    border: 1px solid rgba(0,113,197,.15);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .highlight-box h2 {
+    color: #58a6ff;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .highlight-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .highlight-box ul li {
+    color: #c9d1d9;
+    font-size: 13px;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .highlight-box ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #3fb950;
+    font-weight: 700;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .info-item {
+    background: rgba(255,255,255,.03);
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .info-item .label { color: #8b949e; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-item .value { color: #fff; font-size: 14px; font-weight: 600; margin-top: 2px; }
+  .info-item .note { color: #484f58; font-size: 11px; }
+
+  .cta {
+    background: linear-gradient(135deg, #0071c5, #005a9e);
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: transform .2s;
+    text-decoration: none;
+    display: block;
+  }
+  .cta:hover { transform: scale(1.02); }
+
+  .cta-sub {
+    text-align: center;
+    color: #484f58;
+    font-size: 11px;
+  }
+
+  .testimonial {
+    border-top: 1px solid #30363d;
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+  .testimonial p {
+    color: #8b949e;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .testimonial .author {
+    color: #484f58;
+    font-size: 11px;
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  .footer-note {
+    text-align: center;
+    color: #484f58;
+    font-size: 10px;
+    margin-top: 16px;
+    border-top: 1px solid #21262d;
+    padding-top: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <div class="badge">Intel · AI Global Impact Festival</div>
+
+  <h1>用AI改变世界，<br><span class="highlight">英特尔为你搭台</span></h1>
+  <div class="sub">
+    <strong>Intel AI Global Impact Festival</strong> — 英特尔全球AI影响力节。<br>
+    4–18岁均可参赛，总奖金池 <strong>US$500,000+</strong>，32+国家同台竞技。
+  </div>
+
+  <div class="free-badge">💰 奖金池 US$500,000+ · 完全免费参赛</div>
+
+  <div class="org-row">
+    <span class="org-tag">🤖 Intel Corporation</span>
+    <span class="org-tag">🌍 32+国家</span>
+    <span class="org-tag">🎯 4–18岁</span>
+    <span class="org-tag">🏆 全球决赛10月</span>
+  </div>
+
+  <div class="highlight-box">
+    <h2>🎯 悦洋AI商科 · Intel冲刺方案</h2>
+    <ul>
+      <li><strong>爱创营产出直接参赛</strong> — AI原型+SDG选题=Intel入场券</li>
+      <li><strong>完全免费</strong> — 零成本体验全球顶级AI赛事</li>
+      <li><strong>全学段覆盖</strong> — 4岁起即可参赛，低龄组友好</li>
+      <li><strong>$500K+奖金池</strong> — 现金+Intel设备+导师资源</li>
+    </ul>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="label">适合年龄</div>
+      <div class="value">4–18岁</div>
+      <div class="note">低龄/初中/高中三组</div>
+    </div>
+    <div class="info-item">
+      <div class="label">参赛费用</div>
+      <div class="value" style="color:#3fb950;">完全免费</div>
+      <div class="note">无需任何参赛费</div>
+    </div>
+    <div class="info-item">
+      <div class="label">关键日期</div>
+      <div class="value">1月说明会·10月决赛</div>
+      <div class="note">2026年赛季</div>
+    </div>
+    <div class="info-item">
+      <div class="label">奖金池</div>
+      <div class="value" style="color:#58a6ff;">US$500,000+</div>
+      <div class="note">现金+设备+导师资源</div>
+    </div>
+  </div>
+
+  <a class="cta" href="#">🚀 立即咨询 · Intel冲刺方案</a>
+  <div class="cta-sub">📞 edu@joy1996.com · 悦洋教育澳洲事业部</div>
+
+  <div class="testimonial">
+    <p>"在爱创营做了一个AI垃圾分类的项目，悦洋导师帮我改成了Intel AI Festival的方案。没想到真的入围全球决赛了！站在国际舞台上展示自己的AI项目，那种感觉太棒了。"</p>
+    <div class="author">— Sarah L., 布里斯班 Y10, Intel AI Global Impact Festival 2025 入围选手</div>
+  </div>
+
+  <div class="footer-note">
+    Intel AI Global Impact Festival is a program of Intel Corporation. 悦洋教育提供赛事辅导服务，非赛事主办方。
+  </div>
+
+</div>
+
+</body>
+</html>
