@@ -39,7 +39,7 @@
   .hero h1 { font-size: 38px; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
   .hero h1 .accent { background: linear-gradient(135deg, #d69e2e, #f6e05e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero h1 .globe { color: #805ad5; }
-  .hero .subtitle { font-size: 17px; font-weight: 300; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+  .hero .subtitle { font-size: 17px; font-weight: 300; opacity: 0.85; max-width: 650px; margin: 0 auto; }
   .hero-meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; opacity: 0.6; margin-top: 10px; }
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -55,12 +55,12 @@
   .section-label.purple { background: #805ad5; }
   .section-label.red { background: #e53e3e; }
   .section-label.teal { background: #319795; }
+  .section-label.orange { background: #dd6b20; }
 
   h2 { font-size: 26px; font-weight: 700; margin-bottom: 20px; color: #1a365d; }
   h2 .emoji { margin-right: 6px; }
   h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: #2b6cb0; }
   h4 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; }
-  p { margin-bottom: 14px; }
 
   .card {
     background: white; border-radius: 10px; padding: 24px;
@@ -73,6 +73,7 @@
   .card-purple { border-left: 4px solid #805ad5; background: #faf5ff; }
   .card-blue { border-left: 4px solid #2b6cb0; background: #ebf8ff; }
   .card-teal { border-left: 4px solid #319795; background: #e6fffd; }
+  .card-orange { border-left: 4px solid #dd6b20; background: #fffaf0; }
 
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
@@ -101,6 +102,7 @@
   .tag-blue { background: #bee3f8; color: #2a4365; }
   .tag-purple { background: #e9d8fd; color: #553c9a; }
   .tag-teal { background: #b2f5ea; color: #234e52; }
+  .tag-orange { background: #feebc8; color: #7b341e; }
 
   .funnel {
     display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 16px 0;
@@ -143,6 +145,8 @@
   .highlight-box.gold { background: #fffff0; border-color: #d69e2e; }
   .highlight-box.green { background: #f0fff4; border-color: #38a169; }
   .highlight-box.purple { background: #faf5ff; border-color: #805ad5; }
+  .highlight-box.red { background: #fff5f5; border-color: #fed7d7; }
+  .highlight-box.orange { background: #fffaf0; border-color: #feebc8; }
 
   ul, ol { padding-left: 20px; margin-bottom: 14px; }
   li { margin-bottom: 5px; }
@@ -162,6 +166,7 @@
   .dot-blue { background: #2b6cb0; }
   .dot-gold { background: #d69e2e; }
   .dot-purple { background: #805ad5; }
+  .dot-orange { background: #dd6b20; }
 
   .comp-detail {
     background: white; border-radius: 12px; border: 1px solid #e2e8f0;
@@ -186,6 +191,12 @@
     color: white; padding: 2px 10px; border-radius: 10px;
     font-size: 11px; font-weight: 600;
   }
+  .enterprise-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: linear-gradient(135deg, #c05621, #dd6b20);
+    color: white; padding: 2px 10px; border-radius: 10px;
+    font-size: 11px; font-weight: 600;
+  }
 
   .footer {
     text-align: center; padding: 30px;
@@ -197,12 +208,12 @@
 <body>
 
 <div class="hero">
-  <div class="hero-badge">内部讨论稿 · v4.0 · 国际化版</div>
+  <div class="hero-badge">内部讨论稿 · v4.1 · 国际化+企业AI扩展版</div>
   <h1>悦洋教育 · <span class="accent">竞赛产品矩阵</span> 分析</h1>
-  <div class="subtitle">10 大赛事 × 4 级产品体系 — <span class="accent">聚焦能走向国际的赛道</span></div>
+  <div class="subtitle">14 大赛事全面分析 — 从传统竞赛到企业AI赛事，覆盖完整国际升学路径</div>
   <div class="hero-meta">
-    <span>版本：v4.0</span>
-    <span>2026年5月14日</span>
+    <span>版本：v4.1</span>
+    <span>2026年5月18日</span>
     <span>编制：杨辉</span>
   </div>
 </div>
@@ -213,7 +224,7 @@
 <section>
   <span class="section-label teal">PART 1</span>
   <h2>🌍 国际路径全景</h2>
-  <p>10大赛事按<strong>国际化潜力</strong>重新分级：</p>
+  <p>14大赛事按<strong>国际化潜力</strong>重新分级，新增<strong>企业AI赛事</strong>板块：</p>
 
   <h3>🌍 直达国际赛道（赛事本身即为国际级）</h3>
   <table>
@@ -236,6 +247,24 @@
       <td>UNESCO等</td>
       <td>各国选拔 → 国际峰会</td>
     </tr>
+    <tr>
+      <td><b>Microsoft Imagine Cup</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>微软</td>
+      <td>中国区 → 区域赛 → 全球总决赛（微软总部）</td>
+    </tr>
+    <tr>
+      <td><b>Intel AI Global Impact Festival</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>Intel</td>
+      <td>各国选拔 → 全球峰会</td>
+    </tr>
+    <tr>
+      <td><b>Google Science Fair</b></td>
+      <td><span class="intl-badge">★★★★★</span></td>
+      <td>Google</td>
+      <td>在线提交 → 全球评审 → 加州颁奖</td>
+    </tr>
   </table>
 
   <h3>🚪 国内→国际晋级通道</h3>
@@ -249,31 +278,36 @@
     <tr>
       <td><b>NOC AI创新赛项</b></td>
       <td><span class="tag tag-blue">→ 国际邀请赛</span></td>
-      <td>部分赛项设有国际交流环节</td>
+      <td>部分赛项设有国际交流环节（⚠️ NOC已于2025年退出白名单）</td>
     </tr>
     <tr>
       <td><b>蓝桥杯（青少年AI组）</b></td>
       <td><span class="tag tag-purple">→ 国际邀请</span></td>
       <td>国赛一等奖可获国际邀请赛资格</td>
     </tr>
+    <tr>
+      <td><b>华为ICT大赛</b></td>
+      <td><span class="tag tag-orange">→ 全球总决赛</span></td>
+      <td>中国区 → 区域赛 → 全球总决赛（深圳/华为总部）</td>
+    </tr>
   </table>
 
   <h3>🛠️ 国内基础赛（为国际化打基础）</h3>
   <table>
     <tr><th>赛事</th><th>对国际赛的价值</th></tr>
-    <tr><td>互联网+萌芽赛道</td><td>BP写作+路演能力 → CTB/全球AI峰会直接复用</td></tr>
+    <tr><td>互联网+萌芽赛道</td><td>BP写作+路演能力 → CTB/Imagine Cup直接复用</td></tr>
     <tr><td>宋庆龄少年儿童发明奖</td><td>社会创新案例 → ICC/ICW的作品素材</td></tr>
-    <tr><td>全国青少年AI创新挑战赛</td><td>AI技术基础 → 全球AI峰会技术储备</td></tr>
+    <tr><td>全国青少年AI创新挑战赛</td><td>AI技术基础 → 全球AI峰会/企业AI赛事技术储备</td></tr>
     <tr><td>全国青少年科创大赛</td><td>科研方法论 → 所有国际赛的研究基础</td></tr>
   </table>
 
   <div class="highlight-box">
-    <strong>核心战略转换</strong>：从"白名单升学"叙事 → <strong>"从国内到国际"成长叙事</strong>。<br>
-    家长购买的不是一个赛事辅导，而是一条完整的国际化成长路径。
+    <strong>核心战略升级</strong>：从"白名单升学"叙事 → <strong>"从国内到国际、从传统竞赛到企业AI"成长叙事</strong>。<br>
+    家长购买的不是一个赛事辅导，而是一条<strong>可被世界名校看见的竞争力路径</strong>。
   </div>
 </section>
 
-<!-- ===== PART 2: 国际化深度分析 ===== -->
+<!-- ===== PART 2: 十大竞赛国际化深度分析 ===== -->
 <section>
   <span class="section-label gold">PART 2</span>
   <h2>十大竞赛国际化深度分析</h2>
@@ -346,15 +380,15 @@
   <div class="comp-detail" style="border-left:4px solid #38a169;">
     <div class="cd-header">
       <div class="cd-name">5️⃣ NOC AI创新赛项</div>
-      <div class="cd-badges"><span class="tag tag-green">白名单</span></div>
+      <div class="cd-badges"><span class="tag tag-red">已出局</span></div>
     </div>
     <table>
-      <tr><td style="width:100px;font-weight:600;">级别</td><td>教育部白名单</td></tr>
+      <tr><td style="width:100px;font-weight:600;">级别</td><td>原教育部白名单（⚠️ 2025年已退出）</td></tr>
       <tr><td style="font-weight:600;">年龄</td><td>10-18岁</td></tr>
       <tr><td style="font-weight:600;">国际路径</td><td>部分赛项设有国际交流/邀请环节</td></tr>
       <tr><td style="font-weight:600;">匹配度</td><td><span class="score score-5">★★★★★</span></td></tr>
       <tr><td style="font-weight:600;">悦洋优势</td><td>AI专项赛道，悦洋AI工具链天然匹配；与ICC共享课程体系</td></tr>
-      <tr><td style="font-weight:600;">国际化价值</td><td><strong>全国最大AI赛事，获奖成果可写入国际申请材料</strong></td></tr>
+      <tr><td style="font-weight:600;">国际化价值</td><td><strong>虽退出白名单，但参赛规模仍大，可做能力验证</strong></td></tr>
     </table>
   </div>
 
@@ -380,7 +414,7 @@
     <div class="card card-blue">
       <h4 style="margin-top:0;">7️⃣ 互联网+ 萌芽赛道</h4>
       <p style="font-size:13px;">白名单 · 14-18岁</p>
-      <p style="font-size:13px;">BP写作+路演能力 → CTB/全球AI峰会直接复用</p>
+      <p style="font-size:13px;">BP写作+路演能力 → CTB/Imagine Cup/全球AI峰会直接复用</p>
       <p style="font-size:13px;">匹配度：<span class="score score-4">★★★★</span></p>
     </div>
     <div class="card card-green">
@@ -392,7 +426,7 @@
     <div class="card card-gold">
       <h4 style="margin-top:0;">9️⃣ 全国青少年AI创新挑战赛</h4>
       <p style="font-size:13px;">白名单 · 8-18岁</p>
-      <p style="font-size:13px;">AI技术基础 → 全球AI峰会技术储备</p>
+      <p style="font-size:13px;">AI技术基础 → 全球AI峰会/Intel AI Festival技术储备</p>
       <p style="font-size:13px;">匹配度：<span class="score score-4">★★★★</span></p>
     </div>
     <div class="card card-purple">
@@ -404,23 +438,174 @@
   </div>
 </section>
 
-<!-- ===== PART 3: 三条国际路径 ===== -->
+<!-- ===== PART 3: 企业AI赛事专题分析（新增） ===== -->
 <section>
-  <span class="section-label purple">PART 3</span>
+  <span class="section-label orange">PART 3</span>
+  <h2>企业AI赛事专题分析</h2>
+  <p>企业AI赛事是悦洋"<strong>AI商科</strong>"战略的天然主场。与传统白名单赛事相比，企业AI赛事更看重：技术落地能力、商业模式设计、社会影响力——这与悦洋"AI+商科"的教学理念高度一致。</p>
+
+  <div class="highlight-box orange">
+    <strong>💡 为什么企业AI赛事是悦洋的核心战场？</strong><br>
+    <strong>1. 评审标准包含商业可行性</strong> — Imagine Cup等赛事的评审中，商业模式占25-30%权重，悦洋商科教学直接加分<br>
+    <strong>2. 企业品牌 = 国际化免解释</strong> — 微软/Intel/Google的Logo对海外招生官意味着无需背景说明的认可度<br>
+    <strong>3. 年龄门槛高 → 客单价高</strong> — 16岁+参赛，家长决策更成熟，支付意愿更强<br>
+    <strong>4. 竞争格局未定型</strong> — 国内辅导机构尚未大规模进入，先入者建立品牌的窗口期
+  </div>
+
+  <!-- Microsoft Imagine Cup -->
+  <div class="comp-detail" style="border-left:4px solid #dd6b20;">
+    <div class="cd-header">
+      <div class="cd-name">1️⃣ Microsoft Imagine Cup 微软"创新杯"</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 全球级</span><span class="enterprise-badge">企业主办</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">主办方</td><td>微软（Microsoft），2003年创办，100+国家参与</td></tr>
+      <tr><td style="font-weight:600;">级别</td><td>全球级 · 20年+历史 · 历年数百万参赛者</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>16岁+（含高中生组）· 全英文</td></tr>
+      <tr><td style="font-weight:600;">赛项方向</td><td>AI for Good / Innovation / World Citizenship</td></tr>
+      <tr><td style="font-weight:600;">参赛形式</td><td>商业计划书 + AI技术原型 + 3分钟路演</td></tr>
+      <tr><td style="font-weight:600;">晋级路径</td><td>中国区选拔 → 区域决赛 → 全球总决赛（微软总部雷德蒙德）</td></tr>
+      <tr><td style="font-weight:600;">时间线</td><td>赛季1月启动报名 → 4月区域决赛 → 5月全球总决赛</td></tr>
+      <tr><td style="font-weight:600;">AI商科匹配</td><td><span class="score score-5">★★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>AI工具链（豆包/灵光等）加速原型开发，比纯技术团队更快完成MVP；商业计划书写作能力（萌芽/CTB训练直接复用）；路演训练让展示环节远超纯技术参赛者</td></tr>
+      <tr><td style="font-weight:600;">国际升学价值</td><td><strong>微软全球品牌背书，美国Top 30大学高度认可。MIT、Stanford、CMU、UC Berkeley均有Imagine Cup获奖者录取记录。最具"名校说服力"的AI赛事之一。</strong></td></tr>
+    </table>
+    <div class="highlight-box" style="margin-top:10px;">
+      <strong>🔍 AI商科深度分析：</strong>Imagine Cup评审由三部分组成：技术实现（30%）、商业可行性（30%）、社会影响力（40%）。传统编程机构的学生能做出技术原型，但缺乏商业模式设计能力——商业计划书往往是薄弱环节。悦洋学员的优势在于：AI工具链辅助下快速完成原型（节省50%开发时间），将更多精力投入商业计划和影响力叙事。这正是"AI+商科"双驱动的核心价值：<strong>技术不输人，商业远超同龄人</strong>。
+    </div>
+  </div>
+
+  <!-- Intel AI Global Impact Festival -->
+  <div class="comp-detail" style="border-left:4px solid #dd6b20;">
+    <div class="cd-header">
+      <div class="cd-name">2️⃣ Intel AI Global Impact Festival Intel AI影响力嘉年华</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 全球级</span><span class="enterprise-badge">企业主办</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">主办方</td><td>Intel（英特尔），2020年创办，亚太/欧美多赛区</td></tr>
+      <tr><td style="font-weight:600;">级别</td><td>全球级 · AI+SDGs方向</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>13-18岁 · 全英文 · AI+社会影响力</td></tr>
+      <tr><td style="font-weight:600;">赛项方向</td><td>AI for Social Impact — 用AI解决联合国SDGs目标</td></tr>
+      <tr><td style="font-weight:600;">参赛形式</td><td>项目展示视频（2-3分钟）+ 技术说明文档 + 社会影响力分析</td></tr>
+      <tr><td style="font-weight:600;">晋级路径</td><td>各国/地区选拔 → 亚太区决赛 → 全球峰会（Intel总部/线上）</td></tr>
+      <tr><td style="font-weight:600;">AI商科匹配</td><td><span class="score score-5">★★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>SDGs议题是悦洋社会创新课程的基石；AI工具链快速产出原型；社会影响力分析需要商业思维支撑（悦洋独有优势）</td></tr>
+      <tr><td style="font-weight:600;">国际升学价值</td><td><strong>Intel品牌全球认知度极高；SDGs方向与Top 30大学招生偏好（社会责任感）高度吻合；亚太区获奖对中国学生极具竞争力</strong></td></tr>
+    </table>
+    <div class="highlight-box" style="margin-top:10px;">
+      <strong>🔍 AI商科深度分析：</strong>Intel AI Festival的核心评审维度是"AI技术的落地效果"——不仅仅是技术有多先进，而是技术是否<strong>真正解决了问题</strong>、是否<strong>可持续</strong>、是否<strong>可复制</strong>。这三个维度恰好对应悦洋教学中的：技术原型（AI工具链）、商业模式（商业思维课）、社会创新（SDGs框架）。悦洋学员的ICC发明项目中本身就包含"社会价值"板块，稍加转化即可参赛。<strong>ICC → Intel AI Festival是一条高效的"一鱼两吃"路径。</strong>
+    </div>
+  </div>
+
+  <!-- Google Science Fair -->
+  <div class="comp-detail" style="border-left:4px solid #dd6b20;">
+    <div class="cd-header">
+      <div class="cd-name">3️⃣ Google Science Fair 谷歌科学博览会</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 全球级</span><span class="enterprise-badge">企业主办</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">主办方</td><td>Google，2011年创办，全球在线竞赛</td></tr>
+      <tr><td style="font-weight:600;">级别</td><td>全球级 · 面向13-18岁青少年</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>13-18岁 · 全英文</td></tr>
+      <tr><td style="font-weight:600;">赛项方向</td><td>科学/技术/工程/数学（STEM）— 数据驱动的科研项目</td></tr>
+      <tr><td style="font-weight:600;">参赛形式</td><td>在线提交研究项目 + 摘要 + 研究报告 + 展示视频</td></tr>
+      <tr><td style="font-weight:600;">晋级路径</td><td>全球在线提交 → 区域评选 → 全球决赛（加州Google总部）</td></tr>
+      <tr><td style="font-weight:600;">AI商科匹配</td><td><span class="score score-4">★★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>科研方法论（科创大赛训练）+ AI数据分析工具能力；商业视角让科研项目更有"社会价值"说服力</td></tr>
+      <tr><td style="font-weight:600;">国际升学价值</td><td><strong>Google品牌全球最高认知度；历年获奖者多被MIT、Harvard、Stanford录取；全球最具影响力的青少年科学竞赛之一</strong></td></tr>
+    </table>
+    <div class="highlight-box" style="margin-top:10px;">
+      <strong>🔍 AI商科深度分析：</strong>Google Science Fair更偏科研而非商业，但悅洋学员有一项独特优势：<strong>将AI应用与商业/社会问题结合</strong>的项目叙事。纯粹的科学项目竞争激烈（大量国际学校学生参加），而"AI+商业+社会"的交叉项目反而稀缺——这正是悦洋学员的差异化定位。用CTB/ICC中训练的问题发现能力，搭配AI工具链的数据分析能力，可以产出既有科研深度又有社会影响力的项目。
+    </div>
+  </div>
+
+  <!-- 华为ICT大赛 -->
+  <div class="comp-detail" style="border-left:4px solid #dd6b20;">
+    <div class="cd-header">
+      <div class="cd-name">4️⃣ 华为ICT大赛</div>
+      <div class="cd-badges"><span class="intl-badge">🌍 全球级</span><span class="enterprise-badge">企业主办</span></div>
+    </div>
+    <table>
+      <tr><td style="width:100px;font-weight:600;">主办方</td><td>华为，UNESCO等</td></tr>
+      <tr><td style="font-weight:600;">级别</td><td>全球级 · 80+国家参与</td></tr>
+      <tr><td style="font-weight:600;">年龄</td><td>15岁+（含中学组/大学组）· 中英文均可</td></tr>
+      <tr><td style="font-weight:600;">赛项方向</td><td>AI / 云计算 / 大数据 / 网络 — 偏技术实践</td></tr>
+      <tr><td style="font-weight:600;">参赛形式</td><td>技术实操 + 创新应用方案（含商业场景设计）</td></tr>
+      <tr><td style="font-weight:600;">晋级路径</td><td>中国区省赛 → 国赛 → 全球总决赛（深圳/华为总部）</td></tr>
+      <tr><td style="font-weight:600;">AI商科匹配</td><td><span class="score score-3">★★★</span></td></tr>
+      <tr><td style="font-weight:600;">悦洋优势</td><td>偏技术实操，纯商科加持有限；但创新应用赛项需提交商业场景方案，可利用悦洋的商业思维课程</td></tr>
+      <tr><td style="font-weight:600;">国际升学价值</td><td><strong>华为全球品牌影响力；80+国家参赛，国际认可度逐年上升；适合偏技术方向的学生作为国际赛道补充</strong></td></tr>
+    </table>
+    <div class="highlight-box" style="margin-top:10px;">
+      <strong>🔍 AI商科深度分析：</strong>华为ICT大赛偏重技术实操，AI商科的直接匹配度不如Imagine Cup高。但其中"创新应用"赛项需要提交<strong>行业解决方案</strong>——需要理解一个真实行业的痛点，并设计AI+云的技术方案。悦洋学员的商业思维在此发挥作用：普通参赛者关注技术指标（延时/吞吐量），悦洋学员关注<strong>商业模式落地</strong>（ROI/用户价值/市场规模）。这个差异化在评分中非常明显。
+    </div>
+  </div>
+
+  <!-- 企业AI赛事对比总结 -->
+  <div class="highlight-box purple">
+    <strong>📊 企业AI赛事综合价值对比</strong>
+  </div>
+
+  <table>
+    <tr><th>赛事</th><th>AI商科匹配</th><th>国际升学价值</th><th>悦洋竞争优势</th><th>推荐指数</th></tr>
+    <tr>
+      <td><b>Microsoft Imagine Cup</b></td>
+      <td><span class="score score-5">★★★★★</span></td>
+      <td><span class="score score-5">★★★★★</span></td>
+      <td>AI工具链 + BP + 路演三重匹配</td>
+      <td><strong>🔴 首选</strong></td>
+    </tr>
+    <tr>
+      <td><b>Intel AI Festival</b></td>
+      <td><span class="score score-5">★★★★★</span></td>
+      <td><span class="score score-4">★★★★</span></td>
+      <td>SDGs + AI工具链 + 社会影响力</td>
+      <td><strong>🔴 首选</strong></td>
+    </tr>
+    <tr>
+      <td><b>Google Science Fair</b></td>
+      <td><span class="score score-4">★★★★</span></td>
+      <td><span class="score score-5">★★★★★</span></td>
+      <td>交叉学科项目设计</td>
+      <td><span class="score score-4">★★★★</span></td>
+    </tr>
+    <tr>
+      <td><b>华为ICT大赛</b></td>
+      <td><span class="score score-3">★★★</span></td>
+      <td><span class="score score-4">★★★★</span></td>
+      <td>商业场景方案设计</td>
+      <td><span class="score score-3">★★★</span></td>
+    </tr>
+  </table>
+
+  <div class="highlight-box green">
+    <strong>🎯 悦洋企业AI赛事切入策略：</strong><br>
+    <b>优先</b>：Microsoft Imagine Cup + Intel AI Festival — AI商科匹配度最高，悦洋教学体系可直接赋能<br>
+    <b>次选</b>：Google Science Fair — 适合科研型学员，配合科创大赛训练体系<br>
+    <b>补充</b>：华为ICT大赛 — 适合技术型学员做差异化国际赛道<br>
+    <b>核心逻辑</b>：企业AI赛事不需要白名单资质背书，竞争格局未定，先入者建立品牌优势。<strong>悦洋的"AI+商科"教学体系在这些赛事中是差异化竞争武器</strong>。
+  </div>
+</section>
+
+<!-- ===== PART 4: 三条国际路径详解 ===== -->
+<section>
+  <span class="section-label purple">PART 4</span>
   <h2>三条国际路径详解</h2>
 
   <div class="path-card path-a">
     <div class="path-title">🛤️ 路径A：国内白名单 → 国际展演 <span style="font-size:13px;font-weight:400;color:#718096;">（性价比最高）</span></div>
     <div class="flow">
-      <span class="step">ICC报名</span>
+      <span class="step">启蒙营体验</span>
       <span class="arrow">→</span>
-      <span class="step">ICC省赛/国赛</span>
+      <span class="step">ICC报名/省赛</span>
+      <span class="arrow">→</span>
+      <span class="step">ICC国赛获奖</span>
       <span class="arrow">→</span>
       <span class="step" style="border-color:#805ad5;background:#faf5ff;">ICW全球展</span>
     </div>
     <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
-      <span class="tag tag-green">一日营 ¥599</span>
-      <span class="tag tag-blue">→ 3天营 ¥3,980</span>
+      <span class="tag tag-green">启蒙营 ¥980</span>
+      <span class="tag tag-blue">→ 竞赛冲刺营 ¥19,800</span>
       <span class="tag tag-purple">→ 陪跑 ¥48,000+</span>
     </div>
     <p style="font-size:13px;margin-top:8px;"><strong>优势：</strong>国内白名单赛事打底，获奖后自然晋级国际，双重收益。<br>
@@ -432,7 +617,7 @@
     <div class="flow">
       <span class="step">CTB/全球AI峰会</span>
       <span class="arrow">→</span>
-      <span class="step" style="border-color:#805ad5;background:#faf5ff;">全球站/国际峰会</span>
+      <span class="step">全球站/国际峰会</span>
     </div>
     <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
       <span class="tag tag-purple">研究型辅导 ¥48,000+</span>
@@ -443,13 +628,33 @@
   </div>
 
   <div class="path-card path-c">
-    <div class="path-title">🛤️ 路径C：多赛叠加路径 <span style="font-size:13px;font-weight:400;color:#718096;">（最优组合）</span></div>
+    <div class="path-title">🛤️ 路径C：企业AI赛事路径 <span style="font-size:13px;font-weight:400;color:#718096;">（新增·差异化赛道）</span></div>
+    <div class="flow">
+      <span class="step">启蒙营/AI基础</span>
+      <span class="arrow">→</span>
+      <span class="step">爱创营/竞赛冲刺营</span>
+      <span class="arrow">→</span>
+      <span class="step" style="border-color:#dd6b20;background:#fffaf0;">Imagine Cup/Intel AI</span>
+      <span class="arrow">→</span>
+      <span class="step" style="border-color:#d69e2e;background:#fffff0;">全球总决赛/升学背书</span>
+    </div>
+    <div style="display:flex;gap:10px;font-size:13px;flex-wrap:wrap;">
+      <span class="tag tag-green">启蒙营 ¥980</span>
+      <span class="tag tag-blue">→ 爱创营 ¥8,000-¥20,000</span>
+      <span class="tag tag-orange">→ 企业AI冲刺 ¥29,800-¥49,800</span>
+    </div>
+    <p style="font-size:13px;margin-top:8px;"><strong>优势：</strong>企业品牌背书 + 商科能力展现，海外升学差异化最强路径。<br>
+    <strong>悦洋AI商科优势：</strong>纯技术机构做不了商业模式辅导，悦洋独家</p>
+  </div>
+
+  <div class="path-card path-c">
+    <div class="path-title">🛤️ 路径D：多赛叠加路径 <span style="font-size:13px;font-weight:400;color:#718096;">（最优组合）</span></div>
     <div class="flow">
       <span class="step">ICC</span>
       <span class="arrow">+</span>
       <span class="step">NOC/蓝桥杯</span>
       <span class="arrow">+</span>
-      <span class="step" style="border-color:#805ad5;background:#faf5ff;">CTB/AI峰会</span>
+      <span class="step" style="border-color:#805ad5;background:#faf5ff;">CTB/Imagine Cup</span>
       <span class="arrow">=</span>
       <span class="step" style="border-color:#d69e2e;background:#fffff0;">完整国际升学Portfolio</span>
     </div>
@@ -457,39 +662,39 @@
   </div>
 
   <div class="highlight-box green">
-    <strong>💡 核心叙事转换</strong>：过去的卖点是"白名单竞赛加分"，现在的卖点是<strong>"从广州走到世界"</strong>。<br>
-    家长不是在买课程，是在买一条让孩子被世界看见的路径。
+    <strong>💡 核心叙事转换</strong>：过去的卖点是"白名单竞赛加分"，现在的卖点是<strong>"从广州走到世界，从技术能力到商业思维"</strong>。<br>
+    家长不是在买课程，是在买一条让孩子<strong>被世界名校看见</strong>的路径。
   </div>
 </section>
 
-<!-- ===== PART 4: 产品体系 ===== -->
+<!-- ===== PART 5: 产品体系 ===== -->
 <section>
-  <span class="section-label">PART 4</span>
-  <h2>四级产品体系（国际化版）</h2>
+  <span class="section-label">PART 5</span>
+  <h2>四级产品体系（国际化+企业AI版）</h2>
 
   <div class="funnel">
     <div class="funnel-step" style="background:#38a169;width:95%;">
-      L1 · 引流体验 · ¥599-¥899
-      <span class="sub">AI一日创造营 → 埋下国际竞赛的种子</span>
+      L1 · 引流体验 · ¥980
+      <span class="sub">AI一日创造营（启蒙营）→ 发现兴趣，埋下国际竞赛的种子</span>
     </div>
     <div class="funnel-arrow">▼</div>
     <div class="funnel-step" style="background:#2b6cb0;width:80%;">
-      L2 · 专项备赛 · ¥3,980-¥9,800
-      <span class="sub">ICC/NOC/蓝桥杯 3天营 → 国内获奖，获取国际晋级资格</span>
+      L2 · 竞赛核心 · ¥8,000-¥20,000
+      <span class="sub">爱创营 / ICC两天竞赛冲刺营 → 国内获奖，获取国际晋级资格</span>
     </div>
     <div class="funnel-arrow">▼</div>
-    <div class="funnel-step" style="background:#d69e2e;width:60%;">
+    <div class="funnel-step" style="background:#dd6b20;width:60%;">
       L3 · 国际冲刺 · ¥29,800-¥59,800
-      <span class="sub">ICW/CTB/全球AI峰会专项 → 英文答辩+国际评审+海外导师</span>
+      <span class="sub">ICW/CTB/全球AI峰会/企业AI赛事专项 → 英文答辩+商业计划+海外导师</span>
     </div>
     <div class="funnel-arrow">▼</div>
     <div class="funnel-step" style="background:#805ad5;width:40%;">
-      L4 · 长期陪跑 · ¥98,000-¥198,000
+      L4 · 长期陪跑 · ¥48,000-¥198,000
       <span class="sub">全赛覆盖+海外升学规划 → 从国内到国际的完整竞赛生涯管理</span>
     </div>
   </div>
 
-  <h3>新增国际化产品线</h3>
+  <h3>新增国际化 + 企业AI产品线</h3>
   <table>
     <tr><th>产品</th><th>定价</th><th>说明</th></tr>
     <tr>
@@ -508,42 +713,55 @@
       <td>SDGs项目+英文展示+国际评委模拟答辩</td>
     </tr>
     <tr>
+      <td><b>Microsoft Imagine Cup专项</b></td>
+      <td>¥29,800-¥49,800</td>
+      <td>商业计划书+AI技术原型+英文路演 — 企业AI赛事旗舰产品</td>
+    </tr>
+    <tr>
+      <td><b>Intel AI Festival专项</b></td>
+      <td>¥19,800-¥39,800</td>
+      <td>SDGs项目+AI原型+社会影响力分析 — ICC学员天然转化</td>
+    </tr>
+    <tr>
       <td><b>国际竞赛陪跑包</b></td>
-      <td>¥98,000-¥198,000</td>
-      <td>全部国际赛+海外升学规划+Tim教育学背景资源</td>
+      <td>¥48,000-¥198,000</td>
+      <td>全部国际赛+企业AI赛事+海外升学规划+Tim教育学背景资源</td>
     </tr>
   </table>
 </section>
 
-<!-- ===== PART 5: 年度国际化节奏 ===== -->
+<!-- ===== PART 6: 年度国际化节奏 ===== -->
 <section>
-  <span class="section-label teal">PART 5</span>
+  <span class="section-label teal">PART 6</span>
   <h2>年度国际化竞赛节奏</h2>
 
   <div class="timeline-grid">
     <div class="tl-month" style="border-top-color:#e53e3e;">
       <div class="month">5-6月 🔥</div>
-      <div class="event"><span class="dot dot-red"></span>ICC报名截止</div>
+      <div class="event"><span class="dot dot-red"></span>ICC省赛提交（6.15截止）</div>
       <div class="event"><span class="dot dot-blue"></span>ICW晋级预备</div>
-      <div class="event" style="font-size:11px;color:#718096;">ICC备赛营招生黄金期</div>
+      <div class="event"><span class="dot dot-orange"></span>Imagine Cup新赛季报名</div>
+      <div class="event" style="font-size:11px;color:#718096;">企业AI赛事推广黄金期</div>
     </div>
     <div class="tl-month" style="border-top-color:#2b6cb0;">
       <div class="month">7-8月 🎯</div>
       <div class="event"><span class="dot dot-blue"></span>ICC省赛/国赛</div>
       <div class="event"><span class="dot dot-purple"></span>ICC→ICW晋级确认</div>
-      <div class="event" style="font-size:11px;color:#718096;">ICW辅导启动</div>
+      <div class="event" style="font-size:11px;color:#718096;">ICW辅导启动 / Imagine Cup备赛启动</div>
     </div>
     <div class="tl-month" style="border-top-color:#38a169;">
       <div class="month">9-10月 📚</div>
       <div class="event"><span class="dot dot-green"></span>NOC/蓝桥杯报名</div>
       <div class="event"><span class="dot dot-purple"></span>CTB启动报名</div>
-      <div class="event" style="font-size:11px;color:#718096;">三赛复用+CTB战队组建</div>
+      <div class="event"><span class="dot dot-orange"></span>Intel AI Festival报名</div>
+      <div class="event" style="font-size:11px;color:#718096;">三赛复用+企业AI赛事战队组建</div>
     </div>
     <div class="tl-month" style="border-top-color:#d69e2e;">
       <div class="month">11-12月 📊</div>
       <div class="event"><span class="dot dot-gold"></span>NOC/蓝桥杯省赛</div>
       <div class="event"><span class="dot dot-purple"></span>全球AI峰会报名</div>
-      <div class="event" style="font-size:11px;color:#718096;">国际赛辅导启动</div>
+      <div class="event"><span class="dot dot-orange"></span>Imagine Cup区域赛</div>
+      <div class="event" style="font-size:11px;color:#718096;">企业AI赛事辅导冲刺</div>
     </div>
     <div class="tl-month" style="border-top-color:#805ad5;">
       <div class="month">1-2月 ❄️</div>
@@ -555,14 +773,15 @@
       <div class="month">3-4月 🌸</div>
       <div class="event"><span class="dot dot-green"></span>科创大赛/宋庆龄</div>
       <div class="event"><span class="dot dot-purple"></span>CTB全球站</div>
-      <div class="event" style="font-size:11px;color:#718096;">获奖案例传播</div>
+      <div class="event"><span class="dot dot-orange"></span>Imagine Cup全球总决赛</div>
+      <div class="event" style="font-size:11px;color:#718096;">获奖案例传播 + 新赛季招生启动</div>
     </div>
   </div>
 </section>
 
-<!-- ===== PART 6: 悦洋国际化优势 ===== -->
+<!-- ===== PART 7: 悦洋国际化差异化优势 ===== -->
 <section>
-  <span class="section-label green">PART 6</span>
+  <span class="section-label green">PART 7</span>
   <h2>悦洋国际化差异化优势</h2>
 
   <div class="grid-2">
@@ -571,59 +790,61 @@
       <table>
         <tr><th style="background:#e53e3e;">维度</th><th style="background:#e53e3e;">普通机构</th><th style="background:#e53e3e;">悦洋教育</th></tr>
         <tr><td>AI工具链</td><td>无/基础</td><td>自研AI工具链，原型搭建快3倍</td></tr>
-        <tr><td>国内赛事</td><td>单一赛事</td><td>ICC+NOC+蓝桥杯三赛复用</td></tr>
-        <tr><td>国际化资源</td><td>无</td><td>海外集团 + Tim教育学背景</td></tr>
         <tr><td>商业思维</td><td>纯技术导向</td><td>AI+商业创新双驱动</td></tr>
+        <tr><td>企业AI赛事</td><td>无/不关注</td><td>Microsoft/Intel/Google赛事全链路辅导</td></tr>
+        <tr><td>国际化资源</td><td>无</td><td>海外集团 + Tim教育学背景</td></tr>
         <tr><td>英文辅导</td><td>外包/无</td><td>Tim教育学博士背景，英文+教育双专业</td></tr>
+        <tr><td>国内赛事</td><td>单一赛事</td><td>ICC+NOC+蓝桥杯三赛复用</td></tr>
       </table>
     </div>
 
     <div class="card card-teal">
       <h4 style="margin-top:0;">🌍 海外资源赋能</h4>
       <ol>
-        <li><b>悦洋海外集团</b> — 可直接对接口AI峰会/ICW等国际赛事</li>
-        <li><b>Tim Yang（杨辉）</b> — 教育学背景 + 海外经历 + AI工具专家</li>
-        <li><b>英文辅导能力</b> — ICW/CTB/全球AI峰会的英文答辩辅导</li>
+        <li><b>悦洋海外集团</b> — 可直接对接口AI峰会/ICW/Intel AI Festival等国际赛事</li>
+        <li><b>Tim Yang（杨辉）</b> — 教育学背景 + 海外经历 + AI工具专家 + 商业思维</li>
+        <li><b>英文辅导能力</b> — ICW/CTB/Imagine Cup等英文答辩辅导</li>
         <li><b>海外升学链路</b> — 竞赛获奖 → 留学背景提升 → 海外名校申请</li>
       </ol>
     </div>
   </div>
 
-  <h3>国际化定价策略</h3>
+  <h3>定价策略（国内 vs 国际化 vs 企业AI）</h3>
   <table>
-    <tr><th>产品线</th><th>国内版</th><th>国际化版</th><th>溢价</th></tr>
-    <tr><td>3天备赛营</td><td>¥3,980</td><td>¥5,980（含英文材料辅导）</td><td>+50%</td></tr>
-    <tr><td>竞赛冲刺</td><td>¥12,800</td><td>¥29,800（含英文答辩）</td><td>+133%</td></tr>
-    <tr><td>VIP冲奖</td><td>¥19,800</td><td>¥49,800（冲击国际赛奖项）</td><td>+152%</td></tr>
-    <tr><td>长期陪跑</td><td>¥48,000</td><td>¥98,000-¥198,000（含海外升学）</td><td>+104%</td></tr>
+    <tr><th>产品线</th><th>国内版</th><th>国际化版</th><th>企业AI版</th></tr>
+    <tr><td>启蒙体验</td><td>¥980</td><td>¥980</td><td>¥980（无溢价，引流品）</td></tr>
+    <tr><td>竞赛核心</td><td>¥8,000-¥20,000</td><td>¥12,800-¥29,800</td><td>¥19,800-¥39,800</td></tr>
+    <tr><td>国际冲刺</td><td>—</td><td>¥29,800-¥59,800</td><td>¥29,800-¥49,800</td></tr>
+    <tr><td>长期陪跑</td><td>¥48,000</td><td>¥98,000-¥198,000</td><td>¥48,000-¥198,000</td></tr>
   </table>
-  <p style="font-size:13px;color:#718096;">国际化版本定价翻倍以上：英文辅导成本更高 + 国际赛事家长支付意愿更强（海外升学的"刚需"属性）+ 悦洋海外资源的稀缺性溢价</p>
+  <p style="font-size:13px;color:#718096;">企业AI赛事产品定价介于国内版和国际化版之间：企业品牌认知度高但无需英文答辩（相对于国际赛），性价比感知强。企业AI赛事产品的边际成本低（课程内容与竞赛冲刺营共享60%+），利润空间更大。</p>
 </section>
 
-<!-- ===== PART 7: 营收预估 ===== -->
+<!-- ===== PART 8: 营收预估 ===== -->
 <section>
-  <span class="section-label gold">PART 7</span>
-  <h2>国际化营收预估</h2>
+  <span class="section-label gold">PART 8</span>
+  <h2>国际化+企业AI营收预估</h2>
 
   <div class="highlight-box gold">
-    <b>💰 全年营收预估（国际化版）</b><br>
-    L1 引流：120人 × ¥599 = ¥71,880<br>
-    L2 专项：60人 × ¥4,500（均价）= ¥270,000<br>
-    L3 国际冲刺：15人 × ¥39,800（均价）= ¥597,000<br>
-    L4 陪跑：6人 × ¥128,000（均价）= ¥768,000<br>
-    <b style="font-size:18px;">合计约 ¥170万</b><br>
-    <span style="font-size:12px;">较v3国内版（¥130万）增加31%。增量主要来自L3产品客单价提升（国内¥16,000 → 国际¥39,800）<br>
-    L3/L4人数减少但单价翻倍，利润率更高（国际赛辅导为纯智力交付，边际成本低）</span>
+    <b>💰 全年营收预估（国际化+企业AI版）</b><br>
+    L1 引流：120人 × ¥980 = ¥117,600<br>
+    L2 竞赛核心：50人 × ¥12,000（均价）= ¥600,000<br>
+    L3 国际/企业AI冲刺：18人 × ¥35,000（均价）= ¥630,000<br>
+    L4 陪跑：5人 × ¥98,000（均价）= ¥490,000<br>
+    <b style="font-size:18px;">合计约 ¥184万</b><br>
+    <span style="font-size:12px;">较v3国内版（¥130万）增加42%。增量来自：企业AI赛事产品线新增收入 + L2/L3客单价提升。<br>
+    企业AI赛事新增营收预估：Microsoft Imagine Cup专项（3-5人×¥39,800）+ Intel AI专项（3-5人×¥29,800）≈ ¥25万-¥35万<br>
+    L3/L4人数虽少但利润率更高（国际/企业AI赛事辅导为纯智力交付，边际成本低）</span>
   </div>
 </section>
 
-<!-- ===== PART 8: 执行清单 ===== -->
+<!-- ===== PART 9: 执行清单 ===== -->
 <section>
-  <span class="section-label red">PART 8</span>
-  <h2>本周执行清单（国际化版）</h2>
+  <span class="section-label red">PART 9</span>
+  <h2>本周执行清单（国际化+企业AI扩展版）</h2>
 
   <div class="card" style="background:#fff5f5;border:1px solid #fed7d7;">
-    <p style="font-weight:700;color:#e53e3e;">距ICC报名截止还有32天 — ICC是悦洋国际化的第一张门票</p>
+    <p style="font-weight:700;color:#e53e3e;">距ICC省赛提交截止还有28天 — ICC是悦洋国际化的第一张门票</p>
   </div>
 
   <div class="grid-2">
@@ -632,28 +853,30 @@
       <ol>
         <li>确认ICC首批辅导学员（1-2人）→ 目标：产出国际晋级案例</li>
         <li>朋友圈发ICC测试 → 话术强调"ICC获奖→国际舞台"</li>
-        <li>对接悦洋海外集团 → 确认ICW/全球AI峰会资源支持</li>
-        <li>整理CTB往届获奖案例 → 建立国际赛事信任素材</li>
+        <li>对接悦洋海外集团 → 确认ICW/全球AI峰会/Intel AI Festival资源支持</li>
+        <li>整理CTB/Imagine Cup往届获奖案例 → 建立国际+企业赛事信任素材</li>
       </ol>
     </div>
     <div class="card">
       <h4>📅 本月内</h4>
       <ol>
-        <li>ICC备赛营课程定型 → 预留15%内容给ICW晋级规划</li>
-        <li>制作"国际化竞赛路径图" → 给家长看的可视化路线</li>
-        <li>录制英文路演示范视频 → CTB/ICW预备素材</li>
-        <li>确认CTB 2026-2027赛季报名时间</li>
+        <li>ICC备赛营课程定型 → 预留15%内容给ICW晋级规划 + 企业AI赛事衔接</li>
+        <li>制作"国际化+企业AI竞赛路径图" → 给家长看的可视化路线</li>
+        <li>录制英文路演示范视频 → CTB/Imagine Cup预备素材</li>
+        <li>确认CTB 2026-2027赛季 + Imagine Cup新赛季报名时间</li>
+        <li>研究Intel AI Festival 2026-2027参赛要求 → 准备辅导方案</li>
       </ol>
     </div>
   </div>
 
   <div class="highlight-box">
-    <strong>关键结论</strong><br>
+    <strong>关键结论（v4.1升级版）</strong><br>
     1. <b>ICC是悦洋最核心的国际化入口赛事</b> — 国内白名单+国际晋级通道，双重价值<br>
     2. <b>三赛复用（ICC+NOC+蓝桥杯）是效率引擎</b> — 75%内容重合，一次开发覆盖三赛<br>
-    3. <b>CTB+ICW+全球AI峰会构成高端产品线</b> — 客单价¥29,800-¥198,000，海外资源是竞争壁垒<br>
-    4. <b>"从国内到国际"是核心叙事</b> — 家长购买的不是一个赛事辅导，是一条完整的国际化成长路径<br>
-    5. <b>国际化版本定价是国内版的2-3倍</b> — 海外升学家长的支付意愿和价格敏感度完全不同
+    3. <b>企业AI赛事是悦洋的差异化蓝海</b> — Microsoft Imagine Cup + Intel AI Festival，AI商科教学体系在此无人竞争<br>
+    4. <b>CTB+ICW+全球AI峰会构成高端产品线</b> — 客单价¥29,800-¥198,000，海外资源是竞争壁垒<br>
+    5. <b>"从国内到国际，从技术到商业"是核心叙事</b> — 家长购买的不是一个赛事辅导，是一条完整的国际化竞争力路径<br>
+    6. <b>企业AI赛事版定价溢价合理</b> — 无需英文答辩（对比纯国际赛），课程复用率高（60%+），利润空间更大
   </div>
 </section>
 
