@@ -60,23 +60,38 @@
     align-self: flex-start;
     max-height: calc(100vh - 108px);
     overflow-y: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 0 0 12px 0;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
   }
   .sidebar::-webkit-scrollbar { width: 4px; }
   .sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
-  .sidebar .menu { list-style: none; }
+  .sidebar-logo {
+    padding: 18px 14px 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 6px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .sidebar-logo span { color: #f1c40f; }
+  .sidebar .menu { list-style: none; padding: 0; margin: 0; }
   .sidebar .menu li { margin-bottom: 1px; }
   .sidebar .menu a {
     display: block;
-    padding: 8px 14px;
-    border-radius: 8px;
-    color: #555;
+    padding: 7px 14px 7px 16px;
+    border-radius: 0;
+    color: #444;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: all .15s;
     border-left: 3px solid transparent;
   }
   .sidebar .menu a:hover, .sidebar .menu a.active {
-    background: #fff;
+    background: #f8f9fa;
     color: #1a1a2e;
     border-left-color: #f1c40f;
     font-weight: 600;
@@ -85,16 +100,27 @@
     font-size: 10px;
     text-transform: uppercase;
     color: #bbb;
-    padding: 20px 14px 4px;
+    padding: 16px 14px 3px 16px;
     letter-spacing: 1.5px;
     font-weight: 600;
   }
-  .sidebar .menu .sub {
-    padding-left: 28px !important;
-    font-size: 13px;
-    color: #888;
+  .sidebar .menu .sub-item a {
+    padding-left: 36px !important;
+    font-size: 12.5px;
+    color: #777;
   }
-  .sidebar .menu .sub:hover { color: #555; }
+  .sidebar .menu .sub-item a:hover { color: #444; }
+  .sidebar .menu .has-sub > a::after {
+    content: "\25BC";
+    font-size: 8px;
+    opacity: .45;
+    margin-left: 4px;
+    transition: transform .2s;
+    display: inline-block;
+  }
+  .sidebar .menu .has-sub.collapsed > a::after { content: "\25B6"; }
+  .sidebar .menu .sub-item { display: block; }
+  .sidebar .menu .sub-item.collapsed { display: none; }
 
   /* ===== Sections ===== */
   .section {
@@ -289,7 +315,6 @@
     <a href="#course">一日营</a>
     <a href="#price">定价</a>
     <a href="#todo">待办</a>
-    <a href="#todo">待办</a>
   </div>
 </div>
 
@@ -297,63 +322,51 @@
 
 <!-- ===== Sidebar ===== -->
 <aside class="sidebar">
-  <ul class="menu">
+  <div class="sidebar-logo">悦洋<span>教育</span></div>
+    <ul class="menu">
     <li class="sec-title">悦洋教育规划</li>
-    <li><a href="#brand">品牌与哲学</a></li>
-    <li><a href="#chain">全链路闭环</a></li>
-    <li class="has-sub"><a href="#product">产品全景</a></li>
-    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v3_10赛事.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">📊 国内竞赛产品</a></li>
-    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v4_国际化.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">📊 国际竞赛产品</a></li>
-    <li class="sub-item"><a href="悦洋·五大成果国际化竞赛与展示机会分析.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">🏆 五大成果竞赛分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" class="sub">🔁 全链路闭环海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" class="sub">☀️ 暑假5天出项目海报</a></li>
-    <li class="has-sub"><a href="#race">📊 赛事全景</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_NOC全国中小学信息技术创新与实践大赛.md" target="_blank" class="sub">📄 NOC大赛分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_中国国际大学生创新大赛萌芽赛道.md" target="_blank" class="sub">📄 萌芽赛道分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_全国青少年人工智能创新挑战赛.md" target="_blank" class="sub">📄 AI挑战赛分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_宋庆龄少年儿童发明奖.md" target="_blank" class="sub">📄 宋庆龄奖分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_康莱德创新挑战赛.md" target="_blank" class="sub">📄 康莱德分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="../Enjoy/analysis/赛事分析_国际青少年商业竞赛.md" target="_blank" class="sub">📄 国际商赛分析</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="#race-au" class="sub" style="font-size:13px;color:#888;">🇦🇺 澳洲赛事库</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" class="sub">🏅 赛事直通车海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank" class="sub">📊 NOC大赛海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank" class="sub">🌱 萌芽赛道海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank" class="sub">🤖 AI挑战赛海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank" class="sub">🏆 宋庆龄发明奖海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank" class="sub">🚀 康莱德挑战赛海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank" class="sub">🌍 国际商赛海报</a></li>
+    <li><a href="#brand">🌅 品牌与哲学</a></li>
+    <li><a href="#chain">🔄 全链路闭环</a></li>
+    <li class="has-sub"><a href="#product">📦 悦洋教育服务</a></li>
+    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v3_10赛事.html" target="_blank">📊 国内竞赛产品</a></li>
+    <li class="sub-item"><a href="悦洋教育_竞赛产品矩阵分析_v4_国际化.html" target="_blank">📊 国际竞赛产品</a></li>
+    <li class="sub-item"><a href="悦洋·五大成果国际化竞赛与展示机会分析.html" target="_blank">🏆 五大成果竞赛分析</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank">🔁 全链路闭环海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank">☀️ 暑假5天出项目海报</a></li>
+    <li class="has-sub"><a href="#race">📊 AI商业赛事分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_NOC全国中小学信息技术创新与实践大赛.md" target="_blank">📄 NOC大赛分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_中国国际大学生创新大赛萌芽赛道.md" target="_blank">📄 萌芽赛道分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_全国青少年人工智能创新挑战赛.md" target="_blank">📄 AI挑战赛分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_宋庆龄少年儿童发明奖.md" target="_blank">📄 宋庆龄奖分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_康莱德创新挑战赛.md" target="_blank">📄 康莱德分析</a></li>
+    <li class="sub-item"><a href="../Enjoy/analysis/赛事分析_国际青少年商业竞赛.md" target="_blank">📄 国际商赛分析</a></li>
+    <li class="sub-item"><a href="#race-au">🇦🇺 澳洲赛事库</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank">🏅 赛事直通车海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank">📊 NOC大赛海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank">🌱 萌芽赛道海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank">🤖 AI挑战赛海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank">🏆 宋庆龄发明奖海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank">🚀 康莱德挑战赛海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank">🌍 国际商赛海报</a></li>
 
     <li><a href="#price">💰 定价策略</a></li>
     <li><a href="#todo">📋 待办与决策</a></li>
-    <li class="sec-title">重点板块</li>
+    <li class="sec-title">当前重点项目</li>
     <li class="has-sub"><a href="#icc">🏅 ICC全球发明大会</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank" class="sub">🏅 ICC海报</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC完整资料合集.html" target="_blank" class="sub">📚 ICC完整资料合集</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC参赛手册_官方版.html" target="_blank" class="sub">📖 ICC参赛手册（官方版）</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC智能制造主题赛通知.html" target="_blank" class="sub">🏭 智能制造主题赛通知</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank" class="sub">🎤 ICC内部宣讲（海外版）</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_ICC辅导系统_AI商科升级版_v1.html" target="_blank" class="sub" style="color:#7c5cfc;">🚀 ICC辅导系统AI商科升级版</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_ICC全球发明大会_v1.html" target="_blank">🏅 ICC海报</a></li>
+    <li class="sub-item"><a href="悦洋教育_ICC完整资料合集.html" target="_blank">📚 ICC完整资料合集</a></li>
+    <li class="sub-item"><a href="悦洋教育_ICC参赛手册_官方版.html" target="_blank">📖 ICC参赛手册（官方版）</a></li>
+    <li class="sub-item"><a href="悦洋教育_ICC智能制造主题赛通知.html" target="_blank">🏭 智能制造主题赛通知</a></li>
+    <li class="sub-item"><a href="悦洋海外集团_ICC项目内部宣讲.html" target="_blank">🎤 ICC内部宣讲（海外版）</a></li>
+    <li class="sub-item"><a href="悦洋教育_ICC辅导系统_AI商科升级版_v1.html" target="_blank">🚀 ICC辅导系统AI商科升级版</a></li>
     <li class="has-sub"><a href="#course">🚀 AI商科启蒙一日营</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_一日创造营_招生海报文案.html" target="_blank" class="sub">📝 招生文案</a></li>
+    <li class="sub-item"><a href="悦洋教育_一日创造营_招生海报文案.html" target="_blank">📝 招生文案</a></li>
     <li class="has-sub"><a href="#parent-lecture">🗣 家长宣讲会</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank" class="sub">🎓 升学背书版</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank" class="sub">😰 家长焦虑版</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="科技特长生升学规划_家长讲座.html" target="_blank" class="sub">📚 科技特长生升学规划</a></li>
-
-    <li class="sub-item" style="padding-left:28px;"><a href="#feedback" class="sub">💬 家长反馈</a></li>
-    <li><a href="研学营市场对比分析.html" target="_blank" class="sub" style="padding-left:28px!important;font-size:13px;color:#888;">✈️ 研学营对比分析</a></li>
-    <li class="sec-title">物料中心</li>
-    <li class="has-sub"><a href="#poster">🎨 招生海报库</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank" class="sub">🔁 全链路闭环</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank" class="sub">☀️ 暑假5天出项目</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank" class="sub">🏅 赛事直通车</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank" class="sub">📊 NOC大赛</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank" class="sub">🌱 萌芽赛道</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank" class="sub">🤖 AI挑战赛</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank" class="sub">🏆 宋庆龄发明奖</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank" class="sub">🚀 康莱德挑战赛</a></li>
-    <li class="sub-item" style="padding-left:28px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank" class="sub">🌍 国际商赛</a></li>
-
+    <li class="sub-item"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank">🎓 升学背书版</a></li>
+    <li class="sub-item"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank">😰 家长焦虑版</a></li>
+    <li class="sub-item"><a href="科技特长生升学规划_家长讲座.html" target="_blank">📚 科技特长生升学规划</a></li>
+    <li class="sub-item"><a href="#feedback">💬 家长反馈</a></li>
+    <li><a href="研学营市场对比分析.html" target="_blank">✈️ 研学营对比分析</a></li>
   </ul>
 </aside>
 
@@ -798,7 +811,7 @@
 
 <!-- ===== 5. 赛事全景 ===== -->
 <div class="section" id="race">
-  <h2>📊 赛事全景 · 国内国际30+赛事</h2>
+  <h2>📊 AI商业赛事分析 · 国内国际30+赛事</h2>
 
   <div class="grid-4">
     <div class="card" style="text-align:center;border-left:4px solid #f1c40f;">
@@ -932,29 +945,7 @@
   </table>
 </div>
 
-<!-- ===== 6. 招生海报库 ===== -->
-<div class="section" id="poster">
-  <h2>🖼️ 招生海报库 · 18+套</h2>
-  <div class="poster-grid">
-    <div class="poster-card"><div class="ptitle">🔁 全链路闭环版 <span class="tag confirmed">v5</span></div><div class="pdesc">一日营→暑假营→赛事→升学，完整链条</div><div style="margin-top:4px;"><a href="悦洋教育_海报_全链路闭环_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">☀️ 暑假5天出项目版 <span class="tag confirmed">v2</span></div><div class="pdesc">"5天，做出一个能参赛的商业项目"</div><div style="margin-top:4px;"><a href="悦洋教育_海报_暑假5天出项目_v2.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🏅 赛事直通车版 <span class="tag confirmed">v3</span></div><div class="pdesc">"暑假做项目，秋季拿奖项"</div><div style="margin-top:4px;"><a href="悦洋教育_海报_赛事直通车_v3.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">😰 家长焦虑版 <span class="tag confirmed">v4</span></div><div class="pdesc">"暑假60天拉开差距" — 痛点驱动+解决方案</div><div style="margin-top:4px;"><a href="悦洋教育_海报_家长焦虑版_v4.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🎓 升学背书版 <span class="tag confirmed">v5</span></div><div class="pdesc">"当别人写模联，你的孩子说：我创办了一个商业项目"</div><div style="margin-top:4px;"><a href="悦洋教育_海报_升学背书版_v5.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">📊 NOC全国大赛版 <span class="tag confirmed">v1</span></div><div class="pdesc">NOC专项招生</div><div style="margin-top:4px;"><a href="悦洋教育_海报_NOC大赛_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🌱 萌芽赛道版 <span class="tag confirmed">v1</span></div><div class="pdesc">教育部最高级别赛事</div><div style="margin-top:4px;"><a href="悦洋教育_海报_萌芽赛道_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🤖 AI挑战赛版 <span class="tag confirmed">v1</span></div><div class="pdesc">全国青少年人工智能创新挑战赛</div><div style="margin-top:4px;"><a href="悦洋教育_海报_人工智能创新挑战赛_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🏆 宋庆龄发明奖版 <span class="tag confirmed">v1</span></div><div class="pdesc">白名单AI编程作品</div><div style="margin-top:4px;"><a href="悦洋教育_海报_宋庆龄发明奖_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🚀 康莱德挑战赛版 <span class="tag confirmed">v1</span></div><div class="pdesc">NASA支持·MIT推荐</div><div style="margin-top:4px;"><a href="悦洋教育_海报_康莱德创新挑战赛_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🌍 五大国际商赛版 <span class="tag confirmed">v1</span></div><div class="pdesc">MEC/CBPA/ASDAN/SAGE/JA中国</div><div style="margin-top:4px;"><a href="悦洋教育_海报_国际商赛_v1.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">🚀 一日创造营体验课</div><div class="pdesc">6小时AI商科体验课完整页面</div><div style="margin-top:4px;"><a href="AI青少年一日创造营-6小时体验课.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">📝 创造营海报文案</div><div class="pdesc">AI一日创造营招生海报文案</div><div style="margin-top:4px;"><a href="悦洋教育_一日创造营_招生海报文案.html" target="_blank">📄 打开 →</a></div></div>
-    <div class="poster-card"><div class="ptitle">💼 商科四营版 <span class="tag draft">待出</span></div><div class="pdesc">面向企二代/留学群体</div></div>
-    <div class="poster-card"><div class="ptitle">👑 商科领袖陪跑版 <span class="tag draft">待出</span></div><div class="pdesc">面向企二代家族传承</div></div>
-  </div>
-</div>
-
-<!-- ===== 7. 核心文案库 ===== -->
+<!-- ===== 6. 核心文案库 ===== -->
 <div class="section" id="copy">
   <h2>✍️ 核心文案库</h2>
   <table>
@@ -974,7 +965,7 @@
   </table>
 </div>
 
-<!-- ===== 8. 定价策略 ===== -->
+<!-- ===== 7. 定价策略 ===== -->
 <div class="section" id="price">
   <h2>💰 定价策略</h2>
   <table>
@@ -999,7 +990,7 @@
   </table>
 </div>
 
-<!-- ===== 9. 家长反馈 ===== -->
+<!-- ===== 8. 家长反馈 ===== -->
 <div class="section" id="feedback">
   <h2>📊 家长课程反馈系统</h2>
   <div class="callout green"><strong>✅ 已上线</strong>飞书多维表格「家长课程反馈收集表」</div>
@@ -1019,7 +1010,7 @@
   </table>
 </div>
 
-<!-- ===== 10. 待办与决策 ===== -->
+<!-- ===== 9. 待办与决策 ===== -->
 <div class="section" id="todo">
   <h2>📋 待办与决策日志</h2>
   <div class="callout yellow"><strong>📌 本页为内部决策跟踪，以下为最新待办。</strong></div>
