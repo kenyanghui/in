@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>悦洋教育 · AI+飞书高效办公 · 课程模块</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  /* Topbar */
+  .topbar {
+    background: #1a1a2e; color: #fff;
+    padding: 0 32px; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid #7c5cfc;
+  }
+  .topbar .logo { font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+  .topbar .logo span { color: #7c5cfc; }
+  .topbar .badge { font-size: 12px; color: rgba(255,255,255,.4); }
+
+  .wrapper { display: flex; max-width: 1400px; margin: 0 auto; padding: 24px 20px; gap: 24px; }
+
+  /* Sidebar */
+  .sidebar {
+    width: 240px; flex-shrink: 0;
+    position: sticky; top: 88px; align-self: flex-start;
+    max-height: calc(100vh - 108px); overflow-y: auto;
+    background: #fff; border-radius: 12px;
+    padding: 0 0 12px; box-shadow: 0 1px 6px rgba(0,0,0,.06);
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+  .sidebar-logo {
+    padding: 20px 14px 16px; font-size: 18px; font-weight: 700;
+    color: #1a1a2e; border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  .sidebar-logo small { display: block; font-size: 12px; font-weight: 400; color: #999; margin-top: 4px; }
+  .sidebar .menu { list-style: none; padding: 0; margin: 0; }
+  .sidebar .menu li { margin-bottom: 1px; }
+  .sidebar .menu a {
+    display: block; padding: 10px 14px 10px 20px;
+    color: #444; text-decoration: none; font-size: 14px;
+    border-left: 3px solid transparent; transition: all .15s;
+  }
+  .sidebar .menu a:hover, .sidebar .menu a.active {
+    background: #f5f0ff; color: #7c5cfc; border-left-color: #7c5cfc; font-weight: 600;
+  }
+  .sidebar .menu .sec-title {
+    font-size: 11px; text-transform: uppercase; color: #bbb;
+    padding: 18px 14px 4px 20px; letter-spacing: 1px; font-weight: 600;
+  }
+
+  /* Main */
+  .main { flex: 1; min-width: 0; }
+  .section {
+    background: #fff; border-radius: 16px;
+    padding: 36px 40px; margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    scroll-margin-top: 84px;
+  }
+  .section h2 {
+    font-size: 26px; margin-bottom: 16px;
+    padding-bottom: 12px; border-bottom: 2px solid #f0f2f5;
+  }
+  .section h3 {
+    font-size: 18px; margin: 28px 0 12px;
+    color: #2c3e50; padding-bottom: 6px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .section h4 { font-size: 15px; margin: 18px 0 8px; color: #555; }
+  .section h5 { font-size: 14px; margin: 14px 0 6px; color: #666; }
+  .section p { font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 10px; }
+  .section ul, .section ol { padding-left: 22px; margin-bottom: 12px; }
+  .section li { font-size: 15px; color: #444; margin-bottom: 6px; }
+
+  /* Tags */
+  .tag {
+    display: inline-block; font-size: 11px; padding: 2px 10px;
+    border-radius: 10px; font-weight: 600; margin-left: 4px; vertical-align: middle;
+  }
+  .tag.purple { background: #f0e6ff; color: #7c5cfc; }
+  .tag.blue { background: #d6eaf8; color: #1a5276; }
+  .tag.green { background: #d5f5e3; color: #1e8449; }
+  .tag.gold { background: #fef9e7; color: #b7950b; }
+  .tag.red { background: #fde8e8; color: #c0392b; }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px; padding: 16px 20px;
+    margin: 14px 0; font-size: 14px; line-height: 1.6;
+  }
+  .callout.purple { background: #f5f0ff; border-left: 4px solid #7c5cfc; }
+  .callout.blue { background: #eaf2f8; border-left: 4px solid #2e86c1; }
+  .callout.green { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .callout.gold { background: #fef9e7; border-left: 4px solid #f1c40f; }
+  .callout.red { background: #fdedec; border-left: 4px solid #e74c3c; }
+  .callout strong { display: block; margin-bottom: 4px; }
+
+  /* Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 900px) { .grid-2,.grid-3,.grid-4 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #f8f9fa; border-radius: 12px;
+    padding: 18px 20px; font-size: 14px; line-height: 1.6;
+  }
+  .card .lbl { color: #888; font-size: 12px; margin-bottom: 4px; }
+  .card .val { font-weight: 600; }
+  .card.border-p { border-left: 4px solid #7c5cfc; }
+  .card.border-b { border-left: 4px solid #2e86c1; }
+  .card.border-g { border-left: 4px solid #27ae60; }
+  .card.border-y { border-left: 4px solid #f1c40f; }
+
+  /* Tables */
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 14px; margin: 12px 0;
+  }
+  table th {
+    background: #2c3e50; color: #fff;
+    padding: 10px 14px; text-align: left;
+    font-weight: 600; font-size: 13px;
+  }
+  table th:first-child { border-radius: 8px 0 0 0; }
+  table th:last-child { border-radius: 0 8px 0 0; }
+  table td { padding: 10px 14px; border-bottom: 1px solid #eee; font-size: 14px; }
+  table tr:nth-child(even) td { background: #f8f9fa; }
+  table tr:hover td { background: #eef2f7; }
+
+  /* Step cards */
+  .step-card {
+    background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px; position: relative;
+  }
+  .step-card .step-num {
+    position: absolute; top: -10px; left: 16px;
+    background: #7c5cfc; color: #fff;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+  .step-card h4 { margin-top: 4px; }
+  .step-card p { font-size: 14px; color: #555; }
+
+  /* Demo block */
+  .demo-box {
+    background: #1a1a2e; color: #e8e8f0;
+    border-radius: 10px; padding: 16px 20px;
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 13px; line-height: 1.7;
+    margin: 10px 0; overflow-x: auto;
+  }
+  .demo-box .cmt { color: #888; }
+  .demo-box .cmd { color: #7c5cfc; }
+  .demo-box .out { color: #5bde78; }
+  .demo-box .err { color: #ff6b6b; }
+
+  /* Prompt template */
+  .prompt-box {
+    background: #fef9e7; border: 1px solid #f9e79f;
+    border-radius: 10px; padding: 16px 20px;
+    margin: 10px 0; font-size: 14px;
+  }
+  .prompt-box .label { font-size: 11px; color: #b7950b; font-weight: 600; margin-bottom: 6px; }
+
+  /* Timeline */
+  .tl { position: relative; padding-left: 28px; margin: 12px 0; }
+  .tl::before {
+    content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px;
+    width: 2px; background: #e0e0e0;
+  }
+  .tl-item { position: relative; margin-bottom: 16px; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -24px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #7c5cfc; border: 2px solid #fff;
+  }
+  .tl-item h4 { font-size: 15px; margin: 0 0 2px; }
+  .tl-item p { font-size: 14px; color: #666; margin: 0; }
+
+  .footer { text-align: center; color: #aaa; font-size: 13px; padding: 30px; }
+  hr { border: none; border-top: 1px solid #eef0f2; margin: 24px 0; }
+  code { background: #f0f2f5; padding: 2px 6px; border-radius: 4px; font-size: .9em; }
+  a { color: #7c5cfc; }
+  a:hover { text-decoration: underline; }
+
+  /* Icon row */
+  .icon-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+  .icon-item {
+    display: flex; align-items: center; gap: 8px;
+    background: #f8f9fa; border-radius: 8px;
+    padding: 8px 16px; font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">悦洋<span>教育</span></div>
+  <div class="badge">AI+飞书高效办公 · 课程模块 v1.0</div>
+</div>
+
+<div class="wrapper">
+
+<!-- ===== Sidebar ===== -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    📘 AI+飞书办公
+    <small>课程模块 · 商科教育体系</small>
+  </div>
+  <ul class="menu">
+    <li class="sec-title">课程概览</li>
+    <li><a href="#intro">📖 课程介绍</a></li>
+    <li><a href="#fit">🎯 体系定位</a></li>
+    <li><a href="#outline">📋 课程大纲</a></li>
+
+    <li class="sec-title">模块一：飞书云文档</li>
+    <li><a href="#doc-intro">📝 云文档基础</a></li>
+    <li><a href="#doc-ai">🤖 文档+AI 协作</a></li>
+    <li><a href="#doc-workflow">⚡ 实操工作流</a></li>
+
+    <li class="sec-title">模块二：飞书PPT</li>
+    <li><a href="#slide-intro">📊 幻灯片基础</a></li>
+    <li><a href="#slide-ai">🎨 幻灯片+AI 协作</a></li>
+    <li><a href="#slide-workflow">⚡ 实操工作流</a></li>
+
+    <li class="sec-title">模块三：综合实战</li>
+    <li><a href="#project">🏗️ 项目实战</a></li>
+    <li><a href="#rubric">📏 评估标准</a></li>
+    <li><a href="#resources">📚 扩展资源</a></li>
+  </ul>
+</aside>
+
+<div class="main">
+
+<!-- ===== 课程介绍 ===== -->
+<div class="section" id="intro">
+  <h2>📖 课程介绍</h2>
+
+  <div class="grid-3">
+    <div class="card border-p">
+      <div class="lbl" style="color:#7c5cfc;">🎯 课程名称</div>
+      <div class="val">AI + 飞书高效办公</div>
+      <div style="font-size: 13px; color: #666; margin-top: 6px;">用AI赋能飞书云文档与幻灯片制作<br>—— 每个商科学生必备的数字化工作流</div>
+    </div>
+    <div class="card border-b">
+      <div class="lbl" style="color:#2e86c1;">⏱ 课时</div>
+      <div class="val">4 课时（半天）</div>
+      <div style="font-size: 13px; color: #666; margin-top: 6px;">理论 1.5h + 实操 2.5h</div>
+    </div>
+    <div class="card border-g">
+      <div class="lbl" style="color:#27ae60;">🎓 适合阶段</div>
+      <div class="val">L1–L2（8–14岁）</div>
+      <div style="font-size: 13px; color: #666; margin-top: 6px;">AI商科启蒙营 / 爱创营前置技能</div>
+    </div>
+  </div>
+
+  <div class="callout purple">
+    <strong>🧠 课程核心理念</strong>
+    不是教"飞书怎么用"，而是教"如何用AI驱动飞书，10倍提升文档与PPT产出效率"。<br>
+    在AI时代，工具的熟练度不是壁垒——<strong>用AI驾驭工具的能力</strong>才是。
+  </div>
+
+  <h3>学习目标</h3>
+  <div class="grid-2">
+    <div>
+      <div class="card" style="border-left: 4px solid #7c5cfc; margin-bottom: 10px;">
+        <strong>掌握飞书云文档核心能力</strong>
+        <ul style="margin-top: 8px; font-size: 13px;">
+          <li>云文档创建、多人协作、评论与任务分配</li>
+          <li>用Claude AI生成文档大纲、内容、表格</li>
+          <li>文档结构设计——从头脑风暴到最终输出</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-left: 4px solid #2e86c1; margin-bottom: 10px;">
+        <strong>掌握飞书幻灯片核心能力</strong>
+        <ul style="margin-top: 8px; font-size: 13px;">
+          <li>幻灯片设计与排版基础</li>
+          <li>用Claude AI生成PPT大纲、文案、演讲稿</li>
+          <li>从文档秒变PPT——飞书原生转换能力</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout gold">
+    <strong>📌 与悦洋AI商科教育体系的关联</strong>
+    本模块是<strong>AI商科启蒙营</strong>和<strong>爱创营</strong>的<strong>前置技能模块</strong>。学生在后续项目实战中，将直接用飞书云文档撰写商业计划书、用飞书PPT制作路演材料——"学完即用"。
+  </div>
+</div>
+
+<!-- ===== 体系定位 ===== -->
+<div class="section" id="fit">
+  <h2>🎯 在AI商科教育体系中的定位</h2>
+
+  <table>
+    <thead><tr><th>层级</th><th>课程</th><th>本模块角色</th><th>输出成果</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>T1 体验</strong></td>
+        <td>AI商科启蒙营 ¥980</td>
+        <td><span class="tag green">核心技能模块</span></td>
+        <td>学生用飞书云文档完成第一份"商业画布"</td>
+      </tr>
+      <tr>
+        <td><strong>T2 创造</strong></td>
+        <td>爱创营 ¥16,800</td>
+        <td><span class="tag green">必备工具链</span></td>
+        <td>团队用飞书协作文档完成BP，用PPT制作路演slides</td>
+      </tr>
+      <tr>
+        <td><strong>T3 竞赛</strong></td>
+        <td>竞赛冲刺营 ¥19,800</td>
+        <td><span class="tag blue">进阶应用</span></td>
+        <td>用飞书管理赛事材料、多人协作备赛</td>
+      </tr>
+      <tr>
+        <td><strong>T4 升学</strong></td>
+        <td>背景提升陪跑</td>
+        <td><span class="tag gold">长期技能</span></td>
+        <td>数字化工作流成为学生的底层能力</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout blue">
+    <strong>💡 为什么是飞书？</strong>
+    飞书是字节跳动旗下的企业协作平台，被越来越多的创新企业和国际学校采用。<br>
+    <strong>三大理由：</strong><br>
+    1️⃣ 云文档+幻灯片+多维表格一体化，无需切换工具<br>
+    2️⃣ 原生AI能力（飞书智能伙伴）+ 外部Claude AI可无缝结合<br>
+    3️⃣ 协作体验领先——评论、@提及、任务分配、实时编辑，天然适合团队项目
+  </div>
+</div>
+
+<!-- ===== 课程大纲 ===== -->
+<div class="section" id="outline">
+  <h2>📋 课程大纲 · 4课时</h2>
+
+  <table>
+    <thead><tr><th>课时</th><th>模块</th><th>内容</th><th>时长</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>飞书云文档基础+AI协作</td><td>文档创建 · 结构设计 · Claude生成内容 · 协作技巧</td><td>60min</td></tr>
+      <tr><td>2</td><td>飞书幻灯片基础+AI协作</td><td>幻灯片创建 · 设计原则 · Claude生成PPT内容</td><td>60min</td></tr>
+      <tr><td>3</td><td>综合实战：商业计划书</td><td>用飞书文档写BP → 一键转PPT → AI润色</td><td>60min</td></tr>
+      <tr><td>4</td><td>路演准备+成果展示</td><td>完善PPT · 写演讲稿 · 模拟路演 · 互评</td><td>60min</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 模块一：飞书云文档 ===== -->
+<div class="section" id="doc-intro">
+  <h2>📝 模块一：飞书云文档基础</h2>
+
+  <h3>什么是飞书云文档？</h3>
+  <p>飞书云文档是飞书套件中的在线文档工具，类似Google Docs或Notion，但深度集成了飞书的IM、日历、多维表格等能力。核心特点：</p>
+
+  <div class="grid-4">
+    <div class="card" style="text-align:center;">
+      <div style="font-size: 28px; margin-bottom: 6px;">🌐</div>
+      <div class="val" style="font-size: 14px;">在线协作</div>
+      <div style="font-size: 12px; color: #999;">多人实时编辑 · 自动保存</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size: 28px; margin-bottom: 6px;">💬</div>
+      <div class="val" style="font-size: 14px;">评论+@提及</div>
+      <div style="font-size: 12px; color: #999;">直接分配给具体人</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size: 28px; margin-bottom: 6px;">📋</div>
+      <div class="val" style="font-size: 14px;">任务管理</div>
+      <div style="font-size: 12px; color: #999;">创建待办 · 截止日期</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size: 28px; margin-bottom: 6px;">🔗</div>
+      <div class="val" style="font-size: 14px;">一键转PPT</div>
+      <div style="font-size: 12px; color: #999;">文档内容 → 幻灯片</div>
+    </div>
+  </div>
+
+  <h3>基础操作速览</h3>
+  <table>
+    <thead><tr><th>操作</th><th>方法</th><th>快捷键/Tips</th></tr></thead>
+    <tbody>
+      <tr><td>新建文档</td><td>飞书首页 → 云文档 → "+" → 选择模板</td><td><code>Ctrl+Shift+N</code></td></tr>
+      <tr><td>分享协作</td><td>右上角"分享" → 输入成员/链接</td><td>设置"可编辑/可评论/可查看"权限</td></tr>
+      <tr><td>@提及</td><td>输入 <code>@</code> + 成员名字</td><td>被@的人会收到飞书消息通知</td></tr>
+      <tr><td>添加评论</td><td>选中文字 → 右侧"评论"图标</td><td>评论可@人并分配任务</td></tr>
+      <tr><td>插入表格</td><td>菜单"插入" → "表格"</td><td>支持公式和条件格式</td></tr>
+      <tr><td>插入多维表格</td><td>"/" → "多维表格"</td><td>项目管理/数据收集神器</td></tr>
+      <tr><td>版本历史</td><td>菜单"文件" → "版本历史"</td><td>可回溯任何历史版本</td></tr>
+      <tr><td>模板中心</td><td>新建文档 → "模板"</td><td>商业计划书、会议纪要等模板</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 文档+AI ===== -->
+<div class="section" id="doc-ai">
+  <h3>🤖 云文档 + Claude AI 协作</h3>
+
+  <div class="callout purple">
+    <strong>🚀 核心工作流：Claude → 飞书文档</strong>
+    让Claude AI帮你完成文档的<strong>内容生成</strong>和<strong>结构设计</strong>，然后在飞书文档中进行<strong>协作打磨</strong>和<strong>最终呈现</strong>。
+  </div>
+
+  <h4>三种协作模式</h4>
+  <table>
+    <thead><tr><th>模式</th><th>Claude角色</th><th>适用场景</th><th>示例</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>① AI先写，人再改</strong></td>
+        <td>初稿生成器</td>
+        <td>商业计划书框架、市场分析报告</td>
+        <td>让Claude生成BP初稿 → 粘贴到飞书 → 团队协作修改</td>
+      </tr>
+      <tr>
+        <td><strong>② 人先写，AI润色</strong></td>
+        <td>编辑助手</td>
+        <td>路演演讲稿、项目说明文档</td>
+        <td>在飞书写草稿 → 复制给Claude润色 → 粘贴回飞书</td>
+      </tr>
+      <tr>
+        <td><strong>③ AI辅助，边写边问</strong></td>
+        <td>实时顾问</td>
+        <td>研究过程、数据分析</td>
+        <td>写文档时遇到问题 → 问Claude → 将答案整合进文档</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Prompt 模板库</h4>
+
+  <div class="prompt-box">
+    <div class="label">📄 商业计划书大纲</div>
+    <p>"我是[年龄]岁的学生，想做一个关于[产品/服务]的项目。请帮我写一份商业计划书的大纲，包含：痛点分析、目标用户、解决方案、商业模式、市场分析、竞争分析、实施计划。每个部分用2-3句话简单描述。"</p>
+  </div>
+
+  <div class="prompt-box">
+    <div class="label">📊 市场分析报告</div>
+    <p>"请帮我分析[行业/领域]的市场情况，从以下维度展开：市场规模、主要参与者、用户需求、未来趋势。语言简单易懂，适合[年龄]岁青少年阅读。"</p>
+  </div>
+
+  <div class="prompt-box">
+    <div class="label">✍️ 文档润色</div>
+    <p>"请帮我把以下这段文字润色得更专业、更有说服力。保持原意，但让语言更精炼：[粘贴文字]"</p>
+  </div>
+
+  <div class="callout gold">
+    <strong>💡 教学要点</strong>
+    引导学生在使用AI生成内容时，始终问自己三个问题：<br>
+    1️⃣ <strong>AI说的对吗？</strong> — 培养事实核查意识<br>
+    2️⃣ <strong>这是我的声音吗？</strong> — 保持个人风格，不照搬AI<br>
+    3️⃣ <strong>还能更好吗？</strong> — AI是起点，不是终点
+  </div>
+</div>
+
+<!-- ===== 文档工作流 ===== -->
+<div class="section" id="doc-workflow">
+  <h3>⚡ 实操工作流：从0到1完成一份文档</h3>
+
+  <div class="step-card">
+    <div class="step-num">1</div>
+    <h4>Step 1：需求定义</h4>
+    <p>明确要写什么文档、目标读者是谁、核心信息是什么。在飞书新建文档并写下标题和3个关键词。</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">2</div>
+    <h4>Step 2：AI生成初稿</h4>
+    <p>打开Claude AI，输入上述"文档大纲"prompt，将生成的结构复制到飞书文档中。</p>
+    <div class="demo-box">
+      <span class="cmt">// 例：AI生成的BP大纲粘贴到飞书后的效果</span><br>
+      📄 商业计划书：校园二手书平台<br>
+      ├── 1. 痛点分析（待填写）<br>
+      ├── 2. 目标用户（待填写）<br>
+      ├── 3. 解决方案（待填写）<br>
+      ├── 4. 商业模式（待填写）<br>
+      └── 5. 财务计划（待填写）
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">3</div>
+    <h4>Step 3：逐段填充+AI辅助</h4>
+    <p>每个部分让Claude生成具体内容 → 理解后用自己的话改写 → 粘贴到飞书。关键：不要直接复制AI输出，要理解后再重写。</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">4</div>
+    <h4>Step 4：协作打磨</h4>
+    <p>将文档分享给团队成员 → 使用评论功能提修改意见 → @提及具体负责人 → 分配任务。</p>
+    <div class="demo-box">
+      <span class="cmt">// 飞书评论示例</span><br>
+      <span class="cmd">@李明</span> "这里的市场数据需要查一下最新报告，我来补充"<br>
+      <span class="cmd">@小张</span> "商业模式部分画个收入模型表格？" ✅ 已分配任务
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">5</div>
+    <h4>Step 5：最终审阅+输出</h4>
+    <p>通读全文，用Claude做最终润色。确认格式统一、逻辑连贯。导出为PDF或分享链接给导师/评委。</p>
+  </div>
+</div>
+
+<!-- ===== 模块二：飞书幻灯片 ===== -->
+<div class="section" id="slide-intro">
+  <h2>📊 模块二：飞书幻灯片基础</h2>
+
+  <div class="callout purple">
+    <strong>🎨 核心原则：内容先行，设计后至</strong>
+    好的PPT来自好的内容结构，而不是炫酷的动画。先搞定"说什么"，再考虑"怎么呈现"——这正是AI最擅长帮助你的地方。
+  </div>
+
+  <h3>基础操作速览</h3>
+  <table>
+    <thead><tr><th>操作</th><th>方法</th><th>Tips</th></tr></thead>
+    <tbody>
+      <tr><td>新建幻灯片</td><td>飞书 → 云文档 → 新建 → 幻灯片</td><td>从模板库中选择路演/项目汇报模板</td></tr>
+      <tr><td>从文档转PPT</td><td>打开飞书文档 → "..." → "转换为幻灯片"</td><td>自动根据标题层级生成页面结构</td></tr>
+      <tr><td>主题与模板</td><td>右侧"主题"面板 → 选择配色方案</td><td>保持品牌色统一（悦洋品牌色：深蓝+金色）</td></tr>
+      <tr><td>插入图表</td><td>菜单"插入" → "图表"</td><td>支持柱状图、折线图、饼图等</td></tr>
+      <tr><td>插入视频</td><td>"插入" → "视频" → 粘贴链接</td><td>支持B站/YouTube嵌入</td></tr>
+      <tr><td>演讲者备注</td><td>底部"点击添加演讲者备注"</td><td>路演时的提词器</td></tr>
+      <tr><td>动画与过渡</td><td>选中元素 → "动画"面板</td><td>适度使用，不要过度</td></tr>
+    </tbody>
+  </table>
+
+  <h4>路演PPT的标准结构（6页黄金法则）</h4>
+  <div class="grid-3">
+    <div class="card" style="text-align:center; border-left: 4px solid #7c5cfc;">
+      <div style="font-size: 24px;">1️⃣</div>
+      <div class="val" style="font-size: 14px;">封面</div>
+      <div style="font-size: 12px; color: #999;">项目名称+团队+日期</div>
+    </div>
+    <div class="card" style="text-align:center; border-left: 4px solid #2e86c1;">
+      <div style="font-size: 24px;">2️⃣</div>
+      <div class="val" style="font-size: 14px;">痛点</div>
+      <div style="font-size: 12px; color: #999;">我们发现什么问题？</div>
+    </div>
+    <div class="card" style="text-align:center; border-left: 4px solid #27ae60;">
+      <div style="font-size: 24px;">3️⃣</div>
+      <div class="val" style="font-size: 14px;">方案</div>
+      <div style="font-size: 12px; color: #999;">我们的产品/服务是什么？</div>
+    </div>
+    <div class="card" style="text-align:center; border-left: 4px solid #f1c40f;">
+      <div style="font-size: 24px;">4️⃣</div>
+      <div class="val" style="font-size: 14px;">市场</div>
+      <div style="font-size: 12px; color: #999;">谁来买单？市场规模多大？</div>
+    </div>
+    <div class="card" style="text-align:center; border-left: 4px solid #e74c3c;">
+      <div style="font-size: 24px;">5️⃣</div>
+      <div class="val" style="font-size: 14px;">优势</div>
+      <div style="font-size: 12px; color: #999;">为什么是我们？</div>
+    </div>
+    <div class="card" style="text-align:center; border-left: 4px solid #9b59b6;">
+      <div style="font-size: 24px;">6️⃣</div>
+      <div class="val" style="font-size: 14px;">行动</div>
+      <div style="font-size: 12px; color: #999;">我们需要什么？下一步？</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 幻灯片+AI ===== -->
+<div class="section" id="slide-ai">
+  <h3>🎨 幻灯片 + Claude AI 协作</h3>
+
+  <h4>AI驱动的PPT制作工作流</h4>
+
+  <table>
+    <thead><tr><th>阶段</th><th>AI做什么</th><th>你做什么</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>① 内容策划</strong></td>
+        <td>生成PPT大纲结构、每页核心信息</td>
+        <td>确定主题→给Claude写prompt→选择合适的结构</td>
+      </tr>
+      <tr>
+        <td><strong>② 文案撰写</strong></td>
+        <td>写标题、要点、过渡句、演讲者备注</td>
+        <td>审核内容准确性→调整语气风格→补充个人故事</td>
+      </tr>
+      <tr>
+        <td><strong>③ 设计建议</strong></td>
+        <td>推荐配色方案、页面布局、视觉层次</td>
+        <td>选择飞书主题→按建议排版→微调细节</td>
+      </tr>
+      <tr>
+        <td><strong>④ 演讲稿</strong></td>
+        <td>为每页PPT写出讲稿或演讲者备注</td>
+        <td>用自己的话说出来→根据练习调整</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Prompt 模板库</h4>
+
+  <div class="prompt-box">
+    <div class="label">🎬 PPT大纲生成</div>
+    <p>"我是一个[年龄]岁的学生，要做一个关于[项目主题]的6页路演PPT。目标受众是[评委/投资人/家长]。请帮我设计每页的标题和3个核心要点。"</p>
+  </div>
+
+  <div class="prompt-box">
+    <div class="label">🎤 演讲稿生成</div>
+    <p>"以下是我PPT每页的内容，请为每页写一段30-45秒的演讲稿，语言要自然、有感染力，适合[年龄]岁青少年在台上讲述：<br>[粘贴每页标题和要点]"</p>
+  </div>
+
+  <div class="prompt-box">
+    <div class="label">🎨 设计建议</div>
+    <p>"我的PPT主题是关于[项目类型]的项目路演。请给3种配色方案和字体建议，风格要[专业/活泼/创意]，适合青少年路演场景。"</p>
+  </div>
+
+  <div class="callout gold">
+    <strong>⚠️ 关键提醒</strong>
+    AI生成的PPT内容只是草稿。<strong>你的故事、你的数据、你的真实经历</strong>才是路演的灵魂。AI帮你省去"从空白开始"的恐惧，但内容和表达必须属于你自己！
+  </div>
+</div>
+
+<!-- ===== 幻灯片工作流 ===== -->
+<div class="section" id="slide-workflow">
+  <h3>⚡ 实操工作流：从文档到路演PPT</h3>
+
+  <div class="step-card">
+    <div class="step-num">1</div>
+    <h4>Step 1：在飞书文档中写完内容</h4>
+    <p>用前面学到的"Claude+云文档"工作流，先完成完整的商业计划书文档。确保标题层级清晰（H1=每页标题，H2=要点）。</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">2</div>
+    <h4>Step 2：一键转换为PPT</h4>
+    <p>在飞书文档中 → 点击右上角"..." → "转换为幻灯片"。飞书会自动根据文档标题层级生成幻灯片页面结构。</p>
+    <div class="demo-box">
+      <span class="cmt">// 转换规则</span><br>
+      文档 H1 标题 → 每张幻灯片的标题<br>
+      文档 H2/H3 → 幻灯片正文要点<br>
+      文档中的表格 → 自动转为PPT表格<br>
+      文档中的图片 → 自动嵌入PPT
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">3</div>
+    <h4>Step 3：AI优化每页内容</h4>
+    <p>将PPT每页的要点复制到Claude，请它帮你精简文案、优化表达。飞书PPT的原生设计能力 + Claude的文案能力 = 高效产出。</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">4</div>
+    <h4>Step 4：设计美化</h4>
+    <p>选择飞书PPT的主题模板 → 调整字体大小和颜色 → 添加关键图表 → 插入项目原型截图。保持风格统一，每页不超过5个要点。</p>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">5</div>
+    <h4>Step 5：准备路演</h4>
+    <p>用Claude为每页生成演讲稿 → 填写到"演讲者备注"中 → 对着PPT练习3遍 → 根据练习情况修改内容。</p>
+  </div>
+</div>
+
+<!-- ===== 综合实战 ===== -->
+<div class="section" id="project">
+  <h2>🏗️ 综合实战：完成一份商业计划书+路演PPT</h2>
+
+  <div class="callout red">
+    <strong>🔥 实战任务</strong>
+    在4课时内，使用Claude AI + 飞书云文档 + 飞书幻灯片，完成一份完整的<strong>商业计划书文档</strong>和<strong>6页路演PPT</strong>。
+  </div>
+
+  <h3>选题方向（4选1）</h3>
+  <div class="grid-2">
+    <div class="card border-p">
+      <div class="lbl" style="font-weight:700;">🌱 校园环保方案</div>
+      <div style="font-size:13px; color:#555;">设计一个解决校园浪费/环保问题的产品，如"校园二手物品交换平台"</div>
+    </div>
+    <div class="card border-b">
+      <div class="lbl" style="font-weight:700;">🤖 AI学习助手</div>
+      <div style="font-size:13px; color:#555;">设计一个用AI帮助同学学习的产品，如"AI作业规划助手"</div>
+    </div>
+    <div class="card border-g">
+      <div class="lbl" style="font-weight:700;">🏘️ 社区服务</div>
+      <div style="font-size:13px; color:#555;">设计一个解决社区问题的方案，如"邻里互助工具"</div>
+    </div>
+    <div class="card border-y">
+      <div class="lbl" style="font-weight:700;">🎨 创意工具</div>
+      <div style="font-size:13px; color:#555;">设计一个帮助同龄人发挥创意的产品</div>
+    </div>
+  </div>
+
+  <h3>提交物清单</h3>
+  <table>
+    <thead><tr><th>#</th><th>提交物</th><th>工具</th><th>要求</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>商业计划书文档</td><td>飞书云文档 + Claude</td><td>包含6个部分，不少于800字</td></tr>
+      <tr><td>2</td><td>路演PPT</td><td>飞书幻灯片 + Claude</td><td>6页，含封面+痛点+方案+市场+优势+行动</td></tr>
+      <tr><td>3</td><td>演讲稿</td><td>飞书"演讲者备注"</td><td>每页30-45秒讲稿，总时长3-4分钟</td></tr>
+      <tr><td>4</td><td>协作记录</td><td>飞书评论区</td><td>至少3条有意义的评论/任务分配</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 评估标准 ===== -->
+<div class="section" id="rubric">
+  <h2>📏 评估标准</h2>
+
+  <table>
+    <thead><tr><th>维度</th><th>权重</th><th>优秀（5分）</th><th>合格（3分）</th><th>待提升（1分）</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>文档质量</strong></td>
+        <td>25%</td>
+        <td>结构清晰，内容完整，有数据支撑</td>
+        <td>结构基本完整，部分内容需补充</td>
+        <td>结构混乱，内容缺失较多</td>
+      </tr>
+      <tr>
+        <td><strong>PPT设计</strong></td>
+        <td>25%</td>
+        <td>视觉统一，信息层次清晰，图文搭配</td>
+        <td>整体整齐，有些页面可优化</td>
+        <td>风格不统一，文字堆砌</td>
+      </tr>
+      <tr>
+        <td><strong>AI运用</strong></td>
+        <td>20%</td>
+        <td>有效使用AI生成+润色，有批判性修改</td>
+        <td>使用了AI但修改较少</td>
+        <td>直接复制AI输出或未使用AI</td>
+      </tr>
+      <tr>
+        <td><strong>协作沟通</strong></td>
+        <td>15%</td>
+        <td>积极使用评论/任务，高效协作</td>
+        <td>使用了协作功能但不够充分</td>
+        <td>未使用协作功能</td>
+      </tr>
+      <tr>
+        <td><strong>路演表达</strong></td>
+        <td>15%</td>
+        <td>表达自然，自信，时间控制精准</td>
+        <td>基本流畅，偶有卡顿</td>
+        <td>生硬背诵，超时</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 扩展资源 ===== -->
+<div class="section" id="resources">
+  <h2>📚 扩展资源</h2>
+
+  <div class="grid-2">
+    <div>
+      <h4>飞书官方资源</h4>
+      <ul>
+        <li><a href="https://www.feishu.cn/hc" target="_blank">飞书帮助中心</a> — 官方教程和FAQ</li>
+        <li><a href="https://www.feishu.cn/templates" target="_blank">飞书模板中心</a> — 商业计划书、项目提案等模板</li>
+        <li><a href="https://www.feishu.cn/product/docs" target="_blank">飞书云文档介绍</a></li>
+        <li><a href="https://www.feishu.cn/product/slides" target="_blank">飞书幻灯片介绍</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Claude AI 资源</h4>
+      <ul>
+        <li><strong>Claude Code CLI</strong> — 终端中的AI助手</li>
+        <li><strong>Claude.ai</strong> — 网页版对话AI</li>
+        <li><strong>提示词工程指南</strong> — 如何写出好的prompt</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>推荐学习路径</h4>
+  <div class="tl">
+    <div class="tl-item">
+      <h4>Step 1：完成本模块（4课时）</h4>
+      <p>掌握AI+飞书核心工作流</p>
+    </div>
+    <div class="tl-item">
+      <h4>Step 2：AI商科启蒙营（1天）</h4>
+      <p>用AI+飞书完成第一个商业画布</p>
+    </div>
+    <div class="tl-item">
+      <h4>Step 3：爱创营（5天）</h4>
+      <p>团队协作，用飞书完成完整BP+路演PPT</p>
+    </div>
+    <div class="tl-item">
+      <h4>Step 4：竞赛冲刺营</h4>
+      <p>将飞书工作流用于ICC等真实赛事</p>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <strong>🎉 课程总结</strong>
+    本模块的核心不是"学会飞书"，而是建立一套<strong>AI驱动、协作优先</strong>的数字化工作流。<br>
+    这套能力将贯穿学生在悦洋教育的整个学习旅程——从启蒙营的一日体验到竞赛营的国际舞台。<br><br>
+    <strong>记住三句话：</strong><br>
+    🅰 AI帮你开始，不替你想<br>
+    🅱 协作不是分任务，是一起变得更好<br>
+    🅲 工具会变，能力带走
+  </div>
+</div>
+
+<div class="footer">
+  悦洋教育 · AI+飞书高效办公 · 课程模块 v1.0<br>
+  广州天河·中泰国际广场A座29楼 · edu@joy1996.com
+</div>
+
+</div><!-- /main -->
+</div><!-- /wrapper -->
+
+</body>
+</html>
